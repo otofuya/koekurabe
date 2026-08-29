@@ -1,0 +1,5893 @@
+{
+  "generatedAt": "2026-08-27T16:02:47.388Z",
+  "products": [
+    {
+      "id": "rakuten-0858ede77704a39fb1ba5dafafd4b806",
+      "productId": "0858ede77704a39fb1ba5dafafd4b806",
+      "categoryId": "earbuds",
+      "jan": "4548736132061",
+      "name": "ソニー 開放型 完全ワイヤレスイヤホン LinkBuds WF-L900 グレー(1個)",
+      "brand": "SONY(ソニー)",
+      "model": "WF-L900 HM",
+      "price": 4400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ko/PEQ/MR0/2JW/CEO/34c533d1f16df6eae4396e82900f435e.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-0858ede77704a39fb1ba5dafafd4b806",
+      "productUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 32,
+      "reviewAverage": 4.22,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4.1,
+          "displayValue": "4.1g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 5.5,
+          "displayValue": "5.5時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-0a0b48228f9fbadefca9ea47e81e98d5",
+      "productId": "0a0b48228f9fbadefca9ea47e81e98d5",
+      "categoryId": "earbuds",
+      "jan": "4562314016932",
+      "name": "NOBLE FoKus Mystique 完全ワイヤレスイヤホン",
+      "brand": "Noble Audio",
+      "model": "NOB-FOKUSMST-B",
+      "price": 27479,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF0/AS4/FW5/NMB/bbc2e82c80b84e3c6992195497e2f959.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-0a0b48228f9fbadefca9ea47e81e98d5",
+      "productUrl": "https://product.rakuten.co.jp/product/-/0a0b48228f9fbadefca9ea47e81e98d5/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 8,
+          "displayValue": "8.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-0b2b3fdebcb3af70933639818e3bedf9",
+      "productId": "0b2b3fdebcb3af70933639818e3bedf9",
+      "categoryId": "earbuds",
+      "jan": "4969929258168",
+      "name": "BOSE 完全ワイヤレスイヤホン QUIETCOMFORT EARBUDS II Triple Black",
+      "brand": "ボーズ",
+      "model": "QCEARBUDS2ELP BLK",
+      "price": 10980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEW/EJS/D17/SKC/ef6fa83ba27b93b79598aa874c1eb8b5.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-0b2b3fdebcb3af70933639818e3bedf9",
+      "productUrl": "https://product.rakuten.co.jp/product/-/0b2b3fdebcb3af70933639818e3bedf9/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 52,
+      "reviewAverage": 4.19,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 6,
+          "displayValue": "6g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 1591685010,
+          "displayValue": "https://www.yamada-denkiweb.com/1591685010/",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-0e4b000cd9e022f73f67666c1bb27b1b",
+      "productId": "0e4b000cd9e022f73f67666c1bb27b1b",
+      "categoryId": "earbuds",
+      "jan": "0194644082543",
+      "name": "Anker Soundcore Liberty 3 Pro 完全ワイヤレスイヤホン Bluetooth 5.2",
+      "brand": "サウンドコア（ANKER）",
+      "model": "A3952",
+      "price": 12390,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEP/3KN/08T/8UH/3086918bc7b271d9c2f19f282c4077c9.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-0e4b000cd9e022f73f67666c1bb27b1b",
+      "productUrl": "https://product.rakuten.co.jp/product/-/0e4b000cd9e022f73f67666c1bb27b1b/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7,
+          "displayValue": "7g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-126743646479e8ac7d1f09d6c0f8b647",
+      "productId": "126743646479e8ac7d1f09d6c0f8b647",
+      "categoryId": "earbuds",
+      "jan": "7350088304891",
+      "name": "urbanista PHOENIX TWS 完全ワイヤレスイヤフォン MIDNIGHT BLACK",
+      "brand": "ブランド情報なし",
+      "model": "1037102",
+      "price": 11760,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEZ/BF4/PJ7/S1O/b8d8ffabb2a08a69e92092abe06e05ca.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-126743646479e8ac7d1f09d6c0f8b647",
+      "productUrl": "https://product.rakuten.co.jp/product/-/126743646479e8ac7d1f09d6c0f8b647/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8,
+          "displayValue": "8時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-14799cc5a5fd242427f25898557620ab",
+      "productId": "14799cc5a5fd242427f25898557620ab",
+      "categoryId": "earbuds",
+      "jan": "4580152976843",
+      "name": "GLIDiC 完全ワイヤレスイヤホン SB-WS57-MRTW/WH",
+      "brand": "グライディック",
+      "model": "SB-WS57-MRTW/WH",
+      "price": 14260,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEE/OJE/WF7/NG7/248ebf5e42b2f68e801057c0b3a9ed3c.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-14799cc5a5fd242427f25898557620ab",
+      "productUrl": "https://product.rakuten.co.jp/product/-/14799cc5a5fd242427f25898557620ab/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8,
+          "displayValue": "8時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-165b2aac5747eee78f371c85773ab0ae",
+      "productId": "165b2aac5747eee78f371c85773ab0ae",
+      "categoryId": "earbuds",
+      "jan": "4968929217212",
+      "name": "JBL 完全ワイヤレスイヤホン TOUR PRO 2 BLACK",
+      "brand": "JBL",
+      "model": "JBLTOURPRO2BLK",
+      "price": 8599,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF0/TLM/61W/6B2/f04e9a78309bec5c7132056fd0d6e190.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-165b2aac5747eee78f371c85773ab0ae",
+      "productUrl": "https://product.rakuten.co.jp/product/-/165b2aac5747eee78f371c85773ab0ae/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 5,
+      "reviewAverage": 3.4,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-17154519fa028196f7dfe0846d6b637f",
+      "productId": "17154519fa028196f7dfe0846d6b637f",
+      "categoryId": "earbuds",
+      "jan": "4571411194023",
+      "name": "完全ワイヤレスイヤホン LIBERTY AIR 2 PRO BLACK",
+      "brand": "ANKER",
+      "model": "A3951N11",
+      "price": 3900,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEG/GNZ/QD2/FT6/fdf2148974a2c69d3aa5094f81943468.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-17154519fa028196f7dfe0846d6b637f",
+      "productUrl": "https://product.rakuten.co.jp/product/-/17154519fa028196f7dfe0846d6b637f/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7,
+          "displayValue": "7時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-1d2fe3dd5e87d353ae963c45df1e5eec",
+      "productId": "1d2fe3dd5e87d353ae963c45df1e5eec",
+      "categoryId": "earbuds",
+      "jan": "4969929255440",
+      "name": "BOSE ワイヤレスイヤフォン QUIETCOMFORT EARBUDS TRIPLE ブラック",
+      "brand": "ボーズ",
+      "model": "QuietComfort Earbuds",
+      "price": 8998,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OKO/NYS/MVS/afa0fbc560f1e0a36db2c9a947c998b9.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-1d2fe3dd5e87d353ae963c45df1e5eec",
+      "productUrl": "https://product.rakuten.co.jp/product/-/1d2fe3dd5e87d353ae963c45df1e5eec/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 8,
+      "reviewAverage": 4.37,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 10,
+          "displayValue": "10g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 6,
+          "displayValue": "6 時間",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4",
+          "displayValue": "IPX4",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-1e912899e28389ed5bfc43ee4a21d447",
+      "productId": "1e912899e28389ed5bfc43ee4a21d447",
+      "categoryId": "earbuds",
+      "jan": "4969929258397",
+      "name": "BOSE 完全ワイヤレスイヤホン QUIETCOMFORT EARBUDS II Soapstone",
+      "brand": "ボーズ",
+      "model": "QC EARBUDS II SPS",
+      "price": 11980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEW/EIV/FJ4/8R8/cb209043fa2f4767a238372620d149ac.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-1e912899e28389ed5bfc43ee4a21d447",
+      "productUrl": "https://product.rakuten.co.jp/product/-/1e912899e28389ed5bfc43ee4a21d447/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 29,
+      "reviewAverage": 4.38,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-1fa89b4b3ee2485871e52008dea669e5",
+      "productId": "1fa89b4b3ee2485871e52008dea669e5",
+      "categoryId": "earbuds",
+      "jan": "0734038401958",
+      "name": "Noble Audio｜ノーブルオーディオ 完全ワイヤレスイヤホン Osprey Blue NBA-OSPREY-BL ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "Noble Audio",
+      "model": "NBA-OSPREY-BL",
+      "price": 34630,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFZ/7IL/3VN/K9F/3759480ee5d98e67e84d943be28427b5.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-1fa89b4b3ee2485871e52008dea669e5",
+      "productUrl": "https://product.rakuten.co.jp/product/-/1fa89b4b3ee2485871e52008dea669e5/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 4,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-1fe48b21b41d04d62521ab87d2ba643a",
+      "productId": "1fe48b21b41d04d62521ab87d2ba643a",
+      "categoryId": "earbuds",
+      "jan": "4595124028468",
+      "name": "JLAB｜ジェイラブ 完全ワイヤレスイヤホン JBuds Mini Sage IAPEBJBMINIRSGE124 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "JLab Japan",
+      "model": null,
+      "price": 8162,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFJ/CYW/KZI/IDM/fd5de610fd91423005bb5c3eda54d88d.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-1fe48b21b41d04d62521ab87d2ba643a",
+      "productUrl": "https://product.rakuten.co.jp/product/-/1fe48b21b41d04d62521ab87d2ba643a/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-1ffa6ce4d880da2126bd0ea33165f937",
+      "productId": "1ffa6ce4d880da2126bd0ea33165f937",
+      "categoryId": "earbuds",
+      "jan": "4580029520520",
+      "name": "QCY 完全ワイヤレスイヤホン HT01C",
+      "brand": "QCY",
+      "model": null,
+      "price": 4916,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEJ/VX0/QQM/TOU/422dd8edb1d5c8c65dc8399d83d35e5e.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-1ffa6ce4d880da2126bd0ea33165f937",
+      "productUrl": "https://product.rakuten.co.jp/product/-/1ffa6ce4d880da2126bd0ea33165f937/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 7,
+          "displayValue": "7.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.1,
+          "displayValue": "5.1",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact",
+        "beginner"
+      ]
+    },
+    {
+      "id": "rakuten-23dfef59ae67f6fa6c7264dfbaaa67ab",
+      "productId": "23dfef59ae67f6fa6c7264dfbaaa67ab",
+      "categoryId": "earbuds",
+      "jan": "4549980408421",
+      "name": "Panasonic 完全ワイヤレスイヤホン RZ-S30W-K",
+      "brand": "パナソニック",
+      "model": "RZ-S30W-K",
+      "price": 7480,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OJD/8RL/JFT/ac7c754b75f9989966b5377924b457cf.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-23dfef59ae67f6fa6c7264dfbaaa67ab",
+      "productUrl": "https://product.rakuten.co.jp/product/-/23dfef59ae67f6fa6c7264dfbaaa67ab/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4,
+          "displayValue": "イヤホン：約4g×2 (LR同値) 充電ケース：約45g",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7.5,
+          "displayValue": "イヤホン単体：約7.5時間（AAC） 充電ケース含む：約30時間（AAC）",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC,AAC",
+          "displayValue": "SBC,AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-291e1ebb09c59fbddde73ab4e5aa5f9c",
+      "productId": "291e1ebb09c59fbddde73ab4e5aa5f9c",
+      "categoryId": "earbuds",
+      "jan": "4580029520469",
+      "name": "QCY 完全ワイヤレスイヤホン T9 WHITE",
+      "brand": "MIRISE",
+      "model": "QCYT9WH",
+      "price": 2400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEK/WLA/PIF/5W3/f92608647b4dfce9bb9cd8b64b5444a1.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-291e1ebb09c59fbddde73ab4e5aa5f9c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/291e1ebb09c59fbddde73ab4e5aa5f9c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "AAC",
+          "displayValue": "AAC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-29a705db0f6d27385683a23c10e498fd",
+      "productId": "29a705db0f6d27385683a23c10e498fd",
+      "categoryId": "earbuds",
+      "jan": "4968929214938",
+      "name": "JBL LIVE PRO 2 完全ワイヤレスイヤホン JBLLIVEPRO2TWSBLK",
+      "brand": "JBL",
+      "model": null,
+      "price": 14940,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFF/WKS/HOL/G2I/48d93c57941e9b1bd847ea1f0eca30b5.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-29a705db0f6d27385683a23c10e498fd",
+      "productUrl": "https://product.rakuten.co.jp/product/-/29a705db0f6d27385683a23c10e498fd/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-2a5f9d61024fb1e58058dbd0a314ec25",
+      "productId": "2a5f9d61024fb1e58058dbd0a314ec25",
+      "categoryId": "earbuds",
+      "jan": "4560358452204",
+      "name": "NUARL 完全ワイヤレスイヤホン N10PRO-BM",
+      "brand": "NUARL（エム・ティ・アイ）",
+      "model": null,
+      "price": 6282,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OJE/E79/UEU/2e74ac64ebba8f252f3889ab450de3c4.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-2a5f9d61024fb1e58058dbd0a314ec25",
+      "productUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 37,
+      "reviewAverage": 4.19,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "AAC;aptX;SBC",
+          "displayValue": "AAC;aptX;SBC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-2cea7b9fcc820db7dd575308b8b24262",
+      "productId": "2cea7b9fcc820db7dd575308b8b24262",
+      "categoryId": "earbuds",
+      "jan": "4571512251410",
+      "name": "acoustune｜アコースチューン 完全ワイヤレスイヤホン HSX1001 Jin -迅- ブラック HSX1001V1-BLK ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "ＡＣＯＵＳＴＵＮＥ",
+      "model": "HSX1001V1BLK",
+      "price": 85440,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFK/VQ0/5ET/HMZ/9a6a1d9bfe954fc53766e0dd2dc6b8a2.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-2cea7b9fcc820db7dd575308b8b24262",
+      "productUrl": "https://product.rakuten.co.jp/product/-/2cea7b9fcc820db7dd575308b8b24262/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 3,
+      "reviewAverage": 4.33,
+      "specs": [],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-2ef8684309a8919f3581c12a185a5519",
+      "productId": "2ef8684309a8919f3581c12a185a5519",
+      "categoryId": "earbuds",
+      "jan": "4986773240347",
+      "name": "GALAXY 完全ワイヤレスイヤホン Galaxy Buds3 Pro Silver SM-R630NZAAXJP",
+      "brand": "サムスン",
+      "model": "SM-R630NZAAXJP",
+      "price": 15980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFF/CHP/572/XIC/d4381e063000914855c7c074ebc9cd60.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-2ef8684309a8919f3581c12a185a5519",
+      "productUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 51.9,
+          "displayValue": "51.9g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 30,
+          "displayValue": "30時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.4,
+          "displayValue": "5.4",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-2ffa34c42f7babfa0a5676e65ffb8d4a",
+      "productId": "2ffa34c42f7babfa0a5676e65ffb8d4a",
+      "categoryId": "earbuds",
+      "jan": "4571303222933",
+      "name": "final ag UZURA 完全ワイヤレスイヤホン BLACK",
+      "brand": "ag",
+      "model": null,
+      "price": 10862,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEZ/6EY/H5W/YCE/c54f2530393b1971c16a64b5c5d6f4ad.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-2ffa34c42f7babfa0a5676e65ffb8d4a",
+      "productUrl": "https://product.rakuten.co.jp/product/-/2ffa34c42f7babfa0a5676e65ffb8d4a/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8,
+          "displayValue": "イヤホン本体：最大8時間 ケース込み：最大22時間",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC, AAC",
+          "displayValue": "SBC, AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-30c5d18365c069fc2b90a56c6c6f88b0",
+      "productId": "30c5d18365c069fc2b90a56c6c6f88b0",
+      "categoryId": "earbuds",
+      "jan": "0194644140281",
+      "name": "Anker Soundcore Life P2完全ワイヤレスイヤホン",
+      "brand": "ブランド情報なし",
+      "model": "Soundcore Life P2",
+      "price": 7612,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEG/OCN/T6H/5VF/da3978309e28fa09ccfd4e72244bcef8.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-30c5d18365c069fc2b90a56c6c6f88b0",
+      "productUrl": "https://product.rakuten.co.jp/product/-/30c5d18365c069fc2b90a56c6c6f88b0/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 40,
+          "displayValue": "40時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-32a8357b72b67d796005b75e8cc934e3",
+      "productId": "32a8357b72b67d796005b75e8cc934e3",
+      "categoryId": "earbuds",
+      "jan": "4969929262004",
+      "name": "BOSE｜ボーズ 完全ワイヤレスイヤホン DEWDROP MINT QCEarbudsIMNT ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "ボーズ",
+      "model": "QCEarbudsIMNT",
+      "price": 26400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PG0/EYQ/BLF/MLJ/21ff6278e97dcee8579af1412a523426.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-32a8357b72b67d796005b75e8cc934e3",
+      "productUrl": "https://product.rakuten.co.jp/product/-/32a8357b72b67d796005b75e8cc934e3/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 0,
+          "displayValue": "0",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-347410d66f3db42d23647689fe6b932d",
+      "productId": "347410d66f3db42d23647689fe6b932d",
+      "categoryId": "earbuds",
+      "jan": "4549980602294",
+      "name": "Panasonic ワイヤレスステレオインサイドホン RZ-S50W-W",
+      "brand": "パナソニック",
+      "model": "RZ-S50W-W",
+      "price": 4900,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OJE/EOA/9WE/ce54b3e56a1f4e3195d545ba5448c665.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-347410d66f3db42d23647689fe6b932d",
+      "productUrl": "https://product.rakuten.co.jp/product/-/347410d66f3db42d23647689fe6b932d/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 4,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7,
+          "displayValue": "イヤホン：約7g×2 (LR同値) 充電ケース：約45g",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 6.5,
+          "displayValue": "イヤホン単体：約6.5時間（ノイズキャンセリングON、AAC） 充電ケース含む：約19.5時間（ノイズキャンセリングON、AAC）",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 8,
+          "displayValue": "8.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC,AAC",
+          "displayValue": "SBC,AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-393f753643e2ca29e0c675c25ad58b7e",
+      "productId": "393f753643e2ca29e0c675c25ad58b7e",
+      "categoryId": "earbuds",
+      "jan": "4975769470219",
+      "name": "ビクター 完全ワイヤレスイヤホン ノイズキャンセリング対応 グリーン HA-A30T-G(1個)",
+      "brand": "ビクター",
+      "model": "HA-A30T-G",
+      "price": 3300,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ko/PET/FLR/49N/NNK/c54bcba741ce0d5f0d43b7973877031c.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-393f753643e2ca29e0c675c25ad58b7e",
+      "productUrl": "https://product.rakuten.co.jp/product/-/393f753643e2ca29e0c675c25ad58b7e/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 5,
+      "reviewAverage": 4.2,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4.2,
+          "displayValue": "4.2g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-3a97669b45e8f68a3a4335299c2a0a97",
+      "productId": "3a97669b45e8f68a3a4335299c2a0a97",
+      "categoryId": "earbuds",
+      "jan": "4975769455063",
+      "name": "JVC ワイヤレスステレオヘッドセット HA-XC70BT-R",
+      "brand": "JVC",
+      "model": "HA-XC70BT-R",
+      "price": 2800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OL2/BBQ/WZL/78fc6f6de857d03f14874a8d3c3da131.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-3a97669b45e8f68a3a4335299c2a0a97",
+      "productUrl": "https://product.rakuten.co.jp/product/-/3a97669b45e8f68a3a4335299c2a0a97/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 4.2,
+          "displayValue": "4.2",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "AAC",
+          "displayValue": "AAC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-3ccd4f0557502c897f9145d3fb6e88e5",
+      "productId": "3ccd4f0557502c897f9145d3fb6e88e5",
+      "categoryId": "earbuds",
+      "jan": "0840353933057",
+      "name": "Google｜グーグル 完全ワイヤレスイヤホン Pixel Buds 2a Fog GA09553-JP ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "グーグル",
+      "model": "GA09553-JP",
+      "price": 23799,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFW/UQE/VXA/K3Y/f141365f006b57d4cb01148db1bbe2d6.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-3ccd4f0557502c897f9145d3fb6e88e5",
+      "productUrl": "https://product.rakuten.co.jp/product/-/3ccd4f0557502c897f9145d3fb6e88e5/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-3d786ef56a096cb77a98f61c178a8384",
+      "productId": "3d786ef56a096cb77a98f61c178a8384",
+      "categoryId": "earbuds",
+      "jan": "4512223695209",
+      "name": "Shokz OpenFit 2023年新登場 完全ワイヤレスイヤホン 8.3g超軽量 手軽なマルチポイント接続 オープンイヤー bluetooth5.2 マイク付き パワフルな低音 IP54防水性能 最大28時間利用可能 耳を塞がない 簡",
+      "brand": "アフターショックス",
+      "model": "T910",
+      "price": 9000,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF9/SR7/LVP/3GX/af291ea8e3cf78cc6f4e39c03dfba83c.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-3d786ef56a096cb77a98f61c178a8384",
+      "productUrl": "https://product.rakuten.co.jp/product/-/3d786ef56a096cb77a98f61c178a8384/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 8.3,
+          "displayValue": "8.3g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-427454e13742017fcae715db41275478",
+      "productId": "427454e13742017fcae715db41275478",
+      "categoryId": "earbuds",
+      "jan": "4571303222995",
+      "name": "final ag UZURA 完全ワイヤレスイヤホン CORAL",
+      "brand": "final",
+      "model": "AGUZURACORAL",
+      "price": 11500,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEZ/4GD/NK6/UXS/ac47f00189ed117dcd89aa9db2ccc3f6.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-427454e13742017fcae715db41275478",
+      "productUrl": "https://product.rakuten.co.jp/product/-/427454e13742017fcae715db41275478/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-43c9394e727be3b8fb1eea059b3ac4a7",
+      "productId": "43c9394e727be3b8fb1eea059b3ac4a7",
+      "categoryId": "earbuds",
+      "jan": "4969929260123",
+      "name": "BOSE 完全ワイヤレスイヤホン QuietComfort Earbuds WHITE SMOKE",
+      "brand": "ボーズ",
+      "model": "QCEARBUDSIWHT",
+      "price": 12800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFH/5QH/4SR/RVW/066c2fbd5ef275ca95b9197260525199.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-43c9394e727be3b8fb1eea059b3ac4a7",
+      "productUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 25,
+      "reviewAverage": 4.08,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-463cfbcf8bb646ee270c5fa0aaf26b2d",
+      "productId": "463cfbcf8bb646ee270c5fa0aaf26b2d",
+      "categoryId": "earbuds",
+      "jan": "4571512251960",
+      "name": "Cleer オープンイヤー型完全ワイヤレスイヤホン ブラック ARC-5-AIANC-BLK ARC 5 AI ANC Black",
+      "brand": "東京音響",
+      "model": null,
+      "price": 41400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFZ/4MX/9E7/JMS/611bbb96cd57ed0acf219bf55334b43f.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-463cfbcf8bb646ee270c5fa0aaf26b2d",
+      "productUrl": "https://product.rakuten.co.jp/product/-/463cfbcf8bb646ee270c5fa0aaf26b2d/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1,
+      "reviewAverage": 3,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 16,
+          "displayValue": "16.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-4666a7b1eb217768eb0ffeb92419493b",
+      "productId": "4666a7b1eb217768eb0ffeb92419493b",
+      "categoryId": "earbuds",
+      "jan": "4548736101777",
+      "name": "SONY 完全ワイヤレスイヤホン WF-H800(G)",
+      "brand": "SONY(ソニー)",
+      "model": "WF-H800G",
+      "price": 3850,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ko/PED/4UW/R85/V5S/a9e733dd8843d4340c8394c1d1bfdcd8.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-4666a7b1eb217768eb0ffeb92419493b",
+      "productUrl": "https://product.rakuten.co.jp/product/-/4666a7b1eb217768eb0ffeb92419493b/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7.6,
+          "displayValue": "約7.6 g×2",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8,
+          "displayValue": "最大8時間",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6mm ドーム型",
+          "unit": "mm",
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC,AAC",
+          "displayValue": "SBC,AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-47092710224386505144fcd6a7dd735c",
+      "productId": "47092710224386505144fcd6a7dd735c",
+      "categoryId": "earbuds",
+      "jan": "4531465049649",
+      "name": "radius Bluetooth対応 完全ワイヤレスイヤホン 軽量コンパクトモデル ファイヤードブリック HP-T60BTR",
+      "brand": "ラディウス",
+      "model": null,
+      "price": 7128,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ht/PEI/63P/AGI/KRG/747007c9d700e40d1d10205f26dbfd30.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-47092710224386505144fcd6a7dd735c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/47092710224386505144fcd6a7dd735c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-4aded9c18d92523825b01b327f890fb1",
+      "productId": "4aded9c18d92523825b01b327f890fb1",
+      "categoryId": "earbuds",
+      "jan": "4531465050072",
+      "name": "radius LDACコーデック対応 ハイレゾ完全ワイヤレスイヤホン ホワイト HP-R300BTW",
+      "brand": "ラディウス",
+      "model": null,
+      "price": 8942,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PES/R2Z/MB4/2ZB/c36f72a599f70a46ca311457af484116.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-4aded9c18d92523825b01b327f890fb1",
+      "productUrl": "https://product.rakuten.co.jp/product/-/4aded9c18d92523825b01b327f890fb1/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 9,
+          "displayValue": "9.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-4bb3cc999bc58265a2cf2b6a28b906dc",
+      "productId": "4bb3cc999bc58265a2cf2b6a28b906dc",
+      "categoryId": "earbuds",
+      "jan": "4571303220045",
+      "name": "final 完全ワイヤレスイヤホン FI-EVATW (02)",
+      "brand": "ファイナル",
+      "model": "FIEVATW02",
+      "price": 19800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEE/OJE/9HL/NQE/690dc30327a4cf8386273cd915c8b825.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-4bb3cc999bc58265a2cf2b6a28b906dc",
+      "productUrl": "https://product.rakuten.co.jp/product/-/4bb3cc999bc58265a2cf2b6a28b906dc/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "AAC",
+          "displayValue": "AAC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-4c88cf6c3180af6af1724594c60f11c1",
+      "productId": "4c88cf6c3180af6af1724594c60f11c1",
+      "categoryId": "earbuds",
+      "jan": "4571411203398",
+      "name": "ANKER 完全ワイヤレスイヤホン soundcore SLEEP A10 WHITE",
+      "brand": "ANKER",
+      "model": "A6610021",
+      "price": 7100,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEX/XBC/GPJ/PHH/723f1b9cc34a6b555b2c90faa4ae4aec.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-4c88cf6c3180af6af1724594c60f11c1",
+      "productUrl": "https://product.rakuten.co.jp/product/-/4c88cf6c3180af6af1724594c60f11c1/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 2.9,
+          "displayValue": "2.9g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 5,
+          "displayValue": "5.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-4fec7203d742aabdd2525157305195fb",
+      "productId": "4fec7203d742aabdd2525157305195fb",
+      "categoryId": "earbuds",
+      "jan": "4595558405033",
+      "name": "JLAB｜ジェイラブ 完全ワイヤレスイヤホン Epic Open Sport True Wireless Earbuds Black EBEPOPSPRTBLK50WEB ワイヤレス 左右分離 /オープンイヤー型 /Bluetooth対応 /USB",
+      "brand": "JLab Japan",
+      "model": null,
+      "price": 22000,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFO/BNN/OR7/O8U/ca685699d9fc92998ccb091cd7ddc147.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-4fec7203d742aabdd2525157305195fb",
+      "productUrl": "https://product.rakuten.co.jp/product/-/4fec7203d742aabdd2525157305195fb/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-50cf5fa29eb9eb02f17daf517c3a7cde",
+      "productId": "50cf5fa29eb9eb02f17daf517c3a7cde",
+      "categoryId": "earbuds",
+      "jan": "4595124028482",
+      "name": "JLAB｜ジェイラブ 完全ワイヤレスイヤホン JBuds Mini Pink IAPEBJBMINIRPNK124 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "JLab Japan",
+      "model": null,
+      "price": 8470,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFJ/BZW/EQ8/BYO/11b9d9d391742e9ef8a9bc9c0360917a.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-50cf5fa29eb9eb02f17daf517c3a7cde",
+      "productUrl": "https://product.rakuten.co.jp/product/-/50cf5fa29eb9eb02f17daf517c3a7cde/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-53b7995763440b004a84a2894865daa2",
+      "productId": "53b7995763440b004a84a2894865daa2",
+      "categoryId": "earbuds",
+      "jan": "7350088304440",
+      "name": "urbanista COPENHAGEN 完全ワイヤレスイヤホン SAGE GREEN",
+      "brand": "COPENHAGEN TWS - Sage Green",
+      "model": "1036624",
+      "price": 10890,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEY/PKO/IY7/UQK/a48511b9f9dc2df367ff40d3feef20e4.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-53b7995763440b004a84a2894865daa2",
+      "productUrl": "https://product.rakuten.co.jp/product/-/53b7995763440b004a84a2894865daa2/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 3.7,
+          "displayValue": "3.7g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-5444b8a9926872178d30fabc3eff1bf3",
+      "productId": "5444b8a9926872178d30fabc3eff1bf3",
+      "categoryId": "earbuds",
+      "jan": "0194644082390",
+      "name": "Anker Soundcore Liberty 3 Pro（完全ワイヤレスイヤホン Bluetooth 5.2） ミッドナイトブラック",
+      "brand": "Soundcore",
+      "model": "A3952",
+      "price": 11166,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEQ/YHJ/6BO/B0O/bf706b5eeb632513c9d8be6cad746527.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-5444b8a9926872178d30fabc3eff1bf3",
+      "productUrl": "https://product.rakuten.co.jp/product/-/5444b8a9926872178d30fabc3eff1bf3/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7,
+          "displayValue": "7g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-584553be9f1b94986164a06e284cca4b",
+      "productId": "584553be9f1b94986164a06e284cca4b",
+      "categoryId": "earbuds",
+      "jan": "4968929216567",
+      "name": "JBL 完全ワイヤレスイヤホン ENDURANCE PEAK 3 BLUE",
+      "brand": "JBL",
+      "model": "JBLENDURPEAK3BLU",
+      "price": 15400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEW/EIV/EPI/WRK/a35ff7220d0a621565d84ce7db2efc5c.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-584553be9f1b94986164a06e284cca4b",
+      "productUrl": "https://product.rakuten.co.jp/product/-/584553be9f1b94986164a06e284cca4b/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 10,
+      "reviewAverage": 3.8,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-59e2037efd6006378ea69445f5f42a05",
+      "productId": "59e2037efd6006378ea69445f5f42a05",
+      "categoryId": "earbuds",
+      "jan": "4571604941496",
+      "name": "SHOKZ 完全ワイヤレスイヤホン OpenFit Pro SKZ-EP-000062",
+      "brand": "アフターショックス",
+      "model": "SKZ-EP-000062",
+      "price": 31980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PFW/ST6/PP5/TKS/56ff037b44ef2e568e574d2afae4ed0b.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-59e2037efd6006378ea69445f5f42a05",
+      "productUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 6,
+      "reviewAverage": 4.5,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 12,
+          "displayValue": "12g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 12,
+          "displayValue": "12時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 20,
+          "displayValue": "20.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-5c93cf7bbfe6f46be8fb9528d44d408b",
+      "productId": "5c93cf7bbfe6f46be8fb9528d44d408b",
+      "categoryId": "earbuds",
+      "jan": "4260752334341",
+      "name": "ゼンハイザー イヤーカフ型完全ワイヤレスBluetoothイヤホン ブラック AOWS1-BLACK SENNHEISER ACCENTUM Clip",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 35200,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFZ/PPO/JNT/O0A/5cb2219d9585fd6fb0440a0b7b51edb8.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-5c93cf7bbfe6f46be8fb9528d44d408b",
+      "productUrl": "https://product.rakuten.co.jp/product/-/5c93cf7bbfe6f46be8fb9528d44d408b/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-637e1dd64912138092e4fb1b1de5a800",
+      "productId": "637e1dd64912138092e4fb1b1de5a800",
+      "categoryId": "earbuds",
+      "jan": "4571411204302",
+      "name": "soundcore LIBERTY 4 完全ワイヤレスイヤホン CLOUD WHITE",
+      "brand": "ANKER",
+      "model": "A3953N21",
+      "price": 6248,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEX/XBC/D5A/LHE/3d43b13486b8f3d762bf965bfdadb821.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-637e1dd64912138092e4fb1b1de5a800",
+      "productUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1383,
+      "reviewAverage": 4.62,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 6,
+          "displayValue": "6g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 9,
+          "displayValue": "9時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 9,
+          "displayValue": "9.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-63fbccee1b3774af8a5632262b6829a4",
+      "productId": "63fbccee1b3774af8a5632262b6829a4",
+      "categoryId": "earbuds",
+      "jan": "4975769478840",
+      "name": "ビクター Victor HA-FXY50AT ビクタースタジオ監修 完全ワイヤレスイヤホン HAFXY50AT",
+      "brand": "JVC",
+      "model": "HA-FXY50A-T",
+      "price": 7980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFC/O3Y/VKV/VD3/24cdaed9bd040329bb480096b01a64dc.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-63fbccee1b3774af8a5632262b6829a4",
+      "productUrl": "https://product.rakuten.co.jp/product/-/63fbccee1b3774af8a5632262b6829a4/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-6bef7640f938cd7225909bdf14f7626d",
+      "productId": "6bef7640f938cd7225909bdf14f7626d",
+      "categoryId": "earbuds",
+      "jan": "4589753072060",
+      "name": "Padmate 完全ワイヤレスイヤホン PAMU SLIDE WHITE",
+      "brand": "Padmate",
+      "model": "PM18206",
+      "price": 11800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ko/PEE/OF4/CBR/YOK/690a404a3e479fc5f19c115195c2d4ca.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-6bef7640f938cd7225909bdf14f7626d",
+      "productUrl": "https://product.rakuten.co.jp/product/-/6bef7640f938cd7225909bdf14f7626d/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-6d7c4a68238d33745f6d754a4a3ebb1a",
+      "productId": "6d7c4a68238d33745f6d754a4a3ebb1a",
+      "categoryId": "earbuds",
+      "jan": "0810145322758",
+      "name": "SKULLCANDY｜スカルキャンディ 完全ワイヤレスイヤホン Bone White S4PFW-T001 ワイヤレス ネックバンド /耳かけ型 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 14800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PG0/2WD/MIW/P3F/b7fb4f2bddefc444b3fbaf56418ee83c.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-6d7c4a68238d33745f6d754a4a3ebb1a",
+      "productUrl": "https://product.rakuten.co.jp/product/-/6d7c4a68238d33745f6d754a4a3ebb1a/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-713f4af6e5c7773b1574f29792ea777d",
+      "productId": "713f4af6e5c7773b1574f29792ea777d",
+      "categoryId": "earbuds",
+      "jan": "4580029520346",
+      "name": "QCY Bluetooth 5.0 完全ワイヤレスイヤホン T1 WHITE",
+      "brand": "QCY",
+      "model": "QCY-T1WH",
+      "price": 3507,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PED/5F6/CGX/W8S/cf2631c367a813d6a2f2c18d1f031162.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-713f4af6e5c7773b1574f29792ea777d",
+      "productUrl": "https://product.rakuten.co.jp/product/-/713f4af6e5c7773b1574f29792ea777d/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 6,
+      "reviewAverage": 3.33,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 20,
+          "displayValue": "20時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact",
+        "beginner"
+      ]
+    },
+    {
+      "id": "rakuten-71457f19decc6ed90b2d2bf1c7069b77",
+      "productId": "71457f19decc6ed90b2d2bf1c7069b77",
+      "categoryId": "earbuds",
+      "jan": "4968929217236",
+      "name": "JBL 完全ワイヤレスイヤホン TUNE FLEX GHOST EDITION BLACK",
+      "brand": "JBL",
+      "model": "JBLTFLEXGBLK",
+      "price": 4999,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEX/4FZ/EQ9/HAP/e66133b7ee4db874085714daba8f8901.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-71457f19decc6ed90b2d2bf1c7069b77",
+      "productUrl": "https://product.rakuten.co.jp/product/-/71457f19decc6ed90b2d2bf1c7069b77/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 4.5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-73e3cbcd01858730c06b0601bfe649ac",
+      "productId": "73e3cbcd01858730c06b0601bfe649ac",
+      "categoryId": "earbuds",
+      "jan": "4548736145764",
+      "name": "SONY 完全ワイヤレスイヤホン WF-C700N ラベンダー",
+      "brand": "ソニー",
+      "model": "WF-C700N VZ",
+      "price": 4999,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF2/AWK/8YD/PN6/0af933b90fc8bd002641c013779b0018.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-73e3cbcd01858730c06b0601bfe649ac",
+      "productUrl": "https://product.rakuten.co.jp/product/-/73e3cbcd01858730c06b0601bfe649ac/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 9,
+      "reviewAverage": 3.67,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4.6,
+          "displayValue": "約 4.6 g x 2 (イヤーピース(M)含む)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7.5,
+          "displayValue": "最大7.5時間 (NCオン) / 最大10時間 (NCオフ)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 5,
+          "displayValue": "5mm",
+          "unit": "mm",
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC, AAC",
+          "displayValue": "SBC, AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-7568027d6691ccd569d6341b11a42aa5",
+      "productId": "7568027d6691ccd569d6341b11a42aa5",
+      "categoryId": "earbuds",
+      "jan": "0194644102357",
+      "name": "Anker Soundcore Space A40完全ワイヤレスイヤホン",
+      "brand": "Soundcore",
+      "model": "A3936",
+      "price": 12175,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEZ/R71/Q1I/5HP/371bcfe3e55e369a4be4629c55dcd5db.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-7568027d6691ccd569d6341b11a42aa5",
+      "productUrl": "https://product.rakuten.co.jp/product/-/7568027d6691ccd569d6341b11a42aa5/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1,
+      "reviewAverage": 4,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4.9,
+          "displayValue": "4.9g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 10,
+          "displayValue": "10時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "ambient",
+          "label": "外音取込",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-7576ad630ee4de07f353e1f5d3d46ea9",
+      "productId": "7576ad630ee4de07f353e1f5d3d46ea9",
+      "categoryId": "earbuds",
+      "jan": "0194644140724",
+      "name": "Anker Soundcore Liberty Air 2 完全ワイヤレスイヤホン ホワイト",
+      "brand": "サウンドコア",
+      "model": "A3910",
+      "price": 19463,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEG/PLD/2OP/DN9/93fb3583bde4c4497ff3e203cb579919.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-7576ad630ee4de07f353e1f5d3d46ea9",
+      "productUrl": "https://product.rakuten.co.jp/product/-/7576ad630ee4de07f353e1f5d3d46ea9/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 53,
+          "displayValue": "53g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7,
+          "displayValue": "7時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-78177f274eb2c529b5f29b430244b85f",
+      "productId": "78177f274eb2c529b5f29b430244b85f",
+      "categoryId": "earbuds",
+      "jan": "4549980698624",
+      "name": "Technics 完全ワイヤレスイヤホン EAH-AZ60M2-S",
+      "brand": "パナソニック",
+      "model": "EAH-AZ60M2-S",
+      "price": 9980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF3/Q23/7BQ/KEB/50338a123034d952b5306f9981ad1606.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-78177f274eb2c529b5f29b430244b85f",
+      "productUrl": "https://product.rakuten.co.jp/product/-/78177f274eb2c529b5f29b430244b85f/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 6,
+      "reviewAverage": 4.83,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7,
+          "displayValue": "イヤホン：約7g×2 (LR同値) 充電ケース：約45g",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7,
+          "displayValue": "イヤホン単体：約7.0時間（ノイズキャンセリングON、AAC） 充電ケース含む：約24時間（ノイズキャンセリングON、AAC）",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 8,
+          "displayValue": "8.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC,AAC,LDAC",
+          "displayValue": "SBC,AAC,LDAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-7d5e9880c28f9c1d9a7912cb5cb6140c",
+      "productId": "7d5e9880c28f9c1d9a7912cb5cb6140c",
+      "categoryId": "earbuds",
+      "jan": "4969929261014",
+      "name": "BOSE 完全ワイヤレスイヤホン ICE BLUE QCEarbudsIIBL",
+      "brand": "ボーズ",
+      "model": "QCEarbudsIIBL",
+      "price": 15980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFS/N7B/F72/VWI/edb7a324e9214b6999d52a52a8051ce4.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-7d5e9880c28f9c1d9a7912cb5cb6140c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/7d5e9880c28f9c1d9a7912cb5cb6140c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8.5,
+          "displayValue": "8.5時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-821de2ea4d103ede4bb09e3d80df3015",
+      "productId": "821de2ea4d103ede4bb09e3d80df3015",
+      "categoryId": "earbuds",
+      "jan": "4548736164253",
+      "name": "SONY 完全ワイヤレスイヤホン WF-C710N/L グラスブルー",
+      "brand": "ソニー",
+      "model": "WF-C710N (L)",
+      "price": 7980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFN/0FK/PBJ/29C/f9089b14a2cf940f66491e97a9d0dc89.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-821de2ea4d103ede4bb09e3d80df3015",
+      "productUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 132,
+      "reviewAverage": 4.31,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 5.2,
+          "displayValue": "約 5.2 g x 2 (イヤーピース(M)含む)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8.5,
+          "displayValue": "最大8.5時間 (NCオン) / 最大12時間 (NCオフ)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 5,
+          "displayValue": "5mm",
+          "unit": "mm",
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC, AAC",
+          "displayValue": "SBC, AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-8af3784ce8e4bb276e0d2a72770c9a1c",
+      "productId": "8af3784ce8e4bb276e0d2a72770c9a1c",
+      "categoryId": "earbuds",
+      "jan": "7350088304860",
+      "name": "urbanista ATLANTA 完全ワイヤレスイヤホン PURE WHITE",
+      "brand": "ATLANTA",
+      "model": "1037003",
+      "price": 8500,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF0/6J1/STC/NZ7/262cb0d68afbe93482c67a7fd1203499.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-8af3784ce8e4bb276e0d2a72770c9a1c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/8af3784ce8e4bb276e0d2a72770c9a1c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 34,
+          "displayValue": "34時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-8b23bf1eb85c593b8f8ff2ed320021bb",
+      "productId": "8b23bf1eb85c593b8f8ff2ed320021bb",
+      "categoryId": "earbuds",
+      "jan": "4969929255341",
+      "name": "BOSE｜ボーズ イヤープラグ Sleepbuds II N-MsleepbudsII",
+      "brand": "ボース",
+      "model": "N-M Sleepbuds II",
+      "price": 20466,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEG/PD2/LVA/36D/31e9f20a9e31d74b1446c423a6e5e4e0.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-8b23bf1eb85c593b8f8ff2ed320021bb",
+      "productUrl": "https://product.rakuten.co.jp/product/-/8b23bf1eb85c593b8f8ff2ed320021bb/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 4,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 10,
+          "displayValue": "10時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-8d09408ebeaf52b7ac678fa0a5ec61af",
+      "productId": "8d09408ebeaf52b7ac678fa0a5ec61af",
+      "categoryId": "earbuds",
+      "jan": "0699838541726",
+      "name": "Noble Audio｜ノーブルオーディオ 完全ワイヤレスイヤホン NBA-FOKUS-AMADEUS ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 44550,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFT/1T7/51P/YS0/33c3558d7419578c7526867eb5e63cd3.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-8d09408ebeaf52b7ac678fa0a5ec61af",
+      "productUrl": "https://product.rakuten.co.jp/product/-/8d09408ebeaf52b7ac678fa0a5ec61af/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 0,
+          "displayValue": "0",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-94d17e89b2b91fb9ab5697c53b1b4b3c",
+      "productId": "94d17e89b2b91fb9ab5697c53b1b4b3c",
+      "categoryId": "earbuds",
+      "jan": "7350088304433",
+      "name": "urbanista COPENHAGEN Dusty Pink 完全ワイヤレスイヤホン",
+      "brand": "Urbanista",
+      "model": "1036604",
+      "price": 7576,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEY/POZ/ES8/24C/a80f8b5fe4ed1ebe5c6704cbc2f2a463.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-94d17e89b2b91fb9ab5697c53b1b4b3c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/94d17e89b2b91fb9ab5697c53b1b4b3c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 3.7,
+          "displayValue": "3.7g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-97550ceff7083dbbaa5f5efe6b00065c",
+      "productId": "97550ceff7083dbbaa5f5efe6b00065c",
+      "categoryId": "earbuds",
+      "jan": "4562151500441",
+      "name": "GLIDiC 完全ワイヤレスイヤホン GL-TW3000F-GR",
+      "brand": "グライディック",
+      "model": null,
+      "price": 1240,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEX/OHE/ILP/HBU/a5c5722941a786cdedcaaae25178e3a5.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-97550ceff7083dbbaa5f5efe6b00065c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 6,
+      "reviewAverage": 3.5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-9798143f8372c40cf829be3bc49f804f",
+      "productId": "9798143f8372c40cf829be3bc49f804f",
+      "categoryId": "earbuds",
+      "jan": "7350088303399",
+      "name": "urbanista LONDON WHITE PEARL 完全ワイヤレスイヤフォン",
+      "brand": "ブランド情報なし",
+      "model": "1035834",
+      "price": 1980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PED/1WV/0JS/9BX/b5e0bd42bbdbf94687c7f8d931aecd43.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-9798143f8372c40cf829be3bc49f804f",
+      "productUrl": "https://product.rakuten.co.jp/product/-/9798143f8372c40cf829be3bc49f804f/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 5,
+          "displayValue": "5時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-992396b45314c77be0cfb3c482e8ad07",
+      "productId": "992396b45314c77be0cfb3c482e8ad07",
+      "categoryId": "earbuds",
+      "jan": "4969929260680",
+      "name": "BOSE｜ボーズ 完全ワイヤレスイヤホン Bose Ultra Open Earbuds カーボンブルー ULTRAOPENECBN ワイヤレス 左右分離 /イヤーカフ型 /Bluetooth対応",
+      "brand": "ボーズ",
+      "model": "ULTRAOPENEBCBN",
+      "price": 35800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFI/OY3/DQR/KX8/a257ad6e54fd4e86ecadf41ce128dd12.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-992396b45314c77be0cfb3c482e8ad07",
+      "productUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 3,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 10,
+          "displayValue": "10g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7,
+          "displayValue": "7 時間",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4",
+          "displayValue": "IPX4",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-9e1a797eb55b7919ef0e50173e70bb97",
+      "productId": "9e1a797eb55b7919ef0e50173e70bb97",
+      "categoryId": "earbuds",
+      "jan": "4975769464980",
+      "name": "JVC 完全ワイヤレスイヤホン HA-ET45T-P",
+      "brand": "JVC（ビクター）",
+      "model": "HA-ET45T-P",
+      "price": 7802,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OL0/QZ7/509/60f923eb48bdafa09f576d155adb4ecf.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-9e1a797eb55b7919ef0e50173e70bb97",
+      "productUrl": "https://product.rakuten.co.jp/product/-/9e1a797eb55b7919ef0e50173e70bb97/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 7.4,
+          "displayValue": "7.4g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC",
+          "displayValue": "SBC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-a5f797fdbdf06aa2fd80f7a1b5e75638",
+      "productId": "a5f797fdbdf06aa2fd80f7a1b5e75638",
+      "categoryId": "earbuds",
+      "jan": "0810145322680",
+      "name": "SKULLCANDY｜スカルキャンディ 完全ワイヤレスイヤホン Bone White S2SPW-T001 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 5680,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PG0/175/BI2/7S6/4111fbdfdf674e31e45dfb4565d59fa8.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-a5f797fdbdf06aa2fd80f7a1b5e75638",
+      "productUrl": "https://product.rakuten.co.jp/product/-/a5f797fdbdf06aa2fd80f7a1b5e75638/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-b0dc9eda29ca725d4ce25d7508ecdd8f",
+      "productId": "b0dc9eda29ca725d4ce25d7508ecdd8f",
+      "categoryId": "earbuds",
+      "jan": "4961310155117",
+      "name": "audio-technica ATH-SQ1TW BK",
+      "brand": "オーディオテクニカ",
+      "model": "ATH-SQ1TW BK",
+      "price": 9132,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OKN/V5Q/RYK/1f05851d62523e243305a6f374268743.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b0dc9eda29ca725d4ce25d7508ecdd8f",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b0dc9eda29ca725d4ce25d7508ecdd8f/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 5.2,
+          "displayValue": "イヤホン：約5.2g(L側)、約5.2g(R側) 充電ケース：約34.2g",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 6.5,
+          "displayValue": "連続通信(音楽再生時)：最大約6.5時間(イヤホン)、 最大約19.5時間(充電ケース併用時)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4(イヤホンのみ)",
+          "displayValue": "IPX4(イヤホンのみ)",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC",
+          "displayValue": "SBC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact",
+        "beginner"
+      ]
+    },
+    {
+      "id": "rakuten-b1c3d0df921b7fb510814ec69d6965f7",
+      "productId": "b1c3d0df921b7fb510814ec69d6965f7",
+      "categoryId": "earbuds",
+      "jan": "4961310164096",
+      "name": "audio-technica 完全ワイヤレスイヤホン ATH-CKS50TW2 GG",
+      "brand": "オーディオテクニカ",
+      "model": "ATH-CKS50TW2 GG",
+      "price": 64194,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFN/4IH/8UA/GQU/30cc648175c119c3a3baa6c8898c67d1.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b1c3d0df921b7fb510814ec69d6965f7",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b1c3d0df921b7fb510814ec69d6965f7/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1,
+      "reviewAverage": 2,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 8,
+          "displayValue": "ヘッドホン：約8g(L側),約8g(R側)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 20,
+          "displayValue": "最大約20時間(イヤホン)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4(イヤホン本体のみ)",
+          "displayValue": "IPX4(イヤホン本体のみ)",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 9,
+          "displayValue": "9.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "Qualcomm&reg; aptX&trade; Adaptive audio、Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "displayValue": "Qualcomm&reg; aptX&trade; Adaptive audio、Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-b314ebb76e70fc53720d76f482402b00",
+      "productId": "b314ebb76e70fc53720d76f482402b00",
+      "categoryId": "earbuds",
+      "jan": "0810145322703",
+      "name": "SKULLCANDY｜スカルキャンディ 完全ワイヤレスイヤホン True Black S2DPW-T740 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 9980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PG0/172/VW4/F3V/2bb21acd949ff621706aff2f558e79a1.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b314ebb76e70fc53720d76f482402b00",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b314ebb76e70fc53720d76f482402b00/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 1,
+          "displayValue": "1",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-b41c556d5baaee81320b7781e9bbd6d3",
+      "productId": "b41c556d5baaee81320b7781e9bbd6d3",
+      "categoryId": "earbuds",
+      "jan": "6974173980237",
+      "name": "earfun イヤホン AIR PRO 3 BLUE",
+      "brand": "EarFun Air Pro 3 Bluetooth 5.3 IPX5 防水 アクティブノイズキャンセリング搭載 完全ワイヤレスイヤホン",
+      "model": "EARFUNAIRPRO3",
+      "price": 7990,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF7/RI9/4FB/V1U/4075cdf2473aa439c9db00a5a8e98bf1.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b41c556d5baaee81320b7781e9bbd6d3",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 9,
+      "reviewAverage": 4.67,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-b53ee021fa34c2fde7c918b303543013",
+      "productId": "b53ee021fa34c2fde7c918b303543013",
+      "categoryId": "earbuds",
+      "jan": "4969929262011",
+      "name": "BOSE｜ボーズ 完全ワイヤレスイヤホン ROSEWOOD MAUVE QCEarbudsIMUV ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "ボーズ",
+      "model": "QCEarbudsIMUV",
+      "price": 26400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PG0/EYR/02G/8IP/950d9905ea688f6715ab37863df2098e.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b53ee021fa34c2fde7c918b303543013",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b53ee021fa34c2fde7c918b303543013/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-b9a8cb100aaf0bfc29786733aa1be431",
+      "productId": "b9a8cb100aaf0bfc29786733aa1be431",
+      "categoryId": "earbuds",
+      "jan": "4571411191039",
+      "name": "Anker soundcore LIBERTY AIR 2 BLACK 完全ワイヤレスイヤホン",
+      "brand": "ANKER",
+      "model": "Soundcore Liberty Air 2",
+      "price": 3900,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OJL/QZM/UQG/b48fb385c91a65c65f7a46ddfbba6150.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-b9a8cb100aaf0bfc29786733aa1be431",
+      "productUrl": "https://product.rakuten.co.jp/product/-/b9a8cb100aaf0bfc29786733aa1be431/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-ba448c4d0b5a6c8975ecba9c9f358cbe",
+      "productId": "ba448c4d0b5a6c8975ecba9c9f358cbe",
+      "categoryId": "earbuds",
+      "jan": "4571512251946",
+      "name": "Cleer オープンイヤー型完全ワイヤレスイヤホン ブラック ARC-5-BLK ARC 5 Black",
+      "brand": "東京音響",
+      "model": null,
+      "price": 32400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFZ/4N8/2XE/CSL/453706b399db418e604e2ee74ea899b6.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-ba448c4d0b5a6c8975ecba9c9f358cbe",
+      "productUrl": "https://product.rakuten.co.jp/product/-/ba448c4d0b5a6c8975ecba9c9f358cbe/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 16,
+          "displayValue": "16.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-be5eb2aa0e4c7a81aef3172363f08840",
+      "productId": "be5eb2aa0e4c7a81aef3172363f08840",
+      "categoryId": "earbuds",
+      "jan": "4968929078318",
+      "name": "JBL 完全ワイヤレスイヤホン CLUB PRO+ TWS",
+      "brand": "JBL",
+      "model": "JBLCLUBPROPTWSBLK",
+      "price": 5500,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEE/OKO/N4W/O24/f005aa88541c4a216ac020eec9485dbd.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-be5eb2aa0e4c7a81aef3172363f08840",
+      "productUrl": "https://product.rakuten.co.jp/product/-/be5eb2aa0e4c7a81aef3172363f08840/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 3,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 7,
+          "displayValue": "7.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.1,
+          "displayValue": "5.1",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-c087632f8140734817e7259101637100",
+      "productId": "c087632f8140734817e7259101637100",
+      "categoryId": "earbuds",
+      "jan": "0699838541665",
+      "name": "Noble Audio｜ノーブルオーディオ 完全ワイヤレスイヤホン NBA-FOKUS-PRESTIGE-ENCORE ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": "NBA-FOKUS-PRESTIGE-ENCORE",
+      "price": 108900,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFU/OYL/RFI/7NP/6e809248d317c7d9ed5eaca59c20f373.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-c087632f8140734817e7259101637100",
+      "productUrl": "https://product.rakuten.co.jp/product/-/c087632f8140734817e7259101637100/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-c0e1a976386b4299a1287f94f4032a1e",
+      "productId": "c0e1a976386b4299a1287f94f4032a1e",
+      "categoryId": "earbuds",
+      "jan": "0810145322697",
+      "name": "SKULLCANDY｜スカルキャンディ 完全ワイヤレスイヤホン Plasma Red S2SPW-T995 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 5680,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PG0/1Y5/J6S/FUD/79eea6d765cef6e38873475c7b12963e.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-c0e1a976386b4299a1287f94f4032a1e",
+      "productUrl": "https://product.rakuten.co.jp/product/-/c0e1a976386b4299a1287f94f4032a1e/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-c3bdf10d0467b6725adbd3df79b8c5ae",
+      "productId": "c3bdf10d0467b6725adbd3df79b8c5ae",
+      "categoryId": "earbuds",
+      "jan": "5707055043345",
+      "name": "Jabra 完全ワイヤレスイヤホン ELITE SPORT 4.5",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 16800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEE/OLE/YUI/KY9/e8a3f3bebf2c72dff6ad30a45350a854.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-c3bdf10d0467b6725adbd3df79b8c5ae",
+      "productUrl": "https://product.rakuten.co.jp/product/-/c3bdf10d0467b6725adbd3df79b8c5ae/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-c8e94357c00ab55c463c21d3008bad39",
+      "productId": "c8e94357c00ab55c463c21d3008bad39",
+      "categoryId": "earbuds",
+      "jan": "4961310157609",
+      "name": "audio-technica ワイヤレスイヤホン ブラック ATH-CKS50TW BK",
+      "brand": "オーディオテクニカ",
+      "model": "ATH-CKS50TW BK",
+      "price": 4400,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEN/OD3/OFA/ZKM/9cf6a77a4da3931a74227328771314d1.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-c8e94357c00ab55c463c21d3008bad39",
+      "productUrl": "https://product.rakuten.co.jp/product/-/c8e94357c00ab55c463c21d3008bad39/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 36,
+      "reviewAverage": 4.42,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 8,
+          "displayValue": "ヘッドホン：約8g(L側),約8g(R側)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 20,
+          "displayValue": "最大約20時間(イヤホン)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4(イヤホン本体のみ)",
+          "displayValue": "IPX4(イヤホン本体のみ)",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 9,
+          "displayValue": "9.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "Qualcomm&reg; aptX&trade; Adaptive audio、Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "displayValue": "Qualcomm&reg; aptX&trade; Adaptive audio、Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-c97f6860ff8c7fcfeb8c6da3ad26afcc",
+      "productId": "c97f6860ff8c7fcfeb8c6da3ad26afcc",
+      "categoryId": "earbuds",
+      "jan": "4986773256515",
+      "name": "サムスン ノイズキャンセリング機能搭載 完全ワイヤレスBluetoothイヤホン ホワイト SM-R540NZWAXJP Samsung Galaxy Buds4",
+      "brand": "サムスン",
+      "model": "SM-R540NZWAXJP",
+      "price": 31343,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFV/T70/X8E/5X8/8b4027e6b2ebb78c02ea77d45a991768.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-c97f6860ff8c7fcfeb8c6da3ad26afcc",
+      "productUrl": "https://product.rakuten.co.jp/product/-/c97f6860ff8c7fcfeb8c6da3ad26afcc/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 30,
+          "displayValue": "30時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-cb0101de2de36b8662bf78cfb18b27cb",
+      "productId": "cb0101de2de36b8662bf78cfb18b27cb",
+      "categoryId": "earbuds",
+      "jan": "0608119201655",
+      "name": "AUKEY｜オーキー フルワイヤレスイヤホン Black EP-T27-BK ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "AUKEY",
+      "model": "EP-T27-BK",
+      "price": 1480,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEL/I4X/KH4/8HY/e731028447b36cb1a80f6ec5fd2d7459.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-cb0101de2de36b8662bf78cfb18b27cb",
+      "productUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 18,
+      "reviewAverage": 4.22,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 3.5,
+          "displayValue": "3.5g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "AAC",
+          "displayValue": "AAC",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-cd6a9906806eec21fd2336caccac91b5",
+      "productId": "cd6a9906806eec21fd2336caccac91b5",
+      "categoryId": "earbuds",
+      "jan": "4969929261397",
+      "name": "BOSE 完全ワイヤレスイヤホン DESERT GOLD ULTRAOPENEGLD",
+      "brand": "ボーズ",
+      "model": "ULTRAOPENEBGLD",
+      "price": 22980,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFS/M5I/JC6/722/746323432138b195faabc864fa36a903.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-cd6a9906806eec21fd2336caccac91b5",
+      "productUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 27,
+      "reviewAverage": 4.41,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7.5,
+          "displayValue": "7.5時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-cfba76ccc72675a0766bf3d91bcfb2ac",
+      "productId": "cfba76ccc72675a0766bf3d91bcfb2ac",
+      "categoryId": "earbuds",
+      "jan": "4969929257161",
+      "name": "BOSE ワイヤレスイヤフォン QUIETCOMFORT EARBUDS SANDSTONE",
+      "brand": "ボーズ",
+      "model": null,
+      "price": 10800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEM/2A3/7NF/Z5J/fd05a58584298195884c8b7a11b5a200.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-cfba76ccc72675a0766bf3d91bcfb2ac",
+      "productUrl": "https://product.rakuten.co.jp/product/-/cfba76ccc72675a0766bf3d91bcfb2ac/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-d5f259d1eccbf0d27ee11229aaa66486",
+      "productId": "d5f259d1eccbf0d27ee11229aaa66486",
+      "categoryId": "earbuds",
+      "jan": "6974173980183",
+      "name": "earfun 完全ワイヤレスイヤホン AIR PRO 3",
+      "brand": "EarFun",
+      "model": "TW500",
+      "price": 7990,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF0/AM5/NFU/8DA/cc1009c778c293b8510caff0977f7b41.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-d5f259d1eccbf0d27ee11229aaa66486",
+      "productUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 134,
+      "reviewAverage": 4.56,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-d9a9e554200aadf028d2a264e369f471",
+      "productId": "d9a9e554200aadf028d2a264e369f471",
+      "categoryId": "earbuds",
+      "jan": "4961310150570",
+      "name": "audio-technica フルワイヤレスイヤホン ATH-CKS5TW BK",
+      "brand": "オーディオテクニカ",
+      "model": "ATH-CKS5TW BK",
+      "price": 5500,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEE/OKN/8PE/CR7/36c3464a615edba80e186f24f4178087.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-d9a9e554200aadf028d2a264e369f471",
+      "productUrl": "https://product.rakuten.co.jp/product/-/d9a9e554200aadf028d2a264e369f471/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 8,
+          "displayValue": "ヘッドホン：約8g(L側),約8g(R側)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 15,
+          "displayValue": "最大約15時間(ヘッドホン)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX2(ヘッドホンのみ)",
+          "displayValue": "IPX2(ヘッドホンのみ)",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "displayValue": "Qualcomm&reg; aptX&trade; audio、AAC、SBC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-de48fc4d6b10300f30e2d5679fd500fd",
+      "productId": "de48fc4d6b10300f30e2d5679fd500fd",
+      "categoryId": "earbuds",
+      "jan": "4562151500427",
+      "name": "GLIDiC 完全ワイヤレスイヤホン GL-TW3000F-CO",
+      "brand": "グライディック",
+      "model": "GLTW3000FCO",
+      "price": 1240,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEX/QAG/3OL/2LY/5792314cd62468fc2b7933fb6ed86ede.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-de48fc4d6b10300f30e2d5679fd500fd",
+      "productUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 6,
+      "reviewAverage": 3.5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 10,
+          "displayValue": "10.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.2,
+          "displayValue": "5.2",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-e3e9d2fcfdc8b26b57752fa2c3f00dbc",
+      "productId": "e3e9d2fcfdc8b26b57752fa2c3f00dbc",
+      "categoryId": "earbuds",
+      "jan": "4548736163614",
+      "name": "SONY 完全ワイヤレスイヤホン WF-1000XM5 (P)",
+      "brand": "ソニー",
+      "model": "WF-1000XM5",
+      "price": 15379,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFH/5QJ/5VO/QXN/f0e264424e02cc950dd2d873fe4c26e2.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-e3e9d2fcfdc8b26b57752fa2c3f00dbc",
+      "productUrl": "https://product.rakuten.co.jp/product/-/e3e9d2fcfdc8b26b57752fa2c3f00dbc/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 23,
+      "reviewAverage": 4.17,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 5.9,
+          "displayValue": "約 5.9 g x 2 (イヤーピース(M)含む)",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 8,
+          "displayValue": "最大8時間 (NCオン) / 最大12時間 (NCオフ)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 8.4,
+          "displayValue": "8.4 mm",
+          "unit": "mm",
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.3,
+          "displayValue": "5.3",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC, AAC, LDAC, LC3",
+          "displayValue": "SBC, AAC, LDAC, LC3",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-e41a54fa59ad724b375979040baa8beb",
+      "productId": "e41a54fa59ad724b375979040baa8beb",
+      "categoryId": "earbuds",
+      "jan": "0699838541627",
+      "name": "Noble Audio｜ノーブルオーディオ 完全ワイヤレスイヤホン ブラック NBA-FOKUS-REX5-BK ワイヤレス 左右分離 /カナル型 /ノイズキャンセリング対応 /Bluetooth対応",
+      "brand": "Noble Audio",
+      "model": "NBA-FOKUS-REX5-BK",
+      "price": 62370,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFU/NFT/7UK/HSF/68cf666b9c7023d4e1be70ec910f9026.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-e41a54fa59ad724b375979040baa8beb",
+      "productUrl": "https://product.rakuten.co.jp/product/-/e41a54fa59ad724b375979040baa8beb/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 4,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-e676c4833a5fd4634fed868a4a87e047",
+      "productId": "e676c4833a5fd4634fed868a4a87e047",
+      "categoryId": "earbuds",
+      "jan": "4595124028475",
+      "name": "JLAB｜ジェイラブ 完全ワイヤレスイヤホン JBuds Mini Aqua IAPEBJBMINIRAQUA124 ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "JLab Japan",
+      "model": null,
+      "price": 8470,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFJ/C1S/HC2/748/d0c0bb92bd2809d13a1f66841e1f2c59.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-e676c4833a5fd4634fed868a4a87e047",
+      "productUrl": "https://product.rakuten.co.jp/product/-/e676c4833a5fd4634fed868a4a87e047/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-e7e3a2269bfd2c54c440a3e27469c043",
+      "productId": "e7e3a2269bfd2c54c440a3e27469c043",
+      "categoryId": "earbuds",
+      "jan": "4975769475511",
+      "name": "Victor 完全ワイヤレスイヤホン HA-A20T-W",
+      "brand": "JVC",
+      "model": "HA-A20T-W",
+      "price": 5940,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PF3/GY9/OST/FPO/dcc985aba601dd572a09cfea9a4bd6fd.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-e7e3a2269bfd2c54c440a3e27469c043",
+      "productUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 61,
+      "reviewAverage": 4.06,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4.2,
+          "displayValue": "4.2g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-e89650d6cd6325e9c070a96a8996da12",
+      "productId": "e89650d6cd6325e9c070a96a8996da12",
+      "categoryId": "earbuds",
+      "jan": "0600310697510",
+      "name": "AUKEY｜オーキー 完全ワイヤレスイヤホン Pink EP-T21S-PK ワイヤレス 左右分離 /カナル型 /Bluetooth対応",
+      "brand": "AUKEY",
+      "model": "EP-T21S-PK",
+      "price": 1940,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEL/I4X/YKY/QM4/fc6c6f9a755066609c261f15f6518aff.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-e89650d6cd6325e9c070a96a8996da12",
+      "productUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 173,
+      "reviewAverage": 3.86,
+      "specs": [
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-ea935cd751513bc02284700b89e1cb87",
+      "productId": "ea935cd751513bc02284700b89e1cb87",
+      "categoryId": "earbuds",
+      "jan": "4531465049687",
+      "name": "radius Tinyシリーズ フルワイヤレスイヤホン ブラック HP-T200BTK",
+      "brand": "ラディウス",
+      "model": null,
+      "price": 3900,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ht/PEL/I4Y/95E/E4Y/f4f627de5d6c78d89743abbc4481938e.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-ea935cd751513bc02284700b89e1cb87",
+      "productUrl": "https://product.rakuten.co.jp/product/-/ea935cd751513bc02284700b89e1cb87/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 4,
+          "displayValue": "4g",
+          "unit": "g",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.1,
+          "displayValue": "5.1",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-ecb1d7cbed7a9ec0efae960396330da6",
+      "productId": "ecb1d7cbed7a9ec0efae960396330da6",
+      "categoryId": "earbuds",
+      "jan": "4580029520506",
+      "name": "QCY フルワイヤレスイヤホン T13 BLACK",
+      "brand": "QCY",
+      "model": null,
+      "price": 2500,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEM/K1O/K6Z/CRS/cfbb76a01d2f908f65cbc7b978ddfef4.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-ecb1d7cbed7a9ec0efae960396330da6",
+      "productUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 7,
+      "reviewAverage": 4.28,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 7,
+          "displayValue": "7.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5.1,
+          "displayValue": "5.1",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-eea74071aeb8a7783d353abdb7c25bd3",
+      "productId": "eea74071aeb8a7783d353abdb7c25bd3",
+      "categoryId": "earbuds",
+      "jan": "0840353933064",
+      "name": "Google ノイズキャンセリング機能搭載 完全ワイヤレスBluetoothイヤホン Berry GA09845-JP Pixel Buds 2a",
+      "brand": "ブランド情報なし",
+      "model": "GA09845-JP",
+      "price": 23800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFW/UQ7/ROH/3RV/c882d66f78b337e92f3085e4d65688cb.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-eea74071aeb8a7783d353abdb7c25bd3",
+      "productUrl": "https://product.rakuten.co.jp/product/-/eea74071aeb8a7783d353abdb7c25bd3/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 11,
+          "displayValue": "11.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 0,
+          "displayValue": "0",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-f02e6fec61cfa5751a7ebde6d6bbef94",
+      "productId": "f02e6fec61cfa5751a7ebde6d6bbef94",
+      "categoryId": "earbuds",
+      "jan": "4571651014297",
+      "name": "soundcore 完全ワイヤレスイヤホン C50I LIGHT PURPLE",
+      "brand": "ANKER",
+      "model": "D1101NQ1",
+      "price": 10990,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFX/KEF/RX4/XUL/1d96d1909795c0b9834618e265ef144d.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-f02e6fec61cfa5751a7ebde6d6bbef94",
+      "productUrl": "https://product.rakuten.co.jp/product/-/f02e6fec61cfa5751a7ebde6d6bbef94/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 5.5,
+          "displayValue": "5.5g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 12,
+          "displayValue": "12.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-f06092aefa6fce901eb1b4a471ea1dd7",
+      "productId": "f06092aefa6fce901eb1b4a471ea1dd7",
+      "categoryId": "earbuds",
+      "jan": "4969929260673",
+      "name": "BOSE｜ボーズ 完全ワイヤレスイヤホン Bose Ultra Open Earbuds チルドライラック ULTRAOPENELLC ワイヤレス 左右分離 /イヤーカフ型 /Bluetooth対応",
+      "brand": "ボーズ",
+      "model": "ULTRAOPENEBLLC",
+      "price": 35800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFJ/HRA/3B6/0U1/aa719c1766fb2a9f2efe8704f7b8e760.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-f06092aefa6fce901eb1b4a471ea1dd7",
+      "productUrl": "https://product.rakuten.co.jp/product/-/f06092aefa6fce901eb1b4a471ea1dd7/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 1,
+      "reviewAverage": 5,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 10,
+          "displayValue": "10g",
+          "unit": "g",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 7,
+          "displayValue": "7 時間",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "official"
+        },
+        {
+          "key": "multipoint",
+          "label": "マルチポイント",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": true,
+          "displayValue": "開放型",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterproof",
+          "label": "防水等級",
+          "value": "IPX4",
+          "displayValue": "IPX4",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-f09ac0db6c0ea115e3fb5c671d3de4c7",
+      "productId": "f09ac0db6c0ea115e3fb5c671d3de4c7",
+      "categoryId": "earbuds",
+      "jan": "4548736088801",
+      "name": "SONY ノイズキャンセル機能搭載 完全ワイヤレスイヤホン WF-1000XM3(B)",
+      "brand": "SONY(ソニー)",
+      "model": "WF-1000XM3",
+      "price": 3800,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ko/PED/49U/3QO/154/f7acb15a9cb58333c9dca747ed73e08f.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-f09ac0db6c0ea115e3fb5c671d3de4c7",
+      "productUrl": "https://product.rakuten.co.jp/product/-/f09ac0db6c0ea115e3fb5c671d3de4c7/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 13,
+      "reviewAverage": 4.31,
+      "specs": [
+        {
+          "key": "weight",
+          "label": "本体重量",
+          "value": 8.5,
+          "displayValue": "約8.5 g×2",
+          "unit": "g",
+          "provenance": "official"
+        },
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 6,
+          "displayValue": "最大6時間(NC ON)/最大8時間(NC OFF)",
+          "unit": "時間",
+          "provenance": "official"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6mm ドーム型（CCAWボイスコイル採用）",
+          "unit": "mm",
+          "provenance": "official"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "codec",
+          "label": "対応コーデック",
+          "value": "SBC, AAC",
+          "displayValue": "SBC, AAC",
+          "unit": null,
+          "provenance": "official"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-f8e292b282c63b30122845af559ff56c",
+      "productId": "f8e292b282c63b30122845af559ff56c",
+      "categoryId": "earbuds",
+      "jan": "4986773256485",
+      "name": "サムスン ノイズキャンセリング機能搭載 完全ワイヤレスBluetoothイヤホン ホワイト SM-R640NZWAXJP Samsung Galaxy Buds4 Pro",
+      "brand": "サムスン",
+      "model": "SM-R640NZWAXJP",
+      "price": 41242,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PFV/T7Z/E1Z/S0I/ae78e1d2d2f97685be7656068ccc4947.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-f8e292b282c63b30122845af559ff56c",
+      "productUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 7,
+      "reviewAverage": 4.86,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 30,
+          "displayValue": "30時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 6.1,
+          "displayValue": "6.1",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-f91aa1ca6ce1c7c17790dbf613add38a",
+      "productId": "f91aa1ca6ce1c7c17790dbf613add38a",
+      "categoryId": "earbuds",
+      "jan": "4957812685023",
+      "name": "YAMAHA 完全ワイヤレスイヤホン TW-E3C(A)",
+      "brand": "ヤマハ",
+      "model": "TW-E3C-A",
+      "price": 6627,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEY/3F7/GF3/P82/d71cd22a21e288160966382f46062ba5.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-f91aa1ca6ce1c7c17790dbf613add38a",
+      "productUrl": "https://product.rakuten.co.jp/product/-/f91aa1ca6ce1c7c17790dbf613add38a/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 2,
+      "reviewAverage": 3,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 9,
+          "displayValue": "9時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": false,
+          "displayValue": "非対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "openEar",
+          "label": "構造",
+          "value": false,
+          "displayValue": "密閉型",
+          "unit": null,
+          "provenance": "ec_api"
+        },
+        {
+          "key": "driver",
+          "label": "ドライバー径",
+          "value": 6,
+          "displayValue": "6.0",
+          "unit": "mm",
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily",
+        "compact"
+      ]
+    },
+    {
+      "id": "rakuten-fa524b2e6a8ae39c50ae114c23917a94",
+      "productId": "fa524b2e6a8ae39c50ae114c23917a94",
+      "categoryId": "earbuds",
+      "jan": "0194644140878",
+      "name": "Anker Soundcore Spirit X2（完全ワイヤレスイヤホン Bluetooth 5.0）/ マイク内蔵/PSE技術",
+      "brand": "ブランド情報なし",
+      "model": null,
+      "price": 13325,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/im/PEQ/ZSG/RFF/U0R/1547d9b8e9040f328e55877c2a9e3bce.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-fa524b2e6a8ae39c50ae114c23917a94",
+      "productUrl": "https://product.rakuten.co.jp/product/-/fa524b2e6a8ae39c50ae114c23917a94/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 36,
+          "displayValue": "36時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "anc",
+          "label": "ANC",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "bluetooth",
+          "label": "Bluetoothバージョン",
+          "value": 5,
+          "displayValue": "5",
+          "unit": null,
+          "provenance": "llm_inferred"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    },
+    {
+      "id": "rakuten-faaeca461f41bff8b8bb5f0f9b0f8dd9",
+      "productId": "faaeca461f41bff8b8bb5f0f9b0f8dd9",
+      "categoryId": "earbuds",
+      "jan": "0194644140663",
+      "name": "Anker Soundcore Liberty 2 Pro 完全ワイヤレスイヤホン",
+      "brand": "サウンドコア",
+      "model": "Liberty 2 Pro",
+      "price": 10462,
+      "imageUrl": "https://r.r10s.jp/g/gran_img/ho/PEG/PGR/U6H/BCY/8997d8d012afd9e880b4005ef093fbb3.jpg?_ex=300x300",
+      "offerId": "atlas-earbuds-faaeca461f41bff8b8bb5f0f9b0f8dd9",
+      "productUrl": "https://product.rakuten.co.jp/product/-/faaeca461f41bff8b8bb5f0f9b0f8dd9/?rafcid=wsc_i_ps_115c0d7e-ae0a-4234-baeb-d8e073971b3c",
+      "reviewCount": 0,
+      "reviewAverage": 0,
+      "specs": [
+        {
+          "key": "playback",
+          "label": "連続再生時間",
+          "value": 32,
+          "displayValue": "32時間",
+          "unit": "時間",
+          "provenance": "llm_inferred"
+        },
+        {
+          "key": "waterResistant",
+          "label": "防水",
+          "value": true,
+          "displayValue": "対応",
+          "unit": null,
+          "provenance": "ec_api"
+        }
+      ],
+      "contextTagIds": [
+        "commute",
+        "work",
+        "portable",
+        "long-use",
+        "daily"
+      ]
+    }
+  ]
+}

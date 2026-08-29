@@ -1,0 +1,312 @@
+.page-header {
+  margin-bottom: 12px;
+}
+
+.page-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.coverage {
+  font-size: 13px;
+  color: #555;
+  margin-top: 2px;
+}
+
+.chart-info {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* ── 四象限チャート ──────────────────────────── */
+
+.chart {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 12px 0 24px;
+  overflow: visible;
+}
+
+.chart-axis {
+  position: absolute;
+  pointer-events: none;
+}
+
+.chart-axis--x {
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chart-axis--y {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid #e0e0e0;
+}
+
+.chart-pole {
+  position: absolute;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.chart-pole--x-pos {
+  right: 8px;
+  top: 50%;
+  transform: translateY(8px);
+}
+
+.chart-pole--x-neg {
+  left: 8px;
+  top: 50%;
+  transform: translateY(8px);
+}
+
+.chart-pole--y-pos {
+  top: 8px;
+  left: 50%;
+  transform: translateX(8px);
+}
+
+.chart-pole--y-neg {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(8px);
+}
+
+/* ── 商品ボタン ──────────────────────────────── */
+
+.chart-product {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+  padding: 0;
+  cursor: pointer;
+  background: #fff;
+  transition: transform 0.15s ease, border-color 0.15s ease, opacity 0.3s ease;
+  z-index: 1;
+}
+
+.chart-product:hover,
+.chart-product:focus-visible {
+  transform: translate(-50%, -50%) scale(1.2);
+  border-color: #333;
+  z-index: 20;
+}
+
+.chart-product:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.chart-product--dimmed {
+  opacity: 0.15;
+}
+
+.chart-product__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── ホバーカード ─────────────────────────────── */
+
+.product-card {
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 12px 14px;
+  width: 340px;
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.product-card__name {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product-card__price {
+  color: #c00;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.product-card__tally {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.product-card__aspect-label {
+  color: #666;
+  min-width: 7em;
+  flex-shrink: 0;
+}
+
+.product-card__pos {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.product-card__neg {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.product-card__denom {
+  color: #888;
+  font-size: 12px;
+}
+
+/* ── 軸切り替え ──────────────────────────────── */
+
+.axis-picker {
+  margin: 0 0 16px;
+}
+
+.axis-picker__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.axis-picker__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  min-width: 3em;
+}
+
+.axis-picker__cell {
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.axis-picker__cell:hover {
+  background: #f0f0f0;
+}
+
+.axis-picker__cell--active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+.axis-picker__cell--active:hover {
+  background: #333;
+}
+
+.axis-picker__cell--blocked {
+  color: #bbb;
+  border-color: #e8e8e8;
+  cursor: not-allowed;
+  background: #fafafa;
+}
+
+.axis-picker__cell--blocked:hover {
+  background: #fafafa;
+}
+
+/* ── 価格フィルタ ────────────────────────────── */
+
+.price-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.price-filter__label {
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
+}
+
+.price-filter__slider {
+  flex: 1;
+  max-width: 300px;
+  accent-color: #333;
+}
+
+.price-filter__value {
+  color: #333;
+  white-space: nowrap;
+}
+
+.price-filter__count {
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ── 非掲載リスト ────────────────────────────── */
+
+.unspoken-list {
+  margin-top: 24px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.unspoken-list summary {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+}
+
+.unspoken-list__note {
+  font-size: 13px;
+  color: #888;
+  margin: 6px 0;
+}
+
+.unspoken-list ul {
+  list-style: none;
+  padding: 0;
+  font-size: 13px;
+}
+
+.unspoken-list li {
+  padding: 2px 0;
+  color: #666;
+}
+
+.unspoken-list li .unspoken-list__detail {
+  color: #aaa;
+}
