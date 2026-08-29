@@ -1,4 +1,4 @@
-import type { JoinedProduct } from "../lib/types.ts";
+import type { JoinedProduct } from "@lib/types.ts";
 
 export type PriceChangeCallback = (maxPrice: number) => void;
 

@@ -1,5 +1,5 @@
-import type { OfferableAxis } from "@ref/aspect-model.ts";
-import type { JoinedProduct } from "../lib/types.ts";
+import type { OfferableAxis } from "@lib/aspect-model.ts";
+import type { JoinedProduct } from "@lib/types.ts";
 
 export function renderUnspokenList(
   container: HTMLElement,

@@ -1,4 +1,4 @@
-import type { OfferableAxis } from "@ref/aspect-model.ts";
+import type { OfferableAxis } from "@lib/aspect-model.ts";
 
 export type AxisChangeCallback = (xKey: string, yKey: string) => void;
 

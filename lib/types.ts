@@ -1,4 +1,4 @@
-import type { AspectTally } from "@ref/aspect-model.ts";
+import type { AspectTally } from "./aspect-model.ts";
 
 export type JoinedProduct = {
   productId: string;

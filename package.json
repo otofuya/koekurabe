@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "node --experimental-strip-types --test reference/aspect-model.test.ts"
+    "test": "node --experimental-strip-types --test lib/aspect-model.test.ts"
   },
   "devDependencies": {
     "playwright": "^1.62.1",

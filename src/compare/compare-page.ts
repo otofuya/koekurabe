@@ -1,19 +1,19 @@
-import { loadGenre } from "../lib/data-loader.ts";
+import { loadGenre } from "@lib/data-loader.ts";
 import {
   offerableAxes,
   quadrantPoints,
   coverageOf,
-} from "@ref/aspect-model.ts";
+} from "@lib/aspect-model.ts";
 import {
   CATEGORY_DEFINITIONS,
   defaultAxesFor,
-} from "@ref/category-definitions.ts";
+} from "@lib/category-definitions.ts";
 import { renderChart, updateDimming } from "./chart.ts";
 import { renderAxisPicker } from "./axis-picker.ts";
 import { renderPriceFilter } from "./price-filter.ts";
 import { renderCoveragebar } from "./coverage-bar.ts";
 import { renderUnspokenList } from "./unspoken-list.ts";
-import type { JoinedProduct } from "../lib/types.ts";
+import type { JoinedProduct } from "@lib/types.ts";
 import "../styles/chart.css";
 
 export function renderComparePage(container: HTMLElement, genreId: string) {

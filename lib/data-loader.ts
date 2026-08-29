@@ -1,11 +1,9 @@
-import type { AspectProduct } from "@ref/aspect-model.ts";
+import type { AspectProduct } from "./aspect-model.ts";
 import type { JoinedProduct } from "./types.ts";
-import productsJson from "../../data/genre-products.json";
-import aspectsJson from "../../data/genre-aspects.json";
+import productsJson from "../data/genre-products.json";
+import aspectsJson from "../data/genre-aspects.json";
 
-type RawProduct = (typeof productsJson)["products"][number];
-type RawGenre = (typeof aspectsJson)["genres"][number];
-type RawAspectProduct = RawGenre["products"][number];
+type RawAspectProduct = (typeof aspectsJson)["genres"][number]["products"][number];
 
 export function loadGenre(categoryId: string) {
   const products = productsJson.products.filter(

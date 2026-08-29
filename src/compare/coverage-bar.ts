@@ -1,4 +1,4 @@
-import type { Coverage } from "@ref/aspect-model.ts";
+import type { Coverage } from "@lib/aspect-model.ts";
 
 export function renderCoveragebar(
   container: HTMLElement,

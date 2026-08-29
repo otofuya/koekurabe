@@ -1,5 +1,5 @@
-import type { QuadrantPoint, OfferableAxis } from "@ref/aspect-model.ts";
-import type { JoinedProduct } from "../lib/types.ts";
+import type { QuadrantPoint, OfferableAxis } from "@lib/aspect-model.ts";
+import type { JoinedProduct } from "@lib/types.ts";
 import { showProductCard, hideProductCard } from "./product-card.ts";
 
 function scoreToPercent(score: number): number {

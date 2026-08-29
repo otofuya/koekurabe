@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 export default defineConfig({
   resolve: {
     alias: {
-      "@ref": resolve(__dirname, "reference"),
+      "@lib": resolve(__dirname, "lib"),
     },
   },
   server: {
