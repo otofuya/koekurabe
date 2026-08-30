@@ -10,13 +10,20 @@ const VALID_PROVENANCE = new Set(["ec_api", "official", "llm_inferred"]);
 function parseSpecs(raw: RawProduct): Spec[] {
   const arr = (raw as Record<string, unknown>).specs;
   if (!Array.isArray(arr)) return [];
-  return arr.filter(
-    (s): s is Spec =>
-      s != null &&
-      typeof s === "object" &&
-      typeof (s as Spec).key === "string" &&
-      VALID_PROVENANCE.has((s as Spec).provenance),
-  );
+  return arr
+    .filter(
+      (s): s is Spec =>
+        s != null &&
+        typeof s === "object" &&
+        typeof (s as Spec).key === "string" &&
+        VALID_PROVENANCE.has((s as Spec).provenance),
+    )
+    .map((s) => {
+      if (s.unit && !s.displayValue.includes(s.unit)) {
+        return { ...s, displayValue: s.displayValue + s.unit };
+      }
+      return s;
+    });
 }
 
 type RawAspectProduct = (typeof aspectsJson)["genres"][number]["products"][number];
@@ -57,7 +64,22 @@ export function loadGenre(categoryId: string) {
       : [],
   );
 
-  return { joined, aspectProducts, totalProducts: products.length };
+  return {
+    joined,
+    aspectProducts,
+    totalProducts: products.length,
+    generatedAt: productsJson.generatedAt,
+  };
+}
+
+export type GenreData = ReturnType<typeof loadGenre> & { categoryId: string };
+
+export function loadAllGenres(): GenreData[] {
+  const categoryIds = [...new Set(productsJson.products.map((p) => p.categoryId))];
+  return categoryIds.map((categoryId) => ({
+    categoryId,
+    ...loadGenre(categoryId),
+  }));
 }
 
 export function loadProduct(productId: string) {

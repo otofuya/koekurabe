@@ -10,6 +10,7 @@ export function showProductCard(
   point: QuadrantPoint,
   xAxis: OfferableAxis,
   yAxis: OfferableAxis,
+  priceDate?: string,
 ): void {
   hideProductCard(chartContainer);
 
@@ -20,7 +21,7 @@ export function showProductCard(
 
   card.innerHTML = `
     <div class="product-card__name">${esc(product.name)}</div>
-    <div class="product-card__price">¥${product.price.toLocaleString()}</div>
+    <div class="product-card__price">¥${product.price.toLocaleString()}${priceDate ? ` <span class="product-card__denom">（${esc(priceDate)}）</span>` : ""}</div>
     <div class="product-card__tally">
       <span class="product-card__aspect-label">${esc(xAxis.label)}</span>
       <span class="product-card__pos">良い${point.xTally.positive}件</span>

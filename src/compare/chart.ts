@@ -20,10 +20,11 @@ export type ChartState = {
   xAxis: OfferableAxis;
   yAxis: OfferableAxis;
   dimmedIds: Set<string>;
+  priceDate?: string;
 };
 
 export function renderChart(state: ChartState): void {
-  const { container, points, productMap, xAxis, yAxis, dimmedIds } = state;
+  const { container, points, productMap, xAxis, yAxis, dimmedIds, priceDate } = state;
   container.innerHTML = "";
   container.className = "chart";
 
@@ -81,13 +82,13 @@ export function renderChart(state: ChartState): void {
     btn.appendChild(img);
 
     btn.addEventListener("mouseenter", () => {
-      showProductCard(container, btn, product, point, xAxis, yAxis);
+      showProductCard(container, btn, product, point, xAxis, yAxis, priceDate);
     });
     btn.addEventListener("mouseleave", () => {
       hideProductCard(container);
     });
     btn.addEventListener("focus", () => {
-      showProductCard(container, btn, product, point, xAxis, yAxis);
+      showProductCard(container, btn, product, point, xAxis, yAxis, priceDate);
     });
     btn.addEventListener("blur", () => {
       hideProductCard(container);

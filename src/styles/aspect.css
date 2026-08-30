@@ -2,12 +2,12 @@
 
 .aspect-breadcrumb {
   font-size: 13px;
-  color: #888;
+  color: var(--color-text-tertiary);
   margin-bottom: 16px;
 }
 
 .aspect-breadcrumb a {
-  color: #2563eb;
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -22,24 +22,25 @@
 }
 
 .aspect-header__title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   margin-bottom: 4px;
 }
 
 .aspect-header__poles {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 /* ── 分母 ─────────────────────────────────────── */
 
 .aspect-denom {
   font-size: 13px;
-  color: #555;
+  color: var(--color-text-secondary);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ── ランキング ───────────────────────────────── */
@@ -56,8 +57,12 @@
   grid-template-rows: auto auto auto;
   gap: 0 12px;
   align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 14px;
+  margin-bottom: 8px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
 }
 
 .aspect-rank-item__rank {
@@ -65,12 +70,12 @@
   grid-column: 1;
   font-size: 18px;
   font-weight: 700;
-  color: #999;
+  color: var(--color-text-tertiary);
   text-align: center;
 }
 
-.aspect-rank-item:nth-child(1) .aspect-rank-item__rank { color: #d4a017; }
-.aspect-rank-item:nth-child(2) .aspect-rank-item__rank { color: #888; }
+.aspect-rank-item:nth-child(1) .aspect-rank-item__rank { color: #d97706; }
+.aspect-rank-item:nth-child(2) .aspect-rank-item__rank { color: #9ca3af; }
 .aspect-rank-item:nth-child(3) .aspect-rank-item__rank { color: #b87333; }
 
 .aspect-rank-item__image {
@@ -79,9 +84,9 @@
   width: 56px;
   height: 56px;
   object-fit: contain;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
-  background: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
 }
 
 .aspect-rank-item__info {
@@ -95,7 +100,7 @@
 .aspect-rank-item__name {
   font-size: 14px;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--color-link);
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -108,7 +113,7 @@
 
 .aspect-rank-item__meta {
   font-size: 12px;
-  color: #888;
+  color: var(--color-text-tertiary);
   margin-top: 1px;
 }
 
@@ -123,21 +128,21 @@
 
 .aspect-rank-item__track {
   display: flex;
-  height: 14px;
-  background: #f0f0f0;
-  border-radius: 3px;
+  height: 18px;
+  background: #f0ece6;
+  border-radius: var(--radius-bar);
   overflow: hidden;
   flex: 1;
   max-width: 200px;
 }
 
 .aspect-rank-item__pos {
-  background: #2da44e;
+  background: var(--color-pos);
   height: 100%;
 }
 
 .aspect-rank-item__neg {
-  background: #cf222e;
+  background: var(--color-neg);
   height: 100%;
 }
 
@@ -147,18 +152,18 @@
 }
 
 .aspect-rank-item__pos-count {
-  color: #1a7f37;
+  color: var(--color-pos-text);
   font-weight: 600;
 }
 
 .aspect-rank-item__neg-count {
-  color: #cf222e;
+  color: var(--color-neg-text);
   font-weight: 600;
   margin-left: 4px;
 }
 
 .aspect-rank-item__denom {
-  color: #888;
+  color: var(--color-text-tertiary);
   font-size: 12px;
   margin-left: 2px;
 }
@@ -168,10 +173,10 @@
   grid-column: 3;
   grid-row: 3;
   font-size: 12px;
-  color: #666;
+  color: var(--color-text-secondary);
   margin-top: 4px;
   padding-left: 8px;
-  border-left: 2px solid #e0e0e0;
+  border-left: 3px solid var(--color-accent-lighter);
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-color: #ccc;
@@ -179,7 +184,7 @@
 }
 
 .aspect-rank-item__quote:hover {
-  text-decoration-color: #666;
+  text-decoration-color: var(--color-text-secondary);
 }
 
 .aspect-rank-item__cite {
@@ -187,7 +192,7 @@
   grid-column: 3;
   grid-row: 4;
   font-size: 11px;
-  color: #999;
+  color: var(--color-text-tertiary);
   padding-left: 8px;
 }
 
@@ -200,7 +205,7 @@
 .aspect-unspoken__summary {
   font-size: 14px;
   font-weight: 600;
-  color: #555;
+  color: var(--color-text-secondary);
   cursor: pointer;
   padding: 8px 0;
 }
@@ -222,19 +227,19 @@
   text-decoration: none;
   color: inherit;
   padding: 6px 8px;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: background 0.15s;
 }
 
 .aspect-unspoken__link:hover {
-  background: #f5f5f5;
+  background: var(--color-accent-light);
 }
 
 .aspect-unspoken__image {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -254,16 +259,16 @@
 
 .aspect-unspoken__meta {
   font-size: 12px;
-  color: #888;
+  color: var(--color-text-tertiary);
 }
 
 /* ── カバレッジ ───────────────────────────────── */
 
 .aspect-coverage {
   font-size: 13px;
-  color: #888;
+  color: var(--color-text-tertiary);
   padding-top: 16px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-border);
   margin-top: 24px;
 }
 
@@ -273,7 +278,7 @@
   .aspect-rank-item {
     grid-template-columns: 28px 44px 1fr;
     gap: 0 8px;
-    padding: 10px 0;
+    padding: 12px 10px;
   }
 
   .aspect-rank-item__image {

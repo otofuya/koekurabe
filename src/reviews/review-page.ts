@@ -18,7 +18,7 @@ import "../styles/review.css";
 export function renderReviewPage(container: HTMLElement, productId: string) {
   const loaded = loadProduct(productId);
   if (!loaded) {
-    container.innerHTML = `<p>商品が見つかりません。<a href="/compare/earbuds">/compare/earbuds</a> に戻る</p>`;
+    container.innerHTML = `<p>商品が見つかりません。<a href="/">ホームに戻る</a></p>`;
     return;
   }
 
@@ -338,6 +338,13 @@ function renderCrossLinks(
 
       a.appendChild(text);
       li.appendChild(a);
+
+      const vsLink = document.createElement("a");
+      vsLink.href = `/vs/${currentProduct.productId}/${p.productId}`;
+      vsLink.className = "review-crosslinks__vs-link";
+      vsLink.textContent = "2商品を比較";
+      li.appendChild(vsLink);
+
       list.appendChild(li);
     }
 
