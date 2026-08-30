@@ -2,8 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { MakerCrawler } from "../lib/maker-crawl.ts";
-import { savePageText } from "./page-text.mjs";
+import { MakerCrawler } from "./maker-crawl.ts";
+import { savePageText, savePageMeta } from "./page-text.mjs";
 
 /**
  * The other half of the reviews: the ones left on each shop's own listing.
@@ -114,7 +114,7 @@ async function main() {
         const url = shopReviewUrl(shopItem, page);
         const fetched = offline
           ? await cachedHtml("shop-review-pages", url).then((html) => (html ? { html } : null))
-          : await crawler.fetchPage(url).catch(() => null);
+          : await crawler.fetchPage(url);
         if (!fetched) break;
         const prose = reviewProse(fetched.html);
         // An empty page means this listing has no more reviews. Asking for the next one is a
@@ -122,6 +122,7 @@ async function main() {
         if (prose.length < 20) break;
         slot += 1;
         await savePageText(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, prose);
+        await savePageMeta(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, { sourceUrl: url });
         characters += prose.length; pagesRead += 1;
       }
     }
@@ -132,6 +133,7 @@ async function main() {
   }
 
   const output = path.join(ROOT_DIR, "test", "data", `shop-reviews-${categoryId}.json`);
+  await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, JSON.stringify({ generatedAt: new Date().toISOString(), categoryId, records }, null, 2) + "\n", "utf8");
   const source = offline ? "キャッシュから再抽出" : `リクエスト ${crawler.requestsMade}件`;
   console.log(`\n${products.length}件中${withProse}件に店舗レビュー（${pagesRead}ページ）→ ${path.relative(ROOT_DIR, output)}（${source}）`);

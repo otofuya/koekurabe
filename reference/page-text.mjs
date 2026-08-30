@@ -30,3 +30,21 @@ export async function savePageText(rootDir, categoryId, source, productId, text)
 export async function loadPageText(rootDir, categoryId, source, productId) {
   return readFile(pageTextPath(rootDir, categoryId, source, productId), "utf8").catch(() => "");
 }
+
+function pageMetaPath(rootDir, categoryId, source, productId) {
+  return pageTextPath(rootDir, categoryId, source, productId).replace(/\.txt$/, ".meta.json");
+}
+
+export async function savePageMeta(rootDir, categoryId, source, productId, meta) {
+  const target = pageMetaPath(rootDir, categoryId, source, productId);
+  await mkdir(path.dirname(target), { recursive: true });
+  await writeFile(target, JSON.stringify(meta) + "\n", "utf8");
+}
+
+export async function loadPageMeta(rootDir, categoryId, source, productId) {
+  try {
+    return JSON.parse(await readFile(pageMetaPath(rootDir, categoryId, source, productId), "utf8"));
+  } catch {
+    return null;
+  }
+}

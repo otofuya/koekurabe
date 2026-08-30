@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   MINIMUM_MENTIONING_PRODUCTS, aspectRanking, axisPairs, coverageOf, mentionCount, offerableAxes,
-  quadrantPoints, separation, shrunkScore, verdict, verifiedQuotes, type AspectProduct,
+  quadrantPoints, separation, shrunkScore, verdict, verifiedQuotes, checkPublishability,
+  resolveDefaultAxes, type AspectProduct,
 } from "./aspect-model.ts";
 import type { AspectDefinition } from "./category-definitions.ts";
 
@@ -213,4 +214,49 @@ test("coverage reports the denominator, not just the share", () => {
 
 test("coverage of an empty genre does not divide by zero", () => {
   assert.equal(coverageOf(0, []).share, 0);
+});
+
+// ── checkPublishability ────────────────────────────────────────────────────
+
+test("a well-populated genre is publishable", () => {
+  const result = checkPublishability(genre(), DEFINITIONS);
+  assert.equal(result.publishable, true);
+  assert.ok(result.offerableCount >= 2);
+  assert.ok(result.validPairCount >= 1);
+  assert.equal(result.blockers.length, 0);
+});
+
+test("a genre with only one offerable axis is not publishable", () => {
+  const sparse = [
+    product("a", { fit: [3, 4], sound: [11, 1] }),
+    product("b", { fit: [3, 8], sound: [14, 0] }),
+    product("c", { fit: [10, 2], sound: [13, 0] }),
+    product("d", { fit: [4, 0], sound: [13, 1] }),
+    product("e", { fit: [4, 0], sound: [10, 0] }),
+    product("f", { fit: [4, 0], sound: [9, 1] }),
+    product("g", { fit: [2, 1], sound: [9, 0] }),
+    product("h", { fit: [3, 1], sound: [3, 0] }),
+  ];
+  const result = checkPublishability(sparse, DEFINITIONS);
+  assert.equal(result.publishable, false);
+  assert.ok(result.blockers.length > 0);
+});
+
+// ── resolveDefaultAxes ─────────────────────────────────────────────────────
+
+test("resolveDefaultAxes returns preferred axes when they form a valid pair", () => {
+  const resolved = resolveDefaultAxes(genre(), DEFINITIONS, ["fit", "anc"]);
+  assert.deepEqual(resolved, ["fit", "anc"]);
+});
+
+test("resolveDefaultAxes falls back when preferred axes are not a valid pair", () => {
+  const resolved = resolveDefaultAxes(genre(), DEFINITIONS, ["calls", "sound"]);
+  assert.notEqual(resolved, null);
+  assert.notDeepEqual(resolved, ["calls", "sound"]);
+});
+
+test("resolveDefaultAxes returns null when no valid pairs exist", () => {
+  const tiny = [product("a", { fit: [1, 0] }), product("b", { sound: [1, 0] })];
+  const resolved = resolveDefaultAxes(tiny, DEFINITIONS);
+  assert.equal(resolved, null);
 });

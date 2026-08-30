@@ -1,16 +1,23 @@
-import type { OfferableAxis } from "@lib/aspect-model.ts";
+import type { OfferableAxis, AxisPair } from "@lib/aspect-model.ts";
 
 export type AxisChangeCallback = (xKey: string, yKey: string) => void;
 
 export function renderAxisPicker(
   container: HTMLElement,
   axes: readonly OfferableAxis[],
+  validPairs: readonly AxisPair[],
   currentX: string,
   currentY: string,
   onChange: AxisChangeCallback,
 ): void {
   container.innerHTML = "";
   container.className = "axis-picker";
+
+  const pairSet = new Set<string>();
+  for (const pair of validPairs) {
+    pairSet.add(`${pair.x.key}:${pair.y.key}`);
+    pairSet.add(`${pair.y.key}:${pair.x.key}`);
+  }
 
   const rows: { label: string; current: string; other: string; axis: "x" | "y" }[] = [
     { label: "横軸", current: currentX, other: currentY, axis: "x" },
@@ -41,6 +48,11 @@ export function renderAxisPicker(
         btn.disabled = true;
         btn.title = "もう一方の軸で使用中";
         btn.style.opacity = "0.4";
+      } else if (!pairSet.has(`${ax.key}:${row.other}`)) {
+        btn.classList.add("axis-picker__cell--blocked");
+        btn.disabled = true;
+        const otherLabel = axes.find((a) => a.key === row.other)?.label ?? "";
+        btn.title = `${ax.label}と${otherLabel}の組み合わせでは、両方に言及した商品が足りません`;
       }
 
       btn.addEventListener("click", () => {

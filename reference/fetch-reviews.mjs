@@ -2,8 +2,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { MakerCrawler } from "../lib/maker-crawl.ts";
-import { savePageText } from "./page-text.mjs";
+import { MakerCrawler } from "./maker-crawl.ts";
+import { savePageText, savePageMeta } from "./page-text.mjs";
 
 /**
  * Buyer prose, from the marketplace's own review pages.
@@ -127,7 +127,7 @@ async function main() {
     let characters = 0; let pagesRead = 0; let found = null;
     for (let page = 1; page <= MAX_PAGES_PER_PRODUCT; page += 1) {
       const url = reviewUrl(product.productUrl, page);
-      const fetched = offline ? await cachedPage(url) : await crawler.fetchPage(url).catch(() => null);
+      const fetched = offline ? await cachedPage(url) : await crawler.fetchPage(url);
       if (!fetched) break;
       if (page === 1) found = totalReviews(fetched.html);
       const prose = reviewProse(fetched.html);
@@ -136,6 +136,7 @@ async function main() {
       // Pages are kept apart so extraction can run one page at a time: thirty reviews is a size a
       // model reads accurately, and each quote can be checked against the page it came from.
       await savePageText(ROOT_DIR, categoryId, "reviews", `${product.productId}-p${page}`, prose);
+      await savePageMeta(ROOT_DIR, categoryId, "reviews", `${product.productId}-p${page}`, { sourceUrl: url });
       characters += prose.length; pagesRead = page;
       // Nothing left to page to. Asking anyway is a request to somebody else's server for a page
       // we already know is empty.
@@ -147,6 +148,7 @@ async function main() {
   }
 
   const output = path.join(ROOT_DIR, "test", "data", `reviews-${categoryId}.json`);
+  await mkdir(path.dirname(output), { recursive: true });
   await writeFile(output, JSON.stringify({ generatedAt: new Date().toISOString(), categoryId, records }, null, 2) + "\n", "utf8");
   const coverage = (withProse / products.length * 100).toFixed(0);
   const pages = records.reduce((sum, record) => sum + record.pages, 0);

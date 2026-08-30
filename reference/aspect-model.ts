@@ -1,6 +1,8 @@
 import type { AspectDefinition } from "./category-definitions.ts";
 
 /**
+ * LEGACY — lib/aspect-model.ts が正。ここは前身プロジェクトの参照用。
+ *
  * Turning what buyers wrote into two axes.
  *
  * Everything the chart decides lives here as a pure function, because every one of these decisions

@@ -1,7 +1,23 @@
 import type { AspectProduct } from "./aspect-model.ts";
-import type { JoinedProduct } from "./types.ts";
+import type { JoinedProduct, Spec } from "./types.ts";
 import productsJson from "../data/genre-products.json";
 import aspectsJson from "../data/genre-aspects.json";
+
+type RawProduct = (typeof productsJson)["products"][number];
+
+const VALID_PROVENANCE = new Set(["ec_api", "official", "llm_inferred"]);
+
+function parseSpecs(raw: RawProduct): Spec[] {
+  const arr = (raw as Record<string, unknown>).specs;
+  if (!Array.isArray(arr)) return [];
+  return arr.filter(
+    (s): s is Spec =>
+      s != null &&
+      typeof s === "object" &&
+      typeof (s as Spec).key === "string" &&
+      VALID_PROVENANCE.has((s as Spec).provenance),
+  );
+}
 
 type RawAspectProduct = (typeof aspectsJson)["genres"][number]["products"][number];
 
@@ -31,6 +47,7 @@ export function loadGenre(categoryId: string) {
       reviewAverage: p.reviewAverage,
       reviewsRead: asp ? asp.reviewsRead : null,
       aspects: asp ? asp.aspects : null,
+      specs: parseSpecs(p),
     };
   });
 
@@ -41,4 +58,12 @@ export function loadGenre(categoryId: string) {
   );
 
   return { joined, aspectProducts, totalProducts: products.length };
+}
+
+export function loadProduct(productId: string) {
+  const raw = productsJson.products.find((p) => p.productId === productId);
+  if (!raw) return null;
+  const genre = loadGenre(raw.categoryId);
+  const product = genre.joined.find((p) => p.productId === productId)!;
+  return { product, ...genre, categoryId: raw.categoryId };
 }

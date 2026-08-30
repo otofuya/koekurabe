@@ -6,10 +6,13 @@ import type { AspectDefinition } from "./category-definitions.ts";
  * Everything the chart decides lives here as a pure function, because every one of these decisions
  * was wrong the first time it was written and the tests are what keep them right.
  *
- * The counts themselves are not estimates. "30件のレビューのうち11件が装着感に触れ、うち4件が不満"
- * is a tally of what people wrote, which is why nothing in this file carries a `provenance` or
- * needs a 推定 badge — the whole 87%-estimated problem of the spec pipeline simply does not arise.
+ * The counts are code-computed aggregates of per-review AI classifications. The counting itself is
+ * deterministic, but the classification of each review (which aspect, positive or negative) is
+ * Gemini's judgment — not a human-verified ground truth. The 推定 badge is reserved for spec values
+ * inferred from marketing copy; review counts carry no badge, but the UI must say "AIによる分類".
  */
+
+export type Quote = { text: string; reviewUrl: string };
 
 /** One aspect as counted for one product. */
 export type AspectTally = {
@@ -17,7 +20,7 @@ export type AspectTally = {
   positive: number;
   negative: number;
   /** Verbatim fragments from the reviews, already checked against the source text. */
-  quotes: string[];
+  quotes: Quote[];
 };
 
 export type AspectProduct = {
@@ -295,6 +298,72 @@ export function verdict(product: AspectProduct, definitions: readonly AspectDefi
     praised: lines.filter((line) => line.positive > line.negative).sort((a, b) => b.positive - a.positive),
     blamed: lines.filter((line) => line.negative > 0).sort((a, b) => b.negative - a.negative),
   };
+}
+
+export type Publishability = {
+  publishable: boolean;
+  offerableCount: number;
+  validPairCount: number;
+  blockers: string[];
+};
+
+/**
+ * Whether a genre has enough data to show a comparison page.
+ *
+ * Checks every condition from the public gate table in the spec:
+ * offerable axes >= 2, at least one valid pair (both axes offerable, >= minimumBoth products
+ * mentioning both). This is the single source of truth — link generation, direct access,
+ * and build validation all call this instead of checking subsets of the gate.
+ */
+export function checkPublishability(
+  products: readonly AspectProduct[],
+  definitions: readonly AspectDefinition[],
+): Publishability {
+  const axes = offerableAxes(products, definitions);
+  const pairs = axisPairs(axes, products);
+  const blockers: string[] = [];
+
+  const offerableCount = axes.filter((a) => a.offerable).length;
+  if (offerableCount < 2) {
+    blockers.push(`軸に使える観点が${offerableCount}つしかありません（2つ以上必要）`);
+  }
+  if (pairs.length === 0 && offerableCount >= 2) {
+    blockers.push("両軸に6商品以上が言及しているペアがありません");
+  }
+
+  return {
+    publishable: blockers.length === 0,
+    offerableCount,
+    validPairCount: pairs.length,
+    blockers,
+  };
+}
+
+/**
+ * Resolve the initial axes for a genre, ensuring they pass the full gate.
+ *
+ * Falls back from the hand-picked defaults to the best axisPair if the defaults
+ * are not both offerable or don't have enough products mentioning both.
+ */
+export function resolveDefaultAxes(
+  products: readonly AspectProduct[],
+  definitions: readonly AspectDefinition[],
+  preferredDefaults?: [string, string] | null,
+): [string, string] | null {
+  const axes = offerableAxes(products, definitions);
+  const pairs = axisPairs(axes, products);
+  if (pairs.length === 0) return null;
+
+  if (preferredDefaults) {
+    const valid = pairs.find(
+      (p) =>
+        (p.x.key === preferredDefaults[0] && p.y.key === preferredDefaults[1]) ||
+        (p.x.key === preferredDefaults[1] && p.y.key === preferredDefaults[0]),
+    );
+    if (valid) return preferredDefaults;
+  }
+
+  return [pairs[0].x.key, pairs[0].y.key];
 }
 
 export type Coverage = { total: number; analysed: number; reviewsRead: number; share: number };

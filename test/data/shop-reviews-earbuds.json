@@ -1,0 +1,588 @@
+{
+  "generatedAt": "2026-08-30T01:55:38.637Z",
+  "categoryId": "earbuds",
+  "records": [
+    {
+      "productId": "0858ede77704a39fb1ba5dafafd4b806",
+      "shops": 3,
+      "pages": 3,
+      "characters": 862
+    },
+    {
+      "productId": "0a0b48228f9fbadefca9ea47e81e98d5",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "0b2b3fdebcb3af70933639818e3bedf9",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "0e4b000cd9e022f73f67666c1bb27b1b",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "126743646479e8ac7d1f09d6c0f8b647",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "14799cc5a5fd242427f25898557620ab",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "165b2aac5747eee78f371c85773ab0ae",
+      "shops": 3,
+      "pages": 1,
+      "characters": 31
+    },
+    {
+      "productId": "17154519fa028196f7dfe0846d6b637f",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "1d2fe3dd5e87d353ae963c45df1e5eec",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "1e912899e28389ed5bfc43ee4a21d447",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "1fa89b4b3ee2485871e52008dea669e5",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "1fe48b21b41d04d62521ab87d2ba643a",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "1ffa6ce4d880da2126bd0ea33165f937",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "23dfef59ae67f6fa6c7264dfbaaa67ab",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "291e1ebb09c59fbddde73ab4e5aa5f9c",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "29a705db0f6d27385683a23c10e498fd",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "2a5f9d61024fb1e58058dbd0a314ec25",
+      "shops": 2,
+      "pages": 2,
+      "characters": 3865
+    },
+    {
+      "productId": "2cea7b9fcc820db7dd575308b8b24262",
+      "shops": 3,
+      "pages": 2,
+      "characters": 207
+    },
+    {
+      "productId": "2ef8684309a8919f3581c12a185a5519",
+      "shops": 3,
+      "pages": 1,
+      "characters": 242
+    },
+    {
+      "productId": "2ffa34c42f7babfa0a5676e65ffb8d4a",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "30c5d18365c069fc2b90a56c6c6f88b0",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "32a8357b72b67d796005b75e8cc934e3",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "347410d66f3db42d23647689fe6b932d",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "393f753643e2ca29e0c675c25ad58b7e",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "3a97669b45e8f68a3a4335299c2a0a97",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "3ccd4f0557502c897f9145d3fb6e88e5",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "3d786ef56a096cb77a98f61c178a8384",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "427454e13742017fcae715db41275478",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "43c9394e727be3b8fb1eea059b3ac4a7",
+      "shops": 3,
+      "pages": 3,
+      "characters": 1969
+    },
+    {
+      "productId": "463cfbcf8bb646ee270c5fa0aaf26b2d",
+      "shops": 3,
+      "pages": 1,
+      "characters": 90
+    },
+    {
+      "productId": "4666a7b1eb217768eb0ffeb92419493b",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "47092710224386505144fcd6a7dd735c",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "4aded9c18d92523825b01b327f890fb1",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "4bb3cc999bc58265a2cf2b6a28b906dc",
+      "shops": 0,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "4c88cf6c3180af6af1724594c60f11c1",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "4fec7203d742aabdd2525157305195fb",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "50cf5fa29eb9eb02f17daf517c3a7cde",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "53b7995763440b004a84a2894865daa2",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "5444b8a9926872178d30fabc3eff1bf3",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "584553be9f1b94986164a06e284cca4b",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "59e2037efd6006378ea69445f5f42a05",
+      "shops": 3,
+      "pages": 3,
+      "characters": 518
+    },
+    {
+      "productId": "5c93cf7bbfe6f46be8fb9528d44d408b",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "637e1dd64912138092e4fb1b1de5a800",
+      "shops": 3,
+      "pages": 6,
+      "characters": 14548
+    },
+    {
+      "productId": "63fbccee1b3774af8a5632262b6829a4",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "6bef7640f938cd7225909bdf14f7626d",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "6d7c4a68238d33745f6d754a4a3ebb1a",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "713f4af6e5c7773b1574f29792ea777d",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "71457f19decc6ed90b2d2bf1c7069b77",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "73e3cbcd01858730c06b0601bfe649ac",
+      "shops": 0,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "7568027d6691ccd569d6341b11a42aa5",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "7576ad630ee4de07f353e1f5d3d46ea9",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "78177f274eb2c529b5f29b430244b85f",
+      "shops": 3,
+      "pages": 1,
+      "characters": 105
+    },
+    {
+      "productId": "7d5e9880c28f9c1d9a7912cb5cb6140c",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "821de2ea4d103ede4bb09e3d80df3015",
+      "shops": 3,
+      "pages": 6,
+      "characters": 9837
+    },
+    {
+      "productId": "8af3784ce8e4bb276e0d2a72770c9a1c",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "8b23bf1eb85c593b8f8ff2ed320021bb",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "8d09408ebeaf52b7ac678fa0a5ec61af",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "94d17e89b2b91fb9ab5697c53b1b4b3c",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "97550ceff7083dbbaa5f5efe6b00065c",
+      "shops": 1,
+      "pages": 1,
+      "characters": 789
+    },
+    {
+      "productId": "9798143f8372c40cf829be3bc49f804f",
+      "shops": 0,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "992396b45314c77be0cfb3c482e8ad07",
+      "shops": 3,
+      "pages": 2,
+      "characters": 244
+    },
+    {
+      "productId": "9e1a797eb55b7919ef0e50173e70bb97",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "a5f797fdbdf06aa2fd80f7a1b5e75638",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "b0dc9eda29ca725d4ce25d7508ecdd8f",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "b1c3d0df921b7fb510814ec69d6965f7",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "b314ebb76e70fc53720d76f482402b00",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "b41c556d5baaee81320b7781e9bbd6d3",
+      "shops": 1,
+      "pages": 1,
+      "characters": 662
+    },
+    {
+      "productId": "b53ee021fa34c2fde7c918b303543013",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "b9a8cb100aaf0bfc29786733aa1be431",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "ba448c4d0b5a6c8975ecba9c9f358cbe",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "be5eb2aa0e4c7a81aef3172363f08840",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "c087632f8140734817e7259101637100",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "c0e1a976386b4299a1287f94f4032a1e",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "c3bdf10d0467b6725adbd3df79b8c5ae",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "c8e94357c00ab55c463c21d3008bad39",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "c97f6860ff8c7fcfeb8c6da3ad26afcc",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "cb0101de2de36b8662bf78cfb18b27cb",
+      "shops": 2,
+      "pages": 1,
+      "characters": 1559
+    },
+    {
+      "productId": "cd6a9906806eec21fd2336caccac91b5",
+      "shops": 3,
+      "pages": 3,
+      "characters": 2576
+    },
+    {
+      "productId": "cfba76ccc72675a0766bf3d91bcfb2ac",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "d5f259d1eccbf0d27ee11229aaa66486",
+      "shops": 3,
+      "pages": 5,
+      "characters": 11226
+    },
+    {
+      "productId": "d9a9e554200aadf028d2a264e369f471",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "de48fc4d6b10300f30e2d5679fd500fd",
+      "shops": 2,
+      "pages": 1,
+      "characters": 789
+    },
+    {
+      "productId": "e3e9d2fcfdc8b26b57752fa2c3f00dbc",
+      "shops": 3,
+      "pages": 2,
+      "characters": 521
+    },
+    {
+      "productId": "e41a54fa59ad724b375979040baa8beb",
+      "shops": 3,
+      "pages": 1,
+      "characters": 316
+    },
+    {
+      "productId": "e676c4833a5fd4634fed868a4a87e047",
+      "shops": 2,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "e7e3a2269bfd2c54c440a3e27469c043",
+      "shops": 3,
+      "pages": 4,
+      "characters": 6745
+    },
+    {
+      "productId": "e89650d6cd6325e9c070a96a8996da12",
+      "shops": 2,
+      "pages": 7,
+      "characters": 18930
+    },
+    {
+      "productId": "ea935cd751513bc02284700b89e1cb87",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "ecb1d7cbed7a9ec0efae960396330da6",
+      "shops": 3,
+      "pages": 2,
+      "characters": 694
+    },
+    {
+      "productId": "eea74071aeb8a7783d353abdb7c25bd3",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "f02e6fec61cfa5751a7ebde6d6bbef94",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "f06092aefa6fce901eb1b4a471ea1dd7",
+      "shops": 2,
+      "pages": 1,
+      "characters": 53
+    },
+    {
+      "productId": "f09ac0db6c0ea115e3fb5c671d3de4c7",
+      "shops": 3,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "f8e292b282c63b30122845af559ff56c",
+      "shops": 3,
+      "pages": 3,
+      "characters": 644
+    },
+    {
+      "productId": "f91aa1ca6ce1c7c17790dbf613add38a",
+      "shops": 3,
+      "pages": 1,
+      "characters": 30
+    },
+    {
+      "productId": "fa524b2e6a8ae39c50ae114c23917a94",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    },
+    {
+      "productId": "faaeca461f41bff8b8bb5f0f9b0f8dd9",
+      "shops": 1,
+      "pages": 0,
+      "characters": 0
+    }
+  ]
+}

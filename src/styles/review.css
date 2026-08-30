@@ -1,0 +1,415 @@
+/* ── パンくず ──────────────────────────────────── */
+
+.review-breadcrumb {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.review-breadcrumb a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.review-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ── ヘッダー ──────────────────────────────────── */
+
+.review-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.review-header__image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.review-header__info {
+  min-width: 0;
+}
+
+.review-header__brand {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.review-header__name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.review-header__price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #c00;
+  margin-bottom: 4px;
+}
+
+.review-header__stars {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ── レビュー未読 ──────────────────────────────── */
+
+.review-no-data {
+  font-size: 14px;
+  color: #888;
+  padding: 24px 0;
+  border-top: 1px solid #eee;
+}
+
+/* ── 分母表示 ──────────────────────────────────── */
+
+.review-denom {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ── 観点バー ──────────────────────────────────── */
+
+.aspect-bars {
+  margin-bottom: 24px;
+}
+
+.aspect-bar {
+  margin-bottom: 14px;
+}
+
+.aspect-bar__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.aspect-bar__track {
+  display: flex;
+  height: 18px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.aspect-bar__pos {
+  background: #2da44e;
+  height: 100%;
+  min-width: 0;
+  transition: width 0.3s ease;
+}
+
+.aspect-bar__neg {
+  background: #cf222e;
+  height: 100%;
+  min-width: 0;
+  transition: width 0.3s ease;
+}
+
+.aspect-bar__counts {
+  font-size: 13px;
+}
+
+.aspect-bar__pos-count {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.aspect-bar__neg-count {
+  color: #cf222e;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.aspect-bar__denom {
+  color: #888;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.aspect-bar__quotes {
+  margin-top: 4px;
+  padding-left: 8px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.aspect-bar__quote {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 2px;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 2px;
+}
+
+.aspect-bar__quote:hover {
+  text-decoration-color: #666;
+}
+
+.aspect-bar__cite {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+/* ── まとめ（verdict） ─────────────────────────── */
+
+.review-verdict {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.review-verdict__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.review-verdict__list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.review-verdict__list:last-child {
+  margin-bottom: 0;
+}
+
+.review-verdict__list li {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 2px 0;
+}
+
+.review-verdict__list--praised li::before {
+  content: "○ ";
+  color: #1a7f37;
+}
+
+.review-verdict__list--blamed li::before {
+  content: "△ ";
+  color: #cf222e;
+}
+
+.review-verdict__pos {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.review-verdict__neg {
+  color: #cf222e;
+  font-weight: 600;
+}
+
+.review-verdict__denom {
+  color: #888;
+  font-size: 12px;
+}
+
+/* ── 弱い観点からの導線 ────────────────────────── */
+
+.review-crosslinks {
+  margin-bottom: 24px;
+}
+
+.review-crosslinks__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.review-crosslinks__group {
+  margin-bottom: 16px;
+}
+
+.review-crosslinks__aspect {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.review-crosslinks__list {
+  list-style: none;
+  padding: 0;
+}
+
+.review-crosslinks__list li {
+  margin-bottom: 6px;
+}
+
+.review-crosslinks__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.review-crosslinks__link:hover {
+  background: #f5f5f5;
+}
+
+.review-crosslinks__image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.review-crosslinks__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.review-crosslinks__name {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-crosslinks__detail {
+  font-size: 12px;
+  color: #888;
+}
+
+.review-crosslinks__detail--honest {
+  color: #cf222e;
+}
+
+/* ── 仕様テーブル ──────────────────────────────── */
+
+.review-specs {
+  margin-bottom: 24px;
+}
+
+.review-specs__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.review-specs__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.review-specs__table th {
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  padding: 6px 12px 6px 0;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.review-specs__table td {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.review-specs__badge {
+  display: inline-block;
+  font-size: 11px;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+  border-radius: 3px;
+  padding: 0 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  cursor: help;
+}
+
+/* ── 購入ボタン ────────────────────────────────── */
+
+.review-buy {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.review-buy__button {
+  display: inline-block;
+  padding: 12px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: #bf0000;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.review-buy__button:hover {
+  background: #a00;
+  color: #fff;
+}
+
+/* ── カバレッジ ────────────────────────────────── */
+
+.review-coverage {
+  font-size: 13px;
+  color: #888;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  margin-top: 24px;
+}
+
+/* ── レスポンシブ ──────────────────────────────── */
+
+@media (max-width: 600px) {
+  .review-header {
+    gap: 12px;
+  }
+
+  .review-header__image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .review-header__name {
+    font-size: 16px;
+  }
+
+  .review-header__price {
+    font-size: 18px;
+  }
+
+  .review-specs__table th {
+    width: auto;
+  }
+}

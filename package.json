@@ -4,11 +4,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run validate:data",
     "build": "vite build",
-    "test": "node --experimental-strip-types --test lib/aspect-model.test.ts"
+    "test": "node --experimental-strip-types --test lib/*.test.ts",
+    "validate:data": "node --experimental-strip-types lib/validate-data.ts",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/node": "^26.4.0",
     "playwright": "^1.62.1",
+    "typescript": "^5.8.0",
     "vite": "^6.3.0"
   },
   "allowScripts": {

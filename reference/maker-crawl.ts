@@ -116,9 +116,15 @@ export class MakerCrawler {
     try {
       await this.throttle(new URL(origin).host);
       const response = await fetch(`${origin}/robots.txt`, { headers: { "user-agent": USER_AGENT } });
+      if (response.status === 401 || response.status === 403) {
+        throw new Error(`アクセス拒否 (${response.status}): ${origin}/robots.txt`);
+      }
       // A missing or broken robots.txt means no stated restrictions, not a blanket refusal.
       if (response.ok) rules = RobotsRules.parse(await response.text());
-    } catch { rules = null; }
+    } catch (error) {
+      if (error instanceof Error && error.message.startsWith("アクセス拒否")) throw error;
+      rules = null;
+    }
     this.robots.set(origin, rules);
     return rules;
   }
@@ -153,6 +159,9 @@ export class MakerCrawler {
         continue;
       }
       if (response.status === 304 && cached) return { url, html: cached.html, status: 304, fromCache: true };
+      if (response.status === 401 || response.status === 403) {
+        throw new Error(`アクセス拒否 (${response.status}): ${url}`);
+      }
       if (response.status === 429 || response.status >= 500) {
         if (attempt === MAX_ATTEMPTS - 1) return null;
         const retryAfter = Number(response.headers.get("retry-after"));

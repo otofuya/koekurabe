@@ -92,6 +92,9 @@ export function renderChart(state: ChartState): void {
     btn.addEventListener("blur", () => {
       hideProductCard(container);
     });
+    btn.addEventListener("click", () => {
+      window.location.href = `/reviews/${point.id}`;
+    });
 
     container.appendChild(btn);
   }

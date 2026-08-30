@@ -3,37 +3,31 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { CATEGORY_DEFINITIONS } from "../lib/category-definitions.ts";
 import { verifiedQuotes } from "../lib/aspect-model.ts";
-import { generateStructured } from "../lib/gemini.ts";
-import { modelFamilyKey, variantFamilyKey } from "../test/product-selection.mjs";
-import { PAGE_TEXT_DIR } from "./page-text.mjs";
+import { generateStructured } from "./gemini.ts";
+import { deduplicateReviews } from "../lib/review-dedup.ts";
+import { checkProductInvariants, validateBatchResponse } from "../lib/extraction-invariants.ts";
+import { aggregateTallies } from "../lib/quote-provenance.ts";
+import { PAGE_TEXT_DIR, loadPageMeta } from "./page-text.mjs";
 
 /**
- * Counting what buyers said, one page of reviews at a time.
+ * Classifying what buyers said, one review at a time.
  *
- * The output is a tally, not an opinion: "30件のレビューのうち11件が装着感に触れ、うち4件が不満".
- * That distinction is the whole reason this pipeline exists — the spec pipeline it replaces had to
- * mark 87% of its values 推定, because a spec read off a marketing page is somebody's claim about
- * the product, while a count of what reviewers wrote is a fact about the reviews.
+ * Each review is individually classified by Gemini — which aspects it mentions and whether
+ * the sentiment is positive or negative. The code then counts. Each review contributes at
+ * most one positive and one negative per aspect, so the invariants are:
+ *   positive <= reviewsRead   AND   negative <= reviewsRead
+ * (positive + negative may exceed reviewsRead because a single review can be both).
  *
- * One page per call. Counts add up across pages, so a product with 300 reviews is ten calls rather
- * than one enormous prompt, and each quote can be checked against the page it came from. Cramming
- * ten pages into one request costs accuracy in both directions: the model loses count, and a quote
- * that was stitched from two different pages becomes impossible to catch.
+ * Before classification, reviews from the product page and shop pages are deduplicated by
+ * normalized text hash across sources. Within the same source, identical text is kept
+ * (different reviewers may write the same thing).
  *
- * Usage: node --experimental-strip-types scripts/extract-aspects.mjs earbuds [--limit N]
+ * Usage: node --experimental-strip-types reference/extract-aspects.mjs earbuds [--limit N]
  */
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-/**
- * Flash Lite, and not whatever `.dev.vars` names.
- *
- * The shared variable is set for the spec pipeline, which makes a few dozen calls and wants the
- * stronger model. This one makes a call per page — about a hundred and thirty for the earbuds
- * genre — and the stronger model's free tier allows twenty a day, so inheriting it exhausts the
- * quota a fifth of the way in and the rest of the genre silently comes back empty. Counting
- * sentiment in thirty short reviews is well within Lite; the volume is what matters here.
- */
-const MODEL = process.env.ASPECT_EXTRACTION_MODEL || "gemini-3.1-flash-lite";
+const MODEL = "gemini-3.1-flash-lite";
+const BATCH_SIZE = 30;
 
 function readVars(text) {
   return Object.fromEntries(text.split(/\r?\n/).flatMap((line) => {
@@ -44,67 +38,65 @@ function readVars(text) {
   }));
 }
 
-/** Write, then move into place, so a reader never catches the file half-written. */
 async function writeAtomic(target, contents) {
   const temporary = `${target}.tmp`;
   await writeFile(temporary, contents, "utf8");
   await rename(temporary, target);
 }
 
+// ── Per-review schema: Gemini classifies each review individually ────────────
+
 const schemaFor = (aspects) => ({
   type: "object",
   properties: {
-    aspects: {
+    reviews: {
       type: "array",
       items: {
         type: "object",
         properties: {
-          aspect: { type: "string", enum: aspects.map((aspect) => aspect.label) },
-          positive: { type: "integer" },
-          negative: { type: "integer" },
-          quote: { type: "string" },
+          index: { type: "integer" },
+          aspects: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                aspect: { type: "string", enum: aspects.map((a) => a.label) },
+                polarity: { type: "string", enum: ["positive", "negative"] },
+                quote: { type: "string" },
+              },
+              required: ["aspect", "polarity", "quote"],
+            },
+          },
         },
-        required: ["aspect", "positive", "negative", "quote"],
+        required: ["index", "aspects"],
       },
     },
   },
-  required: ["aspects"],
+  required: ["reviews"],
 });
 
-/**
- * The prompt leans on two things the reviews themselves supply.
- *
- * The separator, so the model can count reviews rather than sentences — without it the counts drift
- * towards "how many times was this mentioned" and stop being comparable between products. And the
- * quote requirement, because a count with no traceable source cannot be checked, and 原則23 already
- * settled that an inferred value without its supporting fragment is thrown away.
- *
- * Negation is called out by name. It is the failure this project has already made twice: a page
- * saying「『マルチポイント対応』は外せません」about a product that does not support it, and a model
- * reading a brand's slogan as a product's feature.
- */
-const promptFor = (aspects, text) => `次は1つの商品に対する購入者レビューです。レビューは " / " で区切られています。
+const promptFor = (aspects, numberedReviews) => `次は1つの商品に対する購入者レビューです。番号付きで並んでいます。
 
-各観点について、その観点に言及した**レビューの件数**を、肯定的なものと否定的なものに分けて数えてください。
-言及が無い観点は配列に含めないでください。
+各レビューについて、どの観点に言及しているか判定してください。
+言及している場合、それが肯定的か否定的かを判定し、根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください。
 
-- 数えた根拠として、本文にそのまま現れる一節を quote に必ず入れてください。複数のレビューをつないだ文は入れないでください
+- 1つのレビューが同じ観点について肯定と否定の両方を述べている場合、両方を出してください
+- 観点に言及していないレビューは aspects を空配列にしてください
 - 否定表現（「〜ない」「〜しにくい」「期待したほどでは」）を見落とさないでください
-- 商品説明やショップの宣伝文が混ざっている場合、それは購入者の声ではないので数えないでください
+- 商品説明やショップの宣伝文が混ざっている場合、それは購入者の声ではないので判定しないでください
+- 入力のレビュー番号をすべて返してください。省略しないでください
 
-観点: ${aspects.map((aspect) => aspect.label).join("、")}
+観点: ${aspects.map((a) => a.label).join("、")}
 
---- レビュー本文 ---
-${text}`;
+--- レビュー ---
+${numberedReviews}`;
 
-/**
- * Every page of reviews on disk, grouped by product.
- *
- * Two sources, read the same way. `reviews` is the product page's merged view; `shop-reviews` is
- * what each shop's own listing collected. They are different populations of buyers writing about
- * the same product, counts add, and neither is more authoritative — so they are simply pooled,
- * with the split recorded on the product so a thin result can be traced to a thin source.
- */
+function formatBatch(reviews) {
+  return reviews.map((r) => `[${r.batchIndex}] ${r.text}`).join("\n\n");
+}
+
+// ── Reading page text files, grouped by product ─────────────────────────────
+
 const SOURCES = ["reviews", "shop-reviews"];
 
 async function reviewPages(categoryId) {
@@ -120,40 +112,26 @@ async function reviewPages(categoryId) {
       byProduct.get(productId).push({ source, page: Number(page), file: path.join(directory, file) });
     }
   }
-  for (const pages of byProduct.values()) {
-    pages.sort((a, b) => a.source.localeCompare(b.source) || a.page - b.page);
-  }
   return byProduct;
 }
 
-async function main() {
-  const args = process.argv.slice(2);
-  const categoryId = args.find((value) => !value.startsWith("--")) ?? "earbuds";
-  const limitFlag = args.indexOf("--limit");
-  const limit = limitFlag >= 0 ? Number(args[limitFlag + 1]) : Infinity;
+// ── Color-variant merging ───────────────────────────────────────────────────
 
-  const definition = CATEGORY_DEFINITIONS[categoryId];
-  if (!definition?.aspects?.length) throw new Error(`${categoryId}: aspects が定義されていません`);
-  const aspects = definition.aspects;
-  const byLabel = new Map(aspects.map((aspect) => [aspect.label, aspect.key]));
+let familyKeyFunctions = null;
 
-  const fileVars = readVars(await readFile(path.join(ROOT_DIR, ".dev.vars"), "utf8").catch(() => ""));
-  const apiKey = process.env.GEMINI_API_KEY || fileVars.GEMINI_API_KEY;
-  if (!apiKey) throw new Error("GEMINI_API_KEY が未設定です");
-  const extractionModel = MODEL;
+async function loadFamilyKeys() {
+  if (familyKeyFunctions) return familyKeyFunctions;
+  try {
+    const mod = await import("../test/product-selection.mjs");
+    familyKeyFunctions = { modelFamilyKey: mod.modelFamilyKey, variantFamilyKey: mod.variantFamilyKey };
+  } catch {
+    familyKeyFunctions = { modelFamilyKey: () => null, variantFamilyKey: () => null };
+  }
+  return familyKeyFunctions;
+}
 
-  const catalogue = JSON.parse(await readFile(path.join(ROOT_DIR, "data", "genre-products.json"), "utf8"));
-  const products = catalogue.products.filter((item) => item.categoryId === categoryId);
-  const byProductId = new Map(products.map((item) => [item.productId, item]));
-
-  /*
-   * One row per product, not per listing.
-   *
-   * The same earbuds appear under several colours, and on a chart each colour is a second circle
-   * sitting on top of the first — density that is not there, and a neighbour list eaten by one
-   * product's palette (原則26). The genre layout already merges them; this reads the same two keys
-   * so the two pipelines agree on what counts as one product.
-   */
+function canonicalProducts(products) {
+  const { modelFamilyKey, variantFamilyKey } = familyKeyFunctions;
   const familyOf = new Map();
   for (const product of products) {
     const keys = [modelFamilyKey(product), variantFamilyKey(product)].filter(Boolean);
@@ -165,62 +143,180 @@ async function main() {
     const held = canonical.get(family);
     if (!held || product.price < held.price) canonical.set(family, product);
   }
-  const keptIds = new Set([...canonical.values()].map((product) => product.productId));
+  return new Set([...canonical.values()].map((p) => p.productId));
+}
+
+// ── Main ────────────────────────────────────────────────────────────────────
+
+async function main() {
+  const args = process.argv.slice(2);
+  const categoryId = args.find((value) => !value.startsWith("--")) ?? "earbuds";
+  const limitFlag = args.indexOf("--limit");
+  const limit = limitFlag >= 0 ? Number(args[limitFlag + 1]) : Infinity;
+  const strict = !args.includes("--no-strict");
+
+  const definition = CATEGORY_DEFINITIONS[categoryId];
+  if (!definition?.aspects?.length) throw new Error(`${categoryId}: aspects が定義されていません`);
+  const aspects = definition.aspects;
+  const byLabel = new Map(aspects.map((a) => [a.label, a.key]));
+
+  const fileVars = readVars(await readFile(path.join(ROOT_DIR, ".dev.vars"), "utf8").catch(() => ""));
+  const apiKey = process.env.GEMINI_API_KEY || fileVars.GEMINI_API_KEY;
+  if (!apiKey) throw new Error("GEMINI_API_KEY が未設定です");
+
+  const catalogue = JSON.parse(await readFile(path.join(ROOT_DIR, "data", "genre-products.json"), "utf8"));
+  const products = catalogue.products.filter((item) => item.categoryId === categoryId);
+  const byProductId = new Map(products.map((item) => [item.productId, item]));
+
+  await loadFamilyKeys();
+  const keptIds = canonicalProducts(products);
 
   const pages = await reviewPages(categoryId);
-  const targets = [...pages.keys()].filter((productId) => keptIds.has(productId) && byProductId.has(productId)).slice(0, limit);
+  const targets = [...pages.keys()]
+    .filter((productId) => keptIds.has(productId) && byProductId.has(productId))
+    .slice(0, limit);
   const merged = [...pages.keys()].filter((productId) => !keptIds.has(productId)).length;
-  console.log(`${targets.length}商品を抽出します（色違い${merged}件は統合済み・モデル ${extractionModel}）`);
+  console.log(`${targets.length}商品を抽出します（色違い${merged}件は統合済み・モデル ${MODEL}）`);
 
   const records = [];
-  let calls = 0; let droppedQuotes = 0; let failures = 0;
+  let calls = 0;
+  let droppedQuotes = 0;
+  let batchFailures = 0;
+  let totalDupsRemoved = 0;
+  let totalMissing = 0;
+  const fatalErrors = [];
 
   for (const [index, productId] of targets.entries()) {
-    const tallies = new Map();
-    const sources = {};
-    let reviewsRead = 0;
-
-    for (const { file, source } of pages.get(productId)) {
+    // ── Step 1: Read all page text and deduplicate ──
+    const rawPages = [];
+    for (const { file, source, page } of pages.get(productId)) {
       const text = await readFile(file, "utf8");
       if (text.trim().length < 20) continue;
-      calls += 1;
-      const result = await generateStructured(promptFor(aspects, text), schemaFor(aspects), { apiKey, extractionModel });
-      if (!result?.aspects) { failures += 1; console.log(`  ${path.basename(file)} の抽出に失敗したので飛ばします`); continue; }
-      const counted = text.split(" / ").length;
-      reviewsRead += counted;
-      sources[source] = (sources[source] ?? 0) + counted;
+      const fileKey = path.basename(file, ".txt");
+      const meta = await loadPageMeta(ROOT_DIR, categoryId, source, fileKey);
+      if (!meta?.sourceUrl) {
+        const msg = `${productId.slice(0, 8)} ${source}/p${page}: .meta.json がないか sourceUrl が未設定です`;
+        if (strict) { fatalErrors.push(msg); continue; }
+        console.log(`  ⚠ ${msg}（--no-strict のため続行）`);
+      }
+      rawPages.push({ source, page, text, sourceUrl: meta?.sourceUrl ?? "" });
+    }
 
-      for (const entry of result.aspects) {
-        const key = byLabel.get(entry.aspect);
-        if (!key) continue;
-        const positive = Math.max(0, Number(entry.positive) || 0);
-        const negative = Math.max(0, Number(entry.negative) || 0);
-        if (!positive && !negative) continue;
-        // 原則23: a quote that is not in the page it claims to come from is discarded, and the
-        // count goes with it — a tally nobody can check is worth less than no tally.
-        const quotes = verifiedQuotes([entry.quote ?? ""], text);
-        if (!quotes.length) { droppedQuotes += 1; continue; }
-        const held = tallies.get(key) ?? { key, positive: 0, negative: 0, quotes: [] };
-        held.positive += positive; held.negative += negative;
-        if (held.quotes.length < 3) held.quotes.push(quotes[0]);
-        tallies.set(key, held);
+    const dedup = deduplicateReviews(rawPages);
+    totalDupsRemoved += dedup.duplicatesRemoved;
+    if (!dedup.reviews.length) {
+      process.stdout.write(`${index + 1}/${targets.length} `);
+      continue;
+    }
+
+    // ── Step 2: Batch unique reviews and classify with Gemini ──
+    const reviewMap = new Map(dedup.reviews.map((r) => [r.index, { text: r.text, sourceUrl: r.sourceUrl, classifications: [] }]));
+    let productClassified = 0;
+    let productBatchFailed = false;
+
+    for (let batchStart = 0; batchStart < dedup.reviews.length; batchStart += BATCH_SIZE) {
+      const batch = dedup.reviews.slice(batchStart, batchStart + BATCH_SIZE)
+        .map((r, i) => ({ ...r, batchIndex: i + 1 }));
+      const prompt = promptFor(aspects, formatBatch(batch));
+      calls += 1;
+      const result = await generateStructured(prompt, schemaFor(aspects), { apiKey, extractionModel: MODEL });
+      if (!result?.reviews) {
+        batchFailures += 1;
+        productBatchFailed = true;
+        const msg = `${productId.slice(0, 8)} バッチ${Math.floor(batchStart / BATCH_SIZE) + 1} の抽出に失敗`;
+        console.log(`  ${msg}`);
+        fatalErrors.push(msg);
+        continue;
+      }
+
+      const returned = result.reviews.map((r) => r.index);
+      const expected = batch.map((r) => r.batchIndex);
+      const validation = validateBatchResponse(returned, expected);
+      if (validation.problems.length > 0) {
+        const msg = `${productId.slice(0, 8)} バッチ${Math.floor(batchStart / BATCH_SIZE) + 1}: ${validation.problems.join("; ")}`;
+        console.log(`  ${msg}`);
+        fatalErrors.push(msg);
+        batchFailures += 1;
+        productBatchFailed = true;
+        totalMissing += validation.missingCount;
+        continue;
+      }
+      productClassified += validation.classifiedCount;
+
+      for (const reviewResult of result.reviews) {
+        const batchIdx = reviewResult.index;
+        const review = batch.find((r) => r.batchIndex === batchIdx);
+        if (!review) continue;
+        const entry = reviewMap.get(review.index);
+        if (!entry) continue;
+
+        for (const tag of reviewResult.aspects ?? []) {
+          const key = byLabel.get(tag.aspect);
+          if (!key) continue;
+
+          const quotes = verifiedQuotes([tag.quote ?? ""], entry.text);
+          if (!quotes.length) { droppedQuotes += 1; continue; }
+
+          entry.classifications.push({ key, polarity: tag.polarity, quote: quotes[0] });
+        }
       }
     }
 
-    if (tallies.size) records.push({ productId, reviewsRead, sources, aspects: [...tallies.values()] });
+    // ── Step 3: Completeness check ──
+    const reviewsRead = dedup.reviews.length;
+    if (productBatchFailed && strict) {
+      fatalErrors.push(`${productId}: API失敗により分類が不完全（${productClassified}/${reviewsRead}件）`);
+    } else if (productClassified < reviewsRead && strict) {
+      fatalErrors.push(`${productId}: 分類が不完全（${productClassified}/${reviewsRead}件、${reviewsRead - productClassified}件未返却）`);
+    }
+
+    // ── Step 4: Aggregate per-review classifications into aspect tallies ──
+    const aspectList = aggregateTallies([...reviewMap.values()]);
+
+    // ── Step 5: Invariant check (shared module) ──
+    const violations = checkProductInvariants(productId, reviewsRead, aspectList);
+    if (violations.length > 0) {
+      for (const v of violations) {
+        const msg = `${v.productId} / ${v.aspect}: ${v.message}`;
+        console.log(`\n  ⚠ ${msg}`);
+        fatalErrors.push(msg);
+      }
+      if (!strict) console.log("  (--no-strict のため続行)");
+    }
+
+    // Keep record even when aspects is empty: "read but no aspects found" is distinct from "not read"
+    records.push({
+      productId,
+      reviewsRead,
+      classifiedCount: productClassified,
+      sources: dedup.sources,
+      dedup: { totalBeforeDedup: dedup.totalBeforeDedup, duplicatesRemoved: dedup.duplicatesRemoved },
+      aspects: aspectList,
+    });
     process.stdout.write(`${index + 1}/${targets.length} `);
+  }
+
+  // ── Final gate ──
+  if (strict && fatalErrors.length > 0) {
+    console.error(`\n\n抽出失敗（strict モード）: ${fatalErrors.length}件のエラー`);
+    for (const e of fatalErrors) console.error(`  ${e}`);
+    console.error("\n既存の genre-aspects.json は変更しません。");
+    process.exit(1);
   }
 
   const output = path.join(ROOT_DIR, "data", "genre-aspects.json");
   const existing = await readFile(output, "utf8").then(JSON.parse).catch(() => ({ genres: [] }));
   const genres = [
     ...existing.genres.filter((genre) => genre.categoryId !== categoryId),
-    { categoryId, generatedAt: new Date().toISOString(), extractionModel, products: records },
+    { categoryId, generatedAt: new Date().toISOString(), extractionModel: MODEL, products: records },
   ].sort((a, b) => a.categoryId.localeCompare(b.categoryId));
   await writeAtomic(output, `${JSON.stringify({ genres }, null, 1)}\n`);
 
-  const mentions = records.reduce((sum, record) => sum + record.aspects.length, 0);
-  console.log(`\n${records.length}商品・観点${mentions}件（呼び出し${calls}回・失敗${failures}回・引用が本文に無く捨てた観点${droppedQuotes}件）→ data/genre-aspects.json`);
+  const mentions = records.reduce((sum, r) => sum + r.aspects.length, 0);
+  const totalReviews = records.reduce((sum, r) => sum + r.reviewsRead, 0);
+  const totalClassified = records.reduce((sum, r) => sum + r.classifiedCount, 0);
+  console.log(`\n${records.length}商品・観点${mentions}件・レビュー${totalReviews}件（分類${totalClassified}件・重複除去${totalDupsRemoved}件・呼び出し${calls}回・失敗${batchFailures}回・未返却${totalMissing}件・引用不一致${droppedQuotes}件）→ data/genre-aspects.json`);
+  if (strict) console.log("不変条件チェック: 全商品通過");
 }
 
 await main();

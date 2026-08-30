@@ -1,8 +1,10 @@
 import { loadGenre } from "@lib/data-loader.ts";
 import {
   offerableAxes,
+  axisPairs,
   quadrantPoints,
   coverageOf,
+  resolveDefaultAxes,
 } from "@lib/aspect-model.ts";
 import {
   CATEGORY_DEFINITIONS,
@@ -14,6 +16,7 @@ import { renderPriceFilter } from "./price-filter.ts";
 import { renderCoveragebar } from "./coverage-bar.ts";
 import { renderUnspokenList } from "./unspoken-list.ts";
 import type { JoinedProduct } from "@lib/types.ts";
+import { renderAiDisclosure } from "../ai-disclosure.ts";
 import "../styles/chart.css";
 
 export function renderComparePage(container: HTMLElement, genreId: string) {
@@ -25,11 +28,18 @@ export function renderComparePage(container: HTMLElement, genreId: string) {
 
   const { joined, aspectProducts, totalProducts } = loadGenre(genreId);
   const axes = offerableAxes(aspectProducts, category.aspects);
+  const pairs = axisPairs(axes, aspectProducts);
   const coverage = coverageOf(totalProducts, aspectProducts);
-  const defaults = defaultAxesFor(genreId) ?? [
-    axes.find((a) => a.offerable)!.key,
-    axes.filter((a) => a.offerable)[1]?.key ?? axes[0].key,
-  ];
+  const defaults = resolveDefaultAxes(
+    aspectProducts,
+    category.aspects,
+    defaultAxesFor(genreId),
+  );
+
+  if (!defaults) {
+    container.innerHTML = `<p>「${category.label}」は比較に十分なデータがまだありません。</p>`;
+    return;
+  }
 
   const productMap = new Map<string, JoinedProduct>();
   for (const p of joined) productMap.set(p.productId, p);
@@ -48,6 +58,7 @@ export function renderComparePage(container: HTMLElement, genreId: string) {
   const coverageEl = document.createElement("p");
   renderCoveragebar(coverageEl, coverage);
   header.appendChild(coverageEl);
+  renderAiDisclosure(header);
   container.appendChild(header);
 
   const pickerEl = document.createElement("div");
@@ -98,7 +109,7 @@ export function renderComparePage(container: HTMLElement, genreId: string) {
       dimmedIds: getDimmedIds(),
     });
 
-    renderAxisPicker(pickerEl, axes, currentX, currentY, (newX, newY) => {
+    renderAxisPicker(pickerEl, axes, pairs, currentX, currentY, (newX, newY) => {
       currentX = newX;
       currentY = newY;
       renderAll();

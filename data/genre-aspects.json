@@ -2,303 +2,917 @@
  "genres": [
   {
    "categoryId": "earbuds",
-   "generatedAt": "2026-08-29T07:45:10.329Z",
+   "generatedAt": "2026-08-30T05:04:53.742Z",
    "extractionModel": "gemini-3.1-flash-lite",
    "products": [
     {
      "productId": "0858ede77704a39fb1ba5dafafd4b806",
-     "reviewsRead": 16,
+     "reviewsRead": 8,
+     "classifiedCount": 8,
      "sources": {
-      "reviews": 8,
-      "shop-reviews": 8
+      "reviews": 8
+     },
+     "dedup": {
+      "totalBeforeDedup": 16,
+      "duplicatesRemoved": 8
      },
      "aspects": [
       {
-       "key": "sound",
-       "positive": 6,
-       "negative": 0,
-       "quotes": [
-        "音はSONYだけあって、聞きやすい。",
-        "音質に関しましては素人の感想ではありますが聞こえる側としては良い方だと思います。"
-       ]
-      },
-      {
        "key": "fit",
-       "positive": 7,
-       "negative": 2,
+       "positive": 4,
+       "negative": 1,
        "quotes": [
-        "耳が痛くないって話聞いたことがあって、買ってみたけど、やっぱり痛くなる",
-        "つけてる感覚がなくとても良いです。",
-        "装着感はとてもいい感じにはまり、多少の動きで吹っ飛んでいくことはないです。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "ノイズキャンセリングが効いているのか鼻をぐずらせる程度の音はカットしてくれているようです。",
-        "ノイズキャンセリングが効いているのか鼻をぐずらせる程度の音はカットしてくれているようです。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "外部音の入るイヤホンとしては音質も良く、骨伝導のように押さえられる感も無くて良いが、目的であった自転車乗車時の使用としては、評価できるレベルではなかった。",
-        "オープンイヤーなので電車では周りの音が入ってきますし地下鉄などでは曲が聞こえなくなります。",
-        "外部音の入るイヤホンとしては音質も良く、骨伝導のように押さえられる感も無くて良い"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 2,
-       "negative": 3,
-       "quotes": [
-        "初期不良で右側だけバッテリーが弱く3時間もたず電源が落ちる。",
-        "充電も出来ず",
-        "初期不良で右側だけバッテリーが弱く3時間もたず電源が落ちる。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 3,
-       "negative": 4,
-       "quotes": [
-        "左側がまったく接続しないしショップとメーカーは責任逃れ、交換の対応も無しどうすればいい？",
-        "スマホから多少離れても他のワイヤレスイヤホンと比べてペアリングが切れにくい感じがお気に入りポイントです。"
+        {
+         "text": "つけてる感覚がなくとても良いです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "骨伝導のように押さえられる感も無くて良い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "やっぱり痛くなる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
        ]
       },
       {
        "key": "controls",
        "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "硬いものを噛むとタップしたことになり曲が止まったりしてしまう",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "右側だけバッテリーが弱く3時間もたず電源が落ちる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 2,
        "negative": 2,
        "quotes": [
-        "硬いものを噛むとタップしたことになり曲が止まったりしてしまう。",
-        "硬いものを噛むとタップしたことになり曲が止まったりしてしまう。"
+        {
+         "text": "左右で音がズレる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "すぐに繋がる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "左側がまったく接続しない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 3,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音はSONYだけあって、聞きやすい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "音質はあまり期待していませんでしたが、想像以上に良くて気に入りました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        },
+        {
+         "text": "聞こえる側としては良い方だと思います",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
        ]
       },
       {
        "key": "calls",
-       "positive": 3,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "どちらにもマイクが内蔵されているので通話にも支障がなく有難いです。",
-        "通話の際の音質も通話相手から聞こえやすいとのこと"
+        {
+         "text": "通話にも支障がなく有難いです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングが効いているのか鼻をぐずらせる程度の音はカットしてくれているようです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/0858ede77704a39fb1ba5dafafd4b806/review/"
+        }
        ]
       }
      ]
     },
     {
-     "productId": "2a5f9d61024fb1e58058dbd0a314ec25",
-     "reviewsRead": 74,
+     "productId": "165b2aac5747eee78f371c85773ab0ae",
+     "reviewsRead": 1,
+     "classifiedCount": 1,
      "sources": {
-      "reviews": 37,
-      "shop-reviews": 37
+      "reviews": 1
+     },
+     "dedup": {
+      "totalBeforeDedup": 2,
+      "duplicatesRemoved": 1
+     },
+     "aspects": []
+    },
+    {
+     "productId": "2a5f9d61024fb1e58058dbd0a314ec25",
+     "reviewsRead": 37,
+     "classifiedCount": 37,
+     "sources": {
+      "reviews": 37
+     },
+     "dedup": {
+      "totalBeforeDedup": 74,
+      "duplicatesRemoved": 37
      },
      "aspects": [
       {
-       "key": "sound",
-       "positive": 40,
-       "negative": 2,
-       "quotes": [
-        "音質も期待より良かった。",
-        "これまでの物よりも、音のリアルさや広がりが良くなったと感じています。",
-        "音質も期待より良かった。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 3,
-       "negative": 4,
-       "quotes": [
-        "ただ、もう少し重低音が欲しい。",
-        "全般的に低音は控えめ、であり、これにより印象を弱めてしまっていることは確かです。",
-        "ただ、万能ではなく全般的に低音は控えめ、であり、これにより印象を弱めてしまっていることは確かです。"
-       ]
-      },
-      {
        "key": "fit",
-       "positive": 7,
-       "negative": 17,
+       "positive": 5,
+       "negative": 10,
        "quotes": [
-        "耳の穴にフィットしません。",
-        "私の耳には少し大きいのか付けたときに負荷を感じますし、持ち運びにも大きいなぁという感じです。",
-        "耳にもう少しフィット感があればよかった。"
+        {
+         "text": "イヤホンそのものが大きいので重く",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "音質、音の広がりや装着感がドンドン進化しているのを実感できました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "耳の穴にフィットしません。 つけていると取れそうになることがよくあります。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 12,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "安く購入したものなのでショックは少ない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "安く購入できてとても嬉しいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "とてもお得に入手できました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 19,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "音質、音の広がりや装着感がドンドン進化しているのを実感できました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "音質も期待より良かった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "音質はかなり良いと思います",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
        ]
       },
       {
        "key": "anc",
        "positive": 0,
-       "negative": 13,
+       "negative": 7,
        "quotes": [
-        "ノイズキャンセリングは物足りないですが",
-        "たしかにXM3と比較すると、ノイキャンは弱いかな？",
-        "ノイズキャンセリングは物足りないですが"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 0,
-       "negative": 4,
-       "quotes": [
-        "ノイキャン、外部音取り込みはAirPods Proと比べるとおまけ程度だと思います。",
-        "ノイキャン、外部音取り込みはAirPods Proと比べるとおまけ程度だと思います。"
+        {
+         "text": "ノイズキャンセリングは物足りない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "ノイズキャンセリングが物足りない様です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "ノイズキャンセリングとヒアスルー機能は正直どちらも効果が実感できず",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
        ]
       },
       {
        "key": "connection",
        "positive": 3,
-       "negative": 4,
+       "negative": 1,
        "quotes": [
-        "時おり片方から音が出なくなるのがマイナスポイント",
-        "スムーズな接続で値段以上の価値があると感じます。",
-        "時おり片方から音が出なくなるのがマイナスポイント"
+        {
+         "text": "時おり片方から音が出なくなるのがマイナスポイント",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "普通に使う分には問題なく使えます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "接続等はしやすく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 0,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングとヒアスルー機能は正直どちらも効果が実感できず",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "ノイキャン、外部音取り込みはAirPods Proと比べるとおまけ程度",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
        ]
       },
       {
        "key": "controls",
        "positive": 2,
-       "negative": 6,
+       "negative": 3,
        "quotes": [
-        "付け方も取説に載ってなく、写真で何となくつけて見たりしますがよく分かりません。",
-        "ボタン操作については少々やりにくいですが‥",
-        "ボタン操作については少々やりにくいですが‥"
+        {
+         "text": "私のandroidスマートホンではアプリのバージョンが古いため使用できないのも残念",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "使いやすそうです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "専用アプリが最新OS（Android）に適合してないためダウンロードできない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        }
        ]
       },
       {
-       "key": "value",
-       "positive": 24,
-       "negative": 3,
+       "key": "bass",
+       "positive": 1,
+       "negative": 2,
        "quotes": [
-        "アウトレットで６５％ぐらいの割引だったので迷わず購入。",
-        "ハイエンドモデルがお得に買えたので個人的には満足です。",
-        "アウトレットと感じさせないキレイな品物だったので安く購入できてとても嬉しいです。"
+        {
+         "text": "もう少し重低音が欲しい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "低音もしっかりと出ていて良かったです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/"
+        },
+        {
+         "text": "全般的に低音は控えめ、であり、これにより印象を弱めてしまっていることは確かです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2a5f9d61024fb1e58058dbd0a314ec25/review/2/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "2cea7b9fcc820db7dd575308b8b24262",
-     "reviewsRead": 6,
+     "reviewsRead": 3,
+     "classifiedCount": 3,
      "sources": {
-      "reviews": 3,
-      "shop-reviews": 3
+      "reviews": 3
+     },
+     "dedup": {
+      "totalBeforeDedup": 6,
+      "duplicatesRemoved": 3
      },
      "aspects": [
       {
        "key": "sound",
-       "positive": 4,
+       "positive": 2,
        "negative": 0,
        "quotes": [
-        "音質は良いと感じる。",
-        "音質は良いと感じる。",
-        "ワイヤレスとは思えない音質"
+        {
+         "text": "音質は良いと感じる。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2cea7b9fcc820db7dd575308b8b24262/review/"
+        },
+        {
+         "text": "ワイヤレスとは思えない音質",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2cea7b9fcc820db7dd575308b8b24262/review/"
+        }
        ]
       },
       {
        "key": "value",
-       "positive": 2,
-       "negative": 3,
+       "positive": 1,
+       "negative": 1,
        "quotes": [
-        "ちょっと値段が高すぎるかな",
-        "ちょっと値段が高すぎるかな"
+        {
+         "text": "ちょっと値段が高すぎるかな",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2cea7b9fcc820db7dd575308b8b24262/review/"
+        },
+        {
+         "text": "Acoustune好きにはこの価格でも妥当かな",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2cea7b9fcc820db7dd575308b8b24262/review/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "2ef8684309a8919f3581c12a185a5519",
-     "reviewsRead": 12,
+     "reviewsRead": 6,
+     "classifiedCount": 6,
      "sources": {
-      "reviews": 6,
-      "shop-reviews": 6
+      "reviews": 6
+     },
+     "dedup": {
+      "totalBeforeDedup": 12,
+      "duplicatesRemoved": 6
      },
      "aspects": [
       {
        "key": "sound",
-       "positive": 6,
+       "positive": 3,
        "negative": 0,
        "quotes": [
-        "凄く良い音でビックリしました。",
-        "凄く良い音でビックリしました。"
+        {
+         "text": "凄く良い音でビックリしました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        },
+        {
+         "text": "とても音がいいとのことです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        },
+        {
+         "text": "音も最高でした。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        }
        ]
       },
       {
        "key": "battery",
-       "positive": 2,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "バッテリーも長持ちするそうです。",
-        "バッテリーも長持ちするそうです。"
+        {
+         "text": "バッテリーも長持ちするそうです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        }
        ]
       },
       {
        "key": "controls",
-       "positive": 2,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "操作などが簡単にできて音も最高でした。",
-        "操作などが簡単にできて音も最高でした。"
+        {
+         "text": "操作などが簡単にできて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        }
        ]
       },
       {
        "key": "connection",
-       "positive": 2,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "本体の蓋を開けた瞬間に自動的にスマホと繋がり、すぐに使えました。",
-        "本体の蓋を開けた瞬間に自動的にスマホと繋がり、すぐに使えました。"
+        {
+         "text": "本体の蓋を開けた瞬間に自動的にスマホと繋がり、すぐに使えました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/2ef8684309a8919f3581c12a185a5519/review/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "43c9394e727be3b8fb1eea059b3ac4a7",
-     "reviewsRead": 48,
+     "reviewsRead": 25,
+     "classifiedCount": 25,
      "sources": {
-      "reviews": 25,
-      "shop-reviews": 23
+      "reviews": 25
+     },
+     "dedup": {
+      "totalBeforeDedup": 48,
+      "duplicatesRemoved": 23
      },
      "aspects": [
       {
        "key": "connection",
-       "positive": 3,
-       "negative": 8,
+       "positive": 2,
+       "negative": 3,
        "quotes": [
-        "接続、切り替え共にスムーズです。",
-        "初期不良で左耳が繋がらない。",
-        "とうとう右側のも不安定になり、ほとんど使い物になりませんでした。"
+        {
+         "text": "接続、切り替え共にスムーズです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "片耳だけ聞こえなくなったり、両耳とも聞こえなくなったり",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "左耳が繋がらない。後に調べたところ、片耳が繋がらないことが多いそう。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
        ]
       },
       {
        "key": "sound",
-       "positive": 16,
-       "negative": 0,
+       "positive": 9,
+       "negative": 1,
        "quotes": [
-        "音は間違いないです",
-        "音の響きが良いです！",
-        "さすがBOSEですね、とても音質が良いと思います。"
+        {
+         "text": "音は間違いないです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "とても良い音です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "音の響きが良いです！",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
        ]
       },
       {
        "key": "anc",
-       "positive": 11,
-       "negative": 4,
+       "positive": 5,
+       "negative": 3,
        "quotes": [
-        "さすがboseです、ノイキャすごいです。",
-        "さすがboseです、ノイキャすごいです。",
-        "その上ノイズキャンセリングの機能を使うとまるで耳栓ですね。"
+        {
+         "text": "ノイズキャンセリングが機能しなかったり",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "遜色ないクワイェット機能",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "ノイキャすごいです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
        ]
       },
       {
        "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "重低音ばっちりのboseらしい感じの音だそうです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      },
+      {
+       "key": "calls",
+       "positive": 0,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "騒音現場での通話が相手側が雑音凄いらしい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "初めから通話が出来なかったり",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 4,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "耳に慣れるまでは少し時間がかかりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "耳にフィットし良い感じです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "最高の付け心地です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 1,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "約2万の修理代がかかるとの事。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "お値段そこそこするので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "コストパフォーマンスは良いと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 3,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "普通に使いやすそうだなと思いました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "アプリを使って設定が色々できました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        },
+        {
+         "text": "タッチ操作の感度も良くストレス溜まりません。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "バッテリーのもちは倍以上長くなりました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/43c9394e727be3b8fb1eea059b3ac4a7/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "463cfbcf8bb646ee270c5fa0aaf26b2d",
+     "reviewsRead": 1,
+     "classifiedCount": 1,
+     "sources": {
+      "reviews": 1
+     },
+     "dedup": {
+      "totalBeforeDedup": 2,
+      "duplicatesRemoved": 1
+     },
+     "aspects": [
+      {
+       "key": "sound",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質が格段に良くなった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/463cfbcf8bb646ee270c5fa0aaf26b2d/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "バッテリー残量がケースで確認できるのが良い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/463cfbcf8bb646ee270c5fa0aaf26b2d/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "ノイズキャンセルは微かに効果を確認できる程度なので、不要だった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/463cfbcf8bb646ee270c5fa0aaf26b2d/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "59e2037efd6006378ea69445f5f42a05",
+     "reviewsRead": 5,
+     "classifiedCount": 5,
+     "sources": {
+      "reviews": 5
+     },
+     "dedup": {
+      "totalBeforeDedup": 8,
+      "duplicatesRemoved": 3
+     },
+     "aspects": [
+      {
+       "key": "fit",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "長時間着けていても耳が痛くならず",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
        "positive": 2,
        "negative": 0,
        "quotes": [
-        "重低音ばっちりのboseらしい感じの音だそうです。",
-        "重低音ばっちりのboseらしい感じの音だそうです。"
+        {
+         "text": "周囲の音も自然に聞こえて安心です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        },
+        {
+         "text": "周りの音や声は聞こえるので、安全性も高い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "オープンイヤー型とは思えないほど低音もしっかり響き",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 4,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "クリアで広がりのあるサウンドを楽しめます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        },
+        {
+         "text": "音質もオープンイヤーにしては凄く良く出ています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        },
+        {
+         "text": "音質に関しては、悪くは無い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 1,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "背景音だけうまく消して人の声などはちゃんと聞こえるように調整してくれる優れもの",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        },
+        {
+         "text": "ノイキャン効果は、正直微妙",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "calls",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "有線マイクとあまり変わらない能力がありました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "フォーカスモードの持続時間が 通常時12時間稼働に対してオン時6時間稼働しかないので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 1,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "非常に満足度の高い買い物ができました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        },
+        {
+         "text": "下位グレードのオープンイヤーのイヤフォンに1万円追加で払う価値があるかと言われるとほとんど無いように感じた",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "スマフォでイコライザーチューンもできるし",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/59e2037efd6006378ea69445f5f42a05/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "637e1dd64912138092e4fb1b1de5a800",
+     "reviewsRead": 303,
+     "classifiedCount": 303,
+     "sources": {
+      "reviews": 300,
+      "shop-reviews": 3
+     },
+     "dedup": {
+      "totalBeforeDedup": 480,
+      "duplicatesRemoved": 177
+     },
+     "aspects": [
+      {
+       "key": "fit",
+       "positive": 39,
+       "negative": 9,
+       "quotes": [
+        {
+         "text": "耳も痛くならないし",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "耳への収まりもいい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "着け心地よく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 15,
+       "negative": 9,
+       "quotes": [
+        {
+         "text": "結構充電も持つし",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "2時間位でバッテリーが切れる様になり",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "バッテリーの持ちも良いので助かります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 64,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "少し安く買えるタイミングだったので大満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "お値段も下がってたので購入しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "値段も安くて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 112,
+       "negative": 8,
+       "quotes": [
+        {
+         "text": "音質も予想以上です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "音もクリアです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "音もすごく良かっです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 50,
+       "negative": 11,
+       "quotes": [
+        {
+         "text": "アプリで管理できて、カスタマイズしてとても使いやすい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "とっても使いやすいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "操作性、音質共に申し分なくお買い得です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 45,
+       "negative": 14,
+       "quotes": [
+        {
+         "text": "ノイキャンが優れているので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "ノイズキャンセリングがすごいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "ノイズキャンリングも快適です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 7,
+       "negative": 3,
+       "quotes": [
+        {
+         "text": "外音取り込みモードで使用しています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "両耳を装着してても、話しかけてくる人の声が聞こえて、最高です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/3/"
+        },
+        {
+         "text": "逆の外音取り込み、どちらのモードもかなりの完成度でした。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/3/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 19,
+       "negative": 10,
+       "quotes": [
+        {
+         "text": "通信も安定しているのがわかります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/"
+        },
+        {
+         "text": "接続は一瞬で簡単だったのも良かったです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/2/"
+        },
+        {
+         "text": "音飛びが結構します。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/3/"
+        }
        ]
       },
       {
@@ -306,9 +920,1232 @@
        "positive": 0,
        "negative": 4,
        "quotes": [
-        "気になったのが、騒音現場での通話が相手側が雑音凄いらしい",
-        "気になったのが、騒音現場での通話が相手側が雑音凄いらしい…",
-        "初めから通話が出来なかったり音が勝手に止まって使えないのに"
+        {
+         "text": "通話とかはAirPodsのほうがクリアな気もしますが",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/3/"
+        },
+        {
+         "text": "通話時に相手から声がこもっていると一度言われた",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/4/"
+        },
+        {
+         "text": "電話かかってきた時が、上手く繋ぐ事が出来ずかけ直しになっています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/7/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 7,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "重低音などはANKERのほうがダイナミックに聞けます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/3/"
+        },
+        {
+         "text": "特に低音とサラウンドが良いです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/4/"
+        },
+        {
+         "text": "低音はこちらの方が良いです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/637e1dd64912138092e4fb1b1de5a800/review/4/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "78177f274eb2c529b5f29b430244b85f",
+     "reviewsRead": 2,
+     "classifiedCount": 2,
+     "sources": {
+      "reviews": 2
+     },
+     "dedup": {
+      "totalBeforeDedup": 4,
+      "duplicatesRemoved": 2
+     },
+     "aspects": [
+      {
+       "key": "value",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "お値段は高め",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/78177f274eb2c529b5f29b430244b85f/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質は最高です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/78177f274eb2c529b5f29b430244b85f/review/"
+        },
+        {
+         "text": "今回は素晴らしい音質",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/78177f274eb2c529b5f29b430244b85f/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "821de2ea4d103ede4bb09e3d80df3015",
+     "reviewsRead": 129,
+     "classifiedCount": 129,
+     "sources": {
+      "reviews": 129
+     },
+     "dedup": {
+      "totalBeforeDedup": 241,
+      "duplicatesRemoved": 112
+     },
+     "aspects": [
+      {
+       "key": "value",
+       "positive": 19,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "クーポンも使えたのでお得感はかなりあります。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "このお値段でしっかりノイキャンがききます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "このお値段でそこそこちゃんとしてるので良き。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 8,
+       "negative": 10,
+       "quotes": [
+        {
+         "text": "充電の減りは結構早い気がします。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "片方だけ充電の減りが異常に速くなります。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "バッテリーの長さも申し分ありません。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 52,
+       "negative": 4,
+       "quotes": [
+        {
+         "text": "音質は良いです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "音が良いこと",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "音は普通に良いです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 10,
+       "negative": 9,
+       "quotes": [
+        {
+         "text": "収納時に 磁石で吸い込まれるように すぐ 収納できるところはいいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "期待通りの操作性",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "使い勝手もすごく良くて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 21,
+       "negative": 14,
+       "quotes": [
+        {
+         "text": "手で持った時に 小さく 滑りやすく 何度か落としそうになりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "私の右耳にフィットしないので、じっとしてても度々落とすことです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "耳から簡単に落ちる事もなく快適に使えています。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 2,
+       "negative": 3,
+       "quotes": [
+        {
+         "text": "低音が そこまで重みが ないような気がします",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "低音がもう少し効いていたらと思いましたが",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "パンチのある高低音",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/3/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 32,
+       "negative": 11,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングが優秀なところです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "右の方だけずっとノイキャン時も音楽時でも不規則にポコポコ？カタカナ？音が鳴ります。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "外音取り込みとノイキャンをワンタッチで切り替えられるのはいいなと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 9,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "外音取り込みとノイキャンをワンタッチで切り替えられるのはいいなと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "外音取り込みが自分の耳で聞くよりクリアな気がする",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "外音取り込みモードもタップで切替えでき、イヤホンを外す手間がいらないのが案外良かったです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 2,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "たま～にケースにしまってるのに勝手に接続されてて目覚まし聞こえなかった罠あるのでそこが困る。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "毎回接続設定しないといけないのだるすぎ。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/"
+        },
+        {
+         "text": "一度接続すると次使う時にすぐ接続されるから便利",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/821de2ea4d103ede4bb09e3d80df3015/review/2/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "97550ceff7083dbbaa5f5efe6b00065c",
+     "reviewsRead": 6,
+     "classifiedCount": 6,
+     "sources": {
+      "reviews": 6
+     },
+     "dedup": {
+      "totalBeforeDedup": 12,
+      "duplicatesRemoved": 6
+     },
+     "aspects": [
+      {
+       "key": "sound",
+       "positive": 3,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "右耳のイヤフォンから音が聞こえなくなりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        },
+        {
+         "text": "とても聴きやすいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        },
+        {
+         "text": "音質も低音の量に対して、中高音も潰れることなく好みでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "低価格で日本メーカーだったこちらを購入しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        },
+        {
+         "text": "量販店ではほぼ正規料金で売っているのにネットでは何故か安い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "ペアリングも簡単で問題なく使えています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 1,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        },
+        {
+         "text": "購入目的だったanc、外音取り込みもしっかり機能しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質も低音の量に対して、中高音も潰れることなく好みでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "外音取り込みもしっかり機能しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/97550ceff7083dbbaa5f5efe6b00065c/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "992396b45314c77be0cfb3c482e8ad07",
+     "reviewsRead": 3,
+     "classifiedCount": 3,
+     "sources": {
+      "reviews": 3
+     },
+     "dedup": {
+      "totalBeforeDedup": 6,
+      "duplicatesRemoved": 3
+     },
+     "aspects": [
+      {
+       "key": "sound",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "とても、太鼓の音の迫力を感じられます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        },
+        {
+         "text": "頭を動かすと音がなっている方向が変わるような臨場感！",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "家で使ってても娘の話しができる。とても、自然な感じに音に包まれている感じがします。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        },
+        {
+         "text": "イヤホンの音、外の音、どちらも、キッチリ聞こえます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "耳の負担なし！",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "重低音がすごいです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "お高い商品なので探す機能がないのがとても残念",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/992396b45314c77be0cfb3c482e8ad07/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "b41c556d5baaee81320b7781e9bbd6d3",
+     "reviewsRead": 9,
+     "classifiedCount": 9,
+     "sources": {
+      "reviews": 9
+     },
+     "dedup": {
+      "totalBeforeDedup": 18,
+      "duplicatesRemoved": 9
+     },
+     "aspects": [
+      {
+       "key": "anc",
+       "positive": 3,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリング機能がある商品を探していたので助かりました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "ノイズキャンセリング機能を持っているこの商品は",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "ノイズキャンサリング機能もこの価格でこれなら問題ないと思う。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 3,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "イヤホンの音質も有線の同価格のものと比べて遜色はなく、かなりクリアーに聞くことができます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "音も良かったと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "とても良い音で大満足です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 5,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "機能、性能、品質、値段を考えるととても良い買い物ができました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "一万円以下の価格では申し分ない性能だと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        },
+        {
+         "text": "お安く手入り良かったです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "アプリも使い易くて良いです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "装着感も自分好みのイヤピースを選ぶことができ良かった。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/b41c556d5baaee81320b7781e9bbd6d3/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "cb0101de2de36b8662bf78cfb18b27cb",
+     "reviewsRead": 18,
+     "classifiedCount": 18,
+     "sources": {
+      "reviews": 18
+     },
+     "dedup": {
+      "totalBeforeDedup": 36,
+      "duplicatesRemoved": 18
+     },
+     "aspects": [
+      {
+       "key": "value",
+       "positive": 7,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "セールとはいえこれが1,480というのは恐ろしいコスパ",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "コスパが非常に良かったです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "お安くなっていたので再度購入しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 11,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "実際使ってみると音質も遅延も全く不満がない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "ドンシャリ系で好みの音",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "音感は悪くない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 4,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "イヤーピースが自分には大でも少しあわず",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "軽量で装着感も良好",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "つけ心地、音質共に申し分ないです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 1,
+       "negative": 5,
+       "quotes": [
+        {
+         "text": "装着時にタッチ操作になることあります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "タッチパネルがわかりにくいのと、少し触れてしまっただけで反応されてしまう",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "接続中にイヤホンに触れてしまうとoffになったり、使いにくい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 2,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "ペアリングも問題ない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "上手く接続できない事が多くストレスに感じる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        },
+        {
+         "text": "ペアリングも簡単でした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cb0101de2de36b8662bf78cfb18b27cb/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "cd6a9906806eec21fd2336caccac91b5",
+     "reviewsRead": 27,
+     "classifiedCount": 27,
+     "sources": {
+      "reviews": 27
+     },
+     "dedup": {
+      "totalBeforeDedup": 54,
+      "duplicatesRemoved": 27
+     },
+     "aspects": [
+      {
+       "key": "fit",
+       "positive": 9,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "使い心地もよく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "やや耳がいたい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "フィット感も良い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 0,
+       "negative": 3,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングに慣れているので、周りの音は気になります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "外部音入りまくりで良さがわからない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "外の音がうるさ過ぎて綺麗な音が台無し",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 3,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "お買い得だったので購入しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "高ポイント還元もまた魅力だったのでお得に購入できました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "価格も少し高い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 13,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質にそこまでこだわっていないですが、商品の説明通りで問題なく満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "高音質のものを探しまわった結果",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "音質はとてもいいですね",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "低音が凄い！低音好きの私には最高のイヤホンです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "Bluetoothの接続も早く",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "充電ケースが小さくなったのは素晴らしい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 0,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "ペアリングに少し手間かかりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        },
+        {
+         "text": "音量調整機能や操作が行えたり行えなかったりアプリによって変わるので一々操作がめんどいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/cd6a9906806eec21fd2336caccac91b5/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "d5f259d1eccbf0d27ee11229aaa66486",
+     "reviewsRead": 130,
+     "classifiedCount": 130,
+     "sources": {
+      "reviews": 130
+     },
+     "dedup": {
+      "totalBeforeDedup": 260,
+      "duplicatesRemoved": 130
+     },
+     "aspects": [
+      {
+       "key": "value",
+       "positive": 41,
+       "negative": 3,
+       "quotes": [
+        {
+         "text": "今まで買ったBluetoothイヤホンの中で最高のコスパ叩いてる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "コスパが良かったです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "値段も手頃でとても良かったです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 30,
+       "negative": 5,
+       "quotes": [
+        {
+         "text": "ノイキャン切っても遮音性高い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "外音が思った以上に遮断され",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "思っていたほどの効果は感じられず",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 7,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "低音域も弾むようで別世界",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "特に低音が厚い感じがします",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "低音重視といった感じ",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/3/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 13,
+       "negative": 4,
+       "quotes": [
+        {
+         "text": "フィット感も良く、装着を感じさせない自然さも気に入ってる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "装着感も外れることもなく（着替えの時は別ですが）軽いし良い感じです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "使い心地はいいみたいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "calls",
+       "positive": 3,
+       "negative": 5,
+       "quotes": [
+        {
+         "text": "相手の声が聞き取りやすく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "通話品質は正直そんなに良くなかった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "マイク性能も良く相手にもクリアーに聞こえている様です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 16,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "テストした中では遅延が一番少なかった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "遅延が少ないものが欲しかったので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "イヤホンと機器との接続に少し時間がかかりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 46,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "高温低音やらそんなにこだわらないので十分",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "音もとても良くて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "とっても聞こえやすくてよかったです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 4,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "バッテリーの持ちはとてもいいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "２年くらいでバッテリーがダメになり",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "充電の持ちもよく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/2/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 11,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "イヤホンのタッチ操作の反応はもう少し改善の余地がある",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "専用アプリは最新のiOSだと使い物になりません",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "操作などわかりづらいところがありました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/2/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 5,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "外音を取り込むモードがあり、イヤホンを聞きながらも周囲の声や音も聞きやすく便利",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/"
+        },
+        {
+         "text": "ノイキャンも外音取り込みも普通に使えます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/3/"
+        },
+        {
+         "text": "電車のアナウンスなどは問題なく聞こえます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/d5f259d1eccbf0d27ee11229aaa66486/review/3/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "de48fc4d6b10300f30e2d5679fd500fd",
+     "reviewsRead": 6,
+     "classifiedCount": 6,
+     "sources": {
+      "reviews": 6
+     },
+     "dedup": {
+      "totalBeforeDedup": 12,
+      "duplicatesRemoved": 6
+     },
+     "aspects": [
+      {
+       "key": "sound",
+       "positive": 3,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "右耳のイヤフォンから音が聞こえなくなりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        },
+        {
+         "text": "とても聴きやすいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        },
+        {
+         "text": "音質も低音の量に対して、中高音も潰れることなく好みでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "低価格で日本メーカーだったこちらを購入しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        },
+        {
+         "text": "量販店ではほぼ正規料金で売っているのにネットでは何故か安い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "connection",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "ペアリングも簡単で問題なく使えています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 1,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        },
+        {
+         "text": "購入目的だったanc、外音取り込みもしっかり機能しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質も低音の量に対して、中高音も潰れることなく好みでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "外音取り込みもしっかり機能しました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      },
+      {
+       "key": "controls",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/de48fc4d6b10300f30e2d5679fd500fd/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "e3e9d2fcfdc8b26b57752fa2c3f00dbc",
+     "reviewsRead": 4,
+     "classifiedCount": 4,
+     "sources": {
+      "reviews": 4
+     },
+     "dedup": {
+      "totalBeforeDedup": 8,
+      "duplicatesRemoved": 4
+     },
+     "aspects": [
+      {
+       "key": "anc",
+       "positive": 1,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングも緩い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e3e9d2fcfdc8b26b57752fa2c3f00dbc/review/"
+        },
+        {
+         "text": "初めてのノイキャンすごいと思いました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e3e9d2fcfdc8b26b57752fa2c3f00dbc/review/"
+        }
+       ]
+      },
+      {
+       "key": "sound",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "音もクリアでなく籠りがちに感じる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e3e9d2fcfdc8b26b57752fa2c3f00dbc/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "イヤホンの耳の穴入る部分がちょっと安っぽい感じがしました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e3e9d2fcfdc8b26b57752fa2c3f00dbc/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "e41a54fa59ad724b375979040baa8beb",
+     "reviewsRead": 4,
+     "classifiedCount": 4,
+     "sources": {
+      "reviews": 4
+     },
+     "dedup": {
+      "totalBeforeDedup": 8,
+      "duplicatesRemoved": 4
+     },
+     "aspects": [
+      {
+       "key": "sound",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "音質はワイヤレスイヤホンの最高峰の頂上めっちゃいい",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e41a54fa59ad724b375979040baa8beb/review/"
+        },
+        {
+         "text": "中高域がクリアになり 聴きやすくなっててビックリしました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e41a54fa59ad724b375979040baa8beb/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "外音取り込みが無いので普段使いが難しかったので REX5に乗り換えました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e41a54fa59ad724b375979040baa8beb/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "低音もちゃんと出てます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e41a54fa59ad724b375979040baa8beb/review/"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "productId": "e7e3a2269bfd2c54c440a3e27469c043",
+     "reviewsRead": 60,
+     "classifiedCount": 60,
+     "sources": {
+      "reviews": 60
+     },
+     "dedup": {
+      "totalBeforeDedup": 120,
+      "duplicatesRemoved": 60
+     },
+     "aspects": [
+      {
+       "key": "value",
+       "positive": 9,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "ワイヤレスイヤホンでは安価でも高価格でもなくと思い購入したけど残念?1年持たずにダメになりました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "Victorでこのお値段で音もよく上等品でした！",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "以前のイヤホンより安いのに",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        }
        ]
       },
       {
@@ -316,1347 +2153,504 @@
        "positive": 7,
        "negative": 1,
        "quotes": [
-        "今まで買ったワイヤレスイヤホンの中で最高の付け心地です。",
-        "耳に慣れるまでは少し時間がかかりましたが、大変満足しています。",
-        "付け替えできる部品がついており、バッチリフィットしました。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "バッテリーのもちは倍以上長くなりました。",
-        "バッテリーのもちは倍以上長くなりました。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 3,
-       "negative": 2,
-       "quotes": [
-        "値段も多少経済的な価格になっていますので、コストパフォーマンスは良いと思います。",
-        "クーポンと還元で安くなると思い購入。",
-        "お値段そこそこするので無くさないように気をつけたいと思います。"
+        {
+         "text": "片耳約4.2gととにかく軽いため、長時間の着用でも耳が痛くなりにくく快適です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "耳へのフィット感も良い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "とても軽いので持ち運びにも便利です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        }
        ]
       },
       {
        "key": "controls",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "タッチ操作の感度も良くストレス溜まりません。",
-        "タッチ操作の感度も良くストレス溜まりません。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "463cfbcf8bb646ee270c5fa0aaf26b2d",
-     "reviewsRead": 2,
-     "sources": {
-      "reviews": 1,
-      "shop-reviews": 1
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "音質が格段に良くなった。",
-        "音質が格段に良くなった。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "ノイズキャンセルは微かに効果を確認できる程度なので、不要だった。",
-        "ノイズキャンセルは微かに効果を確認できる程度なので、不要だった。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "バッテリー残量がケースで確認できるのが良い。",
-        "バッテリー残量がケースで確認できるのが良い。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "59e2037efd6006378ea69445f5f42a05",
-     "reviewsRead": 8,
-     "sources": {
-      "reviews": 5,
-      "shop-reviews": 3
-     },
-     "aspects": [
-      {
-       "key": "fit",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "耳を塞がないため長時間着けていても耳が痛くならず、周囲の音も自然に聞こえて安心です。",
-        "長時間着けていても耳が痛くならず"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 3,
-       "negative": 0,
-       "quotes": [
-        "周囲の音も自然に聞こえて安心です。",
-        "周囲の音も自然に聞こえて安心です"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "オープンイヤー型とは思えないほど低音もしっかり響き、クリアで広がりのあるサウンドを楽しめます。",
-        "オープンイヤー型とは思えないほど低音もしっかり響き"
-       ]
-      },
-      {
-       "key": "sound",
-       "positive": 5,
-       "negative": 0,
-       "quotes": [
-        "音質もオープンイヤーにしては凄く良く出ています。",
-        "クリアで広がりのあるサウンドを楽しめます",
-        "音質もオープンイヤーにしては凄く良く出ています。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "ノイキャン効果は、正直微妙。",
-        "いわゆるオープンイヤー型なのにノイズキャンセリング機能が付いているようなものなんですが 背景音だけうまく消して人の声などはちゃんと聞こえるように調整してくれる優れものです。"
-       ]
-      },
-      {
-       "key": "calls",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "有線マイクとあまり変わらない能力がありました。",
-        "GoogleMeet等で16bit、48kHzの送信が可能ですので 有線マイクとあまり変わらない能力がありました。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "フォーカスモードの持続時間が 通常時12時間稼働に対してオン時6時間稼働しかないので、うまくオンオフをコントロール する方法があれば、と思います。",
-        "フォーカスモードの持続時間が 通常時12時間稼働に対してオン時6時間稼働しかないので、うまくオンオフをコントロール する方法があれば、と思います。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 3,
-       "negative": 1,
-       "quotes": [
-        "下位グレードのオープンイヤーのイヤフォンに1万円追加で払う価値があるかと言われるとほとんど無いように感じた。",
-        "非常に満足度の高い買い物ができました。",
-        "買ってよかったです。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "637e1dd64912138092e4fb1b1de5a800",
-     "reviewsRead": 480,
-     "sources": {
-      "reviews": 300,
-      "shop-reviews": 180
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 196,
-       "negative": 14,
-       "quotes": [
-        "音質も予想以上です。",
-        "音がいいです。",
-        "今まで使用していたものより音質が良く、臨場感がありました。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 49,
-       "negative": 14,
-       "quotes": [
-        "耳も痛くならないし",
-        "耳へのフィット感がとても良く、操作性も良いです。",
-        "フィット感がとてもいいです。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 16,
-       "negative": 13,
-       "quotes": [
-        "結構充電も持つし良い買い物でした。",
-        "バッテリーの持ちがいい。",
-        "ノイキャンにしなければ電池もちも不足ありません。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 73,
-       "negative": 23,
-       "quotes": [
-        "ノイキャンが優れているので、ほぼ毎日使ってます。",
-        "ノイキャンが良くて耳の負担を下げられてると感じています。",
-        "ノイズキャンセリング機能凄いです！"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 13,
-       "negative": 5,
-       "quotes": [
-        "外音取り込みモードで使用しています。",
-        "両耳を装着してても、話しかけてくる人の声が聞こえて、最高です。",
-        "外部音取り込みもノイズキャンセリングも物足りないですが、値段を考慮すればよい商品です。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 25,
-       "negative": 13,
-       "quotes": [
-        "通信も安定しているのがわかります。",
-        "接続は一瞬で簡単だったのも良かったです。",
-        "接続も安定しているし、ノイキャンにしなければ電池もちも不足ありません。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 47,
-       "negative": 21,
-       "quotes": [
-        "アプリで管理できて、カスタマイズしてとても使いやすい。",
-        "操作性も良いです。",
-        "操作も簡単で使いやすいです。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 102,
-       "negative": 5,
-       "quotes": [
-        "少し安く買えるタイミングだったので大満足です！",
-        "安くなっていたのでお買い得でした。",
-        "クーポンを使用して安く手に入ったのでよかったです。"
-       ]
-      },
-      {
-       "key": "calls",
-       "positive": 0,
+       "positive": 15,
        "negative": 6,
        "quotes": [
-        "音質、特に通話とかはAirPodsのほうがクリアな気もしますが",
-        "通話時に相手から声がこもっていると一度言われたため星4つです！",
-        "『外部取り込み』と『マイク性能』はかなり微妙なので、あまり期待しない方が良いかなと思います。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 11,
-       "negative": 1,
-       "quotes": [
-        "特に低音とサラウンドが良いです。",
-        "もうイヤホンの常識を覆す重低音に大満足です。",
-        "音楽を聴くのが好きで、特に重低音の効いた音が好きなのですが、好みのイヤフォンでした。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "78177f274eb2c529b5f29b430244b85f",
-     "reviewsRead": 4,
-     "sources": {
-      "reviews": 2,
-      "shop-reviews": 2
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 6,
-       "negative": 0,
-       "quotes": [
-        "音質は最高です！",
-        "音質は最高です！"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "お値段は高めだが",
-        "お値段は高めだが"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "821de2ea4d103ede4bb09e3d80df3015",
-     "reviewsRead": 241,
-     "sources": {
-      "reviews": 129,
-      "shop-reviews": 112
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 97,
-       "negative": 8,
-       "quotes": [
-        "音質は良いです。",
-        "想像よりも音が良くて",
-        "音質が良くてちょっといい大きさ大変満足します。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 3,
-       "negative": 6,
-       "quotes": [
-        "低音が そこまで重みが ないような気がします",
-        "重低音好きなのでこちらの商品はどうなのかな？と思っていましたがとても良いです！",
-        "音は800Nの方が低音が効いて好みですが、息子たちは十分だと言ってます"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 33,
-       "negative": 26,
-       "quotes": [
-        "私の右耳にフィットしないので、じっとしてても度々落とすことです。",
-        "耳から落ちそうって感じは常にあります。",
-        "自分の耳にもフィットして、長時間使用しても痛くなりません。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 59,
-       "negative": 21,
-       "quotes": [
-        "ノイズキャンセリングが優秀なところです。",
-        "ノイキャンが弱過ぎる。",
-        "ノイズキャンセリング機能はすごいと感じました。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 18,
-       "negative": 3,
-       "quotes": [
-        "外音取り込みとノイキャンをワンタッチで切り替えられるのはいいなと思います。",
-        "外音コントロールも上手く音を拾い住宅街を歩く時には車等に気付けるレベルでした。",
-        "外さずに会話ができて快適でした。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 13,
-       "negative": 16,
-       "quotes": [
-        "充電の減りは結構早い気がします。",
-        "バッテリーのもちもよく。",
-        "ただ新品なので充電の持ちは最高にいいです。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 3,
-       "negative": 13,
-       "quotes": [
-        "毎回接続設定しないといけないのだるすぎ。",
-        "時々音が途切れたり止まったりします、そこがちょっと気になる部分です",
-        "毎日常に付けているくらいの頻度で使用しているが買った時から片耳しか接続されなかったり充電されなかったりって問題が頻発してる。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 16,
-       "negative": 14,
-       "quotes": [
-        "期待通りの操作性、機能性です。",
-        "少し、操作を覚えるのに慣れるまで大変",
-        "前のより軽く操作も楽だと思いました。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 34,
-       "negative": 10,
-       "quotes": [
-        "クーポンも使えたのでお得感はかなりあります。",
-        "1万円台なのに高コストパフォーマンスなノイズキャンセリングが搭載されており，満足しています。",
-        "安くなった時に購入できてラッキーでした。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "97550ceff7083dbbaa5f5efe6b00065c",
-     "reviewsRead": 12,
-     "sources": {
-      "reviews": 6,
-      "shop-reviews": 6
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 6,
-       "negative": 1,
-       "quotes": [
-        "YouTubeを聞く分には全く音質も問題ありません。",
-        "YouTubeを聞く分には全く音質も問題ありません。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "音質も低音の量に対して、中高音も潰れることなく好みでした。",
-        "音質も低音の量に対して、中高音も潰れることなく好みでした。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります。",
-        "ただ、ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "購入目的だったanc、外音取り込みもしっかり機能しました。",
-        "また購入目的だったanc、外音取り込みもしっかり機能しました。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "買って2ヶ月で右耳のイヤフォンから音が聞こえなくなりました。",
-        "買って2ヶ月で右耳のイヤフォンから音が聞こえなくなりました。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品。",
-        "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 3,
-       "negative": 0,
-       "quotes": [
-        "量販店ではほぼ正規料金で売っているのにネットでは何故か安いので商品自体は問題なかろう、とこちらを検索。",
-        "量販店ではほぼ正規料金で売っているのにネットでは何故か安いので商品自体は問題なかろう、とこちらを検索。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "992396b45314c77be0cfb3c482e8ad07",
-     "reviewsRead": 6,
-     "sources": {
-      "reviews": 3,
-      "shop-reviews": 3
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 3,
-       "negative": 0,
-       "quotes": [
-        "とても、太鼓の音の迫力を感じられます。",
-        "とても、太鼓の音の迫力を感じられます。",
-        "頭を動かすと音がなっている方向が変わるような臨場感！"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "重低音がすごいです。",
-        "重低音がすごいです。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "耳の負担なし！",
-        "耳の負担なし！"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 4,
-       "negative": 0,
-       "quotes": [
-        "家で使ってても娘の話しができる。",
-        "家で使ってても娘の話しができる。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 1,
-       "negative": 2,
-       "quotes": [
-        "お高い商品なので探す機能がないのがとても残念。。。",
-        "買ってよかた！",
-        "お高い商品なので探す機能がないのがとても残念。。。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "b41c556d5baaee81320b7781e9bbd6d3",
-     "reviewsRead": 18,
-     "sources": {
-      "reviews": 9,
-      "shop-reviews": 9
-     },
-     "aspects": [
-      {
-       "key": "anc",
-       "positive": 6,
-       "negative": 0,
-       "quotes": [
-        "ノイズキャンサリング機能もこの価格でこれなら問題ないと思う。",
-        "ノイズキャンサリング機能もこの価格でこれなら問題ないと思う。"
+        {
+         "text": "ワンタッチでマイクミュートができる点や、片耳だけでも使えるのが本当に便利です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "左右どちらでも片耳で使える 便利なので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "操作はシンプルで簡単そうです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        }
        ]
       },
       {
        "key": "sound",
-       "positive": 10,
-       "negative": 0,
-       "quotes": [
-        "イヤホンの音質も有線の同価格のものと比べて遜色はなく、かなりクリアーに聞くことができます。",
-        "イヤホンの音質も有線の同価格のものと比べて遜色はなく、かなりクリアーに聞くことができます。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "アプリも使い易くて良いです。",
-        "アプリも使い易くて良いです。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "装着感も自分好みのイヤピースを選ぶことができ良かった。",
-        "装着感も自分好みのイヤピースを選ぶことができ良かった。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 8,
-       "negative": 0,
-       "quotes": [
-        "一万円以下の価格では申し分ない性能だと思います。",
-        "値段以上の性能をしており、購入して損はしないと思った。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "cb0101de2de36b8662bf78cfb18b27cb",
-     "reviewsRead": 36,
-     "sources": {
-      "reviews": 18,
-      "shop-reviews": 18
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 22,
-       "negative": 0,
-       "quotes": [
-        "この価格帯ではとびぬけた高音質で大変気に入っています。",
-        "実際使ってみると音質も遅延も全く不満がない。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 1,
-       "negative": 0,
-       "quotes": [
-        "ドンシャリ系で好みの音でコスパが非常に良かったです。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 6,
+       "positive": 21,
        "negative": 4,
        "quotes": [
-        "ただイヤーピースが自分には大でも少しあわず、他のイヤーピースをつけるとケースに収まらなくないため付け方を考えないといけないと思いました",
-        "ただイヤーピースが自分には大でも少しあわず、他のイヤーピースをつけるとケースに収まらなくないため付け方を考えないといけないと思いました"
+        {
+         "text": "音質も良いです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "音質や耳へのフィット感も良い",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "音量もとても良いと思いました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        }
        ]
       },
       {
        "key": "connection",
-       "positive": 5,
-       "negative": 4,
-       "quotes": [
-        "私のスマホ(Android)との相性が悪いのか、上手く接続できない事が多くストレスに感じる。",
-        "私のスマホ(Android)との相性が悪いのか、上手く接続できない事が多くストレスに感じる。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 1,
-       "negative": 7,
-       "quotes": [
-        "タッチパネルがわかりにくいのと、少し触れてしまっただけで反応されてしまう（タッチパネルの感度が良すぎる？）部分が使いやすければ★5",
-        "タッチパネルがわかりにくいのと、少し触れてしまっただけで反応されてしまう（タッチパネルの感度が良すぎる？）部分が使いやすければ★5"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 17,
-       "negative": 0,
-       "quotes": [
-        "セールとはいえこれが1,480というのは恐ろしいコスパ。",
-        "セールとはいえこれが1,480というのは恐ろしいコスパ。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "cd6a9906806eec21fd2336caccac91b5",
-     "reviewsRead": 33,
-     "sources": {
-      "reviews": 29,
-      "shop-reviews": 4
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 14,
-       "negative": 0,
-       "quotes": [
-        "音質も良く周りの音も聞こえるので街中でも安心。",
-        "音質も良く周りの音も聞こえるので街中でも安心。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "低音が凄い！低音好きの私には最高のイヤホンです！"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 12,
-       "negative": 3,
-       "quotes": [
-        "長時間着けて過ごしても痛くならず、ズレ等でもジョギング程度なら問題なし。",
-        "カナル型だと長時間付けていると耳の中が痒くなることも多々あり今回は耳の穴を塞がないイヤーカフを選択。",
-        "使い心地もよく問題ありません。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "ノイズキャンセルに慣れすぎてか外部音入りまくりで良さがわからない。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 4,
-       "negative": 1,
-       "quotes": [
-        "耳を塞がないので周囲の音を確認しながら音楽を楽しめます。",
-        "音質も良く周りの音も聞こえるので街中でも安心。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 1,
-       "negative": 2,
-       "quotes": [
-        "一度つながらなくなったことがあったが再設定で復帰。",
-        "一度つながらなくなったことがあったが再設定で復帰。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 1,
-       "negative": 2,
-       "quotes": [
-        "音量調整機能や操作が行えたり行えなかったりアプリによって変わるので一々操作がめんどいです。",
-        "耳を塞がないので使い勝手OKです"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 4,
-       "negative": 1,
-       "quotes": [
-        "価格も少し高いけど 満足度は高い",
-        "購入して正解でした！"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "d5f259d1eccbf0d27ee11229aaa66486",
-     "reviewsRead": 260,
-     "sources": {
-      "reviews": 130,
-      "shop-reviews": 130
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 95,
-       "negative": 8,
-       "quotes": [
-        "音質が良く、相手の声が聞き取りやすく、良い商品だと思います。",
-        "音質は良いが操作などわかりづらいところがありました。",
-        "この価格でこの音質はコスパありだと思います。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 11,
-       "negative": 2,
-       "quotes": [
-        "特に低音が厚い感じがします。",
-        "低音重視といった感じですが、イコライザで自分好みに変更しました。",
-        "部屋で聞いていた時は低音が大き過ぎると思いましたが、外ではちょうどいいくらいでした。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 23,
-       "negative": 13,
-       "quotes": [
-        "フィット感も良く、装着を感じさせない自然さも気に入ってる",
-        "耳装着時の安定性も最悪。",
-        "装着感はイマイチです。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 53,
-       "negative": 11,
-       "quotes": [
-        "ノイズキャンセリングがバッチリで気に入っています。",
-        "ノイズキャンセリング機能や音質は十分だと思います。",
-        "ノイズキャンセルはテレビの人の声は拾ってしまうようですが、許容範囲内です。"
-       ]
-      },
-      {
-       "key": "ambient",
        "positive": 9,
-       "negative": 0,
-       "quotes": [
-        "外音を取り込むモードがあり、イヤホンを聞きながらも周囲の声や音も聞きやすく便利みたいです。",
-        "ノイキャンも外音取り込みも普通に使えます。",
-        "また外音取り込みモードでは周囲の声も聞こえるようになります。"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 6,
-       "negative": 0,
-       "quotes": [
-        "バッテリーの持ちはとてもいいです。",
-        "充電の持ちもよく、すぐ携帯に繋がるので助かります！音もよいです！",
-        "音質もいいし充電の持ちもいいです！"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 19,
-       "negative": 12,
-       "quotes": [
-        "Bluetoothに繋がり易く音質も金額の割には 凄く良かったです。",
-        "ですが、ケースに収納しても、しばらくBluetoothが切れず、スマホのBluetoothをオフにするような操作を行なっています。",
-        "Bluetoothの繋がりも早く音質もそこそこ良くて満足できます。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 16,
-       "negative": 8,
-       "quotes": [
-        "イヤホンのタッチ操作の反応はもう少し改善の余地があると思いますが、許容範囲だと思います。",
-        "音質は良いが操作などわかりづらいところがありました。",
-        "欲を言えばタッチセンサーの感度をもう少し良くしてもらいたいです。"
-       ]
-      },
-      {
-       "key": "calls",
-       "positive": 2,
-       "negative": 8,
-       "quotes": [
-        "通話品質は正直そんなに良くなかったですが、テストした中では遅延が一番少なかったです。",
-        "スピーカー音質は悪いわマイク音質は悪いわ、マルチポイント以外いいところがない。",
-        "通話はオマケ程度の性能です。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 87,
        "negative": 6,
        "quotes": [
-        "今まで買ったBluetoothイヤホンの中で最高のコスパ叩いてる。",
-        "コスパがいいと評判だったので購入しました。",
-        "1万円以下でこのクオリティはコスパ最強です。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "de48fc4d6b10300f30e2d5679fd500fd",
-     "reviewsRead": 12,
-     "sources": {
-      "reviews": 6,
-      "shop-reviews": 6
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 6,
-       "negative": 1,
-       "quotes": [
-        "YouTubeを聞く分には全く音質も問題ありません。",
-        "YouTubeを聞く分には全く音質も問題ありません。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "音質も低音の量に対して、中高音も潰れることなく好みでした。",
-        "音質も低音の量に対して、中高音も潰れることなく好みでした。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります。",
-        "ただ、ノイズキャンセリング？モードの時にジジジといった雑音や音割れを感じる時があります。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "購入目的だったanc、外音取り込みもしっかり機能しました。",
-        "また購入目的だったanc、外音取り込みもしっかり機能しました。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "買って2ヶ月で右耳のイヤフォンから音が聞こえなくなりました。",
-        "買って2ヶ月で右耳のイヤフォンから音が聞こえなくなりました。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品。",
-        "イヤホンをタッチで、ある程度メニュー操作も出来るし、慣れたら凄く使い勝手がいい商品。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 3,
-       "negative": 0,
-       "quotes": [
-        "量販店ではほぼ正規料金で売っているのにネットでは何故か安いので商品自体は問題なかろう、とこちらを検索。",
-        "量販店ではほぼ正規料金で売っているのにネットでは何故か安いので商品自体は問題なかろう、とこちらを検索。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "e3e9d2fcfdc8b26b57752fa2c3f00dbc",
-     "reviewsRead": 8,
-     "sources": {
-      "reviews": 4,
-      "shop-reviews": 4
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "色も音もいい♪",
-        "音もクリアでなく籠りがちに感じる。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 2,
-       "negative": 2,
-       "quotes": [
-        "初めてのノイキャンすごいと思いました。",
-        "ノイズキャンセリングも緩いし音もクリアでなく籠りがちに感じる。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "イヤホンの耳の穴入る部分がちょっと安っぽい感じがしました。",
-        "イヤホンの耳の穴入る部分がちょっと安っぽい感じがしました。"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "e41a54fa59ad724b375979040baa8beb",
-     "reviewsRead": 8,
-     "sources": {
-      "reviews": 4,
-      "shop-reviews": 4
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 5,
-       "negative": 0,
-       "quotes": [
-        "音質はワイヤレスイヤホンの最高峰の頂上めっちゃいいから買ったほうがいい。",
-        "中高域がクリアになり 聴きやすくなっててビックリしました。"
-       ]
-      },
-      {
-       "key": "ambient",
-       "positive": 1,
-       "negative": 1,
-       "quotes": [
-        "外音取り込みが無いので普段使いが難しかったので REX5に乗り換えました",
-        "今まではFoKus PRO使ってましたが外音取り込みが無いので普段使いが難しかったので REX5に乗り換えました"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "低音もちゃんと出てます。",
-        "低音もちゃんと出てます。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 1,
-       "negative": 1,
-       "quotes": [
-        "お高いけど 音は言うことないです！",
-        "お高いけど 音は言うことないです！"
-       ]
-      }
-     ]
-    },
-    {
-     "productId": "e7e3a2269bfd2c54c440a3e27469c043",
-     "reviewsRead": 120,
-     "sources": {
-      "reviews": 60,
-      "shop-reviews": 60
-     },
-     "aspects": [
-      {
-       "key": "sound",
-       "positive": 51,
-       "negative": 8,
-       "quotes": [
-        "音質も良いです。",
-        "音質は非常に満足です。",
-        "音質が良くコンパクトで気に入りました。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 13,
-       "negative": 3,
-       "quotes": [
-        "片耳約4.2gととにかく軽いため、長時間の着用でも耳が痛くなりにくく快適です。",
-        "耳にうまくフィットしない。",
-        "長時間の着用でも耳が痛くなりにくく快適です。"
-       ]
-      },
-      {
-       "key": "connection",
-       "positive": 6,
-       "negative": 12,
-       "quotes": [
-        "接触が悪いのか、ケースに閉まっているのにBluetooth接続されてしまう事が多々あり残念",
-        "ただ、途切れる事がたまにあります。",
-        "ただ、途切れる事がたまにあります。"
-       ]
-      },
-      {
-       "key": "controls",
-       "positive": 25,
-       "negative": 9,
-       "quotes": [
-        "操作はシンプルで簡単そうです。",
-        "メカ音痴の方には、本体のタッチ操作にまごついてしまう可能性がありますが、特に気になるマイナス点はありません。",
-        "ワンタッチでマイクミュートができる点や、片耳だけでも使えるのが本当に便利です。"
+        {
+         "text": "接触が悪いのか、ケースに閉まっているのにBluetooth接続されてしまう事が多々あり残念",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "途中で片耳だけ途切れたりして不安定になることが頻回だと感じます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "簡単に接続出来て",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        }
        ]
       },
       {
        "key": "battery",
-       "positive": 5,
-       "negative": 2,
+       "positive": 4,
+       "negative": 1,
        "quotes": [
-        "3時間ほどで、充電してくださいと言われるけど、こんなもの？？？？",
-        "最大24時間再生はよろしいかと。",
-        "3時間ほどで、充電してくださいと言われるけど、こんなもの？？？？"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 23,
-       "negative": 2,
-       "quotes": [
-        "デザイン・価格共満足しています。",
-        "コスパ良い商品だと思います。",
-        "1年持たずにダメになりました。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 0,
-       "negative": 2,
-       "quotes": [
-        "ただ、ちょっとBassモードが強すぎる印象があります。",
-        "ただ、ちょっとBassモードが強すぎる印象があります。"
+        {
+         "text": "3時間ほどで、充電してくださいと言われるけど、こんなもの？？？？",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/"
+        },
+        {
+         "text": "長い時間でしたが問題なくずっと使えました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/2/"
+        },
+        {
+         "text": "最大24時間再生はよろしいかと。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/2/"
+        }
        ]
       },
       {
        "key": "calls",
-       "positive": 0,
-       "negative": 2,
+       "positive": 1,
+       "negative": 1,
        "quotes": [
-        "街中での通話は周りの音を拾い過ぎて声が聞こえないと言われました。",
-        "街中での通話は周りの音を拾い過ぎて声が聞こえないと言われました。"
+        {
+         "text": "街中での通話は周りの音を拾い過ぎて声が聞こえないと言われました。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/2/"
+        },
+        {
+         "text": "通話も可能とのことなので活用したいです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e7e3a2269bfd2c54c440a3e27469c043/review/2/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "e89650d6cd6325e9c070a96a8996da12",
-     "reviewsRead": 346,
+     "reviewsRead": 173,
+     "classifiedCount": 173,
      "sources": {
-      "reviews": 173,
-      "shop-reviews": 173
+      "reviews": 173
+     },
+     "dedup": {
+      "totalBeforeDedup": 346,
+      "duplicatesRemoved": 173
      },
      "aspects": [
       {
+       "key": "value",
+       "positive": 42,
+       "negative": 5,
+       "quotes": [
+        {
+         "text": "お得に買えて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "値段以上です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "値段が安いので、全然期待していなかったですが、思ってたよりも数倍良い商品でした。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
+       ]
+      },
+      {
        "key": "sound",
-       "positive": 86,
-       "negative": 7,
+       "positive": 40,
+       "negative": 5,
        "quotes": [
-        "お得に買えてこの音質は、すごく嬉しい買い物ができました。",
-        "音も良く満足しています。",
-        "安いのに、音が悪くなく良かったです。"
-       ]
-      },
-      {
-       "key": "bass",
-       "positive": 9,
-       "negative": 0,
-       "quotes": [
-        "しかもお安いお値段なのに重低音はAirPodsプロよりもずっと良い。",
-        "低音が効いてる。",
-        "音は低音もしっかり聴こえてとても満足しています"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 35,
-       "negative": 16,
-       "quotes": [
-        "安くて軽くて違和感なくとても満足しています",
-        "耳へのフィット感がとてもいいです。",
-        "残念ながら、私の耳の中に入りませんでしたので、使えませんでした。"
-       ]
-      },
-      {
-       "key": "anc",
-       "positive": 3,
-       "negative": 3,
-       "quotes": [
-        "ただノイズキャンセリングと説明書に明記していたが回りのノイズが聴こえてくる。",
-        "ノイキャンでタッチセンサーもありがたい！",
-        "ノイキャンでタッチセンサーもありがたい！"
-       ]
-      },
-      {
-       "key": "battery",
-       "positive": 10,
-       "negative": 20,
-       "quotes": [
-        "充電も結構保つし、ペアリングも簡単でした。",
-        "充電かなりもちます。",
-        "ケースに入れておいても充電出来ていなかったりすることが時々あります"
+        {
+         "text": "この音質は、すごく嬉しい買い物ができました。今まで使っていたイヤフォンより格段に良かったです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "音が鮮明で良く聴こえます。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "思ったより音質が良く気に入ってます",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
        ]
       },
       {
        "key": "connection",
-       "positive": 29,
-       "negative": 58,
+       "positive": 15,
+       "negative": 23,
        "quotes": [
-        "接続が上手くいかない。何度もすぐに途切れる。",
-        "Bluetoothにつないでも、左耳だけすぐに聞こえなくなります。",
-        "音楽を流している途中でブツブツと時折途切れます。"
+        {
+         "text": "接続が上手くいかない。何度もすぐに途切れる。 接続やり直ししても繋がらなかった。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "すぐ途切れる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "途中で片方だけ切れることはありません。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 19,
+       "negative": 6,
+       "quotes": [
+        {
+         "text": "軽くて違和感なく",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "口など顔が少し動くだけでイヤフォンのポジションが、ズレる。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "エクササイズしていても落ちないので優秀です。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
+       ]
+      },
+      {
+       "key": "anc",
+       "positive": 4,
+       "negative": 2,
+       "quotes": [
+        {
+         "text": "ノイズキャンセリングと説明書に明記していたが回りのノイズが聴こえてくる。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "意外と周りの音が聞こえにくい。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/2/"
+        },
+        {
+         "text": "ノイズキャンセリングは付いてないみたいです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/5/"
+        }
        ]
       },
       {
        "key": "controls",
-       "positive": 25,
-       "negative": 32,
+       "positive": 18,
+       "negative": 17,
        "quotes": [
-        "1タップで再生・停止ができ使い勝手がいい。",
-        "タッチの感度も良すぎるくらいです。",
-        "タッチ操作での操作性に難があり、装着感を修正しようと少し触るとそれがタッチ操作と判断されあらぬ動きをするのは日常茶飯事。"
+        {
+         "text": "操作も簡単で使いやすいです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "1タップで再生・停止ができ使い勝手がいい。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "商品の使い心地もよく満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
+       ]
+      },
+      {
+       "key": "battery",
+       "positive": 6,
+       "negative": 16,
+       "quotes": [
+        {
+         "text": "充電も初めは長く持っていたが、1年経たずにもちが悪くなった",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "充電も結構保つし",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "3ヶ月たちました 壊れました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        }
+       ]
+      },
+      {
+       "key": "bass",
+       "positive": 5,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "重低音はAirPodsプロよりもずっと良い。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/"
+        },
+        {
+         "text": "低音が効いてる。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/2/"
+        },
+        {
+         "text": "立ち上がりが速くキレもそこそこあるので",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/5/"
+        }
        ]
       },
       {
        "key": "calls",
-       "positive": 12,
-       "negative": 4,
+       "positive": 6,
+       "negative": 1,
        "quotes": [
-        "通話の自分と相手の聞こえ具合も以前の機種もEP-T21Sもどちらも良いです",
-        "通話も問題なし。",
-        "マイクも問題なく使えたし、金額、カラー、機能、総合的にサブ機として満足です。"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 83,
-       "negative": 11,
-       "quotes": [
-        "値段以上です。",
-        "商品の価格・品質ともに大満足の商品です。",
-        "1000円と思えないぐらい音質よかったです！"
+        {
+         "text": "通話も問題なし。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/2/"
+        },
+        {
+         "text": "マイクも問題なく使えたし",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/3/"
+        },
+        {
+         "text": "マイク内蔵なのでスマホの着信通話にとても便利です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/e89650d6cd6325e9c070a96a8996da12/review/3/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "ecb1d7cbed7a9ec0efae960396330da6",
-     "reviewsRead": 14,
+     "reviewsRead": 7,
+     "classifiedCount": 7,
      "sources": {
-      "reviews": 7,
-      "shop-reviews": 7
+      "reviews": 7
+     },
+     "dedup": {
+      "totalBeforeDedup": 14,
+      "duplicatesRemoved": 7
      },
      "aspects": [
       {
        "key": "connection",
-       "positive": 2,
-       "negative": 2,
+       "positive": 1,
+       "negative": 1,
        "quotes": [
-        "PC、iPhone、iPad どの機器ともペアリングできません。",
-        "PC、iPhone、iPad どの機器ともペアリングできません。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 4,
-       "negative": 0,
-       "quotes": [
-        "装着感や音質はとても良いと思います。",
-        "装着感や音質はとても良いと思います。"
+        {
+         "text": "PC、iPhone、iPad どの機器ともペアリングできません",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "既存、新規ともに PC、iPhone、iPadすべてOKです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
        ]
       },
       {
        "key": "controls",
-       "positive": 1,
-       "negative": 3,
+       "positive": 2,
+       "negative": 1,
        "quotes": [
-        "ケースからイヤホンを取り出すとき指が何回もすべってイラっとすることです",
-        "ケースからイヤホンを取り出すとき指が何回もすべってイラっとすることです"
+        {
+         "text": "ケースからイヤホンを取り出すとき指が何回もすべってイラっとすることです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "思った以上に音質、使いやすさに満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "充電器から出しにくいと聞いてましたが、気になりませんでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
        ]
       },
       {
        "key": "ambient",
-       "positive": 4,
+       "positive": 2,
        "negative": 0,
        "quotes": [
-        "音の取り込みオンオフが便利でした。",
-        "音の取り込みオンオフが便利でした。"
+        {
+         "text": "音の取り込みオンオフが便利でした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "イヤホンを外さずに外音を取り込める点が気に入っています",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "装着感や音質はとても良いと思います",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "耳から落ちる感じもなく、試してはないですが走っても問題無さそうです",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
        ]
       },
       {
        "key": "sound",
-       "positive": 6,
-       "negative": 2,
+       "positive": 3,
+       "negative": 1,
        "quotes": [
-        "強いて言えば音質も良いですが、期待しすぎたせいか、思ってたほどではなかったかなという感じです",
-        "音質は求めていたもの以上で、遮音性に優れている点とイヤホンを外さずに外音を取り込める点が気に入っています。"
+        {
+         "text": "装着感や音質はとても良いと思います",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "思った以上に音質、使いやすさに満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        },
+        {
+         "text": "音質は求めていたもの以上で",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
        ]
       },
       {
        "key": "battery",
        "positive": 0,
-       "negative": 2,
+       "negative": 1,
        "quotes": [
-        "左イヤホンの連続再生時間が5時間から2時間弱へ減ってしまいました",
-        "左イヤホンの連続再生時間が5時間から2時間弱へ減ってしまいました"
+        {
+         "text": "左イヤホンの連続再生時間が5時間から2時間弱へ減ってしまいました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/ecb1d7cbed7a9ec0efae960396330da6/review/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "f06092aefa6fce901eb1b4a471ea1dd7",
-     "reviewsRead": 2,
+     "reviewsRead": 1,
+     "classifiedCount": 1,
      "sources": {
-      "reviews": 1,
-      "shop-reviews": 1
+      "reviews": 1
+     },
+     "dedup": {
+      "totalBeforeDedup": 2,
+      "duplicatesRemoved": 1
      },
      "aspects": [
       {
        "key": "sound",
-       "positive": 2,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "音はかなり良いです。",
-        "音はかなり良いです。"
+        {
+         "text": "音はかなり良いです。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f06092aefa6fce901eb1b4a471ea1dd7/review/"
+        }
        ]
       },
       {
        "key": "fit",
-       "positive": 2,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "重さもほとんどないので、ロードバイクでも問題ないと思います。",
-        "重さもほとんどないので、ロードバイクでも問題ないと思います。"
+        {
+         "text": "重さもほとんどないので、ロードバイクでも問題ないと思います。",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f06092aefa6fce901eb1b4a471ea1dd7/review/"
+        }
        ]
       }
      ]
     },
     {
      "productId": "f8e292b282c63b30122845af559ff56c",
-     "reviewsRead": 14,
+     "reviewsRead": 7,
+     "classifiedCount": 7,
      "sources": {
-      "reviews": 7,
-      "shop-reviews": 7
+      "reviews": 7
+     },
+     "dedup": {
+      "totalBeforeDedup": 14,
+      "duplicatesRemoved": 7
      },
      "aspects": [
       {
        "key": "sound",
-       "positive": 5,
-       "negative": 0,
-       "quotes": [
-        "音がとても良くて、買って良かったです。",
-        "音がとても良くて、買って良かったです。",
-        "Best quality sound and material!"
-       ]
-      },
-      {
-       "key": "bass",
        "positive": 2,
        "negative": 0,
        "quotes": [
-        "低音域のバランスが凄く良くなりました。",
-        "Buds3からの買い換えですが、低音域のバランスが凄く良くなりました。"
-       ]
-      },
-      {
-       "key": "fit",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "耳が疲れない",
-        "耳が疲れない"
+        {
+         "text": "音がとても良くて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        },
+        {
+         "text": "Best quality sound",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
        ]
       },
       {
        "key": "anc",
-       "positive": 4,
+       "positive": 2,
        "negative": 0,
        "quotes": [
-        "ノイズキャンセリングも初めて体験したのですが、電車の音、人の話し声などほとんど聞こえませんでした。",
-        "ノイズキャンセリングもしっかりしてて満足",
-        "ノイズキャンセリングも初めて体験したのですが、電車の音、人の話し声などほとんど聞こえませんでした。"
+        {
+         "text": "ノイズキャンセリングもしっかりしてて",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        },
+        {
+         "text": "ノイズキャンセリングも初めて体験したのですが、電車の音、人の話し声などほとんど聞こえませんでした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
        ]
       },
       {
-       "key": "ambient",
-       "positive": 0,
-       "negative": 2,
+       "key": "bass",
+       "positive": 1,
+       "negative": 0,
        "quotes": [
-        "イヤフォンをタッチし一時停止し、さらに長押しで外音取込みモードにするのが少しだけ面倒でした。",
-        "イヤフォンをタッチし一時停止し、さらに長押しで外音取込みモードにするのが少しだけ面倒でした。"
+        {
+         "text": "低音域のバランスが凄く良くなりました",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
        ]
       },
       {
        "key": "connection",
-       "positive": 3,
+       "positive": 1,
        "negative": 0,
        "quotes": [
-        "スマホもタブレットもGalaxy なので接続がスムーズで取り扱いやすさも最高です♪",
-        "本体はAppleですが、Bluetoothイヤホンで問題なく、聴けます。",
-        "スマホもタブレットもGalaxy なので接続がスムーズで取り扱いやすさも最高です♪"
-       ]
-      },
-      {
-       "key": "value",
-       "positive": 2,
-       "negative": 0,
-       "quotes": [
-        "高い買い物でしたが大変満足です。",
-        "高い買い物でしたが大変満足です。"
+        {
+         "text": "接続がスムーズ",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
        ]
       },
       {
@@ -1664,10 +2658,63 @@
        "positive": 1,
        "negative": 0,
        "quotes": [
-        "性能が断然良い 使いやすい"
+        {
+         "text": "取り扱いやすさも最高です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
+       ]
+      },
+      {
+       "key": "fit",
+       "positive": 2,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "耳が疲れない",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        },
+        {
+         "text": "耳にちゃんと装着出来てるかセンサーで反応してくれる",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
+       ]
+      },
+      {
+       "key": "ambient",
+       "positive": 0,
+       "negative": 1,
+       "quotes": [
+        {
+         "text": "一時停止した時に外音取込みモードにならないことです。イヤフォンをタッチし一時停止し、さらに長押しで外音取込みモードにするのが少しだけ面倒でした",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
+       ]
+      },
+      {
+       "key": "value",
+       "positive": 1,
+       "negative": 0,
+       "quotes": [
+        {
+         "text": "高い買い物でしたが大変満足です",
+         "reviewUrl": "https://product.rakuten.co.jp/product/-/f8e292b282c63b30122845af559ff56c/review/"
+        }
        ]
       }
      ]
+    },
+    {
+     "productId": "f91aa1ca6ce1c7c17790dbf613add38a",
+     "reviewsRead": 1,
+     "classifiedCount": 1,
+     "sources": {
+      "reviews": 1
+     },
+     "dedup": {
+      "totalBeforeDedup": 2,
+      "duplicatesRemoved": 1
+     },
+     "aspects": []
     }
    ]
   }
