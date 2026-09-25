@@ -11,8 +11,10 @@
  */
 export type AspectDefinition = {
   key: string;
-  /** 抽出プロンプトとバーに出る名前。 */
+  /** 抽出プロンプトに渡す名前。 */
   label: string;
+  /** 画面に出す日常の言葉（装着感 → つけ心地）。抽出には使わない。無ければ label。 */
+  word?: string;
   /** 評価が肯定に振れる側の言葉。図の極になる。 */
   positivePole: string;
   /** その反対側。「悪い」ではなく「割れている」を表す言葉にする。 */
@@ -47,16 +49,16 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
     id: "earbuds",
     label: "完全ワイヤレスイヤホン",
     aspects: [
-      { key: "sound", label: "音質", positivePole: "音が良い", negativePole: "音に不満" },
-      { key: "bass", label: "低音", positivePole: "低音が出る", negativePole: "低音が物足りない" },
-      { key: "fit", label: "装着感", positivePole: "つけ心地が良い", negativePole: "合わない人がいる" },
-      { key: "anc", label: "ノイズキャンセリング", positivePole: "静かになる", negativePole: "効かない" },
-      { key: "ambient", label: "外音取り込み", positivePole: "外がよく聞こえる", negativePole: "不自然" },
-      { key: "battery", label: "バッテリー", positivePole: "長く持つ", negativePole: "持たない" },
-      { key: "connection", label: "接続の安定", positivePole: "安定している", negativePole: "途切れる" },
-      { key: "controls", label: "操作性", positivePole: "使いやすい", negativePole: "使いにくい" },
-      { key: "calls", label: "通話品質", positivePole: "通話しやすい", negativePole: "通話が弱い" },
-      { key: "value", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
+      { key: "sound", word: "音質", label: "音質", positivePole: "音が良い", negativePole: "音に不満" },
+      { key: "bass", word: "低音", label: "低音", positivePole: "低音が出る", negativePole: "低音が物足りない" },
+      { key: "fit", word: "つけ心地", label: "装着感", positivePole: "つけ心地が良い", negativePole: "合わない人がいる" },
+      { key: "anc", word: "ノイキャン", label: "ノイズキャンセリング", positivePole: "静かになる", negativePole: "効かない" },
+      { key: "ambient", word: "外の音", label: "外音取り込み", positivePole: "外がよく聞こえる", negativePole: "不自然" },
+      { key: "battery", word: "電池", label: "バッテリー", positivePole: "長く持つ", negativePole: "持たない" },
+      { key: "connection", word: "つながり", label: "接続の安定", positivePole: "安定している", negativePole: "途切れる" },
+      { key: "controls", word: "操作", label: "操作性", positivePole: "使いやすい", negativePole: "使いにくい" },
+      { key: "calls", word: "通話", label: "通話品質", positivePole: "通話しやすい", negativePole: "通話が弱い" },
+      { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
     ],
     defaultAxes: ["fit", "anc"],
   },
@@ -70,4 +72,9 @@ export function aspectsFor(categoryId: string): readonly AspectDefinition[] {
 /** 手で選んだ既定の2軸。 */
 export function defaultAxesFor(categoryId: string): [string, string] | null {
   return CATEGORY_DEFINITIONS[categoryId]?.defaultAxes ?? null;
+}
+
+/** 画面に出す観点の言葉。 */
+export function wordOf(definition: AspectDefinition): string {
+  return definition.word ?? definition.label;
 }

@@ -8,6 +8,6 @@ export default defineConfig({
     },
   },
   server: {
-    open: "/compare/earbuds",
+    open: "/",
   },
 });

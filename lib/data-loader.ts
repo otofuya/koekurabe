@@ -16,7 +16,9 @@ function parseSpecs(raw: RawProduct): Spec[] {
         s != null &&
         typeof s === "object" &&
         typeof (s as Spec).key === "string" &&
-        VALID_PROVENANCE.has((s as Spec).provenance),
+        VALID_PROVENANCE.has((s as Spec).provenance) &&
+        // 販売ページから、値の代わりにお店の URL が入ってきたことがある（Bluetooth の欄に URL）。仕様ではないので出さない
+        !/https?:\/\/|www\./i.test(String((s as Spec).displayValue)),
     )
     .map((s) => {
       if (s.unit && !s.displayValue.includes(s.unit)) {

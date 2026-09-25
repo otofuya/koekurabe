@@ -1,27 +1,26 @@
-import { renderComparePage } from "./compare/compare-page.ts";
-import { renderReviewPage } from "./reviews/review-page.ts";
-import { renderAspectPage } from "./aspect/aspect-page.ts";
-import { renderHomePage } from "./home/home-page.ts";
-import { renderVsPage } from "./vs/vs-page.ts";
+import "./styles/app.css";
+import { route, start } from "./app/router.ts";
+import { topBar, mountTray, footer } from "./app/shell.ts";
+import { h } from "./app/dom.ts";
+import { homePage } from "./pages/home.ts";
+import { productPage } from "./pages/product.ts";
+import { categoryPage } from "./pages/category.ts";
+import { vsPage } from "./pages/vs.ts";
+import { notFound } from "./pages/not-found.ts";
 
-const path = window.location.pathname;
-const app = document.getElementById("app")!;
+const root = document.getElementById("app")!;
+const main = h("main", { class: "page", id: "main" });
+root.replaceChildren(h("a", { class: "skip", href: "#main", "data-native": "" }, "本文へ"), topBar(), main, footer());
 
-const vsMatch = path.match(/^\/vs\/([a-f0-9]{32})\/([a-f0-9]{32})\/?$/);
-const compareMatch = path.match(/^\/compare\/([a-z0-9-]+)\/?$/);
-const reviewMatch = path.match(/^\/reviews\/([a-f0-9]{32})\/?$/);
-const aspectMatch = path.match(/^\/aspect\/([a-z0-9-]+)\/([a-z0-9-]+)\/?$/);
-
-if (path === "/" || path === "") {
-  renderHomePage(app);
-} else if (vsMatch) {
-  renderVsPage(app, vsMatch[1], vsMatch[2]);
-} else if (compareMatch) {
-  renderComparePage(app, compareMatch[1]);
-} else if (reviewMatch) {
-  renderReviewPage(app, reviewMatch[1]);
-} else if (aspectMatch) {
-  renderAspectPage(app, aspectMatch[1], aspectMatch[2]);
-} else {
-  app.innerHTML = `<p>ページが見つかりません。<a href="/">ホームに戻る</a></p>`;
-}
+const ID = "([a-f0-9]{32})";
+route(/^\/?$/, (app) => homePage(app));
+route(new RegExp(`^/reviews/${ID}/?$`), (app, m, url) => productPage(app, m[1], url));
+route(new RegExp(`^/vs/${ID}/${ID}/?$`), (app, m, url) => vsPage(app, m[1], m[2], url));
+route(/^\/compare\/([a-z0-9-]+)\/?$/, (app, m, url) => categoryPage(app, m[1], url));
+// 前の観点ランキングの URL は、カテゴリの「何が気になる？」へつなぐ
+route(/^\/aspect\/([a-z0-9-]+)\/([a-z0-9-]+)\/?$/, (app, m) => {
+  history.replaceState({}, "", `/compare/${m[1]}?k=${m[2]}`);
+  return categoryPage(app, m[1], new URL(location.href));
+});
+start(main, (app) => notFound(app));
+mountTray();
