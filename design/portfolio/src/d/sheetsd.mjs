@@ -21,7 +21,7 @@ function d00() {
     ['C', '別案C', ['声札・声の3つの型', 'わたしの条件で数えなおす', '読めた深さで見せ方を変える', '観点の辞書と人の承認'], ['紙色の地（B の白に合わせる）', '「段」「声札」などの言葉を画面に出すこと']],
   ];
   return frame('00', '決めたこと', `
-${at(72, 96, `<span style="display:inline-flex; align-items:center; gap:6px; height:28px; padding:0 12px; border-radius:14px; background:${C.ink}; color:#fff; font-size:13px; font-weight:700;">${icon('check', { size: 14, sw: 2.4 })}このキャンバスが、決定版の候補（あなたの OK 待ち）。状態は D11</span>`)}
+${at(72, 96, `<span style="display:inline-flex; align-items:center; gap:6px; height:28px; padding:0 12px; border-radius:14px; background:${C.ink}; color:#fff; font-size:13px; font-weight:700;">${icon('check', { size: 14, sw: 2.4 })}このキャンバスが、決定版の候補（あなたの OK 待ち）。使いやすさの見直しは「改訂」ページ（R0〜R3）。状態は D11</span>`)}
 ${at(72, 128, `<div style="width:640px;">${kick('いただいた回答')}${ans.map(([n, t, s]) => `<div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid ${C.hair};">${dot(n, { size: 28 })}<div><div style="font-size:17px; font-weight:900;">${t}</div><div style="font-size:13.5px; color:${C.ink2}; line-height:1.65; margin-top:3px;">${s}</div></div></div>`).join('')}</div>`)}
 ${at(780, 128, `<div style="width:748px;">${kick('何を、どこから混ぜたか')}<div style="display:flex; flex-direction:column; gap:12px; margin-top:12px;">${take.map(([k, t, yes, no]) => box(`<div style="display:grid; grid-template-columns:70px 1fr 1fr; gap:16px; align-items:start;"><div style="font-size:20px; font-weight:900;">${t}</div><div>${small('使う', { size: 12, color: C.ink })}<div style="margin-top:6px;">${bl(yes, { fs: 13 })}</div></div><div>${small('使わない', { size: 12, color: C.ink })}<div style="margin-top:6px;">${bl(no, { ic: 'close', color: C.faint, fs: 13 })}</div></div></div>`, { pad: 20 })).join('')}</div></div>`)}
 ${at(72, 640, `<div style="width:1456px; font-size:14px; line-height:1.7;"><b>ひとことで：</b>C の骨組み（区分・声の型・わたしの条件・読めた深さ）を、B の見た目で、A の「似ているもの」と一緒に。画面の言葉は、だれでも分かる日常語にそろえた（D03）</div>`)}
@@ -172,10 +172,10 @@ function d11() {
   return frame('11', 'いま決まっていること・決めてほしいこと', `
 ${at(72, 124, `<div style="display:flex; gap:24px; align-items:flex-start;">
 ${col('決まった（あなたの回答）', C.ink, ['A・B・C を混ぜる（この統合案）', '範囲は②：系統をまたいで10カテゴリ', 'わたしの条件は端末の中だけ・登録なし', 'AI の有料枠は、使う前に金額を聞く', '検証の進め方は任せる → 3つで抽出し直してから10へ', '本人が選んだ欄を使う。ただし検証してから'])}
-${col('この統合案で決めたい（OK 待ち）', C.pos, ['画面の骨組み：ホーム → 声の線 → 商品 → これに似たもの・くらべる（D04）', '見た目：白地・色は声の2色だけ・Zen Kaku Gothic New と Outfit（D06）', '画面の言葉は日常語・1画面1問い・はじめての説明（D03）', '最初の10カテゴリ（D07）', 'データは3段：欄 → AI → 蒸留（D10）', '作り方：今の Vite＋TypeScript のまま（D09）'])}
-${col('まだ決めていない', C.faint, ['サイトの名前（コンセプトが固まったので候補を出せる）', '年代・性別を「わたしと同じ人」に使う見せ方', 'embedding の比較を検証に入れるか', '需要（検索の量）の測り方', '色違い・同じ型の別ページの統合キー', 'シャンプー・枕の一覧（503 のまま）'])}
+${col('見直し後で決めたい（OK 待ち）', C.pos, ['流れ：条件で絞る → 気になることで並べる → 候補をくらべる。声の線は「図で見る」へ（R1）', '見た目：白地・声の2色のまま。なじみのある一覧・条件・候補のトレイ（R3・D06）', '言葉：日常語・1画面1問い・答えを先に（R3・D03）', '10カテゴリ：そのまま。声で決まる7つを先に（R2）', 'データ：欄 → AI → 蒸留 ＋ 仕様（公式・販売ページ・推定）（R2・D10）', '作り方：Vite＋TypeScript のまま。商品とくらべるは先に HTML に（R3）'])}
+${col('まだ決めていない', C.faint, ['サイトの名前（コンセプトが固まったので候補を出せる）', '年代・性別を「わたしと同じ人」に使う見せ方', 'embedding の比較を検証に入れるか', 'イヤホン以外の仕様をどこから取るか', '需要（検索の量）の測り方', '色違い・同じ型の別ページの統合キー', 'シャンプー・枕の一覧（503 のまま）'])}
 </div>`)}
-${at(72, 570, `<div style="width:1398px;">${box(`<div style="display:flex; gap:16px; align-items:center;">${dot('→', { size: 32 })}<div><div style="font-size:18px; font-weight:900;">OK なら、キーが無くてもできる実装1・2から始める</div><div style="font-size:13.5px; color:${C.ink2}; margin-top:4px; line-height:1.6;">1 データの形を広げる（欄・3つの型・条件・数えないもの）と、欄の検証。 2 統合案の画面をイヤホンの実データで作る。GEMINI_API_KEY が入ったら、3つのカテゴリで抽出し直す</div></div></div>`, { pad: 22, bg: C.tile, shadow: 'none' })}</div>`)}
+${at(72, 570, `<div style="width:1398px;">${box(`<div style="display:flex; gap:16px; align-items:center;">${dot('→', { size: 32 })}<div><div style="font-size:18px; font-weight:900;">OK なら、キーが無くてもできる実装1・2から始める</div><div style="font-size:13.5px; color:${C.ink2}; margin-top:4px; line-height:1.6;">1 データの形を広げる（欄・3つの型・条件・数えないもの・仕様と出どころ）と、欄の検証。 2 見直し後の画面（くらべる → 商品 → カテゴリ）をイヤホンの実データで作る。GEMINI_API_KEY が入ったら、3つのカテゴリで抽出し直す</div></div></div>`, { pad: 22, bg: C.tile, shadow: 'none' })}</div>`)}
 `, { src: 'none' });
 }
 
