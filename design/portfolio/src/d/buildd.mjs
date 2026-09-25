@@ -5,6 +5,8 @@ import { FONT_LINK, BASE_CSS } from './libd.mjs';
 import { SHEETS_D } from './sheetsd.mjs';
 import { SHEETS_R } from './boardr.mjs';
 import { PHONE_R, PC_R } from './revise.mjs';
+import { SHEETS_N } from './boardn.mjs';
+import { PHONE_N, PC_N, protoN, logicN } from './nakami.mjs';
 
 import { PHONE_D } from './screensd.mjs';
 import { PC_D } from './pcd.mjs';
@@ -69,6 +71,17 @@ PC_D.forEach(([f, t, fn], i) => emit(`${f}.dc.html`, t, fn(), 1440, 900, { board
 notes.pc = { x: 0, y: pcY - 260, text: 'PC（1440）', kind: 'title1', maxW: 2 * 1440 + GX, page: 'screens' };
 notes.screensNote = { x: 4 * (390 + GX) + 40, y: 0, w: 460, text: '数字の出どころ\n・イヤホン：data/ の実データ（AI の分類）\n・シューズ・化粧水・コーヒー：楽天で8商品×30件を読み、単語の規則で数えた見本（「見本」と書いてある）\n・ホームのカテゴリの状態は今の実際（読めているのはイヤホンだけ）\n商品の絵は色から描いた代わりの絵で、実装では楽天の商品画像。', fill: 'gray', size: 'm', page: 'screens' };
 
+// 新しい案「★の中身」：説明6枚・触れる試作1・スマホ6・PC1
+SHEETS_N.forEach(([file, title, fn], i) => emit(file, title, fn(), SW, SH, { board: { x: (i % 3) * (SW + GX), y: Math.floor(i / 3) * (SH + GY), title, page: 'nakami' } }));
+const nY = 2 * (SH + GY) + 300;
+emit('NProto.dc.html', '触れる試作（★の中身）', protoN(), 390, 844, { logic: logicN(), preview: false, board: { x: 0, y: nY, title: '触れる試作（操作できます）', page: 'nakami', is_interactive: true } });
+PHONE_N.forEach(([f, t, fn], i) => emit(`${f}.dc.html`, t, fn(), 390, 844, { board: { x: 940 + i * (390 + GX), y: nY, title: t, page: 'nakami' } }));
+PC_N.forEach(([f, t, fn], i) => emit(`${f}.dc.html`, t, fn(), 1440, 900, { board: { x: 940 + i * (1440 + GX), y: nY + 844 + 400, title: t, page: 'nakami' } }));
+notes.nTitle = { x: 0, y: -300, text: '新しい案：★の中身 — ★の数では、わからないこと。買った人の「よかった」と「残念だった」を数えて見せる', kind: 'title1', maxW: 3 * SW + 2 * GX, page: 'nakami' };
+notes.nHow = { x: 3 * (SW + GX), y: 0, w: 460, text: '「初見では分かりづらい」を受けて、考え直した案です\n・N0 ひと目で分かる形（まずここ）\n・N1 ★の順と「つけ心地」の順はちがう（実データ）\n・N2 10の観点 ・N3 考えた7つの案\n・N4 だれが使っても同じ形 ・N5 決めてほしいこと\n・下の「触れる試作」を右上の Play で操作できます\n・ほかのページ（改訂・統合案…）は経緯として残しています', fill: 'yellow', size: 'm', page: 'nakami' };
+notes.nProto = { x: 470, y: nY, w: 420, text: '触り方（右上の Play）\n1 ホームの「たとえば」を押す\n2 よかった｜残念だった の行や、黒いボタンを押す\n3 「残念が少ないもの」の商品を押すと乗り換え。「くらべる」で2つを並べる\n4 ホームの「イヤホン」→「何が気になる？」を押すと、並びが動く\n数字はイヤホンの実データ。左上の丸で戻る', fill: 'green', size: 'm', page: 'nakami' };
+notes.nScreens = { x: 940, y: nY - 260, text: '実寸の画面（試作の状態を止めたもの）', kind: 'title1', maxW: 6 * 390 + 5 * GX, page: 'nakami' };
+
 // 改訂（使いやすさ）：説明4枚・スマホ6・PC1
 SHEETS_R.forEach(([file, title, fn], i) => emit(file, title, fn(), SW, SH, { board: { x: (i % 2) * (SW + GX), y: Math.floor(i / 2) * (SH + GY), title, page: 'revise' } }));
 const rY = 2 * (SH + GY) + 300;
@@ -92,8 +105,8 @@ const canvas = {
   v: 3,
   createdOnFiles: { v: 1, at: new Date().toISOString().replace(/\.\d+Z$/, 'Z') },
   title: 'koekurabe 統合案（A＋B＋C）',
-  launch: { view: 'canvas', page: 'revise' },
-  pages: [{ id: 'revise', name: '改訂：使いやすさ' }, { id: 'portfolio', name: '統合案' }, { id: 'screens', name: '画面（実寸）' }, { id: 'proto', name: '触れる試作' }],
+  launch: { view: 'canvas', page: 'nakami' },
+  pages: [{ id: 'nakami', name: '新しい案：★の中身' }, { id: 'revise', name: '改訂：使いやすさ' }, { id: 'portfolio', name: '統合案' }, { id: 'screens', name: '画面（実寸）' }, { id: 'proto', name: '触れる試作' }],
   boards, order, notes, designSystems: [],
 };
 writeFileSync(`${OUT}/canvas.json`, JSON.stringify(canvas, null, 2));

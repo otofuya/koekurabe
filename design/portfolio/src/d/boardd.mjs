@@ -11,7 +11,7 @@ export function frame(n, title, body, { sub = '', src = 'none' } = {}) {
     none: '設計の決めごと。数字は推定と書いたものだけ',
   }[src];
   return `<div style="position:relative; width:${BW}px; height:${BH}px; overflow:hidden; background:#fff; font-family:${F.jp}; color:${C.ink};">
-<div style="position:absolute; left:72px; top:50px; display:flex; align-items:baseline; gap:16px; z-index:10;">${num(/^R/.test(n) ? n : `D${n}`, { size: 15, color: C.muted })}<span style="font-weight:900; font-size:32px; line-height:1.2; white-space:nowrap; letter-spacing:.01em;">${title}</span>${sub ? `<span style="font-size:15px; color:${C.ink2}; white-space:nowrap;">${sub}</span>` : ''}</div>
+<div style="position:absolute; left:72px; top:50px; display:flex; align-items:baseline; gap:16px; z-index:10;">${num(/^[A-Z]/.test(n) ? n : `D${n}`, { size: 15, color: C.muted })}<span style="font-weight:900; font-size:32px; line-height:1.2; white-space:nowrap; letter-spacing:.01em;">${title}</span>${sub ? `<span style="font-size:15px; color:${C.ink2}; white-space:nowrap;">${sub}</span>` : ''}</div>
 <div style="position:absolute; right:72px; top:58px; z-index:10; display:flex; align-items:center; gap:12px; font-size:12px; color:${C.muted};">${mark(15)}<span>統合案（A＋B＋C） ・ 2026-09</span></div>
 ${body}
 <div style="position:absolute; left:72px; bottom:24px; font-size:11px; color:${C.muted}; z-index:10;">${SRC}</div>
