@@ -1,0 +1,60 @@
+// 別案C の「案の比較」：入口の4案・並べ方の4案・声札の3案
+import { C, F, SH, icon, obj, tile, earArt, shoeArt, num, cond, tierMark, voiceStrip, justStrip, repeatLine, voiceTag } from './libc.mjs';
+import { frame, at, h, p, kick, dot, box, bl } from './boardc.mjs';
+import { MAPPED, POLE, SHOES, shrink, PLACES } from './datac.mjs';
+import { swarm } from './screensc.mjs';
+
+const mini = (inner, { w = 300, hgt = 400 } = {}) => `<div style="position:relative; width:${w}px; height:${hgt}px; border-radius:26px; background:${C.paper}; box-shadow:0 0 0 7px #1C1B19, ${SH.lift}; overflow:hidden; font-family:${F.jp};">${inner}</div>`;
+const bar = (w, hgt = 9, c = C.tile2) => `<span style="display:block; width:${w}px; height:${hgt}px; border-radius:${hgt / 2}px; background:${c};"></span>`;
+const verdict = (t, on) => `<span style="display:inline-flex; align-items:center; gap:6px; height:30px; padding:0 12px; border-radius:15px; background:${on ? C.ink : C.card}; color:${on ? '#fff' : C.ink}; border:${on ? 'none' : `1px solid ${C.line}`}; font-size:13px; font-weight:700;">${icon(on ? 'check' : 'info', { size: 14, sw: 2.2 })}${t}</span>`;
+const col = (x, title, sub, screen, good, bad, v, on) => at(x, 128, `<div style="width:330px; display:flex; flex-direction:column; gap:12px;"><div><div style="font-size:20px; font-weight:700;">${title}</div><div style="font-size:12.5px; color:${C.muted}; margin-top:2px;">${sub}</div></div><div style="padding:8px 15px;">${screen}</div><div style="display:flex; flex-direction:column; gap:5px;">${bl(good, { ic: 'plus' })}${bl(bad, { ic: 'close', color: C.negText })}</div><div>${verdict(v, on)}</div></div>`);
+
+function x1() {
+  const tree = mini(`<div style="padding:22px 18px; display:flex; flex-direction:column; gap:0;">${['家電', 'パソコン・周辺機器', 'コスメ・化粧品', 'ビューティー・ヘルス', '生活雑貨', 'キッチン用品', 'ベビー・キッズ', '食品', 'ドリンク・お酒', 'アウトドア', 'DIY・工具'].map((t) => `<div style="display:flex; justify-content:space-between; padding:9px 2px; border-bottom:1px solid ${C.hair}; font-size:12.5px;"><span>${t}</span>${icon('arrow', { size: 14, color: C.faint })}</div>`).join('')}</div>`);
+  const places = mini(`<div style="padding:22px 16px;"><div style="font-size:14px; font-weight:700; margin-bottom:10px;">暮らしの場所</div><div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">${PLACES.slice(0, 8).map((pl) => `<div style="height:70px; border-radius:12px; background:${C.card}; box-shadow:${SH.card}; padding:6px 8px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between;"><div style="display:flex;">${pl.objs.slice(0, 2).map((o) => obj(o, { size: 34 })).join('')}</div><b style="font-size:11.5px;">${pl.name}</b></div>`).join('')}</div></div>`);
+  const trouble = mini(`<div style="padding:22px 16px;"><div style="font-size:14px; font-weight:700; margin-bottom:10px;">困りごとから</div><div style="display:flex; flex-direction:column; gap:8px;">${['すぐ壊れた', 'サイズが合わない', '思っていたのと違う', 'においが気になる', '音がうるさい', '手入れが大変'].map((t) => `<div style="display:flex; align-items:center; gap:8px; height:40px; padding:0 12px; border-radius:12px; background:${C.card}; box-shadow:${SH.card}; font-size:12.5px;">${icon('alert', { size: 15 })}${t}<span style="margin-left:auto;">${bar(40, 7)}</span></div>`).join('')}</div></div>`);
+  const conds = mini(`<div style="padding:22px 16px;"><div style="font-size:14px; font-weight:700; margin-bottom:10px;">わたしの条件</div><div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">${cond('足幅が広い', { on: true, h: 28, fs: 11.5 })}${cond('敏感肌', { on: true, h: 28, fs: 11.5 })}${cond('一人暮らし', { h: 28, fs: 11.5 })}</div><div style="font-size:12px; color:${C.muted}; margin-bottom:8px;">あなたと同じ条件の声が多いカテゴリ</div><div style="display:flex; flex-direction:column; gap:8px;">${[['shoe', 'ランニングシューズ', '幅広 38件'], ['bottle', '化粧水', '敏感肌 14件'], ['bottle', '日焼け止め', 'まだ'], ['shoe', 'スニーカー', 'まだ']].map(([o, t, s]) => `<div style="display:flex; gap:8px; align-items:center; padding:6px 8px; border-radius:12px; background:${C.card}; box-shadow:${SH.card};">${tile(obj(o, { size: 30 }), { w: 34, r: 8 })}<div><b style="font-size:12px;">${t}</b><div style="font-size:11px; color:${C.muted};">${s}</div></div></div>`).join('')}</div></div>`);
+  return frame('X1', '入口の4案', `
+${col(72, '木（売り場の分け方）', '価格.com・マイベスト型', tree, ['慣れている。網羅が分かる'], ['表だらけになる（Q11）', '2つのサイトと同じ顔になる'], 'URL の住所として残す', false)}
+${col(440, '暮らしの場所', 'モノの絵のタイル', places, ['絵で見える（好き5・6）', '500以上を10に畳める'], ['場所に入れにくいモノ（ギフト・趣味）は「週末」「贈る」で拾う'], 'ホームの主な入口', true)}
+${col(808, '困りごと', '系統の共通観点から', trouble, ['不満が先に分かる（Q09）', 'カテゴリをまたげる'], ['読めているカテゴリが少ないうちは中身が薄い'], '補助（読めてから育てる）', false)}
+${col(1176, 'わたしの条件', '自分と同じ条件の声から', conds, ['自分に合うのが分かる（Q09）', '一度選べば全カテゴリで効く'], ['条件を書く人は1〜2割（C02）'], 'ホームの2段目', true)}
+${at(72, 900, `<div style="font-size:13px; color:${C.ink2};">推す組み合わせ：<b style="color:${C.ink};">検索（いつでも）＋ 暮らしの場所 ＋ わたしの条件</b>。困りごとは読めたカテゴリが増えてから前に出す</div>`)}
+`, { src: 'none' });
+}
+
+function x2() {
+  const k = 'fit', W0 = 300, H0 = 230;
+  const on = MAPPED.filter((q) => q.pos[k] + q.neg[k] > 0);
+  const pts = swarm(on.map((q) => ({ id: q.s, score: shrink(q.pos[k], q.neg[k]), size: Math.round(24 + 16 * Math.sqrt(Math.min(q.pos[k] + q.neg[k], 50) / 50)) })), { w: W0, h: 160, pad: 14 });
+  const ruler = `<div style="position:relative; width:${W0}px; height:${H0}px; border-radius:18px; background:${C.card}; box-shadow:${SH.card};"><div style="position:absolute; left:10px; right:10px; top:${30 + 80}px; border-top:1.5px solid ${C.hair};"></div><div style="position:absolute; left:0; top:30px; width:${W0}px; height:160px;">${pts.map((q) => `<span style="position:absolute; left:${Math.round(q.x - q.size / 2)}px; top:${Math.round(q.y - q.size / 2)}px; width:${q.size}px; height:${q.size}px; border-radius:50%; background:${C.tile}; display:flex; align-items:center; justify-content:center;">${earArt(q.id, Math.round(q.size * 0.9))}</span>`).join('')}</div><div style="position:absolute; left:10px; right:10px; bottom:10px; display:flex; justify-content:space-between; font-size:11px; font-weight:700;"><span style="color:${C.negText};">← ${POLE[k].neg}</span><span style="color:${C.posText};">${POLE[k].pos} →</span></div></div>`;
+  const both = MAPPED.filter((q) => q.pos.fit + q.neg.fit > 0 && q.pos.anc + q.neg.anc > 0);
+  const xs = both.map((q) => shrink(q.pos.fit, q.neg.fit)), ys = both.map((q) => shrink(q.pos.anc, q.neg.anc));
+  const mx = Math.max(...xs.map(Math.abs)), my = Math.max(...ys.map(Math.abs));
+  const map2 = `<div style="position:relative; width:${W0}px; height:${H0}px; border-radius:18px; background:${C.card}; box-shadow:${SH.card}; overflow:hidden;"><div style="position:absolute; left:${W0 / 2}px; top:10px; bottom:10px; border-left:1px solid ${C.hair};"></div><div style="position:absolute; top:${H0 / 2}px; left:10px; right:10px; border-top:1px solid ${C.hair};"></div>${both.map((q, i) => { const x = W0 / 2 + (xs[i] / mx) * (W0 / 2 - 30), y = H0 / 2 - (ys[i] / my) * (H0 / 2 - 26); return `<span style="position:absolute; left:${Math.round(x - 15)}px; top:${Math.round(y - 15)}px; width:30px; height:30px; border-radius:50%; background:${C.tile}; display:flex; align-items:center; justify-content:center;">${earArt(q.s, 27)}</span>`; }).join('')}<span style="position:absolute; right:8px; top:${H0 / 2 + 4}px; font-size:11px; font-weight:700; color:${C.posText};">装着感 →</span><span style="position:absolute; left:${W0 / 2 + 6}px; top:6px; font-size:11px; font-weight:700; color:${C.posText};">↑ ノイキャン</span></div>`;
+  const bands = [['満足が多い', (s) => s > 0.25], ['やや満足', (s) => s > 0.08 && s <= 0.25], ['割れている・少ない', (s) => s >= -0.08 && s <= 0.08], ['不満が多い', (s) => s < -0.08]];
+  const shelf = `<div style="width:${W0}px; height:${H0}px; border-radius:18px; background:${C.card}; box-shadow:${SH.card}; padding:12px 14px; box-sizing:border-box; display:flex; flex-direction:column; gap:6px;">${bands.map(([t, f]) => `<div style="display:flex; align-items:center; gap:6px; border-bottom:1.5px solid ${C.hair}; padding-bottom:4px; min-height:40px;"><span style="font-size:11px; color:${C.muted}; width:78px; flex-shrink:0;">${t}</span><span style="display:flex; gap:2px; flex-wrap:wrap;">${on.filter((q) => f(shrink(q.pos[k], q.neg[k]))).map((q) => `<span style="width:24px; height:24px; border-radius:50%; background:${C.tile}; display:inline-flex; align-items:center; justify-content:center;">${earArt(q.s, 21)}</span>`).join('')}</span></div>`).join('')}</div>`;
+  const quad = `<div style="position:relative; width:${W0}px; height:${H0}px; border-radius:18px; background:${C.card}; box-shadow:${SH.card}; overflow:hidden;"><div style="position:absolute; left:${W0 / 2}px; top:10px; bottom:10px; border-left:1px solid ${C.ink};"></div><div style="position:absolute; top:${H0 / 2}px; left:10px; right:10px; border-top:1px solid ${C.ink};"></div>${both.map((q, i) => { const x = W0 / 2 + (xs[i] / mx) * (W0 / 2 - 50), y = H0 / 2 - (ys[i] / my) * (H0 / 2 - 22); return `<span style="position:absolute; left:${Math.round(x - 36)}px; top:${Math.round(y - 9)}px; height:18px; padding:0 5px; border:1px solid ${C.ink}; background:#fff; font-size:11px; line-height:16px; white-space:nowrap;">${q.name.split(' ').slice(-1)[0]}</span>`; }).join('')}</div>`;
+  return frame('X2', '並べ方の4案', `
+${col(72, 'ものさし（1本の軸）', '段2の標準。別案C', ruler, ['1秒で読める。軸の名前が1つ', '読めた量が少なくても作れる'], ['2つの観点の関係は見えない'], '段2 で使う', true)}
+${col(440, '地図（2本の軸）', '段3。名前の言える2つの観点', map2, ['似ている・違うが位置で分かる（Q09）', 'ちょうどよさの軸と相性がよい'], ['両方にふれた商品しか載らない（ここでは11）'], '段3 で使う', true)}
+${col(808, '棚（4段）', '別案B の並べ方', shelf, ['位置より区分が分かりやすい'], ['段の境目で差が誇張される', 'ものさしと役割が重なる'], 'ものさしに吸収', false)}
+${col(1176, '四象限（文字の箱）', '案A の「並べる」', quad, ['分析する人には速い'], ['文字の箱で埋まる（嫌い1・4）'], 'PC の奥にだけ', false)}
+`, { src: 'ear' });
+}
+
+function x3() {
+  const s = SHOES.find((q) => q.id === 'nb-arishi');
+  const minimal = voiceTag({ img: shoeArt(s, 110), name: s.name, read: s.read, total: s.total, lines: [{ kind: 'pos', t: '軽さ', n: s.light[0] }], w: 250, imgH: 120 });
+  const standard = voiceTag({ img: shoeArt(s, 110), name: s.name, read: s.read, total: s.total, lines: [{ kind: 'pos', t: '軽さ', n: s.light[0] }, { kind: 'pos', t: 'クッション', n: s.cushion[0] }], just: { counts: s.dir, name: 'サイズ感' }, rep: s.rep, w: 250, imgH: 120 });
+  const full = `<div style="width:250px; box-sizing:border-box; padding:12px; border-radius:16px; background:${C.card}; box-shadow:${SH.card}; display:flex; flex-direction:column; gap:9px;"><div style="height:80px; border-radius:11px; background:${C.tile}; display:flex; align-items:center; justify-content:center;">${shoeArt(s, 76)}</div><div style="font-size:13px; font-weight:700;">${s.name}</div>${voiceStrip({ pos: s.light[0], neg: s.light[1], read: s.read, w: 226, h: 7, name: '軽さ', fs: 12 })}${voiceStrip({ pos: s.cushion[0], neg: s.cushion[1], read: s.read, w: 226, h: 7, name: 'クッション', fs: 12 })}${justStrip({ counts: s.dir, w: 226, h: 7, fs: 11, name: 'サイズ感', labels: ['小', 'ちょうど', '大'] })}${repeatLine(s.rep, s.read, { fs: 11 })}</div>`;
+  const c3 = (x, t, sub, v, good, bad, verd, on) => at(x, 128, `<div style="width:420px; display:flex; flex-direction:column; gap:14px;"><div><div style="font-size:20px; font-weight:700;">${t}</div><div style="font-size:12.5px; color:${C.muted}; margin-top:2px;">${sub}</div></div><div style="height:470px; display:flex; align-items:flex-start;">${v}</div>${bl(good, { ic: 'plus' })}${bl(bad, { ic: 'close', color: C.negText })}<div>${verdict(verd, on)}</div></div>`);
+  return frame('X3', '声札の3案', `
+${c3(72, '最小', '件数と、いちばん多い声1つ', minimal, ['一覧で数が多くても軽い'], ['不満が無いと満足しか出ず、偏って見える'], '検索結果の行で使う', false)}
+${c3(572, '標準', '不満→満足の行・ちょうど・また買った', standard, ['どのカテゴリでも同じ形で、型ごとに行が増減する'], ['行の数がカテゴリで変わる'], '一覧の声札に使う', true)}
+${c3(1072, '全部', 'すべての観点の帯', full, ['札だけで比べられる'], ['一覧では詰め込みになる（嫌い8）'], '商品ページで使う', false)}
+${at(72, 900, `<div style="font-size:13px; color:${C.ink2};">シューズの見本（単語の規則・30件）。「軽さ」は全員が褒めるので、公開では棚にしない（C02・C06）。ここでは札の形を比べるために出している</div>`)}
+`, { src: 'meas' });
+}
+
+export const COMPARE_C = [['X1.dc.html', 'X1 入口の4案', x1], ['X2.dc.html', 'X2 並べ方の4案', x2], ['X3.dc.html', 'X3 声札の3案', x3]];
