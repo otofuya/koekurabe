@@ -4,3 +4,8 @@ dist/
 .dev.vars
 *.log
 output/
+
+# デザインの書き出し・確認用の撮影（元のファイルは design/portfolio/src）
+/design/portfolio/project/
+/design/portfolio/preview/
+/design/portfolio/shots/
