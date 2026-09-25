@@ -1,8 +1,8 @@
 // 統合案のボード（D00〜D09）
-import { C, F, SH, icon, objD, earArt, shoeArt, num, small, tile, pill, qchip, cchip, seg, node, strip, just, again, coverage, tagCard, mark, OBJ_COL } from './libd.mjs';
+import { C, F, SH, icon, objD, earArt, shoeArt, num, small, tile, pill, qchip, cchip, seg, node, strip, just, again, coverage, tagCard, mark, OBJ_COL, factTag, aiTag, fieldBar } from './libd.mjs';
 import { frame, at, ph, pc, h, p, kick, dot, box, note, bl, arrow, bigNum } from './boardd.mjs';
-import { MAPPED, STATS, AXES, POLE, byShort, SHOES, COFFEE, MEASURE, ALL_DIR, UNITS, LISTING_REQUESTS } from './datad.mjs';
-import { QL, ruler, earItems, dHome, dCategory, dCategoryTags, dCategoryCond, dProduct, dProduct2, dSimilar, dCompare, dMe, dSearch, dTodo } from './screensd.mjs';
+import { MAPPED, STATS, AXES, POLE, byShort, SHOES, COFFEE, MEASURE, ALL_DIR, UNITS, LISTING_REQUESTS, FIELDS, FIELD_CATS } from './datad.mjs';
+import { QL, ruler, earItems, dHome, dCategory, dCategoryTags, dCategoryCond, dProduct, dProduct2, dSimilar, dCompare, dMe, dSearch, dTodo, dFacts } from './screensd.mjs';
 
 const line = (cols, cells, { head = false, fs = 13, pad = 11 } = {}) => `<div style="display:grid; grid-template-columns:${cols}; gap:14px; padding:${head ? '0 0 8px' : `${pad}px 0`}; ${head ? '' : `border-top:1px solid ${C.hair};`} font-size:${head ? 12 : fs}px; ${head ? `color:${C.muted}; font-weight:700;` : 'line-height:1.55;'} align-items:center;">${cells.map((c) => `<span>${c}</span>`).join('')}</div>`;
 
@@ -21,6 +21,7 @@ function d00() {
     ['C', '別案C', ['声札・声の3つの型', 'わたしの条件で数えなおす', '読めた深さで見せ方を変える', '観点の辞書と人の承認'], ['紙色の地（B の白に合わせる）', '「段」「声札」などの言葉を画面に出すこと']],
   ];
   return frame('00', '決めたこと', `
+${at(72, 96, `<span style="display:inline-flex; align-items:center; gap:6px; height:28px; padding:0 12px; border-radius:14px; background:${C.ink}; color:#fff; font-size:13px; font-weight:700;">${icon('check', { size: 14, sw: 2.4 })}このキャンバスが、決定版の候補（あなたの OK 待ち）。状態は D11</span>`)}
 ${at(72, 128, `<div style="width:640px;">${kick('いただいた回答')}${ans.map(([n, t, s]) => `<div style="display:flex; gap:14px; padding:14px 0; border-top:1px solid ${C.hair};">${dot(n, { size: 28 })}<div><div style="font-size:17px; font-weight:900;">${t}</div><div style="font-size:13.5px; color:${C.ink2}; line-height:1.65; margin-top:3px;">${s}</div></div></div>`).join('')}</div>`)}
 ${at(780, 128, `<div style="width:748px;">${kick('何を、どこから混ぜたか')}<div style="display:flex; flex-direction:column; gap:12px; margin-top:12px;">${take.map(([k, t, yes, no]) => box(`<div style="display:grid; grid-template-columns:70px 1fr 1fr; gap:16px; align-items:start;"><div style="font-size:20px; font-weight:900;">${t}</div><div>${small('使う', { size: 12, color: C.ink })}<div style="margin-top:6px;">${bl(yes, { fs: 13 })}</div></div><div>${small('使わない', { size: 12, color: C.ink })}<div style="margin-top:6px;">${bl(no, { ic: 'close', color: C.faint, fs: 13 })}</div></div></div>`, { pad: 20 })).join('')}</div></div>`)}
 ${at(72, 640, `<div style="width:1456px; font-size:14px; line-height:1.7;"><b>ひとことで：</b>C の骨組み（区分・声の型・わたしの条件・読めた深さ）を、B の見た目で、A の「似ているもの」と一緒に。画面の言葉は、だれでも分かる日常語にそろえた（D03）</div>`)}
@@ -99,7 +100,7 @@ ${part('一覧の1枚', '一覧の1枚（中では「声札」と呼ぶ）。不
 ${part('これに似たもの', '押した商品を真ん中に。近いほど声の出方が似ている。↑↓は「こちらが好評・不満寄り」', `<div style="display:flex; gap:8px; align-items:center;">${node(earArt('cb0101de', 40), { size: 46 })}<span style="font-size:11px; font-weight:700; background:#fff; padding:2px 7px; border-radius:9px; box-shadow:${SH.soft};">操作 ↓</span><span style="flex:1; border-top:1.4px dashed #C9C9C5; width:60px;"></span>${node(earArt(e.s, 60), { size: 66, sel: true })}</div>`)}
 ${part('読めた量', '1マス＝1商品。塗り＝読めた。読めていないことを隠さない', coverage(STATS.total, STATS.analysed, { cell: 7, gap: 3, cols: 40 }))}
 ${part('気になること・わたしの条件', '質問のチップは灰色、条件のチップは人の印。「みんな満足」は点線で押せない', `<div style="display:flex; gap:8px; flex-wrap:wrap;">${qchip('つけ心地', { on: true })}${qchip('ノイキャン')}${qchip('音質はみんな満足', { flat: true, fs: 12.5 })}${cchip('足幅が広い', { on: true })}</div>`)}
-${part('また買った', '使って減るモノだけ。「わたし」の保存から、もう一度買える', `<div style="display:flex; gap:14px; align-items:center;">${again(cf.rep, cf.read, { fs: 14 })}${pill('また買う', { kind: 'line', h: 36, fs: 13 })}</div>`)}
+${part('また買った', 'レビューの欄「リピート」をそのまま数える（AI なし）。分母は欄に答えた人。使って減るモノだけ', `<div style="display:flex; gap:12px; align-items:center;">${factTag()}<span style="font-size:13px;">リピート ${num(FIELDS['sw-drip'].rep, { size: 15, w: 600 })}／${FIELDS['sw-drip'].attr}人</span>${pill('また買う', { kind: 'line', h: 34, fs: 12.5 })}</div>`)}
 ${part('浮いた丸いタブ', 'ホーム・さがす・くらべる・わたしの4つ。片手で届く下に', `<div style="position:relative; width:410px; height:70px;">${`<nav style="position:absolute; left:0; right:0; top:4px; height:60px; border-radius:30px; background:#fff; box-shadow:${SH.lift}; display:grid; grid-template-columns:repeat(4, 1fr); padding:5px; box-sizing:border-box;">${[['home', 'ホーム'], ['search', 'さがす'], ['pair', 'くらべる'], ['person', 'わたし']].map(([ic, t], i) => `<span style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; border-radius:25px; background:${i === 1 ? C.tile : 'transparent'}; font-size:11px; font-weight:${i === 1 ? 700 : 500};">${icon(ic, { size: 19 })}${t}</span>`).join('')}</nav>`}</div>`)}
 </div>`)}
 `, { src: 'ear' });
@@ -131,15 +132,16 @@ ${at(72, 770, `<div style="display:grid; grid-template-columns:repeat(3, 1fr); g
 function d08() {
   const step1 = [['イヤホン', '読んだ976件を分類し直す', '約33回'], ['化粧水', '20商品×3ページ', '約60回'], ['ランニングシューズ', '20商品×3ページ', '約60回']];
   return frame('08', '検証の順番と AI の費用', `
-${at(72, 128, `<div style="width:700px;">${kick('1. まず3つで抽出し直す（無料枠で1日）')}${step1.map(([a, b, c]) => line('180px 1fr 100px', [`<b>${a}</b>`, `<span style="color:${C.ink2};">${b}</span>`, num(c, { size: 13 })], { fs: 13.5 })).join('')}<div style="font-size:13px; color:${C.ink2}; line-height:1.75; margin-top:14px;">測ること：<br>・条件を書いた人の割合（AI で）と、単語の規則との一致<br>・「好み（サイズ等）」「また買った」の当たり外れ（人が100件を抜き取って確かめる）<br>・「わたしと同じ人だけ」を出してよい件数（今は20件の仮置き）</div></div>`)}
-${at(72, 440, `<div style="width:700px;">${kick('2. 10カテゴリへ広げる')}<div style="display:flex; gap:40px; margin-top:14px;">${bigNum('2,400', '回の呼び出し（推定）＝10 × 60商品 × 4ページ', { size: 42 })}${bigNum('約5', '日＝無料枠（1日500回）のまま', { size: 42, sub: '日' })}</div><div style="font-size:13px; color:${C.ink2}; line-height:1.75; margin-top:14px;">無料枠でも回るので、<b style="color:${C.ink};">有料枠は「急ぐとき」だけ</b>。使う前に、下の数字で改めて聞く</div></div>`)}
+${at(72, 118, `<div style="width:700px; padding:12px 16px; border-radius:18px; background:${C.tile}; box-sizing:border-box;"><b style="font-size:14px;">0. 本人が選んだ欄を確かめる（キーなし）</b><div style="font-size:12.5px; color:${C.ink2}; line-height:1.6; margin-top:4px;">回数の定義・並び順の偏り・商品価格ナビに無いこと・答えた人だけの偏り（D10）</div></div>`)}
+${at(72, 214, `<div style="width:700px;">${kick('1. まず3つで抽出し直す（無料枠で1日）')}${step1.map(([a, b, c]) => line('180px 1fr 100px', [`<b>${a}</b>`, `<span style="color:${C.ink2};">${b}</span>`, num(c, { size: 13 })], { fs: 13.5 })).join('')}<div style="font-size:13px; color:${C.ink2}; line-height:1.75; margin-top:14px;">測ること：<br>・条件を書いた人の割合（AI で）と、単語の規則との一致<br>・「好み（サイズ等）」「また買った」の当たり外れ（人が100件を抜き取って確かめる）<br>・「わたしと同じ人だけ」を出してよい件数（今は20件の仮置き）</div></div>`)}
+${at(72, 560, `<div style="width:700px;">${kick('2. 10カテゴリへ広げる')}<div style="display:flex; gap:40px; margin-top:14px;">${bigNum('2,400', '回の呼び出し（推定）＝10 × 60商品 × 4ページ', { size: 42 })}${bigNum('約5', '日＝無料枠（1日500回）のまま', { size: 42, sub: '日' })}</div><div style="font-size:13px; color:${C.ink2}; line-height:1.75; margin-top:14px;">無料枠でも回るので、<b style="color:${C.ink};">有料枠は「急ぐとき」だけ</b>。使う前に、下の数字で改めて聞く</div></div>`)}
 ${at(840, 128, `<div style="width:688px; display:flex; flex-direction:column; gap:16px;">${box(`${kick('有料で10カテゴリを1回分類すると（推定）')}${line('190px 1fr 1fr', ['', '入力', '出力'], { head: true })}${line('190px 1fr 1fr', ['<b>トークン</b>', '840万〜1,080万', '360万〜580万'], { fs: 13.5 })}${line('190px 1fr 1fr', ['<b>単価（100万あたり）</b>', '$0.25', '$1.50'], { fs: 13.5 })}${line('190px 1fr 1fr', ['<b>金額</b>', '$2.1〜2.7', '$5.4〜8.6'], { fs: 13.5 })}<div style="display:flex; align-items:baseline; gap:12px; margin-top:8px;"><span style="font-family:${F.num}; font-size:36px; font-weight:500;">$7.5〜11</span><span style="font-size:13px; color:${C.ink2};">1回あたり（約1,100〜1,700円。1ドル150円で換算）。まとめて送る方式なら半額</span></div><div style="font-size:12px; color:${C.muted}; line-height:1.6;">モデルは Flash-Lite（今の抽出と同じ系統）。30件で1回、入力3.5〜4.5千・出力1.5〜2.4千トークンと見積もった。やり直しを含めても上限$30程度の見込み</div>`, { pad: 22, gap: 6 })}${box(`${kick('確かめてから使うこと')}<div style="font-size:13px; color:${C.ink2}; line-height:1.7;">・単価は第三者の料金表の値。公式の料金ページで確かめる<br>・無料枠は、送った内容が Google の改善に使われることがある（料金表の注記）。送るのは公開されたレビューだけ</div>`, { pad: 22, gap: 6 })}${box(`${kick('お願いしたいこと')}<div style="font-size:13px; color:${C.ink2}; line-height:1.75;">この環境の設定（画面上の環境のメニュー → 編集）に、<b style="color:${C.ink};">GEMINI_API_KEY</b> を入れてください。あると良いもの：<b style="color:${C.ink};">RAKUTEN_APPLICATION_ID</b>（商品一覧を API で取る）、<b style="color:${C.ink};">RAKUTEN_AFFILIATE_ID</b>（リンク）。キーはチャットに貼らないでください</div>`, { pad: 22, gap: 6 })}</div>`)}
 `, { src: 'cost' });
 }
 
 // ---------- D09 実装の進め方 ----------
 function d09() {
-  const steps = [['データの形を広げる', '3つの声の型・わたしの条件・数えないもの。判断は純粋関数に集めてテストで固定', 'キーなしでできる'], ['画面を作る', 'ホーム・カテゴリ（線／札）・商品・これに似たもの・くらべる・わたし・さがす。イヤホンの実データで', 'キーなしでできる'], ['3つで抽出し直す', 'イヤホン・化粧水・シューズ。ゲートの値を測って決める', 'GEMINI_API_KEY が要る'], ['10へ広げる', '無料枠で約5日。急ぐなら有料（聞いてから）', '同上'], ['公開の準備', '検索に出すページを決める（今は全部 noindex）。Amazon の審査', 'オーナーの判断']];
+  const steps = [['データの形を広げる', '本人が選んだ欄・3つの声の型・わたしの条件・数えないもの。判断は純粋関数に集めてテストで固定', 'キーなしでできる'], ['画面を作る', 'ホーム・カテゴリ（線／札）・商品・これに似たもの・くらべる・わたし・さがす。イヤホンの実データで', 'キーなしでできる'], ['3つで抽出し直す', 'イヤホン・化粧水・シューズ。ゲートの値を測って決める', 'GEMINI_API_KEY が要る'], ['10へ広げる', '無料枠で約5日。急ぐなら有料（聞いてから）', '同上'], ['公開の準備', '検索に出すページを決める（今は全部 noindex）。Amazon の審査', 'オーナーの判断']];
   return frame('09', '実装の進め方', `
 ${at(72, 128, `<div style="width:900px;">${kick('順番')}${steps.map(([t, s, r], i) => `<div style="display:grid; grid-template-columns:40px 220px 1fr 180px; gap:14px; padding:14px 0; border-top:1px solid ${C.hair}; align-items:center;">${dot(i + 1, { size: 28, bg: i < 2 ? C.ink : C.faint })}<b style="font-size:16px;">${t}</b><span style="font-size:13.5px; color:${C.ink2}; line-height:1.6;">${s}</span><span style="font-size:12.5px; color:${i < 2 ? C.ink : C.negText}; font-weight:700;">${r}</span></div>`).join('')}</div>`)}
 ${at(1040, 128, `<div style="width:488px; display:flex; flex-direction:column; gap:16px;">${box(`${kick('作り方（提案）')}<div style="font-size:14px; font-weight:900; line-height:1.5;">今の Vite ＋ TypeScript のまま（フレームワークを足さない）</div><div style="font-size:13px; color:${C.ink2}; line-height:1.7;">判断の純粋関数とテストが lib/ にあり、画面の数も少ない。商品の丸は HTML の絶対配置と本物のボタンで（CLAUDE.md）。アプリ化は、まずホーム画面に置ける形（PWA）から</div>`, { pad: 20, gap: 8 })}${box(`${kick('今あるものから変えること')}<div style="font-size:13px; color:${C.ink2}; line-height:1.7;">四象限を主役から外し、声の線にする。ジャンル一覧を10カテゴリのタイルにする。商品ページに「これに似たもの」。色を声の2色にそろえる</div>`, { pad: 20, gap: 8 })}${box(`${kick('変えないこと')}<div style="font-size:13px; color:${C.ink2}; line-height:1.7;">分母・散らばり・本文を出さない・アクセス制御、の4点。収縮・ゲート・引用の照合</div>`, { pad: 20, gap: 8 })}</div>`)}
@@ -147,7 +149,37 @@ ${at(72, 820, `<div style="width:900px; font-size:14px; line-height:1.7;"><b>こ
 `, { src: 'none' });
 }
 
+// ---------- D10 数字の出どころ（3段） ----------
+function d10() {
+  const rows = FIELD_CATS.map((c) => line('200px 60px 130px 130px 100px 1fr', [`<b>${c.name}</b>`, num(c.n, { size: 13 }), `${num(c.ga, { size: 13 })}<span style="color:${C.muted};">（${Math.round((c.ga / c.n) * 100)}%）</span>`, c.navi ? `<span style="color:${C.negText};">欄なし</span>` : `${num(c.attr, { size: 13 })}<span style="color:${C.muted};">（${Math.round((c.attr / c.n) * 100)}%）</span>`, c.navi ? '—' : num(c.rep, { size: 13 }), c.navi ? '—' : num(c.variant, { size: 13 })], { fs: 13, pad: 8 })).join('');
+  const layer = (n, t, s, who, tag) => box(`<div style="display:flex; justify-content:space-between; align-items:center;"><div style="display:flex; gap:10px; align-items:center;">${dot(n, { size: 28 })}<b style="font-size:17px;">${t}</b></div>${tag}</div><div style="font-size:13px; color:${C.ink2}; line-height:1.65;">${s}</div><div style="font-size:12.5px; line-height:1.6;"><b>受け持つもの：</b>${who}</div>`, { pad: 20, gap: 8 });
+  return frame('10', '数字の出どころ（3段）', `
+${at(72, 124, `<div style="width:620px; display:flex; flex-direction:column; gap:14px;">
+${layer(1, '本人が選んだ欄を数える', '楽天のレビューには、本文とは別に、レビュアーが選ぶ欄がある。選べる語が決まっているので表記ゆれが無く、AI を通さない', '★・年代・性別・買ったサイズや色・使い道｜誰に｜はじめて／リピート', factTag('事実・AIなし'))}
+${layer(2, 'AI が本文を1件ずつ分類', '表記ゆれ（ノイキャン／ノイズキャンセリング）と否定（痛くならない／痛くなる）は AI が読む。件数はコードが数え、引用は原文と照合する', '観点の満足・不満・好みの向き・本文に書いた条件（敏感肌・足幅）・配送やお店の話を除く', aiTag())}
+${layer(3, '広げたら置き換える（蒸留）', 'AI が付けた分類を正解にして小さな分類器を作り、自信のない分だけ AI に回す。500カテゴリに広げるときに', '2段目と同じ', aiTag('あとで'))}
+</div>`)}
+${at(740, 124, `<div style="width:788px;">${kick('欄はどれだけ埋まっているか（1ページ目・標準の並び）')}<div style="margin-top:10px;">${line('200px 60px 130px 130px 100px 1fr', ['カテゴリ', '読んだ', '年代・性別', '使い道の欄', 'うちリピート', '買った種類'], { head: true })}${rows}</div><div style="font-size:12px; color:${C.muted}; line-height:1.6; margin-top:10px;">上の3つは8商品×30件、ほかは1商品30件。欄に答えない人がいるので、分母は「欄に答えた人」にする</div></div>`)}
+${at(740, 590, `<div style="width:788px;">${box(`${kick('使う前に確かめること')}<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 20px;">${bl(['「リピート」は、この商品か、このお店か（定義）', '2ページ目以降で、埋まり方が偏らないか', '商品価格ナビのページに本当に欄が無いか', '欄に答えた人だけで数える偏り'], { ic: 'info', fs: 12.5 })}</div>`, { pad: 20, gap: 8 })}</div>`)}
+${ph(dFacts(), 72, 690, 0.3)}
+${at(210, 700, `<div style="width:480px; font-size:12.5px; color:${C.ink2}; line-height:1.7;">画面では、欄の数字に<b style="color:${C.ink};">黒い枠の印</b>、AI の数字に<b style="color:${C.ink};">灰色の印</b>を付けて見分ける（S13・見本）。表記ゆれがあっても、欄の分は AI を通さないので揺れない</div>`)}
+`, { src: 'list', sub: '欄を先に、AI はそのあと' });
+}
+
+// ---------- D11 いま決まっていること・決めてほしいこと ----------
+function d11() {
+  const col = (t, tone, items) => `<div style="width:450px;">${box(`<div style="display:flex; align-items:center; gap:8px;"><span style="width:12px; height:12px; border-radius:50%; background:${tone};"></span><b style="font-size:18px;">${t}</b></div>${items.map((x) => `<div style="padding:9px 0; border-top:1px solid ${C.hair}; font-size:13.5px; line-height:1.6;">${x}</div>`).join('')}`, { pad: 22, gap: 6 })}</div>`;
+  return frame('11', 'いま決まっていること・決めてほしいこと', `
+${at(72, 124, `<div style="display:flex; gap:24px; align-items:flex-start;">
+${col('決まった（あなたの回答）', C.ink, ['A・B・C を混ぜる（この統合案）', '範囲は②：系統をまたいで10カテゴリ', 'わたしの条件は端末の中だけ・登録なし', 'AI の有料枠は、使う前に金額を聞く', '検証の進め方は任せる → 3つで抽出し直してから10へ', '本人が選んだ欄を使う。ただし検証してから'])}
+${col('この統合案で決めたい（OK 待ち）', C.pos, ['画面の骨組み：ホーム → 声の線 → 商品 → これに似たもの・くらべる（D04）', '見た目：白地・色は声の2色だけ・Zen Kaku Gothic New と Outfit（D06）', '画面の言葉は日常語・1画面1問い・はじめての説明（D03）', '最初の10カテゴリ（D07）', 'データは3段：欄 → AI → 蒸留（D10）', '作り方：今の Vite＋TypeScript のまま（D09）'])}
+${col('まだ決めていない', C.faint, ['サイトの名前（コンセプトが固まったので候補を出せる）', '年代・性別を「わたしと同じ人」に使う見せ方', 'embedding の比較を検証に入れるか', '需要（検索の量）の測り方', '色違い・同じ型の別ページの統合キー', 'シャンプー・枕の一覧（503 のまま）'])}
+</div>`)}
+${at(72, 570, `<div style="width:1398px;">${box(`<div style="display:flex; gap:16px; align-items:center;">${dot('→', { size: 32 })}<div><div style="font-size:18px; font-weight:900;">OK なら、キーが無くてもできる実装1・2から始める</div><div style="font-size:13.5px; color:${C.ink2}; margin-top:4px; line-height:1.6;">1 データの形を広げる（欄・3つの型・条件・数えないもの）と、欄の検証。 2 統合案の画面をイヤホンの実データで作る。GEMINI_API_KEY が入ったら、3つのカテゴリで抽出し直す</div></div></div>`, { pad: 22, bg: C.tile, shadow: 'none' })}</div>`)}
+`, { src: 'none' });
+}
+
 export const SHEETS_D = [
   ['Main.dc.html', 'D00 決めたこと', d00], ['D01.dc.html', 'D01 価格.com・マイベストとの違い', d01], ['D02.dc.html', 'D02 好み・嫌いから', d02], ['D03.dc.html', 'D03 だれでも分かるための約束', d03], ['D04.dc.html', 'D04 画面の流れ', d04],
-  ['D05.dc.html', 'D05 部品', d05], ['D06.dc.html', 'D06 見た目', d06], ['D07.dc.html', 'D07 最初の10カテゴリ', d07], ['D08.dc.html', 'D08 検証の順番と AI の費用', d08], ['D09.dc.html', 'D09 実装の進め方', d09],
+  ['D05.dc.html', 'D05 部品', d05], ['D06.dc.html', 'D06 見た目', d06], ['D07.dc.html', 'D07 最初の10カテゴリ', d07], ['D08.dc.html', 'D08 検証の順番と AI の費用', d08], ['D09.dc.html', 'D09 実装の進め方', d09], ['D10.dc.html', 'D10 数字の出どころ（3段）', d10], ['D11.dc.html', 'D11 いま決まっていること・決めてほしいこと', d11],
 ];

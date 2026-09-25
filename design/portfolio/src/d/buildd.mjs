@@ -54,8 +54,8 @@ function emit(file, title, root, w, h, { logic, board, preview = true } = {}) {
 }
 
 SHEETS_D.forEach(([file, title, fn], i) => emit(file, title, fn(), SW, SH, { board: { x: (i % 3) * (SW + GX), y: Math.floor(i / 3) * (SH + GY), title, page: 'portfolio' } }));
-notes.title = { x: 0, y: -300, text: '統合案（A＋B＋C）— 買った人の声で、自分に合うかを見る', kind: 'title1', maxW: 3 * SW + 2 * GX, page: 'portfolio' };
-notes.how = { x: 3 * (SW + GX), y: 0, w: 460, text: '見方\n・D00 で、回答と「何をどこから混ぜたか」を確かめてください\n・D01 が、価格.com・マイベストとの体験の違い\n・実寸の画面は「画面（実寸）」、動かせる試作は「触れる試作」に\n・D08 に AI の費用（推定）とお願いしたいキー\n・直したい所は、その板にコメントしてください', fill: 'yellow', size: 'm', page: 'portfolio' };
+notes.title = { x: 0, y: -300, text: '統合案（A＋B＋C）— 決定版の候補：買った人の声で、自分に合うかを見る', kind: 'title1', maxW: 3 * SW + 2 * GX, page: 'portfolio' };
+notes.how = { x: 3 * (SW + GX), y: 0, w: 460, text: '見方\n・D11 に、決まったこと・OK 待ち・まだのことをまとめています\n・D00 で、回答と「何をどこから混ぜたか」を確かめてください\n・D01 が、価格.com・マイベストとの体験の違い\n・実寸の画面は「画面（実寸）」、動かせる試作は「触れる試作」に\n・D08 に AI の費用（推定）とお願いしたいキー\n・D10 が、数字の出どころ（本人が選んだ欄と AI）\\n・D10 が、数字の出どころ（本人が選んだ欄と AI）\n・直したい所は、その板にコメントしてください', fill: 'yellow', size: 'm', page: 'portfolio' };
 
 const ROW = 844 + 400;
 PHONE_D.forEach(([g, list], gi) => {

@@ -44,3 +44,31 @@ export function egoLayout(anchorS, { w = 342, h = 360 } = {}) {
 }
 export const EAR_ANCHORS = MAPPED.filter((p) => neighbors(p, 5).length >= 3).map((p) => p.s);
 export { KEYS, shrink };
+
+// 本人が選んだ欄（1ページ目30件ずつ・キャッシュから数えた）。attr＝使い道の欄に答えた人、rep＝リピート、first＝はじめて、fam＝家族へ等、gift＝贈り物、ga＝年代と性別を出した人、f40＝40代・女性
+export const FIELDS = {
+  'sk-pitera': { attr: 14, rep: 7, first: 7, fam: 5, gift: 3, ga: 22, f40: 5 }, 'lmt-uruoi': { attr: 17, rep: 16, first: 1, fam: 2, gift: 0, ga: 22, f40: 8 },
+  'anua-dok': { attr: 18, rep: 3, first: 14, fam: 2, gift: 0, ga: 24, f40: 4 }, 'tb-pre': { attr: 12, rep: 4, first: 8, fam: 1, gift: 0, ga: 19, f40: 5 },
+  'cl-vc100': { attr: 14, rep: 1, first: 13, fam: 1, gift: 0, ga: 22, f40: 9 }, 'tb-white': { attr: 7, rep: 6, first: 1, fam: 0, gift: 0, ga: 14, f40: 2 },
+  'sbc-lotion': { attr: 20, rep: 15, first: 4, fam: 0, gift: 0, ga: 23, f40: 6 }, retinol: { attr: 15, rep: 9, first: 6, fam: 0, gift: 0, ga: 15, f40: 1 },
+  'nk-rev8': { attr: 11, rep: 2, first: 9, fam: 2, gift: 0, ga: 17, f40: 7 }, 'ad-lite3': { attr: 12, rep: 1, first: 11, fam: 2, gift: 0, ga: 16, f40: 4 },
+  'ad-ultima': { attr: 12, rep: 2, first: 9, fam: 5, gift: 2, ga: 21, f40: 5 }, 'nb-arishi': { attr: 15, rep: 0, first: 14, fam: 1, gift: 1, ga: 21, f40: 6 },
+  'ua-cp3a': { attr: 10, rep: 5, first: 5, fam: 4, gift: 1, ga: 21, f40: 1 }, 'ua-cp3b': { attr: 13, rep: 2, first: 11, fam: 2, gift: 0, ga: 27, f40: 5 },
+  'hk-bondi9w': { attr: 7, rep: 0, first: 7, fam: 1, gift: 0, ga: 14, f40: 1 }, 'hk-clifton11': { attr: 18, rep: 1, first: 17, fam: 2, gift: 0, ga: 22, f40: 1 },
+  'sw-beans': { attr: 24, rep: 22, first: 2, fam: 12, gift: 0, ga: 27, f40: 1 }, 'sw-drip6': { attr: 17, rep: 16, first: 1, fam: 7, gift: 0, ga: 25, f40: 4 },
+  'sw-drip': { attr: 18, rep: 15, first: 2, fam: 7, gift: 1, ga: 25, f40: 3 }, 'sw-mocha': { attr: 13, rep: 10, first: 3, fam: 2, gift: 0, ga: 27, f40: 1 },
+  'sw-drip4': { attr: 19, rep: 11, first: 8, fam: 5, gift: 6, ga: 28, f40: 4 }, 'dr-5': { attr: 19, rep: 15, first: 4, fam: 11, gift: 2, ga: 24, f40: 4 },
+  'cf-200': { attr: 17, rep: 11, first: 6, fam: 7, gift: 0, ga: 24, f40: 4 }, 'dp-cap': { attr: 20, rep: 14, first: 5, fam: 6, gift: 0, ga: 26, f40: 5 },
+};
+// カテゴリ全体（3カテゴリ×240件・ほか5カテゴリは1商品30件）。docs/02 第12節
+export const FIELD_CATS = [
+  { name: '化粧水', n: 240, ga: 161, attr: 117, rep: 61, variant: 60 },
+  { name: 'ランニングシューズ', n: 240, ga: 159, attr: 98, rep: 13, variant: 178 },
+  { name: 'コーヒー', n: 240, ga: 206, attr: 147, rep: 114, variant: 30 },
+  { name: 'プロテイン', n: 30, ga: 14, attr: 14, rep: 10, variant: 30 },
+  { name: 'ドリップコーヒー', n: 30, ga: 23, attr: 13, rep: 10, variant: 30 },
+  { name: 'キャットフード', n: 30, ga: 29, attr: 9, rep: 9, variant: 0 },
+  { name: 'ドライヤー', n: 30, ga: 15, attr: 17, rep: 2, variant: 16 },
+  { name: '掃除機', n: 30, ga: 13, attr: 19, rep: 1, variant: 0 },
+  { name: 'イヤホン（商品価格ナビ）', n: 8, ga: 5, attr: 0, rep: 0, variant: 0, navi: true },
+];

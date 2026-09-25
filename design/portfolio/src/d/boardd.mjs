@@ -1,7 +1,7 @@
 // 別案C のボード（1600×1000）の枠と部品
 import { C, F, SH, icon, num, mark, phone, browser } from './libd.mjs';
 
-export const BW = 1600, BH = 1000, TOTAL = 9;
+export const BW = 1600, BH = 1000, TOTAL = 11;
 
 export function frame(n, title, body, { sub = '', src = 'none' } = {}) {
   const SRC = {

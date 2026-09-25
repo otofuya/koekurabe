@@ -1,7 +1,7 @@
 // 統合案のスマホ画面（390×844）
 // イヤホン＝data/ の実データ。化粧水・シューズ・コーヒー＝単語の規則で数えた見本。ホームのカテゴリの状態は今の実際（読めたのはイヤホンだけ）
-import { C, F, SH, icon, objD, earArt, shoeArt, bottleArt, bagArt, num, small, tile, pill, qchip, cchip, seg, aiNote, sample, node, strip, just, again, coverage, tagCard, tabs, status, searchPill, mark } from './libd.mjs';
-import { MAPPED, STATS, AXES, SHORT, LABEL, POLE, neighbors, byShort, yen, KEYS, Q, SHOES, SKIN, COFFEE, MEASURE, ALL_DIR, WIDE_DIR, WIDE_TOTAL, LIGHT, shrink, dirScore, UNITS, egoLayout, reasonOf, reasonText, reasonChip, QL } from './datad.mjs';
+import { C, F, SH, icon, objD, earArt, shoeArt, bottleArt, bagArt, num, small, tile, pill, qchip, cchip, seg, aiNote, sample, node, strip, just, again, coverage, tagCard, tabs, status, searchPill, mark, factTag, aiTag, fieldBar } from './libd.mjs';
+import { MAPPED, STATS, AXES, SHORT, LABEL, POLE, neighbors, byShort, yen, KEYS, Q, SHOES, SKIN, COFFEE, MEASURE, ALL_DIR, WIDE_DIR, WIDE_TOTAL, LIGHT, shrink, dirScore, UNITS, egoLayout, reasonOf, reasonText, reasonChip, QL, FIELDS } from './datad.mjs';
 import { swarm } from '../c/screensc.mjs';
 
 const W = 390, H = 844;
@@ -160,9 +160,9 @@ export function dMe() {
   const cf = COFFEE[2];
   return scr(`
 ${A(24, 56, `<div style="font-size:22px; font-weight:900;">わたし</div>`)}
-${A(24, 100, `<div style="width:342px;"><div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:14px;">わたしの条件</b>${small('この端末の中だけ・登録なし', { size: 11 })}</div><div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">${cchip('足幅が広い', { on: true })}${cchip('敏感肌', { on: true })}${cchip('ブラック派')}${cchip('一人暮らし')}</div><div style="font-size:11.5px; color:${C.muted}; margin-top:8px; line-height:1.6;">レビューに同じ条件を書いた人だけで、件数を数えなおします</div></div>`)}
-${A(24, 240, `<div style="width:342px;"><b style="font-size:14px;">保存したもの</b><div style="display:flex; flex-direction:column; gap:8px; margin-top:10px;">${saved.map((p) => `<div style="display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:18px; background:${C.tile};">${node(ear(p.s, 40), { size: 46, bg: '#fff' })}<div style="flex:1;"><b style="font-size:13px;">${p.name}</b><div style="font-size:11.5px; color:${C.ink2}; margin-top:2px;">レビュー ${p.read}件を読んだ</div></div>${icon('arrow', { size: 16 })}</div>`).join('')}<div style="display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:18px; background:${C.tile};">${tile(bagArt(cf, 40), { w: 46, r: 23, bg: '#fff' })}<div style="flex:1;"><b style="font-size:13px;">ドリップパック</b><div style="font-size:11.5px; color:${C.ink2}; margin-top:2px;">${again(cf.rep, cf.read, { fs: 11.5 })}</div></div>${pill('また買う', { kind: 'line', h: 34, fs: 12.5 })}</div></div></div>`)}
-${A(24, 540, `<div style="width:342px;"><b style="font-size:14px;">今週かわったこと</b><div style="margin-top:10px; padding:12px 14px; border-radius:18px; background:#fff; box-shadow:${SH.soft}; font-size:12.5px; line-height:1.7;">保存したものの声が増えたら、ここに出します。<span style="color:${C.muted};">（週に1回、レビューを読み直します）</span></div></div>`)}
+${A(24, 96, `<div style="width:342px;"><div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:14px;">わたしの条件</b>${small('この端末の中だけ・登録なし', { size: 11 })}</div><div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">${cchip('40代', { on: true, h: 32, fs: 12.5 })}${cchip('女性', { on: true, h: 32, fs: 12.5 })}${cchip('足幅が広い', { on: true, h: 32, fs: 12.5 })}${cchip('敏感肌', { h: 32, fs: 12.5 })}</div><div style="font-size:11.5px; color:${C.muted}; margin-top:8px; line-height:1.6;">年代・性別はレビューの欄から、足幅・肌は本文から（AI）。同じ人だけで数えなおします</div></div>`)}
+${A(24, 262, `<div style="width:342px;"><b style="font-size:14px;">保存したもの</b><div style="display:flex; flex-direction:column; gap:8px; margin-top:10px;">${saved.map((p) => `<div style="display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:18px; background:${C.tile};">${node(ear(p.s, 40), { size: 46, bg: '#fff' })}<div style="flex:1;"><b style="font-size:13px;">${p.name}</b><div style="font-size:11.5px; color:${C.ink2}; margin-top:2px;">レビュー ${p.read}件を読んだ</div></div>${icon('arrow', { size: 16 })}</div>`).join('')}<div style="display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:18px; background:${C.tile};">${tile(bagArt(cf, 40), { w: 46, r: 23, bg: '#fff' })}<div style="flex:1;"><b style="font-size:13px;">ドリップパック</b><div style="font-size:11.5px; color:${C.ink2}; margin-top:2px;">${icon('loop', { size: 13, sw: 2 }).replace('display:block;', 'display:inline-block; vertical-align:-2px; margin-right:3px;')}リピート ${FIELDS['sw-drip'].rep}人／欄に答えた${FIELDS['sw-drip'].attr}人</div></div>${pill('また買う', { kind: 'line', h: 34, fs: 12.5 })}</div></div></div>`)}
+${A(24, 566, `<div style="width:342px;"><b style="font-size:14px;">今週かわったこと</b><div style="margin-top:10px; padding:12px 14px; border-radius:18px; background:#fff; box-shadow:${SH.soft}; font-size:12.5px; line-height:1.7;">保存したものの声が増えたら、ここに出します。<span style="color:${C.muted};">（週に1回、レビューを読み直します）</span></div></div>`)}
 `, { tab: 3 });
 }
 
@@ -178,8 +178,20 @@ ${A(24, 104, `<div style="width:342px;">${grp('カテゴリ')}${row(tile(objD('s
 `, { tab: 1 });
 }
 
+// ---------- 欄と AI を見分ける（化粧水・見本） ----------
+export function dFacts() {
+  const s = SKIN.find((x) => x.id === 'sbc-lotion'), f = FIELDS['sbc-lotion'];
+  return scr(`
+${A(24, 50, `<div style="display:flex; justify-content:space-between; align-items:center; width:342px;">${round('back', '戻る')}${sample()}</div>`)}
+${A(24, 100, `<div style="display:flex; gap:14px; width:342px; align-items:center;">${tile(bottleArt(s, 72), { w: 84, r: 20 })}<div style="min-width:0;"><div style="font-size:17px; font-weight:900; line-height:1.35;">${s.name}</div><div style="font-size:12px; color:${C.ink2}; margin-top:4px;">レビュー ${s.read}件を読んだ（全${s.total.toLocaleString('ja-JP')}件）</div></div></div>`)}
+${A(24, 202, `<div style="width:342px; box-sizing:border-box; padding:14px 16px; border-radius:20px; background:#fff; box-shadow:${SH.soft}; display:flex; flex-direction:column; gap:12px;"><div style="display:flex; justify-content:space-between; align-items:center;"><b style="font-size:14px;">本人が選んだ欄から</b>${factTag('事実・AIなし')}</div>${fieldBar({ n: f.rep, of: f.attr, label: 'また買った（リピート）', w: 310 })}<div style="font-size:12px; color:${C.ink2}; line-height:1.6;">わたしと同じ「40代・女性」は <b style="color:${C.ink};">${f.f40}人</b>（年代と性別を出した${f.ga}人のうち）。まだ少ない</div></div>`)}
+${A(24, 420, `<div style="width:342px; box-sizing:border-box; padding:14px 16px; border-radius:20px; background:#fff; box-shadow:${SH.soft}; display:flex; flex-direction:column; gap:12px;"><div style="display:flex; justify-content:space-between; align-items:center;"><b style="font-size:14px;">本文から</b>${aiTag()}</div>${strip({ pos: s.irr[0], neg: s.irr[1], read: s.read, w: 310, h: 8, name: '刺激' })}${just({ counts: s.dir, labels: ['さっぱり', 'しっとり'], w: 310, h: 8, name: '使用感', read: s.read })}<div style="font-size:12px; color:${C.ink2}; line-height:1.6;">「敏感肌」と本文に書いた人は ${s.sens[0]}人。まだ少ない</div></div>`)}
+${A(24, 688, `<div style="width:342px; font-size:11.5px; color:${C.muted}; line-height:1.6;">黒い枠の印＝本人が選んだ欄（事実）。灰色の印＝AIが本文を読んで分けた数。同じ画面でも見分けられるように</div>`)}
+`, { tab: 1 });
+}
+
 export const PHONE_D = [
   ['はじめて開く', [['SD01-Home', 'S01 ホーム', dHome], ['SD02-Coach', 'S02 はじめての説明', () => dCategory({ coach: true })], ['SD03-Category', 'S03 カテゴリ（線で見る）', () => dCategory()], ['SD04-Tags', 'S04 カテゴリ（一覧で見る）', dCategoryTags]]],
-  ['自分に合うか', [['SD05-Cond', 'S05 わたしと同じ人だけ（見本）', () => dCategoryCond()], ['SD06-Product', 'S06 商品', dProduct], ['SD07-Product2', 'S07 商品（つづき）', dProduct2], ['SD08-Similar', 'S08 これに似たもの', () => dSimilar()]]],
+  ['自分に合うか', [['SD05-Cond', 'S05 わたしと同じ人だけ（見本）', () => dCategoryCond()], ['SD06-Product', 'S06 商品', dProduct], ['SD07-Product2', 'S07 商品（つづき）', dProduct2], ['SD08-Similar', 'S08 これに似たもの', () => dSimilar()], ['SD13-Facts', 'S13 欄とAIを見分ける（見本）', dFacts]]],
   ['くらべる・戻ってくる', [['SD09-Compare', 'S09 くらべる', dCompare], ['SD10-Me', 'S10 わたし', dMe], ['SD11-Search', 'S11 さがす', dSearch], ['SD12-Todo', 'S12 これから読むカテゴリ', dTodo]]],
 ];

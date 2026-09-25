@@ -115,3 +115,11 @@ export function objD(name, { size = 64, col } = {}) {
   if (!EXTRA_OBJ[name]) return obj(name, { size, ...(col ? { col } : {}) });
   return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" aria-hidden="true" style="display:block; flex-shrink:0;"><ellipse cx="50" cy="82" rx="30" ry="5" fill="rgba(20,20,20,.08)"></ellipse>${EXTRA_OBJ[name](col || EXTRA_COL[name])}</svg>`;
 }
+
+// 数字の出どころの印：本人が選んだ欄（事実・AI なし）と、AI が本文を分類したもの
+export const factTag = (t = '本人が選んだ欄', fs = 11) => `<span style="display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 9px; border-radius:11px; border:1.2px solid ${C.ink}; font-size:${fs}px; font-weight:700; color:${C.ink}; white-space:nowrap;">${icon('check', { size: 12, sw: 2.4 })}${t}</span>`;
+export const aiTag = (t = 'AIが本文を分類', fs = 11) => `<span style="display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 9px; border-radius:11px; background:${C.tile}; font-size:${fs}px; color:${C.ink2}; white-space:nowrap;">${icon('info', { size: 12, sw: 2 })}${t}</span>`;
+// 欄の件数（分母＝欄に答えた人）
+export function fieldBar({ n, of, label, w = 300, fs = 12.5 } = {}) {
+  return `<div style="width:${w}px; display:flex; flex-direction:column; gap:6px;"><div style="display:flex; justify-content:space-between; align-items:baseline;"><b style="font-size:${fs + 0.5}px;">${label}</b><span style="font-size:11px; color:${C.muted};">欄に答えた ${of}人のうち</span></div><div style="width:${w}px; height:8px; border-radius:4px; background:${C.rest}; overflow:hidden;"><div style="width:${Math.round((n / of) * 100)}%; height:8px; background:${C.ink};"></div></div><div style="font-size:${fs}px;">${num(n, { size: fs + 1, w: 600 })} 人</div></div>`;
+}
