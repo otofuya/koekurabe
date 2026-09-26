@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-09-26T08:00:50.855Z",
+  "categoryId": "running-shoes",
+  "records": [
+    {
+      "productId": "93029bee8fa15671aebe747123604dd8",
+      "pages": 3,
+      "characters": 6428,
+      "numFound": 171,
+      "reviewCount": 171
+    },
+    {
+      "productId": "dd92f5dcb11263b4590ace15a4ec295e",
+      "pages": 3,
+      "characters": 6378,
+      "numFound": 129,
+      "reviewCount": 129
+    },
+    {
+      "productId": "f475ddd2c18a5b7403ede9fc8e3faf29",
+      "pages": 3,
+      "characters": 5364,
+      "numFound": 109,
+      "reviewCount": 109
+    },
+    {
+      "productId": "60551a7464ec7774f18f6054f094d1d6",
+      "pages": 3,
+      "characters": 7444,
+      "numFound": 108,
+      "reviewCount": 108
+    },
+    {
+      "productId": "1bae07105752d23429197684a8699544",
+      "pages": 3,
+      "characters": 5111,
+      "numFound": 105,
+      "reviewCount": 105
+    },
+    {
+      "productId": "91aa8a7b95ccb3062f35e99d3d5b64e3",
+      "pages": 3,
+      "characters": 5498,
+      "numFound": 103,
+      "reviewCount": 103
+    },
+    {
+      "productId": "82451e9151219c24c2013f61b818d18f",
+      "pages": 3,
+      "characters": 6042,
+      "numFound": 70,
+      "reviewCount": 70
+    },
+    {
+      "productId": "d677ac772df817031dba27ee6da72045",
+      "pages": 2,
+      "characters": 4566,
+      "numFound": 58,
+      "reviewCount": 58
+    },
+    {
+      "productId": "a44c1ef708d049d39a2e9d28e0f84c4b",
+      "pages": 2,
+      "characters": 4068,
+      "numFound": 58,
+      "reviewCount": 58
+    },
+    {
+      "productId": "0d41129c6591e54a9edd2b45cb9612f7",
+      "pages": 2,
+      "characters": 3492,
+      "numFound": 44,
+      "reviewCount": 44
+    },
+    {
+      "productId": "80266a17f4c2cd937677d66a129cae17",
+      "pages": 2,
+      "characters": 2561,
+      "numFound": 40,
+      "reviewCount": 40
+    },
+    {
+      "productId": "81b4bef6a121ca3c8bc48ebb99464db3",
+      "pages": 2,
+      "characters": 2444,
+      "numFound": 39,
+      "reviewCount": 39
+    },
+    {
+      "productId": "4c127cc6c8fffa069fbf141281d65202",
+      "pages": 1,
+      "characters": 2778,
+      "numFound": 30,
+      "reviewCount": 30
+    }
+  ]
+}

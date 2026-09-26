@@ -151,6 +151,16 @@ describe("displayName", () => {
     assert.equal(displayName("AUKEY｜オーキー フルワイヤレスイヤホン Pink EP-T21S-PK ワイヤレス 左右分離 "), "AUKEY Pink EP-T21S-PK");
     assert.equal(displayName("BOSE｜ボーズ 完全ワイヤレスイヤホン Bose Ultra Open Earbuds カーボンブ"), "BOSE Ultra Open Earbuds カーボンブ");
   });
+  it("お店の商品名の宣伝を外し、長すぎる名前は言葉の切れ目で止める", () => {
+    assert.equal(displayName("【送料無料】化粧水 グリシルグリシン 6% アゼライン酸誘導体 プレ化粧水 楽天ベストコスメ2024 2冠受賞 毛穴 テカリ 皮脂 エイジングケア"), "化粧水 グリシルグリシン 6% アゼライン酸誘導体 プレ化粧水…");
+    assert.equal(displayName("Panasonic ワイヤレスステレオインサイドホン RZ-S50W-W"), "Panasonic ワイヤレスステレオインサイドホン RZ-S50W-W", "型番のあるふつうの長さの名前は切らない");
+    assert.equal(displayName("Google Pixel Buds 2a Fog GA09553-JP /カナル型 /ノイズキャンセリング対応 /Bluetooth対応"), "Google Pixel Buds 2a Fog GA09553-JP");
+    assert.equal(displayName("＼ドクダミリニューアル新発売／【Anua公式】ドクダミ 77% トナー"), "ドクダミ 77% トナー");
+    assert.equal(displayName("【公式】SK-II フェイシャルトリートメントエッセンス"), "SK-II フェイシャルトリートメントエッセンス");
+    assert.equal(displayName("公式 アンダーアーマー UNDER ARMOUR UA チャージド"), "アンダーアーマー UNDER ARMOUR UA チャージド");
+    assert.equal(displayName("■生活応援キャンペーン実施中■ロイヤルカナン FHN インドア 4kg"), "ロイヤルカナン FHN インドア 4kg");
+    assert.equal(displayName("★ポイント20倍+セット27日23:59マデ★【送料無料】Yunth 生VC 美白"), "Yunth 生VC 美白");
+  });
   it("何も残らなければ元の名前", () => {
     assert.equal(displayName("完全ワイヤレスイヤホン"), "完全ワイヤレスイヤホン");
   });
@@ -159,7 +169,7 @@ describe("displayName", () => {
 describe("実データ（イヤホン）：docs/11 の数字", () => {
   const root = new URL("../data/", import.meta.url);
   const products = JSON.parse(readFileSync(new URL("genre-products.json", root), "utf8")).products as { productId: string; price: number }[];
-  const aspects = JSON.parse(readFileSync(new URL("genre-aspects.json", root), "utf8")).genres[0].products as { productId: string; reviewsRead: number; aspects: AspectProduct["aspects"] }[];
+  const aspects = JSON.parse(readFileSync(new URL("genre-aspects.json", root), "utf8")).genres.find((g: { categoryId: string }) => g.categoryId === "earbuds").products as { productId: string; reviewsRead: number; aspects: AspectProduct["aspects"] }[];
   const pool: Priced[] = aspects.map((a) => ({ id: a.productId, reviewsRead: a.reviewsRead, aspects: a.aspects, price: products.find((p) => p.productId === a.productId)!.price }));
   const byShort = (s: string) => pool.find((p) => p.id.startsWith(s))!;
   // 2026-09-26 に数え直した（gemini-3.5-flash-lite・引用の向き・レビューごとの記録）。soundcore C50i が新たに読めた

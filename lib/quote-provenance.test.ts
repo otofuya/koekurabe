@@ -134,3 +134,25 @@ test("同じ文が同じ側で2回出ても、引用は1つ", () => {
   assert.equal(tally.positive, 2);
   assert.equal(tally.quotes.length, 1);
 });
+
+// ── 短い引用を一文に広げる（2026-09-26） ─────────────────────────────
+
+import { expandQuote } from "./aspect-model.ts";
+
+test("原文にある短い一節は、そのまわりの一文に広げる（原文どおりのまま）", () => {
+  const text = "予想した通り、履きやすく歩きやすい最高のシューズです。 サイズもぴったりでした。";
+  assert.equal(expandQuote("履きやすく", text), "予想した通り、履きやすく歩きやすい最高のシューズです。");
+  assert.ok(text.includes(expandQuote("履きやすく", text)));
+  assert.deepEqual(verifiedQuotes(["軽くて"], "軽くて理想のシューズです。サイズもぴったりでした。"), ["軽くて理想のシューズです。"]);
+});
+
+test("一文が長すぎるときは、読点や空白までの節にする", () => {
+  const text = `届いた直後は失敗したかと不安がよぎったがこの3日間履いた感想は、通気性あり、履き心地も大変良いし${"とても".repeat(20)}満足です`;
+  assert.equal(expandQuote("通気性あり", text), "通気性あり");
+  assert.deepEqual(verifiedQuotes(["通気性あり"], text), [], "節も短すぎれば、今までどおり落とす");
+});
+
+test("原文に無い短い一節は広げない（照合で落ちる）", () => {
+  assert.equal(expandQuote("軽い", "重たいです。"), "軽い");
+  assert.deepEqual(verifiedQuotes(["軽い"], "重たいです。"), []);
+});

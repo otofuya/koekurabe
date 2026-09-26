@@ -51,6 +51,28 @@ export function sliceJsonArray(text: string, start: number): string | null {
   return null;
 }
 
+/** "{" から始まる JSON のオブジェクトを切り出す（sliceJsonArray と同じ数え方）。 */
+export function sliceJsonObject(text: string, start: number): string | null {
+  if (text[start] !== "{") return null;
+  let depth = 0;
+  let inString = false;
+  for (let i = start; i < text.length; i += 1) {
+    const c = text[i];
+    if (inString) {
+      if (c === "\\") i += 1;
+      else if (c === "\"") inString = false;
+      continue;
+    }
+    if (c === "\"") inString = true;
+    else if (c === "[" || c === "{") depth += 1;
+    else if (c === "]" || c === "}") {
+      depth -= 1;
+      if (depth === 0) return text.slice(start, i + 1);
+    }
+  }
+  return null;
+}
+
 function arrayAfter(html: string, marker: string): unknown[] | null {
   const at = html.indexOf(marker);
   if (at < 0) return null;
@@ -100,22 +122,38 @@ export function structuredReviews(html: string): StructuredReview[] | null {
       };
     }).filter((r) => r.body);
   }
-  const shop = arrayAfter(html, "\"seo\":{\"itemReviewList\":");
-  if (shop) {
-    return shop.map((r) => {
-      const x = r as Record<string, unknown>;
-      return {
-        id: typeof x.key === "string" ? x.key : null,
-        rating: ratingOf(x.rating),
-        date: dateOf(x.postDate),
-        sku: null,
-        age: ageOf(x.ageRange),
-        sex: sexOf(x.sex),
-        codes: Array.isArray(x.codes) ? x.codes.filter((c): c is string => typeof c === "string") : [],
-        title: clean(x.title) || null,
-        body: clean(x.body),
-      };
-    }).filter((r) => r.body);
-  }
+  // お店のページの "seo":{"itemReviewList":[…]} は5件だけ（ページに出る30件のうちの見本）。一覧には使わない。
+  // お店のページは shopReviewMeta で、ページに出る本文にデータを付ける
   return null;
+}
+
+const UUID = /"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})":\{/g;
+
+/**
+ * お店の商品のレビューのページ：番号（UUID）ごとのレビューのデータを、本文（空白をまとめたもの）で引けるようにする。
+ * ページに出る30件の本文は HTML から取り、ここでデータ（★・日付・年代・性別・本人が選んだ欄・見出し）を付ける。
+ * このデータにはお店そのもののレビューなど、ページの30件以外も混ざるので、本文が一致したものだけを使う。
+ */
+export function shopReviewMeta(html: string): Map<string, Omit<StructuredReview, "body">> {
+  const map = new Map<string, Omit<StructuredReview, "body">>();
+  for (const m of html.matchAll(UUID)) {
+    const raw = sliceJsonObject(html, m.index! + m[0].length - 1);
+    if (!raw) continue;
+    let x: Record<string, unknown>;
+    try { x = JSON.parse(raw); } catch { continue; }
+    if (typeof x.body !== "string" || typeof x.rating !== "number") continue;
+    const body = clean(x.body);
+    if (!body || map.has(body)) continue;
+    map.set(body, {
+      id: typeof x.key === "string" ? x.key : m[1],
+      rating: ratingOf(x.rating),
+      date: dateOf(x.postDate),
+      sku: null,
+      age: ageOf(x.ageRange),
+      sex: sexOf(x.sex),
+      codes: Array.isArray(x.codes) ? x.codes.filter((c): c is string => typeof c === "string") : [],
+      title: clean(x.title) || null,
+    });
+  }
+  return map;
 }

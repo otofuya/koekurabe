@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-09-26T08:20:37.967Z",
+  "categoryId": "catfood",
+  "records": [
+    {
+      "productId": "dc72cb87c4ce06e19409de1c288bf106",
+      "pages": 3,
+      "characters": 4232,
+      "numFound": 4526,
+      "reviewCount": 4526
+    },
+    {
+      "productId": "0c5f5f2a166a6517a4c1bf129819e980",
+      "pages": 3,
+      "characters": 5856,
+      "numFound": 1513,
+      "reviewCount": 1513
+    },
+    {
+      "productId": "123e572a7137c2d73a38efe7d6ee6101",
+      "pages": 3,
+      "characters": 5977,
+      "numFound": 983,
+      "reviewCount": 983
+    },
+    {
+      "productId": "f22f8d049eae9cb50a1cb9faaf5cce5c",
+      "pages": 3,
+      "characters": 5353,
+      "numFound": 919,
+      "reviewCount": 919
+    },
+    {
+      "productId": "f741ac837d6720165552a95b2c46feda",
+      "pages": 3,
+      "characters": 6060,
+      "numFound": 915,
+      "reviewCount": 915
+    },
+    {
+      "productId": "221c806f5de419f6041f748b7a797741",
+      "pages": 3,
+      "characters": 6920,
+      "numFound": 861,
+      "reviewCount": 861
+    },
+    {
+      "productId": "75e6a960fb645b05e1705da791e1095f",
+      "pages": 3,
+      "characters": 11081,
+      "numFound": 824,
+      "reviewCount": 824
+    },
+    {
+      "productId": "0800485478361e1f9f5f7ffdaf8c84ea",
+      "pages": 3,
+      "characters": 5047,
+      "numFound": 692,
+      "reviewCount": 692
+    },
+    {
+      "productId": "3bd3b12bb29c5f118dc2ba6db182d9b3",
+      "pages": 3,
+      "characters": 5680,
+      "numFound": 641,
+      "reviewCount": 641
+    },
+    {
+      "productId": "91119ba80cc7257665ca13e103a0ea28",
+      "pages": 3,
+      "characters": 4334,
+      "numFound": 483,
+      "reviewCount": 483
+    },
+    {
+      "productId": "06e505395228521f99c83a66e55b9676",
+      "pages": 3,
+      "characters": 5606,
+      "numFound": 433,
+      "reviewCount": 433
+    },
+    {
+      "productId": "eba5ee4b9d7b4e47092bcca6ddf0260c",
+      "pages": 3,
+      "characters": 6177,
+      "numFound": 373,
+      "reviewCount": 373
+    },
+    {
+      "productId": "809635efd5b0ced19cd3e94152872356",
+      "pages": 3,
+      "characters": 5400,
+      "numFound": 363,
+      "reviewCount": 363
+    },
+    {
+      "productId": "57f93a721825b551631e1b721d562bda",
+      "pages": 3,
+      "characters": 5494,
+      "numFound": 322,
+      "reviewCount": 322
+    },
+    {
+      "productId": "d4a9860a0294afb6531b5789f8313fc7",
+      "pages": 3,
+      "characters": 5619,
+      "numFound": 322,
+      "reviewCount": 322
+    },
+    {
+      "productId": "7443af2fc6108d7c9c83fe9ac9324ca4",
+      "pages": 3,
+      "characters": 8761,
+      "numFound": 307,
+      "reviewCount": 307
+    },
+    {
+      "productId": "657d87baddac9cfc5d6ec5ef036a4f64",
+      "pages": 3,
+      "characters": 5006,
+      "numFound": 263,
+      "reviewCount": 263
+    },
+    {
+      "productId": "9463a15f58b8b591c37d87ca35120565",
+      "pages": 3,
+      "characters": 5505,
+      "numFound": 222,
+      "reviewCount": 222
+    },
+    {
+      "productId": "0a007c2f77a1252b7f72a2c5741163ac",
+      "pages": 3,
+      "characters": 5250,
+      "numFound": 178,
+      "reviewCount": 178
+    },
+    {
+      "productId": "3b614fe5a7d27680c008de92709601e1",
+      "pages": 3,
+      "characters": 5614,
+      "numFound": 128,
+      "reviewCount": 128
+    }
+  ]
+}

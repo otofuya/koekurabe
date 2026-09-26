@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { structuredReviews, sliceJsonArray } from "./review-json.ts";
+import { structuredReviews, sliceJsonArray, shopReviewMeta } from "./review-json.ts";
 
 const priceNavi = (reviews: unknown[]) => `<script>window.x={"reviewInfo":{"reviews":${JSON.stringify(reviews)},"pagination":{"numFound":2}}}</script>`;
 const shop = (list: unknown[]) => `<script>{"seo":{"itemReviewList":${JSON.stringify(list)}},"other":1}</script>`;
@@ -28,11 +28,8 @@ describe("structuredReviews", () => {
     assert.equal(got[1].sku, null);
     assert.ok(!JSON.stringify(got).includes("持ち出さない"), "ニックネームは持ち出さない");
   });
-  it("お店のページ：★・見出し・本人が選んだ欄", () => {
-    const got = structuredReviews(shop([
-      { key: "8836", rating: 5, title: "さすがSONY", body: "音の厚みが段違い", postDate: "2026/09/10", ageRange: "50", sex: "male", codes: ["実用品・普段使い", "自分用", "はじめて"], nickname: "持ち出さない" },
-    ]))!;
-    assert.deepEqual(got[0], { id: "8836", rating: 5, date: "2026-09-10", sku: null, age: 50, sex: "male", codes: ["実用品・普段使い", "自分用", "はじめて"], title: "さすがSONY", body: "音の厚みが段違い" });
+  it("お店のページの seo の一覧（5件だけの見本）は、一覧として使わない", () => {
+    assert.equal(structuredReviews(shop([{ key: "8836", rating: 5, body: "音の厚みが段違い" }])), null);
   });
   it("本文の無いレビューは外す。★が範囲外なら null", () => {
     const got = structuredReviews(priceNavi([{ encryptedEasyId: "a", evaluation: 9, review: "よい", reg_time: "" }, { encryptedEasyId: "b", evaluation: 4, review: "  " }]))!;
@@ -42,5 +39,24 @@ describe("structuredReviews", () => {
   it("データが無いページは null（呼ぶ側は HTML の本文に戻る）", () => {
     assert.equal(structuredReviews("<html>no data</html>"), null);
     assert.deepEqual(structuredReviews(priceNavi([])), []);
+  });
+});
+
+describe("shopReviewMeta", () => {
+  const uuid = (n: number) => `0000000${n}-aaaa-bbbb-cccc-000000000000`;
+  const entry = (n: number, x: Record<string, unknown>) => `"${uuid(n)}":${JSON.stringify({ key: uuid(n), ...x })}`;
+  const html = `<script>{"reviews":{${[
+    entry(1, { ageRange: "50", sex: "male", rating: 5, title: "さすが", body: "音の厚みが\n段違い", postDate: "2026/09/10", codes: ["自分用", "はじめて"], nickname: "持ち出さない" }),
+    entry(2, { helpfulCount: 0, rating: 2, body: "すぐ壊れた", postDate: "2026/08/01" }),
+    entry(3, { rating: 5, body: "発送が早い（お店のレビュー）" }),
+  ].join(",")}}}</script>`;
+  it("本文（空白をまとめたもの）で、★・日付・年代・性別・本人が選んだ欄・見出しを引ける", () => {
+    const map = shopReviewMeta(html);
+    assert.deepEqual(map.get("音の厚みが 段違い"), { id: uuid(1), rating: 5, date: "2026-09-10", sku: null, age: 50, sex: "male", codes: ["自分用", "はじめて"], title: "さすが" });
+    assert.equal(map.get("すぐ壊れた")?.age, null, "年代を答えていない");
+    assert.ok(!JSON.stringify([...map.values()]).includes("持ち出さない"));
+  });
+  it("データの無いページは空", () => {
+    assert.equal(shopReviewMeta("<html></html>").size, 0);
   });
 });

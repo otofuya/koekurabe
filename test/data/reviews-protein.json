@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-09-26T08:30:17.012Z",
+  "categoryId": "protein",
+  "records": [
+    {
+      "productId": "7411b756f1fe7c62aee744cf14416bd8",
+      "pages": 3,
+      "characters": 12709,
+      "numFound": 12818,
+      "reviewCount": 12818
+    },
+    {
+      "productId": "2fd104ea94715d935f87f5e4115c33f0",
+      "pages": 3,
+      "characters": 10361,
+      "numFound": 12484,
+      "reviewCount": 12484
+    },
+    {
+      "productId": "e7ceb13a341a1bab2ecc90e4a100fe84",
+      "pages": 3,
+      "characters": 8489,
+      "numFound": 5304,
+      "reviewCount": 5304
+    },
+    {
+      "productId": "58a8c5a962a8e854241d2bb7e623b2d0",
+      "pages": 3,
+      "characters": 8190,
+      "numFound": 5281,
+      "reviewCount": 5281
+    },
+    {
+      "productId": "56ebdc556010b212c840f9d65b22dd3b",
+      "pages": 3,
+      "characters": 9410,
+      "numFound": 3890,
+      "reviewCount": 3890
+    },
+    {
+      "productId": "9896edea6071b288ad5c641d8c81764f",
+      "pages": 3,
+      "characters": 5372,
+      "numFound": 2443,
+      "reviewCount": 2443
+    },
+    {
+      "productId": "f7a126a4555c2b076dfc6c0821e77e5a",
+      "pages": 3,
+      "characters": 7840,
+      "numFound": 2407,
+      "reviewCount": 2407
+    },
+    {
+      "productId": "ae457913bf34fbc4ac9830893edc1dae",
+      "pages": 3,
+      "characters": 7958,
+      "numFound": 2347,
+      "reviewCount": 2347
+    },
+    {
+      "productId": "1ebe6db689ce6c16d6caea25e6350d2e",
+      "pages": 3,
+      "characters": 7262,
+      "numFound": 2118,
+      "reviewCount": 2118
+    },
+    {
+      "productId": "c58dd14b694a92cfd2fed011839dcc1a",
+      "pages": 3,
+      "characters": 6303,
+      "numFound": 2026,
+      "reviewCount": 2026
+    },
+    {
+      "productId": "843dca18c7f291e9ff02d1dad43943ec",
+      "pages": 3,
+      "characters": 7486,
+      "numFound": 1938,
+      "reviewCount": 1938
+    },
+    {
+      "productId": "f0df5f334930f73db6bcbcd2de347c21",
+      "pages": 3,
+      "characters": 6659,
+      "numFound": 1467,
+      "reviewCount": 1467
+    },
+    {
+      "productId": "88d675f84ce59c8aa0e36ed294a784e9",
+      "pages": 3,
+      "characters": 5717,
+      "numFound": 1064,
+      "reviewCount": 1064
+    },
+    {
+      "productId": "8d2f41a89df6ebfa4bd8037f2139a72e",
+      "pages": 3,
+      "characters": 14839,
+      "numFound": 916,
+      "reviewCount": 916
+    },
+    {
+      "productId": "b3d47b5b3a1b4ea73eba18c0e7e585fd",
+      "pages": 3,
+      "characters": 9434,
+      "numFound": 911,
+      "reviewCount": 911
+    },
+    {
+      "productId": "476fd7b5927a4d962d990f6f34485337",
+      "pages": 3,
+      "characters": 7002,
+      "numFound": 886,
+      "reviewCount": 886
+    },
+    {
+      "productId": "0c6582ad8f8148a003e5e2c4e9d34fae",
+      "pages": 3,
+      "characters": 5098,
+      "numFound": 528,
+      "reviewCount": 528
+    },
+    {
+      "productId": "1d6565cfca1e1da0bddbc01e97a0262c",
+      "pages": 3,
+      "characters": 5973,
+      "numFound": 525,
+      "reviewCount": 525
+    },
+    {
+      "productId": "a55bd985ceca9680c99e485eaa30e722",
+      "pages": 3,
+      "characters": 6797,
+      "numFound": 482,
+      "reviewCount": 482
+    },
+    {
+      "productId": "8ff1bc27f30e357bdf7a75602c3d644f",
+      "pages": 3,
+      "characters": 6864,
+      "numFound": 383,
+      "reviewCount": 383
+    }
+  ]
+}

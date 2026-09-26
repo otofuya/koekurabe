@@ -219,6 +219,12 @@ export function parseQuery(input: string): ParsedQuery {
 export function displayName(name: string) {
   const cleaned = name
     .normalize("NFKC")
+    // お店の商品名に付く宣伝（【公式】【送料無料】＼新発売／［クーポン］など）を外す（2026-09-26・化粧水から）
+    .replace(/【[^】]*】|＼[^／]*／|\\[^/]*\/|［[^］]*］|\[[^\]]*\]|≪[^≫]*≫|《[^》]*》/g, " ")
+    .replace(/送料無料|楽天\d+位|ポイント\d+倍|\d+%OFF|クーポン(配布|利用)?/g, " ")
+    .replace(/(^|\s)公式(?=\s|$)/g, " ")
+    // ■生活応援キャンペーン実施中■ ★ポイント20倍★ ◆最大3000円CP◆ のような、記号で囲んだ宣伝
+    .replace(/([■◆★☆◇●])[^■◆★☆◇●]{1,40}\1/g, " ")
     .replace(/｜[^\s]+/g, "")
     .replace(/\|[^\s]+/g, "")
     .replace(/(完全|フル)?ワイヤレス(Bluetooth)?イヤホン/g, "")
@@ -229,5 +235,19 @@ export function displayName(name: string) {
   const words = cleaned.split(" ");
   // 先頭がブランド名の繰り返し（BOSE Bose …）なら1つにする
   const deduped = words.filter((word, i) => i === 0 || word.toLowerCase() !== words[i - 1].toLowerCase());
-  return deduped.join(" ") || name;
+  // 末尾の「 /カナル型 /Bluetooth対応」のような仕様の札は外す（前に空白があるものだけ。WF-C710N/L の / は残す）
+  const short = deduped.join(" ").replace(/(\s+\/[^/]*)+$/, "").trim();
+  if (!short) return name;
+  // 長すぎる名前（検索向けに言葉を並べたもの）だけ、見た目の幅で30字ぶんまでで、言葉の切れ目で止める。
+  // 半角の英数字は全角の半分ほどの幅として数える。元の名前は画面に小さく残す
+  const width = (s: string) => [...s].reduce((sum, c) => sum + (c.charCodeAt(0) < 0x2e80 ? 0.55 : 1), 0);
+  // 型番が末尾にあるふつうの名前（Panasonic … RZ-S50W-W）は切らない。34字ぶんを超えるものだけ切る
+  if (width(short) <= 34) return short;
+  let cut = "";
+  for (const c of short) {
+    if (width(cut + c) > 29) break;
+    cut += c;
+  }
+  const space = cut.lastIndexOf(" ");
+  return `${space >= cut.length / 2 ? cut.slice(0, space) : cut}…`;
 }

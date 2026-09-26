@@ -249,7 +249,35 @@ export function quadrantPoints(products: readonly AspectProduct[], xKey: string,
  * with more force here, because a quote is the only way a reader can check a count.
  */
 export function verifiedQuotes(quotes: readonly string[], sourceText: string) {
-  return quotes.map((quote) => quote.trim()).filter((quote) => quote.length >= 6 && sourceText.includes(quote));
+  return quotes.map((quote) => expandQuote(quote.trim(), sourceText)).filter((quote) => quote.length >= 6 && sourceText.includes(quote));
+}
+
+/** Longest quote kept when a short fragment is widened to its sentence. */
+export const MAX_EXPANDED_QUOTE = 60;
+
+/**
+ * A short fragment that really is in the review is widened to the sentence around it (2026-09-26).
+ *
+ * The model often quotes just 「軽くて」 or 「履きやすく」. Those are verbatim, but under the six-character floor,
+ * and since a vote without a verified quote is dropped, the commonest short praise went uncounted — 242 of
+ * 879 shoe reviews lost a vote this way. Widening to the enclosing sentence (split at 。！？!? and line breaks,
+ * then at 、 and spaces if still too long) keeps the quote verbatim and gives the reader the reason, not a word.
+ * Fragments that are not in the text are returned untouched, so the verbatim check still throws them out.
+ */
+export function expandQuote(quote: string, sourceText: string) {
+  if (quote.length >= 6 || !quote || !sourceText.includes(quote)) return quote;
+  const at = sourceText.indexOf(quote);
+  const cut = (delimiters: RegExp, from: number, to: number) => {
+    let start = from, end = to;
+    while (start > 0 && !delimiters.test(sourceText[start - 1])) start -= 1;
+    while (end < sourceText.length && !delimiters.test(sourceText[end])) end += 1;
+    if (end < sourceText.length && /[。！？!?]/.test(sourceText[end])) end += 1;
+    return sourceText.slice(start, end).trim();
+  };
+  const sentence = cut(/[。！？!?\n]/, at, at + quote.length);
+  if (sentence.length <= MAX_EXPANDED_QUOTE) return sentence;
+  const clause = cut(/[。！？!?\n、，, ]/, at, at + quote.length);
+  return clause.length >= 6 && clause.length <= MAX_EXPANDED_QUOTE ? clause : quote;
 }
 
 /* ── reading the tallies out loud ─────────────────────────────────────────── */

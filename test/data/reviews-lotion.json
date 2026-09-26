@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-09-26T08:00:49.768Z",
+  "categoryId": "lotion",
+  "records": [
+    {
+      "productId": "599953d5036b6073687b0973a185117b",
+      "pages": 3,
+      "characters": 6416,
+      "numFound": 3520,
+      "reviewCount": 3520
+    },
+    {
+      "productId": "435713b5bac1a6833d90923100cf20a8",
+      "pages": 3,
+      "characters": 5851,
+      "numFound": 3111,
+      "reviewCount": 3111
+    },
+    {
+      "productId": "faf203e0f312bbbdc53a20f322b39acd",
+      "pages": 3,
+      "characters": 10202,
+      "numFound": 2697,
+      "reviewCount": 2697
+    },
+    {
+      "productId": "086924474c8776cacb5fa08557cfb732",
+      "pages": 3,
+      "characters": 6870,
+      "numFound": 1600,
+      "reviewCount": 1600
+    },
+    {
+      "productId": "1a54694c8352e09551abfa14fedb156e",
+      "pages": 3,
+      "characters": 6505,
+      "numFound": 1075,
+      "reviewCount": 1075
+    },
+    {
+      "productId": "e177500a3c34ee63c7c5316bdb0f4619",
+      "pages": 3,
+      "characters": 7411,
+      "numFound": 851,
+      "reviewCount": 851
+    },
+    {
+      "productId": "cbbe5c8eaba9f65aa0d7bd5487500584",
+      "pages": 3,
+      "characters": 10324,
+      "numFound": 846,
+      "reviewCount": 846
+    },
+    {
+      "productId": "74e543c957f0855bd1aa49547b796295",
+      "pages": 3,
+      "characters": 8282,
+      "numFound": 840,
+      "reviewCount": 840
+    },
+    {
+      "productId": "d2eb03a3893eacf903ab63d44bcb3a2a",
+      "pages": 3,
+      "characters": 9082,
+      "numFound": 707,
+      "reviewCount": 707
+    },
+    {
+      "productId": "2819a90dfc7a7b245ce42b942c58ec7d",
+      "pages": 3,
+      "characters": 7684,
+      "numFound": 686,
+      "reviewCount": 686
+    },
+    {
+      "productId": "ad8302d565038855c5cfd8715dca646c",
+      "pages": 3,
+      "characters": 6734,
+      "numFound": 593,
+      "reviewCount": 593
+    },
+    {
+      "productId": "b95bb73d3f8449c1f82e29acbafe0c57",
+      "pages": 3,
+      "characters": 7255,
+      "numFound": 593,
+      "reviewCount": 593
+    },
+    {
+      "productId": "d40982905314d0542a3305620495e153",
+      "pages": 3,
+      "characters": 6964,
+      "numFound": 435,
+      "reviewCount": 435
+    },
+    {
+      "productId": "20a27b5dfc73f73e8c6da14d57eadd2a",
+      "pages": 3,
+      "characters": 7448,
+      "numFound": 434,
+      "reviewCount": 434
+    },
+    {
+      "productId": "3bf926109560df9611db87d300fa74e1",
+      "pages": 3,
+      "characters": 6746,
+      "numFound": 416,
+      "reviewCount": 416
+    },
+    {
+      "productId": "a6f580c75a12a807a20c8974ff166a36",
+      "pages": 3,
+      "characters": 6556,
+      "numFound": 414,
+      "reviewCount": 414
+    },
+    {
+      "productId": "321d9aeac4cb6b00a31cffb4374eb195",
+      "pages": 3,
+      "characters": 6981,
+      "numFound": 405,
+      "reviewCount": 405
+    },
+    {
+      "productId": "11504e3db62089d5e490776a116a0fa9",
+      "pages": 3,
+      "characters": 5751,
+      "numFound": 324,
+      "reviewCount": 324
+    },
+    {
+      "productId": "9978bd3f5e9fc732030fbbceb5e3ad32",
+      "pages": 3,
+      "characters": 5012,
+      "numFound": 321,
+      "reviewCount": 321
+    },
+    {
+      "productId": "62ff7d2e170b0b8350a253a723d01c45",
+      "pages": 3,
+      "characters": 5930,
+      "numFound": 269,
+      "reviewCount": 269
+    }
+  ]
+}

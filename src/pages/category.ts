@@ -56,6 +56,23 @@ export function categoryPage(app: HTMLElement, id: string, url: URL): Page | voi
     const word = g.word(key);
     const { ranked, quiet } = fewestBad(g.analysed, key);
     const out = (price: number) => max !== null && price > max;
+    const unreadList = () => {
+      const unread = g.joined.filter((p) => !p.aspects || !p.reviewsRead);
+      return h("details", { class: "clist__sub clist__unread" },
+        h("summary", null, `まだ読んでいない ${unread.length}商品`),
+        h("p", { class: "fine" }, "読めていないことは、悪いことではありません。名前と★だけ出しています。"),
+        h("ul", { class: "names" }, unread.map((p) => h("li", { class: out(p.price) ? "is-dim" : "" }, h("a", { href: productHref(p.productId) }, nameOf(p)), " ", h("span", { class: "num" }, yen(p.price)), " ", starLine(p)))));
+    };
+    // 並べられる項目が1つも無いとき（読んだ商品がまだ少ない等）は、残念の数で並べない。読めた件数の多い順に出すだけ（2026-09-26）
+    if (!g.offerable.length) {
+      caption.replaceChildren(h("b", null, "読めたレビューの多い順"), "（順位ではありません）");
+      const read = g.joined.filter((p) => p.aspects && p.reviewsRead).sort((a, b) => (b.reviewsRead ?? 0) - (a.reviewsRead ?? 0));
+      fill(list,
+        h("p", { class: "note" }, `どの項目も、商品ごとの差がまだはっきりしません（${g.coverage.analysed}商品を読んだところ）。残念の数で並べずに、商品ごとの中身を見てください。`),
+        h("ol", { class: "clist__ol" }, read.map((p) => h("li", { "data-id": p.productId }, productRow(p, evidenceTag(p), { dim: out(p.price) })))),
+        unreadList());
+      return;
+    }
     caption.replaceChildren(h("b", null, `「${word}」の残念が少ない順`), "（順位ではありません）", max ? `・${yen(max)}より高い商品は薄く表示` : "");
     const card = (pid: string, pos: number, neg: number, read: number) => {
       const p = g.byId.get(pid)!;
@@ -67,7 +84,6 @@ export function categoryPage(app: HTMLElement, id: string, url: URL): Page | voi
         h("span", { class: "cside__read" }, `${read}件中`, evidenceOf(read) === "thin" ? h("span", { class: "tag tag--thin" }, "まだ少ない") : null)),
       { href: productHref(pid, key), dim: out(p.price) }));
     };
-    const unread = g.joined.filter((p) => !p.aspects || !p.reviewsRead);
     fill(list,
       h("ol", { class: "clist__ol" }, ranked.map((r) => card(r.id, r.positive, r.negative, r.read))),
       quiet.length ? h("section", { class: "clist__sub" },
@@ -78,10 +94,7 @@ export function categoryPage(app: HTMLElement, id: string, url: URL): Page | voi
           const t = p.aspects?.find((x) => x.key === key);
           return card(qid, t?.positive ?? 0, t?.negative ?? 0, p.reviewsRead ?? 0);
         }))) : null,
-      h("details", { class: "clist__sub clist__unread" },
-        h("summary", null, `まだ読んでいない ${unread.length}商品`),
-        h("p", { class: "fine" }, "読めていないことは、悪いことではありません。名前と★だけ出しています。"),
-        h("ul", { class: "names" }, unread.map((p) => h("li", { class: max !== null && p.price > max ? "is-dim" : "" }, h("a", { href: productHref(p.productId) }, nameOf(p)), " ", h("span", { class: "num" }, yen(p.price)), " ", starLine(p))))),
+      unreadList(),
     );
     if (before) play(list, before);
   };
@@ -93,8 +106,8 @@ export function categoryPage(app: HTMLElement, id: string, url: URL): Page | voi
       h("p", { class: "cat__cov" }, `${g.coverage.total}商品のうち${g.coverage.analysed}商品、レビュー${g.coverage.reviewsRead.toLocaleString("ja-JP")}件を読みました`, h("span", { class: "fine" }, "（AI がレビューを分類し、コードが数えた件数）"))),
     blockedAsked ? h("p", { class: "note" }, `「${g.word(blockedAsked)}」はどの商品も似た評判で、並べても差が出ません。ほかのことで並べています。`) : null,
     h("section", { class: "cat__ask" },
-      h("h2", null, "何が気になる？"),
-      chips,
+      g.offerable.length ? h("h2", null, "何が気になる？") : null,
+      g.offerable.length ? chips : null,
       blocked.length ? h("details", { class: "why" }, h("summary", null, "並べても差が出ないこと"), h("ul", null, blocked.map((a) => h("li", null, h("b", null, g.word(a.key)), `：${a.blockedBecause}`)))) : null,
       h("div", { class: "cat__budget" }, h("span", { class: "cat__budget-l" }, "予算"), budget)),
     caption,

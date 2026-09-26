@@ -19,8 +19,9 @@ const dateJa = (iso: string) => {
  */
 export function aboutPage(app: HTMLElement): Page {
   setHead(aboutHead(SITE));
-  const genres = categoryIds().map((id) => genre(id)!);
-  const asOf = dateJa(genres[0]?.generatedAt ?? "");
+  const genres = categoryIds().map((id) => genre(id)!).filter((g) => g.coverage.analysed);
+  // カテゴリごとに、値段・★を取った日
+  const asOf = genres.map((g) => `${g.label}：${dateJa(g.generatedAt)}`).join("・");
 
   app.append(h("article", { class: "about" },
     h("h1", null, "このサイトについて"),

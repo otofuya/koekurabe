@@ -34,7 +34,8 @@ const site = {
 const products = JSON.parse(readFileSync(join(ROOT, "data/genre-products.json"), "utf8"));
 const aspects = JSON.parse(readFileSync(join(ROOT, "data/genre-aspects.json"), "utf8"));
 const categories = [...new Set(products.products.map((p) => p.categoryId))];
-const lastmod = String(aspects.genres[0]?.generatedAt ?? products.generatedAt).slice(0, 10);
+// いちばん新しく数えた日（カテゴリの並びに頼らない）
+const lastmod = String(aspects.genres.map((g) => g.generatedAt).sort().pop() ?? products.generatedAt).slice(0, 10);
 
 const routes = [
   "/",

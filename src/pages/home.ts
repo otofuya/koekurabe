@@ -12,6 +12,7 @@ import { SITE } from "../app/site.ts";
 import { homeHead } from "@lib/seo-model.ts";
 
 /** まだ読んでいないカテゴリ（docs/10 第5節の10カテゴリのうち、イヤホン以外）。 */
+const readCategories = () => categoryIds().filter((id) => (genre(id)?.coverage.analysed ?? 0) > 0);
 const LATER = ["化粧水", "シャンプー", "ランニングシューズ", "枕", "ドリップコーヒー", "プロテイン", "キャットフード", "ドライヤー", "スティック掃除機"];
 
 /**
@@ -44,7 +45,8 @@ export function homePage(app: HTMLElement): Page {
       h("div", { class: "chips" }, mine.map((k) => h("a", { class: "chip", href: categoryHref(g, k) }, icon("pin", 13, 2.2), g.word(k))))) : null,
     h("section", { class: "block" },
       h("div", { class: "stitle" }, h("h2", null, "カテゴリから")),
-      categoryIds().map((id) => {
+      // まだ1商品も読めていないカテゴリはカードにせず、準備中に並べる
+      readCategories().map((id) => {
         const c = genre(id)!;
         const faces = [...c.joined].filter((p) => p.reviewsRead).sort((x, y) => (y.reviewsRead ?? 0) - (x.reviewsRead ?? 0)).slice(0, 3);
         return h("a", { class: "cat-card", href: categoryHref(c) },
@@ -52,7 +54,8 @@ export function homePage(app: HTMLElement): Page {
           h("span", { class: "cat-card__body" }, h("b", null, c.label), h("span", null, `${c.coverage.total}商品のうち${c.coverage.analysed}商品を読みました`)),
           icon("arrow", 18));
       }),
-      h("p", { class: "later" }, h("b", null, "準備中："), LATER.join("・"))),
+      // 読めたカテゴリは準備中から外す
+      h("p", { class: "later" }, h("b", null, "準備中："), LATER.filter((label) => !readCategories().some((id) => genre(id)?.label === label)).join("・"))),
     h("section", { class: "block steps" },
       h("div", { class: "stitle" }, h("h2", null, "使い方")),
       h("ol", null,

@@ -116,7 +116,7 @@ export class MakerCrawler {
     let rules: RobotsRules | null = null;
     try {
       await this.throttle(new URL(origin).host);
-      const response = await fetch(`${origin}/robots.txt`, { headers: { "user-agent": USER_AGENT } });
+      const response = await fetch(`${origin}/robots.txt`, { headers: { "user-agent": USER_AGENT }, signal: AbortSignal.timeout(30_000) });
       if (response.status === 401 || response.status === 403) {
         throw new Error(`アクセス拒否 (${response.status}): ${origin}/robots.txt`);
       }
@@ -153,7 +153,8 @@ export class MakerCrawler {
       this.requestCount += 1;
       let response: Response;
       try {
-        response = await fetch(url, { headers, redirect: "follow" });
+        // 60秒で打ち切る（相手が応答を止めると、Node の fetch は数分待ち続ける。2026-09-26 に楽天で起きた）
+        response = await fetch(url, { headers, redirect: "follow", signal: AbortSignal.timeout(60_000) });
       } catch {
         if (attempt === MAX_ATTEMPTS - 1) return null;
         await sleep(RETRY_BASE_MS * 2 ** attempt);
@@ -164,13 +165,22 @@ export class MakerCrawler {
         throw new Error(`アクセス拒否 (${response.status}): ${url}`);
       }
       if (response.status === 429 || response.status >= 500) {
+        // 読まずに捨てる本文は閉じておく（開いたままだと、Node の fetch が後で内部の確認に失敗して落ちた。2026-09-26）
+        await response.body?.cancel().catch(() => {});
         if (attempt === MAX_ATTEMPTS - 1) return null;
         const retryAfter = Number(response.headers.get("retry-after"));
         await sleep(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : RETRY_BASE_MS * 2 ** attempt);
         continue;
       }
       if (!response.ok) return null;
-      const bytes = new Uint8Array(await response.arrayBuffer());
+      let bytes: Uint8Array;
+      try {
+        bytes = new Uint8Array(await response.arrayBuffer());
+      } catch {
+        if (attempt === MAX_ATTEMPTS - 1) return null;
+        await sleep(RETRY_BASE_MS * 2 ** attempt);
+        continue;
+      }
       const html = decodeHtml(bytes, response.headers.get("content-type"));
       await this.options.cache?.set(url, {
         html,

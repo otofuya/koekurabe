@@ -41,6 +41,8 @@ export async function createQuota({ rootDir, model, dailyLimit = DEFAULT_DAILY_L
     used: () => usage[pacificDate()]?.[model]?.calls ?? 0,
     /** 1回ぶんを予約する。上限なら QuotaStop。間隔が足りなければ待つ。 */
     async reserve() {
+      // ほかのスクリプトも同じ記録に書くので、毎回読み直す（同時に動かすと数を上書きしあった。2026-09-26）
+      try { usage = JSON.parse(await readFile(file, "utf8")); } catch {}
       if ((usage[pacificDate()]?.[model]?.calls ?? 0) >= dailyLimit) {
         throw new QuotaStop(`今日（太平洋時間 ${pacificDate()}）の上限 ${dailyLimit}回に達しました。続きは明日`);
       }
@@ -52,6 +54,7 @@ export async function createQuota({ rootDir, model, dailyLimit = DEFAULT_DAILY_L
     },
     async addTokens(tokens) {
       if (!tokens) return;
+      try { usage = JSON.parse(await readFile(file, "utf8")); } catch {}
       entry().tokens += tokens;
       await persist();
     },

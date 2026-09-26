@@ -75,7 +75,8 @@ export function loadGenre(categoryId: string) {
     joined,
     aspectProducts,
     totalProducts: products.length,
-    generatedAt: productsJson.generatedAt,
+    // 値段・★を取った日。カテゴリのページから取った商品は fetchedAt を持つ（2026-09-26〜）。無ければ一覧全体の日
+    generatedAt: products.map((p) => (p as { fetchedAt?: string }).fetchedAt).filter((d): d is string => !!d).sort().pop() ?? productsJson.generatedAt,
   };
 }
 

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { MakerCrawler } from "./maker-crawl.ts";
 import { savePageText, savePageMeta, PAGE_TEXT_DIR } from "./page-text.mjs";
-import { structuredReviews } from "../lib/review-json.ts";
+import { structuredReviews, shopReviewMeta } from "../lib/review-json.ts";
 
 /**
  * Buyer prose, from the marketplace's own review pages.
@@ -92,6 +92,10 @@ async function reviewPagesFor(product, load) {
   const host = new URL(product.productUrl).hostname;
   if (host === "product.rakuten.co.jp") return { kind: "product", url: (page) => reviewUrl(product.productUrl, page) };
   if (host !== "item.rakuten.co.jp") return null;
+  // カテゴリのページのカードから、レビューのページの番号が分かっているときは、商品ページを開かない
+  if (/^\d+_\d+$/.test(product.reviewKey ?? "")) {
+    return { kind: "item", url: (page) => `https://review.rakuten.co.jp/item/1/${product.reviewKey}/${page}.1/` };
+  }
   const itemPage = await load(product.productUrl.split("?")[0]);
   const match = itemPage?.html.match(ITEM_SKU) ?? itemPage?.html.match(ITEM_QUERY);
   if (!match) return null;
@@ -130,12 +134,18 @@ const REVIEW_BODY = /class="review-body--[^"]*"[^>]*>([\s\S]*?)<\/div>/g;
  * ページのレビュー。ページの中のデータ（lib/review-json.ts）があればそれを使い、1件ごとの★・日付・色・年代・性別も返す。
  * 無ければ前のとおり HTML の本文だけ。本文の並びと meta の並びは同じ（extract で1件ずつ結びつけられる）。
  */
+const EMPTY_META = { id: null, rating: null, date: null, sku: null, age: null, sex: null, codes: [], title: null };
+
 function readReviews(html) {
+  // 商品価格ナビ：ページのデータに、出ているレビューが全部ある
+  // お店のページ：データの一覧は5件の見本だけなので、本文は HTML の30件から取り、本文が一致するデータを付ける（2026-09-26）
   const structured = structuredReviews(html);
+  const shopMeta = structured ? null : shopReviewMeta(html);
   const list = structured ?? [...html.matchAll(REVIEW_BODY)]
     .map(([, inner]) => decodeEntities(inner.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim())
     .filter(Boolean)
-    .map((body) => ({ body }));
+    .map((body) => ({ ...(shopMeta?.get(body) ?? EMPTY_META), body }));
+  const withMeta = structured || (shopMeta && shopMeta.size > 0);
   const kept = [];
   let length = 0;
   for (const review of list) {
@@ -149,7 +159,7 @@ function readReviews(html) {
   readReviews.skipped += list.length - kept.length;
   return {
     prose: kept.map((review) => review.body).join(" / "),
-    reviews: structured ? kept.map(({ body, ...meta }) => meta) : null,
+    reviews: withMeta ? kept.map(({ body, ...meta }) => meta) : null,
   };
 }
 readReviews.skipped = 0;
@@ -182,7 +192,7 @@ async function shopItemsRun(categoryId, products, load, crawler, offline) {
     let slot = 0; let characters = 0;
     for (const link of links[product.productId]) {
       if (slot >= MAX_SHOP_PAGES_PER_PRODUCT) break;
-      const pages = await reviewPagesFor({ productUrl: link.itemUrl }, load);
+      const pages = await reviewPagesFor({ productUrl: link.itemUrl, reviewKey: link.reviewKey }, load);
       if (!pages) { console.log(`  ${product.productId.slice(0, 8)} ${link.shopName}：商品ページから店と商品の番号が読めませんでした`); continue; }
       const last = Math.min(MAX_PAGES_PER_SHOP_ITEM, Math.ceil((link.reviewCount || 1) / PAGE_SIZE));
       for (let page = 1; page <= last && slot < MAX_SHOP_PAGES_PER_PRODUCT; page += 1) {
@@ -209,12 +219,15 @@ async function shopItemsRun(categoryId, products, load, crawler, offline) {
 async function main() {
   const args = process.argv.slice(2);
   const offline = args.includes("--from-cache");
-  const categoryId = args.find((value) => !value.startsWith("--")) ?? "earbuds";
+  const categoryId = args.find((value) => !value.startsWith("--") && !/^[0-9]+$/.test(value)) ?? "earbuds";
   const catalogue = JSON.parse(await readFile(path.join(ROOT_DIR, "data", "genre-products.json"), "utf8"));
   const products = catalogue.products.filter((item) => item.categoryId === categoryId && item.productUrl);
   if (!products.length) throw new Error(`${categoryId}: 対象商品がありません`);
 
   const crawler = offline ? null : new MakerCrawler({ cache: await fileCache(), maxRequests: MAX_REQUESTS_PER_RUN, onProgress: (message) => console.log(message) });
+  // 1商品で読むページの上限（新しいカテゴリは3ページ＝約90件。docs/10 第6節の見込み）
+  const maxPagesIndex = args.indexOf("--max-pages");
+  const maxPages = maxPagesIndex >= 0 ? Number(args[maxPagesIndex + 1]) : MAX_PAGES_PER_PRODUCT;
   if (args.includes("--shop-items")) {
     await shopItemsRun(categoryId, products, (url) => (offline ? cachedPage(url) : crawler.fetchPage(url)), crawler, offline);
     return;
@@ -226,7 +239,7 @@ async function main() {
     let characters = 0; let pagesRead = 0; let found = null;
     const load = (url) => (offline ? cachedPage(url) : crawler.fetchPage(url));
     const pages = await reviewPagesFor(product, load);
-    for (let page = 1; pages && page <= MAX_PAGES_PER_PRODUCT; page += 1) {
+    for (let page = 1; pages && page <= maxPages; page += 1) {
       const url = pages.url(page);
       const fetched = await load(url);
       if (!fetched) break;

@@ -91,6 +91,8 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
       { key: "sticky", word: "べたつき", label: "べたつき", positivePole: "べたつかない", negativePole: "べたつく" },
       { key: "scent", word: "香り", label: "香り", positivePole: "香りが好き", negativePole: "香りが苦手" },
       { key: "skin", word: "肌の調子", label: "使い続けたときの肌の調子", positivePole: "調子がよくなった", negativePole: "変わらない・荒れた" },
+      // AI の提案（scripts/suggest-aspects.mjs・2026-09-26）から足した。決めるのはオーナー
+      { key: "pores", word: "毛穴", label: "毛穴の目立ち", positivePole: "毛穴が目立たなくなった", negativePole: "毛穴は変わらない" },
       { key: "bottle", word: "容器", label: "容器の使いやすさ", positivePole: "出しやすい", negativePole: "出しにくい・漏れる" },
       { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
     ],
@@ -106,6 +108,8 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
       { key: "fit", word: "足へのなじみ", label: "フィット感・履き心地", positivePole: "足になじむ", negativePole: "当たる・痛い" },
       { key: "light", word: "軽さ", label: "軽さ", positivePole: "軽い", negativePole: "重い" },
       { key: "fatigue", word: "疲れにくさ", label: "長く走ったときの疲れにくさ", positivePole: "疲れにくい", negativePole: "疲れる・痛くなる" },
+      // AI の提案から足した（ランニングの売り場の靴でも、ふだん歩くのに使う人が多い）。決めるのはオーナー
+      { key: "walk", word: "歩きやすさ", label: "ふだん歩くときの歩きやすさ", positivePole: "歩きやすい", negativePole: "歩きにくい" },
       { key: "grip", word: "グリップ", label: "グリップ（滑りにくさ）", positivePole: "滑らない", negativePole: "滑る" },
       { key: "breath", word: "蒸れ", label: "通気性", positivePole: "蒸れない", negativePole: "蒸れる" },
       { key: "durability", word: "丈夫さ", label: "耐久性", positivePole: "長持ち", negativePole: "すぐすり減る・破れる" },
@@ -116,6 +120,30 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
       { key: "size", word: "サイズ感", label: "サイズ感（いつものサイズと比べて）", low: "小さめ・きつい", just: "ちょうど", high: "大きめ・ゆるい" },
       { key: "width", word: "足幅", label: "足幅（横の幅）", low: "幅がせまい", just: "ちょうど", high: "幅が広い" },
     ],
+  },
+  // 仮（2026-09-26）：scripts/suggest-aspects.mjs の提案（1,800件から200件）をもとに書いた。決めるのはオーナー
+  catfood: {
+    id: "catfood",
+    label: "キャットフード",
+    aspects: [
+      { key: "appetite", word: "食いつき", label: "食いつき", positivePole: "よく食べる", negativePole: "食べない・残す" },
+      { key: "boredom", word: "飽き", label: "飽きずに食べ続けるか", positivePole: "飽きずに食べる", negativePole: "すぐ飽きる" },
+      { key: "stool", word: "お通じ", label: "便の調子・におい", positivePole: "便の調子が良い", negativePole: "便がゆるい・においが強い" },
+      { key: "vomit", word: "吐き戻し", label: "吐き戻し", positivePole: "吐かなくなった", negativePole: "吐く" },
+      { key: "coat", word: "毛並み", label: "毛並み・毛づや", positivePole: "つやが出た", negativePole: "パサつく" },
+      { key: "health", word: "体調", label: "体重・尿・体調", positivePole: "体調が良い", negativePole: "体調を崩した" },
+      { key: "bag", word: "袋・保存", label: "袋・小分け・保存のしやすさ", positivePole: "小分けで便利", negativePole: "湿気る・使いにくい" },
+      { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
+    ],
+    fits: [
+      { key: "kibble", word: "粒の大きさ", label: "粒の大きさ", low: "小さい", just: "ちょうど", high: "大きい" },
+    ],
+  },
+  // 仮（2026-09-26）：一覧とレビューは読んだ。観点は次の日に suggest-aspects.mjs の提案から書く（それまで数えない）
+  protein: {
+    id: "protein",
+    label: "プロテイン（ホエイ）",
+    aspects: [],
   },
 };
 

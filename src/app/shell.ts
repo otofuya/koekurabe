@@ -9,6 +9,8 @@ import { tray, recent, onStoreChange } from "./store.ts";
 import { hasAds, SITE } from "./site.ts";
 
 const allProducts = () => categoryIds().flatMap((id) => genre(id)!.joined);
+/** 扱っているカテゴリの名前（「今は〇〇・〇〇です」）。 */
+const handled = () => categoryIds().map((id) => genre(id)!).filter((g) => g.coverage.analysed).map((g) => g.label).join("・");
 const mostRead = () => [...allProducts()].filter((p) => p.reviewsRead).sort((a, b) => (b.reviewsRead ?? 0) - (a.reviewsRead ?? 0));
 
 /** 上の帯。ロゴと「さがす」。 */
@@ -40,7 +42,7 @@ export function searchBox({ autofocus = false, onGo }: { autofocus?: boolean; on
     if (parsed.kind === "product") {
       const found = findProduct(parsed.id);
       if (found) { first = productHref(parsed.id); list.replaceChildren(h("p", { class: "sbox__cap" }, "この商品を開きます"), h("ul", { class: "sbox__ul" }, row(found.product))); }
-      else list.replaceChildren(h("p", { class: "note" }, "この商品は、まだ扱っていません（今はワイヤレスイヤホンだけです）。"));
+      else list.replaceChildren(h("p", { class: "note" }, `この商品は、まだ扱っていません（今は${handled()}です）。`));
       return;
     }
     if (parsed.kind === "other-url") {
@@ -53,7 +55,7 @@ export function searchBox({ autofocus = false, onGo }: { autofocus?: boolean; on
     if (found.length) first = productHref(found[0].productId);
     list.replaceChildren(found.length
       ? h("ul", { class: "sbox__ul" }, found.map(row))
-      : h("p", { class: "note" }, `「${parsed.q}」に合う商品は見つかりませんでした。今はワイヤレスイヤホンだけです。`));
+      : h("p", { class: "note" }, `「${parsed.q}」に合う商品は見つかりませんでした。今は${handled()}です。`));
   };
   input.addEventListener("input", paint);
   input.addEventListener("keydown", (e) => { if (e.key === "Enter" && first) { e.preventDefault(); go(first); } });
@@ -101,14 +103,14 @@ export function mountTray() {
 
 /** このサイトの数え方。どの画面の下にも。 */
 export function footer() {
-  const g = genre("earbuds");
+  const genres = categoryIds().map((id) => genre(id)!).filter((g) => g.coverage.analysed);
   return h("footer", { class: "foot" },
     h("h2", null, "このサイトの数え方"),
     h("ul", null,
       h("li", null, "★・レビュー数・値段は、楽天の値をそのまま出しています。"),
       h("li", null, "「よかった」「残念だった」は、AI がレビューを1件ずつ分類し、コードが数えた件数です。分母はいつも、読んだレビューの件数です。"),
       h("li", null, "ひとことは、原文と照合した短い引用です。出典にリンクしています。レビューの本文は載せていません。"),
-      g ? h("li", null, `${g.label}：${g.coverage.total}商品のうち${g.coverage.analysed}商品、レビュー${g.coverage.reviewsRead.toLocaleString("ja-JP")}件を読みました。`) : null,
+      genres.map((g) => h("li", null, `${g.label}：${g.coverage.total}商品のうち${g.coverage.analysed}商品、レビュー${g.coverage.reviewsRead.toLocaleString("ja-JP")}件を読みました。`)),
       h("li", null, "「気になる」・最近見た商品・くらべるに入れた商品は、この端末にだけ残ります。")),
     h("p", { class: "foot__links" }, h("a", { href: "/about" }, `このサイトについて（数え方・${hasAds() ? "広告・" : ""}プライバシー・運営者）`)),
     // 楽天ウェブサービスの API で取った商品の情報を使うので、決まりのクレジットを出す（決まりの HTML のまま。変えてはいけない）
