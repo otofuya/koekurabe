@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T01:40:41.054Z",
+  "generatedAt": "2026-09-26T00:34:01.489Z",
   "categoryId": "earbuds",
   "records": [
     {
@@ -116,9 +116,9 @@
     },
     {
       "productId": "2a5f9d61024fb1e58058dbd0a314ec25",
-      "pages": 2,
-      "characters": 3865,
-      "numFound": null,
+      "pages": 0,
+      "characters": 0,
+      "numFound": 0,
       "reviewCount": 37
     },
     {
@@ -174,7 +174,7 @@
       "productId": "3a97669b45e8f68a3a4335299c2a0a97",
       "pages": 0,
       "characters": 0,
-      "numFound": 0,
+      "numFound": null,
       "reviewCount": 0
     },
     {
@@ -237,7 +237,7 @@
       "productId": "4bb3cc999bc58265a2cf2b6a28b906dc",
       "pages": 0,
       "characters": 0,
-      "numFound": null,
+      "numFound": 0,
       "reviewCount": 0
     },
     {
@@ -298,9 +298,9 @@
     },
     {
       "productId": "637e1dd64912138092e4fb1b1de5a800",
-      "pages": 10,
-      "characters": 23283,
-      "numFound": null,
+      "pages": 0,
+      "characters": 0,
+      "numFound": 0,
       "reviewCount": 1383
     },
     {
@@ -342,7 +342,7 @@
       "productId": "73e3cbcd01858730c06b0601bfe649ac",
       "pages": 0,
       "characters": 0,
-      "numFound": null,
+      "numFound": 0,
       "reviewCount": 9
     },
     {
@@ -376,7 +376,7 @@
     {
       "productId": "821de2ea4d103ede4bb09e3d80df3015",
       "pages": 5,
-      "characters": 11241,
+      "characters": 12246,
       "numFound": null,
       "reviewCount": 132
     },
@@ -410,9 +410,9 @@
     },
     {
       "productId": "97550ceff7083dbbaa5f5efe6b00065c",
-      "pages": 1,
-      "characters": 789,
-      "numFound": 6,
+      "pages": 0,
+      "characters": 0,
+      "numFound": null,
       "reviewCount": 6
     },
     {
@@ -501,9 +501,9 @@
     },
     {
       "productId": "c087632f8140734817e7259101637100",
-      "pages": 0,
-      "characters": 0,
-      "numFound": 0,
+      "pages": 1,
+      "characters": 35,
+      "numFound": 1,
       "reviewCount": 0
     },
     {
@@ -517,14 +517,14 @@
       "productId": "c3bdf10d0467b6725adbd3df79b8c5ae",
       "pages": 0,
       "characters": 0,
-      "numFound": 0,
+      "numFound": null,
       "reviewCount": 2
     },
     {
       "productId": "c8e94357c00ab55c463c21d3008bad39",
-      "pages": 0,
-      "characters": 0,
-      "numFound": 0,
+      "pages": 1,
+      "characters": 21,
+      "numFound": 1,
       "reviewCount": 36
     },
     {
@@ -537,15 +537,15 @@
     {
       "productId": "cb0101de2de36b8662bf78cfb18b27cb",
       "pages": 1,
-      "characters": 1559,
+      "characters": 1633,
       "numFound": null,
       "reviewCount": 18
     },
     {
       "productId": "cd6a9906806eec21fd2336caccac91b5",
-      "pages": 1,
-      "characters": 2582,
-      "numFound": null,
+      "pages": 0,
+      "characters": 0,
+      "numFound": 0,
       "reviewCount": 27
     },
     {
@@ -571,16 +571,16 @@
     },
     {
       "productId": "de48fc4d6b10300f30e2d5679fd500fd",
-      "pages": 1,
-      "characters": 789,
-      "numFound": 6,
+      "pages": 0,
+      "characters": 0,
+      "numFound": 0,
       "reviewCount": 6
     },
     {
       "productId": "e3e9d2fcfdc8b26b57752fa2c3f00dbc",
       "pages": 1,
-      "characters": 524,
-      "numFound": 4,
+      "characters": 584,
+      "numFound": 5,
       "reviewCount": 23
     },
     {
@@ -599,15 +599,15 @@
     },
     {
       "productId": "e7e3a2269bfd2c54c440a3e27469c043",
-      "pages": 2,
-      "characters": 6751,
+      "pages": 3,
+      "characters": 6772,
       "numFound": null,
       "reviewCount": 61
     },
     {
       "productId": "e89650d6cd6325e9c070a96a8996da12",
       "pages": 6,
-      "characters": 18933,
+      "characters": 19211,
       "numFound": null,
       "reviewCount": 173
     },
@@ -621,8 +621,8 @@
     {
       "productId": "ecb1d7cbed7a9ec0efae960396330da6",
       "pages": 1,
-      "characters": 697,
-      "numFound": 7,
+      "characters": 31,
+      "numFound": 1,
       "reviewCount": 7
     },
     {
@@ -634,16 +634,16 @@
     },
     {
       "productId": "f02e6fec61cfa5751a7ebde6d6bbef94",
-      "pages": 0,
-      "characters": 0,
-      "numFound": 0,
+      "pages": 2,
+      "characters": 4297,
+      "numFound": null,
       "reviewCount": 0
     },
     {
       "productId": "f06092aefa6fce901eb1b4a471ea1dd7",
-      "pages": 1,
-      "characters": 53,
-      "numFound": 1,
+      "pages": 0,
+      "characters": 0,
+      "numFound": 0,
       "reviewCount": 1
     },
     {
@@ -678,7 +678,7 @@
       "productId": "faaeca461f41bff8b8bb5f0f9b0f8dd9",
       "pages": 0,
       "characters": 0,
-      "numFound": 0,
+      "numFound": null,
       "reviewCount": 0
     }
   ]

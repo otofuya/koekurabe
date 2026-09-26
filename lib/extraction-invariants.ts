@@ -193,6 +193,20 @@ export function validateGenreStructure(
           errors.push({ path: ap, message: "言及があるのに引用が0件です" });
         }
 
+        // 向きの付いた引用（2026-09-26 以降の抽出）。付いているなら全部に付いていて、件数のある側には引用がある
+        const sided = aspect.quotes.filter((q: { polarity?: unknown }) => q && typeof q === "object" && "polarity" in q);
+        if (sided.length && sided.length !== aspect.quotes.length) {
+          errors.push({ path: ap, message: "向きの付いた引用と付いていない引用が混ざっています" });
+        }
+        if (sided.length) {
+          if ((aspect.positive ?? 0) > 0 && !sided.some((q: { polarity?: unknown }) => q.polarity === "positive")) {
+            errors.push({ path: ap, message: "よかったの件数があるのに、よかった側の引用がありません" });
+          }
+          if ((aspect.negative ?? 0) > 0 && !sided.some((q: { polarity?: unknown }) => q.polarity === "negative")) {
+            errors.push({ path: ap, message: "残念だったの件数があるのに、残念だった側の引用がありません" });
+          }
+        }
+
         const seenTexts = new Set<string>();
         for (const [qi, quote] of aspect.quotes.entries()) {
           const qp = `${ap}/quotes[${qi}]`;
@@ -202,12 +216,18 @@ export function validateGenreStructure(
             continue;
           }
 
+          if ("polarity" in quote && quote.polarity !== "positive" && quote.polarity !== "negative") {
+            errors.push({ path: qp, message: `polarity が positive / negative ではありません（${quote.polarity}）` });
+          }
+
+          // 同じ文でも、別のレビューで逆の側に数えられたものは別の引用として持つ
+          const textKey = `${quote.polarity ?? ""}:${quote.text}`;
           if (typeof quote.text !== "string" || quote.text.trim().length < 6) {
             errors.push({ path: qp, message: "text が6文字未満または未設定です" });
-          } else if (seenTexts.has(quote.text)) {
+          } else if (seenTexts.has(textKey)) {
             errors.push({ path: qp, message: "text が同一 tally 内で重複しています" });
           } else {
-            seenTexts.add(quote.text);
+            seenTexts.add(textKey);
           }
 
           if (typeof quote.reviewUrl !== "string" || quote.reviewUrl === "") {

@@ -6,6 +6,7 @@ import { navigate } from "./router.ts";
 import { categoryIds, findProduct, genre } from "./data.ts";
 import { productRow, evidenceTag, productHref, productImage, nameOf } from "./parts.ts";
 import { tray, recent, onStoreChange } from "./store.ts";
+import { hasAds } from "./site.ts";
 
 const allProducts = () => categoryIds().flatMap((id) => genre(id)!.joined);
 const mostRead = () => [...allProducts()].filter((p) => p.reviewsRead).sort((a, b) => (b.reviewsRead ?? 0) - (a.reviewsRead ?? 0));
@@ -109,5 +110,7 @@ export function footer() {
       h("li", null, "ひとことは、原文と照合した短い引用です。出典にリンクしています。レビューの本文は載せていません。"),
       g ? h("li", null, `${g.label}：${g.coverage.total}商品のうち${g.coverage.analysed}商品、レビュー${g.coverage.reviewsRead.toLocaleString("ja-JP")}件を読みました。`) : null,
       h("li", null, "「気になる」・最近見た商品・くらべるに入れた商品は、この端末にだけ残ります。")),
-    h("p", { class: "foot__fine" }, "仮の名前で作っています。"));
+    h("p", { class: "foot__links" }, h("a", { href: "/about" }, `このサイトについて（数え方・${hasAds() ? "広告・" : ""}プライバシー・運営者）`)),
+    // 楽天ウェブサービスの API で取った商品の情報を使うので、決まりのクレジットを出す（決まりの HTML のまま。変えてはいけない）
+    h("p", { class: "foot__fine" }, h("a", { href: "https://developers.rakuten.com/", target: "_blank" }, "Supported by Rakuten Developers")));
 }

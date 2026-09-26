@@ -5,6 +5,7 @@ import { nakami, evidenceOf, allLines, displayName, READ_ENOUGH } from "@lib/nak
 import type { NakamiLine } from "@lib/nakami-model.ts";
 import { asAspect } from "./data.ts";
 import type { Genre } from "./data.ts";
+import { hasAds, shopUrl } from "./site.ts";
 
 export const nameOf = (p: JoinedProduct) => displayName(p.name);
 export const productHref = (id: string, key?: string | null) => `/reviews/${id}${key ? `?k=${key}` : ""}`;
@@ -110,6 +111,21 @@ export function evidenceTag(p: JoinedProduct) {
   if (e === "enough") return h("span", { class: "tag" }, `${p.reviewsRead}件を読んだ`);
   if (e === "thin") return h("span", { class: "tag tag--thin" }, `読めたのは${p.reviewsRead}件（まだ少ない）`);
   return h("span", { class: "tag tag--none" }, "まだ読んでいない");
+}
+
+/**
+ * 楽天へのリンク。アフィリエイトの ID があるときは広告なので「PR」の印を付け、rel も sponsored にする
+ * （景品表示法のステマ規制。広告だと分かるように）。ID が無いときは、ふつうのリンク。
+ */
+export function shopLink(p: JoinedProduct, cls: string, ...children: Child[]) {
+  const ad = hasAds();
+  return h("a", { class: cls, href: shopUrl(p.productUrl), target: "_blank", rel: ad ? "sponsored noopener" : "nofollow noopener", "data-native": "" },
+    ...children, ad ? h("span", { class: "pr", "aria-label": "広告" }, "PR") : null, icon("out", 16));
+}
+
+/** 広告のリンクがあるページの上に出す一文。ID が無いときは出さない。 */
+export function adNotice() {
+  return hasAds() ? h("p", { class: "adnote" }, "このページには広告（楽天のリンク）があります。件数と並びは、広告と関係なく数えています。") : null;
 }
 
 export function sectionTitle(text: string, sub?: Child) {

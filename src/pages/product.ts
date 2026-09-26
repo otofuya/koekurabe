@@ -4,7 +4,10 @@ import { navigate } from "../app/router.ts";
 import { findProduct } from "../app/data.ts";
 import type { Genre } from "../app/data.ts";
 import type { JoinedProduct, Spec } from "@lib/types.ts";
-import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag } from "../app/parts.ts";
+import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag, shopLink, adNotice } from "../app/parts.ts";
+import { setHead } from "../app/head.ts";
+import { SITE } from "../app/site.ts";
+import { productHead } from "@lib/seo-model.ts";
 import { createSheet } from "../app/sheet.ts";
 import { concerns, recent, tray, onStoreChange } from "../app/store.ts";
 import { notFound } from "./not-found.ts";
@@ -18,7 +21,7 @@ export function productPage(app: HTMLElement, id: string, url: URL): Page | void
   if (!found) return notFound(app);
   const { product: p, genre: g } = found;
   recent.add(id);
-  document.title = `${nameOf(p)} の★の中身｜よかった・残念だった`;
+  setHead(productHead(p, g, g.order, g.word, SITE));
 
   let opener: HTMLElement | null = null;
   const closeSheet = () => {
@@ -58,6 +61,7 @@ export function productPage(app: HTMLElement, id: string, url: URL): Page | void
 
   app.append(h("article", { class: "pp" },
     h("nav", { class: "crumb" }, h("a", { href: categoryHref(g) }, icon("back", 16), g.label)),
+    adNotice(),
     h("div", { class: "pp__side" },
     h("header", { class: "pp__hero" },
       productImage(p, 168, { eager: true, transition: true }),
@@ -127,5 +131,5 @@ function specs(list: Spec[]) {
 }
 
 function buyLink(p: JoinedProduct, cls: string) {
-  return h("a", { class: cls, href: p.productUrl, target: "_blank", rel: "nofollow noopener", "data-native": "" }, "楽天で見る", icon("out", 16));
+  return shopLink(p, cls, "楽天で見る");
 }

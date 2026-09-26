@@ -22,7 +22,7 @@ import { PAGE_TEXT_DIR, loadPageMeta } from "./page-text.mjs";
  * normalized text hash across sources. Within the same source, identical text is kept
  * (different reviewers may write the same thing).
  *
- * Usage: node --experimental-strip-types reference/extract-aspects.mjs earbuds [--limit N]
+ * Usage: node --experimental-strip-types scripts/extract-aspects.mjs earbuds [--limit N]
  */
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -81,6 +81,7 @@ const promptFor = (aspects, numberedReviews) => `次は1つの商品に対する
 言及している場合、それが肯定的か否定的かを判定し、根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください。
 
 - 1つのレビューが同じ観点について肯定と否定の両方を述べている場合、両方を出してください
+- 引用は、その判定（肯定か否定か）の根拠になる一節だけにしてください。肯定と否定の両方を出すときは、それぞれの根拠を別々に引用してください
 - 観点に言及していないレビューは aspects を空配列にしてください
 - 否定表現（「〜ない」「〜しにくい」「期待したほどでは」）を見落とさないでください
 - 商品説明やショップの宣伝文が混ざっている場合、それは購入者の声ではないので判定しないでください
@@ -125,6 +126,8 @@ async function loadFamilyKeys() {
     const mod = await import("../test/product-selection.mjs");
     familyKeyFunctions = { modelFamilyKey: mod.modelFamilyKey, variantFamilyKey: mod.variantFamilyKey };
   } catch {
+    // 色違いを1つにまとめる仕組みは、まだ無い（docs/02・未解決）。黙って進めず、そう書く
+    console.warn("注意：色違いの統合はしていません（test/product-selection.mjs がありません）。色違いは別の商品として数えます。");
     familyKeyFunctions = { modelFamilyKey: () => null, variantFamilyKey: () => null };
   }
   return familyKeyFunctions;
@@ -306,6 +309,25 @@ async function main() {
 
   const output = path.join(ROOT_DIR, "data", "genre-aspects.json");
   const existing = await readFile(output, "utf8").then(JSON.parse).catch(() => ({ genres: [] }));
+
+  // 前の抽出を残す（2026-09-26）。楽天の商品価格ナビは、前は読めたレビューを出さなくなった商品がある
+  // （soundcore Liberty 4：前は303件、今は0件）。読み直せなかった・前より少なくしか読めなかった商品は、
+  // 前の件数を残す（分母が大きいほうが、引用の向きより大事）。--replace-all で前のものを捨てる。
+  const previous = existing.genres.find((genre) => genre.categoryId === categoryId);
+  if (previous && !args.includes("--replace-all")) {
+    const fresh = new Map(records.map((record) => [record.productId, record]));
+    const carried = [];
+    for (const old of previous.products) {
+      const now = fresh.get(old.productId);
+      if (now && now.reviewsRead >= old.reviewsRead) continue;
+      carried.push(`${old.productId.slice(0, 8)}（前${old.reviewsRead}件・今${now?.reviewsRead ?? 0}件）`);
+      const kept = { ...old, carriedOverFrom: old.carriedOverFrom ?? previous.generatedAt };
+      if (now) records[records.indexOf(now)] = kept;
+      else records.push(kept);
+    }
+    if (carried.length) console.log(`\n前の抽出を残した商品：${carried.length}件 ${carried.join("・")}`);
+  }
+
   const genres = [
     ...existing.genres.filter((genre) => genre.categoryId !== categoryId),
     { categoryId, generatedAt: new Date().toISOString(), extractionModel: MODEL, products: records },

@@ -41,8 +41,14 @@ const MAX_REQUESTS_PER_RUN = 600;
  */
 const MAX_PAGES_PER_PRODUCT = 10;
 const PAGE_SIZE = 30;
-/** Enough for one page of reviews. Pages are stored and extracted separately. */
-const MAX_TEXT_LENGTH = 8_000;
+/**
+ * Enough for one page of reviews. Pages are stored and extracted separately.
+ *
+ * Whole reviews only: the old version cut the joined text at 8,000 characters, which chopped the last
+ * review of a long page in half — and the half still counted as a review read. Now a review that
+ * would pass the limit is left out entirely (and counted as skipped), so every review read is whole.
+ */
+const MAX_TEXT_LENGTH = 16_000;
 
 const cachePathFor = (url) => path.join(CACHE_DIR, `${createHash("sha256").update(url).digest("hex").slice(0, 32)}.json`);
 
@@ -69,6 +75,27 @@ function reviewUrl(productUrl, page = 1) {
   const base = productUrl.split("?")[0];
   const stem = `${base.endsWith("/") ? base : `${base}/`}review/`;
   return page <= 1 ? stem : `${stem}${page}/`;
+}
+
+/**
+ * お店の商品（item.rakuten.co.jp）のレビューのページ。
+ *
+ * 商品検索 API は店の番号と商品の番号を返さないので、商品ページを1回読んで取る
+ * （"itemInfoSku":{"shopId":"398010",…,"itemId":10007028}）。レビューは
+ * review.rakuten.co.jp/item/1/<店>_<商品>/<ページ>.1/ にある。
+ */
+const ITEM_SKU = /"itemInfoSku":\{[^}]*?"shopId":"?(\d+)"?[^}]*?"itemId":(\d+)/;
+const ITEM_QUERY = /shop_id=(\d+)&(?:amp;)?item_id=(\d+)/;
+
+async function reviewPagesFor(product, load) {
+  const host = new URL(product.productUrl).hostname;
+  if (host === "product.rakuten.co.jp") return { kind: "product", url: (page) => reviewUrl(product.productUrl, page) };
+  if (host !== "item.rakuten.co.jp") return null;
+  const itemPage = await load(product.productUrl.split("?")[0]);
+  const match = itemPage?.html.match(ITEM_SKU) ?? itemPage?.html.match(ITEM_QUERY);
+  if (!match) return null;
+  const key = `${match[1]}_${match[2]}`;
+  return { kind: "item", url: (page) => `https://review.rakuten.co.jp/item/1/${key}/${page}.1/` };
 }
 
 /**
@@ -102,8 +129,18 @@ function reviewProse(html) {
   const bodies = [...html.matchAll(REVIEW_BODY)]
     .map(([, inner]) => decodeEntities(inner.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim())
     .filter(Boolean);
-  return bodies.join(" / ").slice(0, MAX_TEXT_LENGTH);
+  const kept = [];
+  let length = 0;
+  for (const body of bodies) {
+    const next = length + (kept.length ? 3 : 0) + body.length;
+    if (next > MAX_TEXT_LENGTH) break;
+    kept.push(body);
+    length = next;
+  }
+  reviewProse.skipped += bodies.length - kept.length;
+  return kept.join(" / ");
 }
+reviewProse.skipped = 0;
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', "#39": "'", nbsp: " " };
 const decodeEntities = (text) => text.replace(/&(#\d+|[a-z]+);/gi, (whole, name) => {
@@ -125,11 +162,14 @@ async function main() {
 
   for (const [index, product] of products.entries()) {
     let characters = 0; let pagesRead = 0; let found = null;
-    for (let page = 1; page <= MAX_PAGES_PER_PRODUCT; page += 1) {
-      const url = reviewUrl(product.productUrl, page);
-      const fetched = offline ? await cachedPage(url) : await crawler.fetchPage(url);
+    const load = (url) => (offline ? cachedPage(url) : crawler.fetchPage(url));
+    const pages = await reviewPagesFor(product, load);
+    for (let page = 1; pages && page <= MAX_PAGES_PER_PRODUCT; page += 1) {
+      const url = pages.url(page);
+      const fetched = await load(url);
       if (!fetched) break;
-      if (page === 1) found = totalReviews(fetched.html);
+      // お店の商品は、API が返したその商品のレビュー数で止める（ページの数字は店ぜんたいの件数のことがある）
+      if (page === 1) found = pages.kind === "item" ? product.reviewCount ?? null : totalReviews(fetched.html);
       const prose = reviewProse(fetched.html);
       // A page that loaded but says nothing is not a failure; it is a product nobody reviewed.
       if (prose.length < 20) break;
@@ -153,6 +193,7 @@ async function main() {
   const coverage = (withProse / products.length * 100).toFixed(0);
   const pages = records.reduce((sum, record) => sum + record.pages, 0);
   const source = offline ? "キャッシュから再抽出" : `リクエスト ${crawler.requestsMade}件`;
+  if (reviewProse.skipped) console.log(`長すぎて入れなかったレビュー：${reviewProse.skipped}件（途中で切らずに外した）`);
   console.log(`\n${products.length}件中${withProse}件にレビュー本文（カバレッジ${coverage}%・${pages}ページ）→ ${path.relative(ROOT_DIR, output)}（${source}）`);
 }
 

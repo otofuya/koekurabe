@@ -6,7 +6,10 @@ import type { JoinedProduct } from "@lib/types.ts";
 import { compareProducts, compareLead } from "@lib/nakami-model.ts";
 import type { CompareRow } from "@lib/nakami-model.ts";
 import { buildSpecRows } from "@lib/vs-model.ts";
-import { productImage, starLine, nameOf, productHref, bar, evidenceTag, sectionTitle } from "../app/parts.ts";
+import { productImage, starLine, nameOf, productHref, bar, evidenceTag, sectionTitle, shopLink, adNotice } from "../app/parts.ts";
+import { setHead } from "../app/head.ts";
+import { SITE } from "../app/site.ts";
+import { vsHead } from "@lib/seo-model.ts";
 import { concerns } from "../app/store.ts";
 import { notFound } from "./not-found.ts";
 
@@ -18,7 +21,7 @@ export function vsPage(app: HTMLElement, aId: string, bId: string, url: URL): Pa
   const A = findProduct(aId), B = findProduct(bId);
   if (!A || !B || A.genre.id !== B.genre.id) return notFound(app);
   const g = A.genre, a = A.product, b = B.product;
-  document.title = `${nameOf(a)} と ${nameOf(b)}｜★の中身をくらべる`;
+  setHead(vsHead(a.name, b.name, SITE, url.pathname));
 
   const head = h("header", { class: "vs__head" },
     [a, b].map((p) => h("a", { class: "vs__p", href: productHref(p.productId) },
@@ -46,6 +49,7 @@ export function vsPage(app: HTMLElement, aId: string, bId: string, url: URL): Pa
 
   app.append(h("article", { class: "vs" },
     h("h1", { class: "vs__title" }, "2つをくらべる"),
+    adNotice(),
     head,
     h("p", { class: "vs__lead" }, lead),
     mineRows.length ? h("section", { class: "block" }, sectionTitle(mineRows.every((r) => concerns.has(g.id, r.key)) ? "気にしていること" : "いま見ていること"), mineRows.map((r) => vrow(r, a, b, g))) : null,
@@ -56,7 +60,7 @@ export function vsPage(app: HTMLElement, aId: string, bId: string, url: URL): Pa
         onlyA.map((k) => h("li", null, h("b", null, g.word(k)), `：${nameOf(a)} だけ（${nameOf(b)} はふれた声が3件未満）`)),
         onlyB.map((k) => h("li", null, h("b", null, g.word(k)), `：${nameOf(b)} だけ（${nameOf(a)} はふれた声が3件未満）`)))) : null,
     specTable(a, b),
-    h("div", { class: "vs__buy" }, [a, b].map((p) => h("a", { class: "btn btn--soft", href: p.productUrl, target: "_blank", rel: "nofollow noopener" }, h("span", null, "楽天で見る", h("small", { class: "vs__buyname" }, nameOf(p))), icon("out", 15)))),
+    h("div", { class: "vs__buy" }, [a, b].map((p) => shopLink(p, "btn btn--soft", h("span", null, "楽天で見る", h("small", { class: "vs__buyname" }, nameOf(p)))))),
     h("p", { class: "fine" }, "件数は AI がレビューを1件ずつ分類し、コードが数えたものです。分母は読んだ件数です。")));
 }
 

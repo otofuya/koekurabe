@@ -19,7 +19,11 @@ export type TallyWithQuotes = {
   quotes: Quote[];
 };
 
-const MAX_QUOTES_PER_TALLY = 3;
+/**
+ * 引用は、よかった・残念だった それぞれ3件まで。
+ * 1つの枠を両方で取り合うと、先に来た側だけになる（Liberty 4 のノイキャンは残念14件なのに引用が3件ともよかった側だった）。
+ */
+export const MAX_QUOTES_PER_SIDE = 3;
 
 export function aggregateTallies(reviews: ClassifiedReview[]): TallyWithQuotes[] {
   const tallies = new Map<string, TallyWithQuotes>();
@@ -34,8 +38,9 @@ export function aggregateTallies(reviews: ClassifiedReview[]): TallyWithQuotes[]
       const tally = tallies.get(c.key) ?? { key: c.key, positive: 0, negative: 0, quotes: [] };
       if (c.polarity === "positive") tally.positive += 1;
       else tally.negative += 1;
-      if (tally.quotes.length < MAX_QUOTES_PER_TALLY && !tally.quotes.some((q) => q.text === c.quote)) {
-        tally.quotes.push({ text: c.quote, reviewUrl: review.sourceUrl });
+      const sameSide = tally.quotes.filter((q) => q.polarity === c.polarity);
+      if (sameSide.length < MAX_QUOTES_PER_SIDE && !sameSide.some((q) => q.text === c.quote)) {
+        tally.quotes.push({ text: c.quote, reviewUrl: review.sourceUrl, polarity: c.polarity });
       }
       tallies.set(c.key, tally);
     }

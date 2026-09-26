@@ -7,6 +7,9 @@ import { nakamiCard, productImage, nameOf, productHref, categoryHref } from "../
 import { searchBox } from "../app/shell.ts";
 import { recent, concerns } from "../app/store.ts";
 import type { JoinedProduct } from "@lib/types.ts";
+import { setHead } from "../app/head.ts";
+import { SITE } from "../app/site.ts";
+import { homeHead } from "@lib/seo-model.ts";
 
 /** まだ読んでいないカテゴリ（docs/10 第5節の10カテゴリのうち、イヤホン以外）。 */
 const LATER = ["化粧水", "シャンプー", "ランニングシューズ", "枕", "ドリップコーヒー", "プロテイン", "キャットフード", "ドライヤー", "スティック掃除機"];
@@ -16,7 +19,7 @@ const LATER = ["化粧水", "シャンプー", "ランニングシューズ", "�
  * 2回目からは、最近見た商品と、気にしていることが先に出る。
  */
 export function homePage(app: HTMLElement): Page {
-  document.title = "★の中身｜★の数では、わからないこと";
+  setHead(homeHead(SITE));
   const g = genre("earbuds")!;
   const featured = selectFeatured(g.joined, aspectsFor(g.id), 1)[0]?.product;
   const seen = recent.get().map((id) => findProduct(id)?.product).filter((p): p is JoinedProduct => !!p);

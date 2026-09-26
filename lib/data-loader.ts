@@ -1,4 +1,4 @@
-import type { AspectProduct } from "./aspect-model.ts";
+import type { AspectProduct, AspectTally } from "./aspect-model.ts";
 import type { JoinedProduct, Spec } from "./types.ts";
 import productsJson from "../data/genre-products.json";
 import aspectsJson from "../data/genre-aspects.json";
@@ -55,7 +55,8 @@ export function loadGenre(categoryId: string) {
       reviewCount: p.reviewCount,
       reviewAverage: p.reviewAverage,
       reviewsRead: asp ? asp.reviewsRead : null,
-      aspects: asp ? asp.aspects : null,
+      // JSON からは polarity がただの文字列として型づけされる。値は validate:data が確かめている
+      aspects: asp ? (asp.aspects as AspectTally[]) : null,
       specs: parseSpecs(p),
     };
   });

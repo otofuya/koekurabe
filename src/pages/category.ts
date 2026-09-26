@@ -6,6 +6,9 @@ import { fewestBad, evidenceOf, TALKED_MIN } from "@lib/nakami-model.ts";
 import { productRow, bar, evidenceTag, categoryHref, starLine, nameOf, productHref } from "../app/parts.ts";
 import { concerns } from "../app/store.ts";
 import { notFound } from "./not-found.ts";
+import { setHead } from "../app/head.ts";
+import { SITE } from "../app/site.ts";
+import { categoryHead } from "@lib/seo-model.ts";
 
 const BUDGETS: [number | null, string][] = [[null, "すべて"], [5000, "〜5千円"], [10000, "〜1万円"], [20000, "〜2万円"]];
 
@@ -16,7 +19,7 @@ const BUDGETS: [number | null, string][] = [[null, "すべて"], [5000, "〜5千
 export function categoryPage(app: HTMLElement, id: string, url: URL): Page | void {
   const g = genre(id);
   if (!g) return notFound(app);
-  document.title = `${g.label}を、気になることで並べる｜★の中身`;
+  setHead(categoryHead(g, { ...g.coverage, readEnough: g.readEnough, offerable: g.offerable }, g.word, SITE));
 
   const fromUrl = url.searchParams.get("k");
   const mine = concerns.get(g.id).find((k) => g.offerable.includes(k));

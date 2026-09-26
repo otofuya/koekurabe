@@ -96,3 +96,41 @@ test("verifiedQuotes filters text without affecting URL propagation", () => {
   assert.equal(tallies[0].quotes[0].text, "低音がしっかり出ていて満足です。");
   assert.equal(tallies[0].quotes[0].reviewUrl, PRODUCT_URL);
 });
+
+// ── 引用の向き（2026-09-26） ────────────────────────────────────────
+
+const review = (text: string, polarity: "positive" | "negative", quote = text, key = "anc"): ClassifiedReview =>
+  ({ text, sourceUrl: PRODUCT_URL, classifications: [{ key, polarity, quote }] });
+
+test("引用に、数えた側（よかった／残念だった）が付く", () => {
+  const tallies = aggregateTallies([review("ノイキャンがよく効く。", "positive"), review("ノイキャンが弱い気がする。", "negative")]);
+  assert.deepEqual(tallies[0].quotes.map((q) => [q.text, q.polarity]), [
+    ["ノイキャンがよく効く。", "positive"],
+    ["ノイキャンが弱い気がする。", "negative"],
+  ]);
+});
+
+test("引用は側ごとに3件まで。先に来たよかったが、残念の枠を取らない", () => {
+  const good = Array.from({ length: 5 }, (_, i) => review(`ノイキャンがよく効く、その${i}。`, "positive"));
+  const bad = Array.from({ length: 4 }, (_, i) => review(`ノイキャンが弱い、その${i}。`, "negative"));
+  const [tally] = aggregateTallies([...good, ...bad]);
+  assert.equal(tally.positive, 5);
+  assert.equal(tally.negative, 4);
+  assert.equal(tally.quotes.filter((q) => q.polarity === "positive").length, 3);
+  assert.equal(tally.quotes.filter((q) => q.polarity === "negative").length, 3);
+});
+
+test("件数のある側には、必ず引用がある", () => {
+  const reviews = [
+    ...Array.from({ length: 6 }, (_, i) => review(`よく効く${i}です。`, "positive")),
+    review("まったく効かないです。", "negative"),
+  ];
+  const [tally] = aggregateTallies(reviews);
+  assert.ok(tally.quotes.some((q) => q.polarity === "negative"));
+});
+
+test("同じ文が同じ側で2回出ても、引用は1つ", () => {
+  const [tally] = aggregateTallies([review("よく効くと思います。", "positive"), review("よく効くと思います。", "positive")]);
+  assert.equal(tally.positive, 2);
+  assert.equal(tally.quotes.length, 1);
+});

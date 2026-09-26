@@ -3,7 +3,8 @@ import type { JoinedProduct } from "@lib/types.ts";
 import { switchTargets, READ_ENOUGH } from "@lib/nakami-model.ts";
 import { asAspect } from "./data.ts";
 import type { Genre } from "./data.ts";
-import { bar, productImage, nameOf, productHref, categoryHref, starLine, sectionTitle } from "./parts.ts";
+import { bar, productImage, nameOf, productHref, categoryHref, starLine, sectionTitle, sideWord } from "./parts.ts";
+import type { Quote } from "@lib/aspect-model.ts";
 import { concerns, once } from "./store.ts";
 
 /**
@@ -106,11 +107,21 @@ function content(p: JoinedProduct, g: Genre, key: string, close: () => void) {
         bar(side === "good" ? pos : neg, read, side))))
     : h("p", { class: "note" }, `この商品のレビュー${read}件では、「${word}」にふれた声はありませんでした。`);
 
-  const quotes = tally?.quotes.length
-    ? h("section", { class: "sheet__sec" },
-      sectionTitle("買った人のひとこと", "原文から・よかった／残念どちらも"),
-      h("ul", { class: "quotes" }, tally.quotes.map((q) => h("li", null, h("q", null, q.text), " ", h("a", { href: q.reviewUrl, target: "_blank", rel: "noopener", class: "src" }, "出典")))))
-    : null;
+  // 引用に向き（数えた側）があれば、よかった・残念だった に分けて出す。無い（前の抽出の）データは、向きを推測せずにまとめて出す
+  const quoteList = (list: Quote[]) => h("ul", { class: "quotes" }, list.map((q) => h("li", null, h("q", null, q.text), " ", h("a", { href: q.reviewUrl, target: "_blank", rel: "noopener", class: "src" }, "出典"))));
+  const sided = tally?.quotes.some((q) => q.polarity);
+  const quotes = !tally?.quotes.length
+    ? null
+    : sided
+      ? h("section", { class: "sheet__sec" },
+        sectionTitle("買った人のひとこと", "原文から"),
+        (["good", "bad"] as const).map((side) => {
+          const list = tally.quotes.filter((q) => q.polarity === (side === "good" ? "positive" : "negative"));
+          return list.length ? h("div", { class: "qside" }, h("p", { class: "qside__l" }, h("span", { class: `dot dot--${side}` }), sideWord(side)), quoteList(list)) : null;
+        }))
+      : h("section", { class: "sheet__sec" },
+        sectionTitle("買った人のひとこと", "原文から・よかった／残念どちらも"),
+        quoteList(tally.quotes));
 
   const result = switchTargets({ ...ap, price: p.price }, g.pool, key);
   const deep = g.pool.filter((x) => x.reviewsRead >= READ_ENOUGH).length;

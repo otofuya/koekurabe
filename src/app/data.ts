@@ -4,6 +4,7 @@ import type { AspectProduct } from "@lib/aspect-model.ts";
 import { CATEGORY_DEFINITIONS, aspectsFor, wordOf } from "@lib/category-definitions.ts";
 import type { JoinedProduct } from "@lib/types.ts";
 import type { Priced } from "@lib/nakami-model.ts";
+import { READ_ENOUGH } from "@lib/nakami-model.ts";
 import productsJson from "../../data/genre-products.json";
 
 /** カテゴリ1つぶんの、画面が使う形。読み込みは1回だけ。 */
@@ -31,6 +32,8 @@ function build(categoryId: string) {
     offerable: axes.filter((a) => a.offerable).map((a) => a.key),
     defaultKey: CATEGORY_DEFINITIONS[categoryId]?.defaultAxes?.[0] ?? axes.find((a) => a.offerable)?.key ?? order[0],
     coverage: coverageOf(loaded.totalProducts, analysed),
+    /** くわしく読めた（30件以上）商品の数。 */
+    readEnough: analysed.filter((a) => a.reviewsRead >= READ_ENOUGH).length,
     generatedAt: loaded.generatedAt,
   };
 }

@@ -7,6 +7,7 @@ import { productPage } from "./pages/product.ts";
 import { categoryPage } from "./pages/category.ts";
 import { vsPage } from "./pages/vs.ts";
 import { notFound } from "./pages/not-found.ts";
+import { aboutPage } from "./pages/about.ts";
 
 const root = document.getElementById("app")!;
 const main = h("main", { class: "page", id: "main" });
@@ -14,6 +15,7 @@ root.replaceChildren(h("a", { class: "skip", href: "#main", "data-native": "" },
 
 const ID = "([a-f0-9]{32})";
 route(/^\/?$/, (app) => homePage(app));
+route(/^\/about\/?$/, (app) => aboutPage(app));
 route(new RegExp(`^/reviews/${ID}/?$`), (app, m, url) => productPage(app, m[1], url));
 route(new RegExp(`^/vs/${ID}/${ID}/?$`), (app, m, url) => vsPage(app, m[1], m[2], url));
 route(/^\/compare\/([a-z0-9-]+)\/?$/, (app, m, url) => categoryPage(app, m[1], url));

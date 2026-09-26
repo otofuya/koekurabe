@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "npm run validate:data",
-    "build": "vite build",
+    "build": "vite build && node --experimental-strip-types scripts/prerender.mjs",
+    "build:spa": "vite build",
     "test": "node --experimental-strip-types --test lib/*.test.ts",
     "validate:data": "node --experimental-strip-types lib/validate-data.ts",
     "typecheck": "tsc --noEmit"

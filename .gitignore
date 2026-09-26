@@ -2,6 +2,9 @@ node_modules/
 dist/
 .cache/
 .dev.vars
+.env
+.env.*.local
+.env.local
 *.log
 output/
 
@@ -18,3 +21,6 @@ output/
 /design/portfolio/project-d/
 /design/portfolio/preview-d/
 /design/portfolio/shots-d/
+.wrangler/
+# 引き継ぎメモ（この PC の中だけ。リポジトリは公開なので入れない）
+.claude/handoff.md

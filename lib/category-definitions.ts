@@ -62,6 +62,46 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
     ],
     defaultAxes: ["fit", "anc"],
   },
+
+  /*
+   * ── ここから下は仮（2026-09-26・オーナーの確認待ち） ─────────────────────────
+   *
+   * docs/10 第6節の「まず3つで抽出し直す」の残り2つ。docs/09 の観点の辞書（共通・系統・固有）と、
+   * 楽天の「トピックに絞って見る」（シューズ＝サイズ感・クッション性・フィット感・軽量。docs/02）から書いた。
+   *
+   * 良し悪しで数えられるものだけを入れた。「ちょうどよさ」の観点（シューズのサイズ感＝小さめ・ちょうど・大きめ、
+   * 化粧水の使用感＝さっぱり・しっとり）は、今の数え方（よかった／残念だった）では表せないので入れていない。
+   * 数え方を足すかは、オーナーに聞く（docs/09 第5節）。
+   */
+  lotion: {
+    id: "lotion",
+    label: "化粧水",
+    aspects: [
+      { key: "moisture", word: "うるおい", label: "保湿", positivePole: "うるおう", negativePole: "乾く・物足りない" },
+      { key: "irritation", word: "刺激", label: "肌への刺激", positivePole: "しみない", negativePole: "しみた・ピリピリした" },
+      { key: "absorb", word: "なじみ", label: "肌へのなじみ", positivePole: "すっとなじむ", negativePole: "なじみにくい" },
+      { key: "sticky", word: "べたつき", label: "べたつき", positivePole: "べたつかない", negativePole: "べたつく" },
+      { key: "scent", word: "香り", label: "香り", positivePole: "香りが好き", negativePole: "香りが苦手" },
+      { key: "skin", word: "肌の調子", label: "使い続けたときの肌の調子", positivePole: "調子がよくなった", negativePole: "変わらない・荒れた" },
+      { key: "bottle", word: "容器", label: "容器の使いやすさ", positivePole: "出しやすい", negativePole: "出しにくい・漏れる" },
+      { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
+    ],
+  },
+  "running-shoes": {
+    id: "running-shoes",
+    label: "ランニングシューズ",
+    aspects: [
+      { key: "cushion", word: "クッション", label: "クッション性", positivePole: "衝撃がやわらぐ", negativePole: "硬い・底づきする" },
+      { key: "fit", word: "足へのなじみ", label: "フィット感・履き心地", positivePole: "足になじむ", negativePole: "当たる・痛い" },
+      { key: "light", word: "軽さ", label: "軽さ", positivePole: "軽い", negativePole: "重い" },
+      { key: "fatigue", word: "疲れにくさ", label: "長く走ったときの疲れにくさ", positivePole: "疲れにくい", negativePole: "疲れる・痛くなる" },
+      { key: "grip", word: "グリップ", label: "グリップ（滑りにくさ）", positivePole: "滑らない", negativePole: "滑る" },
+      { key: "breath", word: "蒸れ", label: "通気性", positivePole: "蒸れない", negativePole: "蒸れる" },
+      { key: "durability", word: "丈夫さ", label: "耐久性", positivePole: "長持ち", negativePole: "すぐすり減る・破れる" },
+      { key: "look", word: "見た目", label: "見た目・色", positivePole: "見た目が良い", negativePole: "写真と違う" },
+      { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
+    ],
+  },
 };
 
 /** カテゴリの観点。まだレビューを読んでいないカテゴリでは空。 */

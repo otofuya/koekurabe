@@ -12,7 +12,12 @@ import type { AspectDefinition } from "./category-definitions.ts";
  * inferred from marketing copy; review counts carry no badge, but the UI must say "AIによる分類".
  */
 
-export type Quote = { text: string; reviewUrl: string };
+/**
+ * A verbatim fragment and where it came from. `polarity` is the side the review was counted on for this
+ * aspect (Gemini's classification). Data extracted before 2026-09-26 has no polarity; the UI then shows
+ * the quotes without a side instead of guessing one.
+ */
+export type Quote = { text: string; reviewUrl: string; polarity?: "positive" | "negative" };
 
 /** One aspect as counted for one product. */
 export type AspectTally = {

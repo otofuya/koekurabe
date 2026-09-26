@@ -333,3 +333,38 @@ test("validateGenreStructure: missing reviewUrl is rejected", () => {
   });
   assert.ok(errors.some((e) => /reviewUrl.*未設定/.test(e.message)));
 });
+
+// ── 引用の向き（2026-09-26） ────────────────────────────────────────
+
+const sided = (polarity: "positive" | "negative", text = "音質は良いです。低音がしっかり出る") => ({ ...validQuote, text, polarity });
+const genreWith = (aspect: Record<string, unknown>) => ({ categoryId: "test", products: [{ productId: "a", reviewsRead: 10, classifiedCount: 10, aspects: [{ key: "sound", ...aspect }] }] });
+
+test("validateGenreStructure: 向きの付いた引用で、両側に引用があれば通る", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 5, negative: 2, quotes: [sided("positive"), sided("negative", "音がこもって聞こえる時がある")] }), new Set(["sound"]));
+  assert.equal(errors.length, 0);
+});
+
+test("validateGenreStructure: 残念の件数があるのに残念側の引用が無い", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 5, negative: 2, quotes: [sided("positive")] }), new Set(["sound"]));
+  assert.ok(errors.some((e) => /残念だった側の引用がありません/.test(e.message)));
+});
+
+test("validateGenreStructure: 向きの有る引用と無い引用が混ざっている", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 5, negative: 0, quotes: [sided("positive"), { ...validQuote, text: "別の文です、音が良い" }] }), new Set(["sound"]));
+  assert.ok(errors.some((e) => /混ざっています/.test(e.message)));
+});
+
+test("validateGenreStructure: 向きの値がおかしい", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 5, negative: 0, quotes: [{ ...validQuote, polarity: "good" }] }), new Set(["sound"]));
+  assert.ok(errors.some((e) => /polarity/.test(e.message)));
+});
+
+test("validateGenreStructure: 同じ文でも逆の側なら重複にしない", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 1, negative: 1, quotes: [sided("positive"), sided("negative")] }), new Set(["sound"]));
+  assert.equal(errors.length, 0);
+});
+
+test("validateGenreStructure: 向きの無い今までのデータはそのまま通る", () => {
+  const errors = validateGenreStructure(genreWith({ positive: 5, negative: 2, quotes: [validQuote] }), new Set(["sound"]));
+  assert.equal(errors.length, 0);
+});

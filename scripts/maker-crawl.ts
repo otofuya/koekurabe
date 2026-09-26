@@ -33,7 +33,8 @@ export type CrawlConfig = {
 
 export type FetchedPage = { url: string; html: string; status: number; fromCache: boolean };
 
-export const USER_AGENT = "AffiliateMapSpecBot/1.0 (+https://uma-free.com/)";
+/** 名乗り。連絡先はこのプロジェクトの公開リポジトリ（サイトの URL が決まったら差し替える）。 */
+export const USER_AGENT = "KoekurabeBot/0.1 (+https://github.com/otofuya/koekurabe)";
 
 /** Three seconds between requests to one host, well under anything that would be noticed. */
 export const DEFAULT_INTERVAL_MS = 3_000;
