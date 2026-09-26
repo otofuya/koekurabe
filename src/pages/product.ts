@@ -4,7 +4,7 @@ import { navigate } from "../app/router.ts";
 import { findProduct } from "../app/data.ts";
 import type { Genre } from "../app/data.ts";
 import type { JoinedProduct, Spec } from "@lib/types.ts";
-import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag, shopLink, adNotice } from "../app/parts.ts";
+import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag, shopLink, adNotice, fitBlock } from "../app/parts.ts";
 import { setHead } from "../app/head.ts";
 import { SITE } from "../app/site.ts";
 import { productHead } from "@lib/seo-model.ts";
@@ -42,6 +42,7 @@ export function productPage(app: HTMLElement, id: string, url: URL): Page | void
       concernStrip(p, g, keys, pick),
       nakamiCard(p, g, { onPick: pick, concernKeys: keys }),
       p.aspects && p.reviewsRead ? h("p", { class: "hint" }, "行を押すと、買った人のひとことと、その残念が少ない商品が見られます") : null,
+      fitBlock(p, g),
       p.aspects && p.reviewsRead ? h("section", { class: "block" }, sectionTitle("ぜんぶの項目", h("span", null, h("span", { class: "dot dot--good" }), "よかった　残念だった", h("span", { class: "dot dot--bad" }))), allList(p, g, pick, keys)) : null,
       p.aspects ? null : unreadHelp(p, g),
     );

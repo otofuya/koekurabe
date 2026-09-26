@@ -106,8 +106,9 @@ try {
   writeFileSync(join(OUT, "sitemap.xml"), sitemapXml(site, indexable.map((path) => ({ path, lastmod }))));
   writeFileSync(join(OUT, "robots.txt"), robotsTxt(site));
   writeFileSync(join(OUT, "_redirects"), [
-    "# 前の観点ランキングは、カテゴリの「何が気になる？」へ",
-    "/aspect/:cat/:key /compare/:cat?k=:key 301",
+    "# 前の観点ランキングは、アプリがカテゴリの「何が気になる？」へつなぐ（src/main.ts）。",
+    "# 本番の Cloudflare Pages は、転送先の ? のあとの :key を置きかえない（2026-09-26 に確かめた）ので、301 にしない",
+    "/aspect/* /app-shell 200",
     "# くらべるは組み合わせが多いので書き出さない。アプリが描く",
     `/vs/* /${SHELL_DIR} 200`,
     "",

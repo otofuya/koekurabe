@@ -4,6 +4,7 @@ import path from "node:path";
 import { checkGenreInvariants, validateGenreStructure } from "./extraction-invariants.ts";
 import { CATEGORY_DEFINITIONS } from "./category-definitions.ts";
 import { checkPublishability } from "./aspect-model.ts";
+import { checkFits } from "./fit-model.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -26,6 +27,14 @@ for (const genre of data.genres) {
 
   const structErrors = validateGenreStructure(genre, knownKeys);
   for (const e of structErrors) structuralErrors.push(`${e.path}: ${e.message}`);
+  // ちょうどよさ（fits）。無い商品（前のデータ）はそのまま通る
+  const knownFitKeys = categoryDef ? new Set((categoryDef.fits ?? []).map((f) => f.key)) : undefined;
+  for (const p of genre.products ?? []) {
+    for (const e of checkFits(p?.fits, p?.reviewsRead ?? 0, knownFitKeys)) {
+      structErrors.push({ path: `${genre.categoryId}/${p?.productId}`, message: e });
+      structuralErrors.push(`${genre.categoryId}/${p?.productId}: ${e}`);
+    }
+  }
 
   if (structErrors.length > 0) continue;
 

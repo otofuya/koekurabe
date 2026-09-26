@@ -7,6 +7,7 @@ import { generateStructured } from "./gemini.ts";
 import { deduplicateReviews } from "../lib/review-dedup.ts";
 import { checkProductInvariants, validateBatchResponse } from "../lib/extraction-invariants.ts";
 import { aggregateTallies } from "../lib/quote-provenance.ts";
+import { aggregateFits, checkFits } from "../lib/fit-model.ts";
 import { PAGE_TEXT_DIR, loadPageMeta } from "./page-text.mjs";
 
 /**
@@ -46,7 +47,21 @@ async function writeAtomic(target, contents) {
 
 // ── Per-review schema: Gemini classifies each review individually ────────────
 
-const schemaFor = (aspects) => ({
+// ちょうどよさ（lib/fit-model.ts）。定義があるカテゴリだけ、レビューごとに fits を返させる
+const fitSchema = (fits) => ({
+  type: "array",
+  items: {
+    type: "object",
+    properties: {
+      aspect: { type: "string", enum: fits.map((f) => f.label) },
+      direction: { type: "string", enum: ["low", "just", "high"] },
+      quote: { type: "string" },
+    },
+    required: ["aspect", "direction", "quote"],
+  },
+});
+
+const schemaFor = (aspects, fits = []) => ({
   type: "object",
   properties: {
     reviews: {
@@ -55,6 +70,7 @@ const schemaFor = (aspects) => ({
         type: "object",
         properties: {
           index: { type: "integer" },
+          ...(fits.length ? { fits: fitSchema(fits) } : {}),
           aspects: {
             type: "array",
             items: {
@@ -75,7 +91,15 @@ const schemaFor = (aspects) => ({
   required: ["reviews"],
 });
 
-const promptFor = (aspects, numberedReviews) => `次は1つの商品に対する購入者レビューです。番号付きで並んでいます。
+const fitPrompt = (fits) => fits.length ? `
+
+次の観点は、良し悪しではなく「ちょうどよさ」（好み）です。レビューがふれていたら fits に入れてください。
+- 向きは low・just・high のどれか1つ。1件のレビューで、1つの観点につき1つだけ
+- 根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください
+- ふれていなければ入れないでください。推測で埋めないでください
+${fits.map((f) => `- ${f.label}：low＝${f.low}、just＝${f.just}、high＝${f.high}`).join("\n")}` : "";
+
+const promptFor = (aspects, numberedReviews, fits = []) => `次は1つの商品に対する購入者レビューです。番号付きで並んでいます。
 
 各レビューについて、どの観点に言及しているか判定してください。
 言及している場合、それが肯定的か否定的かを判定し、根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください。
@@ -87,7 +111,7 @@ const promptFor = (aspects, numberedReviews) => `次は1つの商品に対する
 - 商品説明やショップの宣伝文が混ざっている場合、それは購入者の声ではないので判定しないでください
 - 入力のレビュー番号をすべて返してください。省略しないでください
 
-観点: ${aspects.map((a) => a.label).join("、")}
+観点: ${aspects.map((a) => a.label).join("、")}${fitPrompt(fits)}
 
 --- レビュー ---
 ${numberedReviews}`;
@@ -162,6 +186,8 @@ async function main() {
   if (!definition?.aspects?.length) throw new Error(`${categoryId}: aspects が定義されていません`);
   const aspects = definition.aspects;
   const byLabel = new Map(aspects.map((a) => [a.label, a.key]));
+  const fits = definition.fits ?? [];
+  const byFitLabel = new Map(fits.map((f) => [f.label, f.key]));
 
   const fileVars = readVars(await readFile(path.join(ROOT_DIR, ".dev.vars"), "utf8").catch(() => ""));
   const apiKey = process.env.GEMINI_API_KEY || fileVars.GEMINI_API_KEY;
@@ -213,16 +239,16 @@ async function main() {
     }
 
     // ── Step 2: Batch unique reviews and classify with Gemini ──
-    const reviewMap = new Map(dedup.reviews.map((r) => [r.index, { text: r.text, sourceUrl: r.sourceUrl, classifications: [] }]));
+    const reviewMap = new Map(dedup.reviews.map((r) => [r.index, { text: r.text, sourceUrl: r.sourceUrl, classifications: [], fits: [] }]));
     let productClassified = 0;
     let productBatchFailed = false;
 
     for (let batchStart = 0; batchStart < dedup.reviews.length; batchStart += BATCH_SIZE) {
       const batch = dedup.reviews.slice(batchStart, batchStart + BATCH_SIZE)
         .map((r, i) => ({ ...r, batchIndex: i + 1 }));
-      const prompt = promptFor(aspects, formatBatch(batch));
+      const prompt = promptFor(aspects, formatBatch(batch), fits);
       calls += 1;
-      const result = await generateStructured(prompt, schemaFor(aspects), { apiKey, extractionModel: MODEL });
+      const result = await generateStructured(prompt, schemaFor(aspects, fits), { apiKey, extractionModel: MODEL });
       if (!result?.reviews) {
         batchFailures += 1;
         productBatchFailed = true;
@@ -262,6 +288,14 @@ async function main() {
 
           entry.classifications.push({ key, polarity: tag.polarity, quote: quotes[0] });
         }
+
+        for (const tag of reviewResult.fits ?? []) {
+          const key = byFitLabel.get(tag.aspect);
+          if (!key) continue;
+          const quotes = verifiedQuotes([tag.quote ?? ""], entry.text);
+          if (!quotes.length) { droppedQuotes += 1; continue; }
+          entry.fits.push({ key, direction: tag.direction, quote: quotes[0] });
+        }
       }
     }
 
@@ -275,6 +309,10 @@ async function main() {
 
     // ── Step 4: Aggregate per-review classifications into aspect tallies ──
     const aspectList = aggregateTallies([...reviewMap.values()]);
+    const fitList = fits.length ? aggregateFits([...reviewMap.values()]) : null;
+    for (const message of fitList ? checkFits(fitList, dedup.reviews.length, new Set(fits.map((f) => f.key))) : []) {
+      fatalErrors.push(`${productId}: ${message}`);
+    }
 
     // ── Step 5: Invariant check (shared module) ──
     const violations = checkProductInvariants(productId, reviewsRead, aspectList);
@@ -295,6 +333,7 @@ async function main() {
       sources: dedup.sources,
       dedup: { totalBeforeDedup: dedup.totalBeforeDedup, duplicatesRemoved: dedup.duplicatesRemoved },
       aspects: aspectList,
+      ...(fitList ? { fits: fitList } : {}),
     });
     process.stdout.write(`${index + 1}/${targets.length} `);
   }

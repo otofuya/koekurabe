@@ -1,4 +1,5 @@
 import type { AspectTally } from "./aspect-model.ts";
+import type { FitTally } from "./fit-model.ts";
 
 export type Spec = {
   key: string;
@@ -21,5 +22,7 @@ export type JoinedProduct = {
   reviewAverage: number;
   reviewsRead: number | null;
   aspects: AspectTally[] | null;
+  /** ちょうどよさ（小さめ・ちょうど・大きめ）。前のデータや、その観点が無いカテゴリでは null。 */
+  fits?: FitTally[] | null;
   specs: Spec[];
 };

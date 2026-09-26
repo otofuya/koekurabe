@@ -1,9 +1,9 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile, readdir, rm } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { MakerCrawler } from "./maker-crawl.ts";
-import { savePageText, savePageMeta } from "./page-text.mjs";
+import { savePageText, savePageMeta, PAGE_TEXT_DIR } from "./page-text.mjs";
 
 /**
  * Buyer prose, from the marketplace's own review pages.
@@ -148,6 +148,52 @@ const decodeEntities = (text) => text.replace(/&(#\d+|[a-z]+);/gi, (whole, name)
   return /^#\d+$/.test(name) ? String.fromCodePoint(Number(name.slice(1))) : whole;
 });
 
+/** お店の商品1つから読む最大ページ数と、1商品あたり（お店の合計）の最大ページ数。 */
+const MAX_PAGES_PER_SHOP_ITEM = 4;
+const MAX_SHOP_PAGES_PER_PRODUCT = 10;
+
+/**
+ * --shop-items：data/shop-items.json（find-shop-items.mjs が JAN で結びつけたお店の商品）のレビューを読む。
+ * 商品価格ナビのページは読み直さない。本文は shop-reviews に置き、抽出は reviews と合わせて重複を除いて数える。
+ */
+async function shopItemsRun(categoryId, products, load, crawler, offline) {
+  const links = JSON.parse(await readFile(path.join(ROOT_DIR, "data", "shop-items.json"), "utf8").catch(() => "{}")).categories?.[categoryId] ?? {};
+  const targets = products.filter((p) => links[p.productId]?.length);
+  if (!targets.length) throw new Error(`${categoryId}: data/shop-items.json に結びつけたお店の商品がありません（先に find-shop-items.mjs）`);
+  const textDir = path.join(ROOT_DIR, PAGE_TEXT_DIR, categoryId, "shop-reviews");
+  const records = [];
+  for (const product of targets) {
+    // 前の回のページが残ると、抽出が古い本文も読む。この商品の分を消してから書く
+    for (const file of await readdir(textDir).catch(() => [])) {
+      if (file.startsWith(`${product.productId}-p`)) await rm(path.join(textDir, file));
+    }
+    let slot = 0; let characters = 0;
+    for (const link of links[product.productId]) {
+      if (slot >= MAX_SHOP_PAGES_PER_PRODUCT) break;
+      const pages = await reviewPagesFor({ productUrl: link.itemUrl }, load);
+      if (!pages) { console.log(`  ${product.productId.slice(0, 8)} ${link.shopName}：商品ページから店と商品の番号が読めませんでした`); continue; }
+      const last = Math.min(MAX_PAGES_PER_SHOP_ITEM, Math.ceil((link.reviewCount || 1) / PAGE_SIZE));
+      for (let page = 1; page <= last && slot < MAX_SHOP_PAGES_PER_PRODUCT; page += 1) {
+        const url = pages.url(page);
+        const fetched = await load(url);
+        if (!fetched) break;
+        const prose = reviewProse(fetched.html);
+        if (prose.length < 20) break;
+        slot += 1;
+        await savePageText(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, prose);
+        await savePageMeta(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, { sourceUrl: url });
+        characters += prose.length;
+      }
+    }
+    records.push({ productId: product.productId, shops: links[product.productId].length, pages: slot, characters });
+    console.log(`${product.productId.slice(0, 8)} ${product.name.slice(0, 36)}：${slot}ページ`);
+  }
+  const output = path.join(ROOT_DIR, "test", "data", `shop-reviews-${categoryId}.json`);
+  await writeFile(output, JSON.stringify({ generatedAt: new Date().toISOString(), categoryId, records }, null, 2) + "\n", "utf8");
+  const source = offline ? "キャッシュから" : `リクエスト ${crawler.requestsMade}件`;
+  console.log(`\n${targets.length}商品・${records.reduce((sum, r) => sum + r.pages, 0)}ページ → ${path.relative(ROOT_DIR, output)}（${source}）`);
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const offline = args.includes("--from-cache");
@@ -157,6 +203,10 @@ async function main() {
   if (!products.length) throw new Error(`${categoryId}: 対象商品がありません`);
 
   const crawler = offline ? null : new MakerCrawler({ cache: await fileCache(), maxRequests: MAX_REQUESTS_PER_RUN, onProgress: (message) => console.log(message) });
+  if (args.includes("--shop-items")) {
+    await shopItemsRun(categoryId, products, (url) => (offline ? cachedPage(url) : crawler.fetchPage(url)), crawler, offline);
+    return;
+  }
   const records = [];
   let withProse = 0;
 

@@ -1,4 +1,5 @@
 import { readFile, writeFile, rename } from "node:fs/promises";
+import { rakutenCredentials, callRakuten, itemsOf, ITEM_SEARCH, GENRE_SEARCH } from "./rakuten-api.mjs";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -19,10 +20,7 @@ import path from "node:path";
  */
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const ENDPOINT = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701";
-const GENRE_ENDPOINT = "https://openapi.rakuten.co.jp/ichibams/api/IchibaGenre/Search/20260701";
 const MIN_REVIEWS = 30;
-const INTERVAL_MS = 1_100;
 
 /**
  * カテゴリと楽天のジャンル。ジャンル ID は楽天のランキング・カテゴリのページから調べた（2026-09-26）。
@@ -35,43 +33,6 @@ const GENRES = {
 
 /** 比べる単位にならない商品（お試し・サンプル・詰め替えだけ）。 */
 const NOT_A_UNIT = /お試し|トライアル|サンプル|試供品|ミニサイズ|詰め?替え用?のみ|つめかえ用?のみ/;
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-async function credentials() {
-  let vars = {};
-  for (const file of [".dev.vars", ".env.local"]) {
-    try {
-      const text = await readFile(path.join(ROOT_DIR, file), "utf8");
-      for (const line of text.split(/\r?\n/)) {
-        const m = line.match(/^\s*([A-Z_]+)\s*=\s*(.*?)\s*$/);
-        if (m) vars[m[1]] = m[2].replace(/^["']|["']$/g, "");
-      }
-    } catch {}
-  }
-  const applicationId = process.env.RAKUTEN_APPLICATION_ID || vars.RAKUTEN_APPLICATION_ID;
-  const accessKey = process.env.RAKUTEN_ACCESS_KEY || vars.RAKUTEN_ACCESS_KEY;
-  if (!applicationId || !accessKey) {
-    throw new Error("RAKUTEN_APPLICATION_ID と RAKUTEN_ACCESS_KEY が要ります（.dev.vars に書く。docs/13）");
-  }
-  return { applicationId, accessKey };
-}
-
-async function callApi(endpoint, params, creds) {
-  const url = new URL(endpoint);
-  url.search = new URLSearchParams({ format: "json", formatVersion: "2", applicationId: creds.applicationId, ...params }).toString();
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
-    const response = await fetch(url, { headers: { accessKey: creds.accessKey } });
-    if (response.status === 429 || response.status >= 500) {
-      await sleep(INTERVAL_MS * 3 * attempt);
-      continue;
-    }
-    const body = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(`楽天 API ${response.status}: ${body.error_description ?? body.error ?? JSON.stringify(body).slice(0, 200)}`);
-    return body;
-  }
-  throw new Error("楽天 API が混んでいて応答しませんでした（429・5xx が3回）。時間をあけて");
-}
 
 /** 商品の ID。画面の URL（/reviews/<32桁>）に合わせて、商品コードから作る。 */
 const productIdOf = (itemCode) => createHash("md5").update(`ichiba:${itemCode}`).digest("hex");
@@ -88,9 +49,9 @@ async function main() {
   const genre = GENRES[categoryId];
   if (!genre) throw new Error(`カテゴリ ${categoryId} のジャンルがありません。使えるもの：${Object.keys(GENRES).join("・")}`);
 
-  const creds = await credentials();
+  const creds = await rakutenCredentials(ROOT_DIR);
 
-  const genreInfo = await callApi(GENRE_ENDPOINT, { genreId: String(genre.genreId) }, creds);
+  const genreInfo = await callRakuten(GENRE_SEARCH, { genreId: String(genre.genreId) }, creds);
   const genreName = genreInfo.current?.genreName ?? genreInfo.current?.[0]?.genreName ?? "";
   if (!genreName.includes(genre.expect)) throw new Error(`ジャンル ${genre.genreId} は「${genreName}」でした（「${genre.expect}」のはず）。GENRES を直して`);
   console.log(`ジャンル ${genre.genreId}：${genreName}`);
@@ -98,9 +59,8 @@ async function main() {
   const kept = [];
   const skipped = [];
   for (let page = 1; page <= 4 && kept.length < limit; page += 1) {
-    await sleep(INTERVAL_MS);
-    const body = await callApi(ENDPOINT, { genreId: String(genre.genreId), sort: "-reviewCount", hits: "30", page: String(page), imageFlag: "1", availability: "1" }, creds);
-    const items = (body.Items ?? body.items ?? []).map((entry) => entry.Item ?? entry);
+    const body = await callRakuten(ITEM_SEARCH, { genreId: String(genre.genreId), sort: "-reviewCount", hits: "30", page: String(page), imageFlag: "1", availability: "1" }, creds);
+    const items = itemsOf(body);
     if (!items.length) break;
     for (const item of items) {
       if (kept.length >= limit) break;

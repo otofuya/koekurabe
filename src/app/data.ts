@@ -1,7 +1,7 @@
 import { loadGenre } from "@lib/data-loader.ts";
 import { offerableAxes, coverageOf } from "@lib/aspect-model.ts";
 import type { AspectProduct } from "@lib/aspect-model.ts";
-import { CATEGORY_DEFINITIONS, aspectsFor, wordOf } from "@lib/category-definitions.ts";
+import { CATEGORY_DEFINITIONS, aspectsFor, fitsFor, wordOf } from "@lib/category-definitions.ts";
 import type { JoinedProduct } from "@lib/types.ts";
 import type { Priced } from "@lib/nakami-model.ts";
 import { READ_ENOUGH } from "@lib/nakami-model.ts";
@@ -15,6 +15,7 @@ function build(categoryId: string) {
   const defs = aspectsFor(categoryId);
   const order = defs.map((d) => d.key);
   const words = new Map(defs.map((d) => [d.key, wordOf(d)]));
+  const fitDefs = fitsFor(categoryId);
   const byId = new Map(loaded.joined.map((p) => [p.productId, p]));
   const analysed: AspectProduct[] = loaded.aspectProducts;
   const pool: Priced[] = analysed.map((a) => ({ ...a, price: byId.get(a.id)!.price }));
@@ -28,6 +29,8 @@ function build(categoryId: string) {
     pool,
     order,
     word: (key: string) => words.get(key) ?? key,
+    /** ちょうどよさの観点（小さめ・ちょうど・大きめ）。定義の順。 */
+    fits: fitDefs,
     axes,
     offerable: axes.filter((a) => a.offerable).map((a) => a.key),
     defaultKey: CATEGORY_DEFINITIONS[categoryId]?.defaultAxes?.[0] ?? axes.find((a) => a.offerable)?.key ?? order[0],

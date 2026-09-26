@@ -31,7 +31,7 @@ a { color: inherit; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 h1, h2, h3 { font-weight: 900; line-height: 1.35; }
 /* 短い説明の文は、言葉の切れ目で折り返す（「見／られます」のような切れ方を防ぐ）。対応していないブラウザではふつうに折り返す */
-h1, h2, h3, .hint, .adnote, .fine, .note, .nk__foot, .about__lead, .foot li, .about__sec li { word-break: auto-phrase; overflow-wrap: anywhere; }
+h1, h2, h3, .hint, .adnote, .fine, .note, .nk__foot, .about__lead, .foot li, .about__sec li, .home__lead, .fit__l span { word-break: auto-phrase; overflow-wrap: anywhere; }
 b { font-weight: 700; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 8px; }
 .num { font-family: var(--num); font-variant-numeric: tabular-nums; }
@@ -191,6 +191,31 @@ button.row:hover .row__word { text-decoration: underline; }
 .quotes li { background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 10px 14px; font-size: 13.5px; line-height: 1.65; }
 q { quotes: "「" "」"; }
 .qside + .qside { margin-top: 14px; }
+
+/* ちょうどよさ：両端は同じ灰色、まん中（ちょうど）だけ濃く。赤と青は使わない */
+.fitbox { padding: 12px 0; border-top: 1px solid var(--hair); }
+.fitbox:first-of-type { border-top: none; padding-top: 0; }
+.fit__top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+.fit__word { font-size: 15px; }
+.fit__read { font-size: 12px; color: var(--muted); }
+.fit__bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--rest); gap: 2px; }
+.fit__seg { display: block; height: 100%; }
+.fit__seg--low, .fit__seg--high { background: var(--line); }
+.fit__seg--just { background: var(--ink); }
+.fit__labels { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 6px; font-size: 12px; color: var(--ink2); }
+.fit__l { display: flex; flex-direction: column; line-height: 1.4; }
+.fit__l b { font-size: 17px; color: var(--ink); }
+.fit__l--just { align-items: center; text-align: center; }
+.fit__l--high { align-items: flex-end; text-align: right; }
+.fit--compact .fit__l b { font-size: 15px; }
+.fit--compact .fit__read { display: block; margin-top: 2px; }
+.fitq { margin-top: 10px; }
+.fitq summary { cursor: pointer; font-size: 13px; color: var(--ink2); min-height: 44px; display: flex; align-items: center; }
+.vfit { padding: 10px 0; border-top: 1px solid var(--hair); }
+.vfit:first-of-type { border-top: none; padding-top: 0; }
+.vfit__word { display: block; font-size: 14.5px; margin-bottom: 8px; }
+.vfit__cells { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.vfit__name { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .qside__l { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
 .src { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
 .swipe { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 18px 10px; margin: 0 -18px; scrollbar-width: none; }

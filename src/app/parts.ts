@@ -6,6 +6,8 @@ import type { NakamiLine } from "@lib/nakami-model.ts";
 import { asAspect } from "./data.ts";
 import type { Genre } from "./data.ts";
 import { hasAds, shopUrl } from "./site.ts";
+import { fitSummaries, FIT_DIRECTIONS } from "@lib/fit-model.ts";
+import type { FitDefinition, FitSummary, FitTally } from "@lib/fit-model.ts";
 
 export const nameOf = (p: JoinedProduct) => displayName(p.name);
 export const productHref = (id: string, key?: string | null) => `/reviews/${id}${key ? `?k=${key}` : ""}`;
@@ -103,6 +105,48 @@ export function productRow(p: JoinedProduct, extra: Child, { href = productHref(
       h("span", { class: "prow__name" }, nameOf(p)),
       h("span", { class: "prow__meta" }, h("span", { class: "num" }, yen(p.price)), " ・ ", starLine(p)),
       extra));
+}
+
+/**
+ * ちょうどよさの帯（lib/fit-model.ts）。左が low、まん中が just、右が high。
+ * 好みなので赤と青は使わない。両端は同じ灰色で、まん中（ちょうど）だけ濃くする。幅は、ふれた件数を全体にした割合。
+ */
+export function fitStrip(def: FitDefinition, s: FitSummary, { compact = false } = {}) {
+  // 狭いところ（くらべる）では、最初の言葉だけ（小さめ・きつい → 小さめ）
+  const short = (s: string) => (compact ? s.split("・")[0] : s);
+  const labels = { low: short(def.low), just: short(def.just), high: short(def.high) };
+  return h("div", { class: `fit${compact ? " fit--compact" : ""}` },
+    compact ? null : h("div", { class: "fit__top" }, h("b", { class: "fit__word" }, def.word ?? def.label), h("span", { class: "fit__read" }, `ふれた${s.talked}件（${s.read}件中）`)),
+    h("span", { class: "fit__bar", role: "img", "aria-label": FIT_DIRECTIONS.map((d) => `${labels[d]} ${s.counts[d]}件`).join("、") },
+      FIT_DIRECTIONS.map((d) => h("span", { class: `fit__seg fit__seg--${d}`, style: { width: `${(s.shares[d] * 100).toFixed(1)}%` } }))),
+    h("div", { class: "fit__labels" }, FIT_DIRECTIONS.map((d) => h("span", { class: `fit__l fit__l--${d}` }, h("span", null, labels[d]), h("b", { class: "num" }, s.counts[d])))),
+    compact ? h("span", { class: "fit__read" }, `ふれた${s.talked}件（${s.read}件中）`) : null);
+}
+
+/** 商品ページのちょうどよさ。ふれた声が無ければ出さない。 */
+export function fitBlock(p: JoinedProduct, g: Genre) {
+  if (!g.fits.length || !p.reviewsRead) return null;
+  const list = fitSummaries(p.fits, p.reviewsRead, g.fits.map((f) => f.key));
+  if (!list.length) return null;
+  return h("section", { class: "block" },
+    sectionTitle("ちょうどよさ", "好みの向きを数えています"),
+    list.map((s) => {
+      const def = g.fits.find((f) => f.key === s.key)!;
+      const tally = p.fits!.find((t) => t.key === s.key)!;
+      return h("div", { class: "fitbox" }, fitStrip(def, s), fitQuotes(def, tally));
+    }));
+}
+
+function fitQuotes(def: FitDefinition, tally: FitTally) {
+  if (!tally.quotes.length) return null;
+  const labels = { low: def.low, just: def.just, high: def.high };
+  return h("details", { class: "fitq" },
+    h("summary", null, "買った人のひとこと"),
+    FIT_DIRECTIONS.map((d) => {
+      const list = tally.quotes.filter((q) => q.direction === d);
+      return list.length ? h("div", { class: "qside" }, h("p", { class: "qside__l" }, labels[d]),
+        h("ul", { class: "quotes" }, list.map((q) => h("li", null, h("q", null, q.text), " ", h("a", { href: q.reviewUrl, target: "_blank", rel: "noopener", class: "src" }, "出典"))))) : null;
+    }));
 }
 
 /** 読めた量の小さな印。 */

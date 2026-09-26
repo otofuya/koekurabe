@@ -6,7 +6,8 @@ import type { JoinedProduct } from "@lib/types.ts";
 import { compareProducts, compareLead } from "@lib/nakami-model.ts";
 import type { CompareRow } from "@lib/nakami-model.ts";
 import { buildSpecRows } from "@lib/vs-model.ts";
-import { productImage, starLine, nameOf, productHref, bar, evidenceTag, sectionTitle, shopLink, adNotice } from "../app/parts.ts";
+import { productImage, starLine, nameOf, productHref, bar, evidenceTag, sectionTitle, shopLink, adNotice, fitStrip } from "../app/parts.ts";
+import { fitSummaries } from "@lib/fit-model.ts";
 import { setHead } from "../app/head.ts";
 import { SITE } from "../app/site.ts";
 import { vsHead } from "@lib/seo-model.ts";
@@ -53,6 +54,7 @@ export function vsPage(app: HTMLElement, aId: string, bId: string, url: URL): Pa
     head,
     h("p", { class: "vs__lead" }, lead),
     mineRows.length ? h("section", { class: "block" }, sectionTitle(mineRows.every((r) => concerns.has(g.id, r.key)) ? "気にしていること" : "いま見ていること"), mineRows.map((r) => vrow(r, a, b, g))) : null,
+    fitCompare(a, b, g),
     rest.length ? h("section", { class: "block" }, sectionTitle("ちがいが大きいこと", "残念の割合の差が大きい順"), rest.map((r) => vrow(r, a, b, g))) : null,
     same.filter((r) => !mine.includes(r.key)).length ? h("section", { class: "block" }, sectionTitle("同じくらいのこと"), h("p", { class: "same" }, same.filter((r) => !mine.includes(r.key)).map((r) => h("span", { class: "same__i" }, g.word(r.key))))) : null,
     onlyA.length + onlyB.length ? h("section", { class: "block" }, sectionTitle("片方だけに声があること"),
@@ -62,6 +64,22 @@ export function vsPage(app: HTMLElement, aId: string, bId: string, url: URL): Pa
     specTable(a, b),
     h("div", { class: "vs__buy" }, [a, b].map((p) => shopLink(p, "btn btn--soft", h("span", null, "楽天で見る", h("small", { class: "vs__buyname" }, nameOf(p)))))),
     h("p", { class: "fine" }, "件数は AI がレビューを1件ずつ分類し、コードが数えたものです。分母は読んだ件数です。")));
+}
+
+/** ちょうどよさを2つ並べる。好みなので「どちらがよい」とは書かない。 */
+function fitCompare(a: JoinedProduct, b: JoinedProduct, g: Genre) {
+  if (!g.fits.length || !a.reviewsRead || !b.reviewsRead) return null;
+  const keys = g.fits.map((f) => f.key);
+  const sa = fitSummaries(a.fits, a.reviewsRead, keys), sb = fitSummaries(b.fits, b.reviewsRead, keys);
+  const rows = g.fits.filter((f) => sa.some((s) => s.key === f.key) || sb.some((s) => s.key === f.key));
+  if (!rows.length) return null;
+  const cell = (list: typeof sa, key: string, p: JoinedProduct) => {
+    const s = list.find((x) => x.key === key);
+    return h("div", { class: "vfit__cell" }, h("span", { class: "vfit__name" }, nameOf(p)),
+      s ? fitStrip(g.fits.find((f) => f.key === key)!, s, { compact: true }) : h("span", { class: "fit__read" }, "ふれた声なし"));
+  };
+  return h("section", { class: "block" }, sectionTitle("ちょうどよさ", "好みの向きを数えています"),
+    rows.map((f) => h("div", { class: "vfit" }, h("b", { class: "vfit__word" }, f.word ?? f.label), h("div", { class: "vfit__cells" }, cell(sa, f.key, a), cell(sb, f.key, b)))));
 }
 
 function vrow(r: CompareRow, a: JoinedProduct, b: JoinedProduct, g: Genre) {

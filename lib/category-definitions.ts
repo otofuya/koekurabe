@@ -1,3 +1,5 @@
+import type { FitDefinition } from "./fit-model.ts";
+
 /**
  * 観点（アスペクト）の定義。
  *
@@ -25,6 +27,8 @@ export type CategoryDefinition = {
   id: string;
   label: string;
   aspects: AspectDefinition[];
+  /** ちょうどよさの観点（小さめ・ちょうど・大きめ のような好み）。良し悪しの観点とは別に数える（lib/fit-model.ts）。 */
+  fits?: FitDefinition[];
   /**
    * チャートが最初に開く2軸。手で選ぶ。
    *
@@ -69,9 +73,8 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
    * docs/10 第6節の「まず3つで抽出し直す」の残り2つ。docs/09 の観点の辞書（共通・系統・固有）と、
    * 楽天の「トピックに絞って見る」（シューズ＝サイズ感・クッション性・フィット感・軽量。docs/02）から書いた。
    *
-   * 良し悪しで数えられるものだけを入れた。「ちょうどよさ」の観点（シューズのサイズ感＝小さめ・ちょうど・大きめ、
-   * 化粧水の使用感＝さっぱり・しっとり）は、今の数え方（よかった／残念だった）では表せないので入れていない。
-   * 数え方を足すかは、オーナーに聞く（docs/09 第5節）。
+   * 良し悪しの観点は aspects に、好みの観点（シューズのサイズ感・足幅、化粧水の使用感）は fits に書いた。
+   * fits は「小さめ｜ちょうど｜大きめ」の3つで数える（lib/fit-model.ts。2026-09-26 にオーナーが「足す」と答えた）。
    */
   lotion: {
     id: "lotion",
@@ -85,6 +88,9 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
       { key: "skin", word: "肌の調子", label: "使い続けたときの肌の調子", positivePole: "調子がよくなった", negativePole: "変わらない・荒れた" },
       { key: "bottle", word: "容器", label: "容器の使いやすさ", positivePole: "出しやすい", negativePole: "出しにくい・漏れる" },
       { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
+    ],
+    fits: [
+      { key: "texture", word: "使用感", label: "使用感（さっぱり〜しっとり）", low: "さっぱり", just: "ちょうどいい", high: "しっとり・とろみ" },
     ],
   },
   "running-shoes": {
@@ -101,8 +107,17 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
       { key: "look", word: "見た目", label: "見た目・色", positivePole: "見た目が良い", negativePole: "写真と違う" },
       { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },
     ],
+    fits: [
+      { key: "size", word: "サイズ感", label: "サイズ感（いつものサイズと比べて）", low: "小さめ・きつい", just: "ちょうど", high: "大きめ・ゆるい" },
+      { key: "width", word: "足幅", label: "足幅（横の幅）", low: "幅がせまい", just: "ちょうど", high: "幅が広い" },
+    ],
   },
 };
+
+/** ちょうどよさの観点。無いカテゴリでは空。 */
+export function fitsFor(categoryId: string): readonly FitDefinition[] {
+  return CATEGORY_DEFINITIONS[categoryId]?.fits ?? [];
+}
 
 /** カテゴリの観点。まだレビューを読んでいないカテゴリでは空。 */
 export function aspectsFor(categoryId: string): readonly AspectDefinition[] {
@@ -115,6 +130,6 @@ export function defaultAxesFor(categoryId: string): [string, string] | null {
 }
 
 /** 画面に出す観点の言葉。 */
-export function wordOf(definition: AspectDefinition): string {
+export function wordOf(definition: AspectDefinition | FitDefinition): string {
   return definition.word ?? definition.label;
 }
