@@ -15,6 +15,13 @@ export type GeminiConfig = {
   endpoint?: string;
   /** Called when a request is being retried, so a batch script can say why it is slow. */
   onRetry?: (attempt: number, status: number) => void;
+  /**
+   * 枠切れ（429）で、やり直さずに止める（generateStructured が GeminiQuotaError を投げる）。
+   * 1日の枠を使い切ったあとにやり直しても、同じ答えが返るだけで回数を無駄にする（2026-09-26）。
+   */
+  stopOn429?: boolean;
+  /** 1回の呼び出しで使ったトークン数（記録用）。 */
+  onUsage?: (totalTokens: number) => void;
 };
 
 const DEFAULT_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta";
@@ -42,7 +49,14 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
  * was one request over the per-minute allowance produced nothing at all and silently fell back to
  * hash vectors.
  */
-async function postWithRetry(url: string, body: string, onRetry?: (attempt: number, status: number) => void) {
+export class GeminiQuotaError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "GeminiQuotaError";
+  }
+}
+
+async function postWithRetry(url: string, body: string, onRetry?: (attempt: number, status: number) => void, stopOn429 = false) {
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
     let response: Response;
     try {
@@ -53,6 +67,7 @@ async function postWithRetry(url: string, body: string, onRetry?: (attempt: numb
       continue;
     }
     if (response.status !== 429 && response.status < 500) return response;
+    if (response.status === 429 && stopOn429) return response;
     if (attempt === MAX_ATTEMPTS - 1) return response;
     onRetry?.(attempt + 1, response.status);
     const retryAfter = Number(response.headers.get("retry-after"));
@@ -132,11 +147,18 @@ export async function generateStructured<T>(prompt: string, schema: JsonSchema, 
       },
     }),
     config.onRetry,
+    config.stopOn429,
   );
+  if (response?.status === 429 && config.stopOn429) {
+    const detail = await response.json().catch(() => null) as { error?: { message?: string } } | null;
+    throw new GeminiQuotaError(`Gemini の枠切れ（429）：${(detail?.error?.message ?? "").slice(0, 160)}`);
+  }
   if (!response?.ok) return null;
   const body = await response.json().catch(() => null) as {
     candidates?: { content?: { parts?: { text?: string }[] } }[];
+    usageMetadata?: { totalTokenCount?: number };
   } | null;
+  config.onUsage?.(body?.usageMetadata?.totalTokenCount ?? 0);
   const text = body?.candidates?.[0]?.content?.parts?.map((part) => part.text ?? "").join("");
   if (!text) return null;
   try { return JSON.parse(text) as T; } catch { return null; }

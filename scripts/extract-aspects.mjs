@@ -3,7 +3,8 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { CATEGORY_DEFINITIONS } from "../lib/category-definitions.ts";
 import { verifiedQuotes } from "../lib/aspect-model.ts";
-import { generateStructured } from "./gemini.ts";
+import { generateStructured, GeminiQuotaError } from "./gemini.ts";
+import { createQuota, QuotaStop, DEFAULT_DAILY_LIMIT } from "./gemini-quota.mjs";
 import { deduplicateReviews } from "../lib/review-dedup.ts";
 import { checkProductInvariants, validateBatchResponse } from "../lib/extraction-invariants.ts";
 import { aggregateTallies } from "../lib/quote-provenance.ts";
@@ -27,7 +28,9 @@ import { PAGE_TEXT_DIR, loadPageMeta } from "./page-text.mjs";
  */
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const MODEL = "gemini-3.1-flash-lite";
+// UMA-FREE の表（model_tiers.ts）：3.5-flash-lite は 1分15回・1日500回・1分25万トークン。
+// 前の 3.1-flash-lite は、表で1分250トークンとされていて、1回数千トークンのこの抽出では止まる（2026-09-26 に替えた）
+const MODEL = "gemini-3.5-flash-lite";
 const BATCH_SIZE = 30;
 
 function readVars(text) {
@@ -205,7 +208,22 @@ async function main() {
     .filter((productId) => keptIds.has(productId) && byProductId.has(productId))
     .slice(0, limit);
   const merged = [...pages.keys()].filter((productId) => !keptIds.has(productId)).length;
-  console.log(`${targets.length}商品を抽出します（色違い${merged}件は統合済み・モデル ${MODEL}）`);
+
+  // --resume：同じモデルで抽出済みの商品は飛ばす（1日の上限で止まった続きから）
+  if (args.includes("--resume")) {
+    const done = new Set((await readFile(path.join(ROOT_DIR, "data", "genre-aspects.json"), "utf8").then(JSON.parse).catch(() => ({ genres: [] })))
+      .genres.find((genre) => genre.categoryId === categoryId)?.products.filter((p) => p.extractionModel === MODEL).map((p) => p.productId) ?? []);
+    const before = targets.length;
+    targets.splice(0, targets.length, ...targets.filter((productId) => !done.has(productId)));
+    console.log(`--resume：抽出済みの${before - targets.length}商品を飛ばします`);
+  }
+  const limitIndex = args.indexOf("--daily-limit");
+  // 0 も上限として扱う（0 を「指定なし」と取りちがえて、実際に呼んでしまったことがある。2026-09-26）
+  const limitRaw = limitIndex >= 0 ? args[limitIndex + 1] : process.env.GEMINI_DAILY_LIMIT;
+  const dailyLimit = limitRaw !== undefined && limitRaw !== "" && Number.isFinite(Number(limitRaw)) ? Number(limitRaw) : DEFAULT_DAILY_LIMIT;
+  const quota = await createQuota({ rootDir: ROOT_DIR, model: MODEL, dailyLimit });
+  let stopped = null;
+  console.log(`${targets.length}商品を抽出します（色違い${merged}件は統合済み・モデル ${MODEL}・今日の使用 ${quota.used()}／上限 ${quota.limit}回）`);
 
   const records = [];
   let calls = 0;
@@ -247,8 +265,17 @@ async function main() {
       const batch = dedup.reviews.slice(batchStart, batchStart + BATCH_SIZE)
         .map((r, i) => ({ ...r, batchIndex: i + 1 }));
       const prompt = promptFor(aspects, formatBatch(batch), fits);
-      calls += 1;
-      const result = await generateStructured(prompt, schemaFor(aspects, fits), { apiKey, extractionModel: MODEL });
+      let result;
+      try {
+        await quota.reserve();
+        calls += 1;
+        result = await generateStructured(prompt, schemaFor(aspects, fits), { apiKey, extractionModel: MODEL, stopOn429: true, onUsage: (tokens) => { quota.addTokens(tokens); } });
+      } catch (error) {
+        if (!(error instanceof QuotaStop || error instanceof GeminiQuotaError)) throw error;
+        // 枠で止まった商品は途中なので書かない。ここまでに終わった商品は書く
+        stopped = error.message;
+        break;
+      }
       if (!result?.reviews) {
         batchFailures += 1;
         productBatchFailed = true;
@@ -299,6 +326,8 @@ async function main() {
       }
     }
 
+    if (stopped) break;
+
     // ── Step 3: Completeness check ──
     const reviewsRead = dedup.reviews.length;
     if (productBatchFailed && strict) {
@@ -334,6 +363,8 @@ async function main() {
       dedup: { totalBeforeDedup: dedup.totalBeforeDedup, duplicatesRemoved: dedup.duplicatesRemoved },
       aspects: aspectList,
       ...(fitList ? { fits: fitList } : {}),
+      extractionModel: MODEL,
+      extractedAt: new Date().toISOString(),
     });
     process.stdout.write(`${index + 1}/${targets.length} `);
   }
@@ -344,6 +375,11 @@ async function main() {
     for (const e of fatalErrors) console.error(`  ${e}`);
     console.error("\n既存の genre-aspects.json は変更しません。");
     process.exit(1);
+  }
+
+  if (stopped && !records.length) {
+    console.log(`\n止めました：${stopped}\n終わった商品が無いので、genre-aspects.json は変えていません`);
+    return;
   }
 
   const output = path.join(ROOT_DIR, "data", "genre-aspects.json");
@@ -378,6 +414,8 @@ async function main() {
   const totalClassified = records.reduce((sum, r) => sum + r.classifiedCount, 0);
   console.log(`\n${records.length}商品・観点${mentions}件・レビュー${totalReviews}件（分類${totalClassified}件・重複除去${totalDupsRemoved}件・呼び出し${calls}回・失敗${batchFailures}回・未返却${totalMissing}件・引用不一致${droppedQuotes}件）→ data/genre-aspects.json`);
   if (strict) console.log("不変条件チェック: 全商品通過");
+  console.log(`Gemini：今日の使用 ${quota.used()}／上限 ${quota.limit}回`);
+  if (stopped) console.log(`\n止めました：${stopped}\n終わった商品は書きました。続きは --resume で（抽出済みの商品を飛ばす）`);
 }
 
 await main();

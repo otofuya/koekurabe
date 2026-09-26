@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { MakerCrawler } from "./maker-crawl.ts";
 import { savePageText, savePageMeta, PAGE_TEXT_DIR } from "./page-text.mjs";
+import { structuredReviews } from "../lib/review-json.ts";
 
 /**
  * Buyer prose, from the marketplace's own review pages.
@@ -125,22 +126,33 @@ function totalReviews(html) {
  */
 const REVIEW_BODY = /class="review-body--[^"]*"[^>]*>([\s\S]*?)<\/div>/g;
 
-function reviewProse(html) {
-  const bodies = [...html.matchAll(REVIEW_BODY)]
+/**
+ * ページのレビュー。ページの中のデータ（lib/review-json.ts）があればそれを使い、1件ごとの★・日付・色・年代・性別も返す。
+ * 無ければ前のとおり HTML の本文だけ。本文の並びと meta の並びは同じ（extract で1件ずつ結びつけられる）。
+ */
+function readReviews(html) {
+  const structured = structuredReviews(html);
+  const list = structured ?? [...html.matchAll(REVIEW_BODY)]
     .map(([, inner]) => decodeEntities(inner.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((body) => ({ body }));
   const kept = [];
   let length = 0;
-  for (const body of bodies) {
+  for (const review of list) {
+    // 区切りの " / " が本文に入っていると、あとで1件を2件に数えてしまうので、全角にしておく
+    const body = review.body.replaceAll(" / ", "／");
     const next = length + (kept.length ? 3 : 0) + body.length;
     if (next > MAX_TEXT_LENGTH) break;
-    kept.push(body);
+    kept.push({ ...review, body });
     length = next;
   }
-  reviewProse.skipped += bodies.length - kept.length;
-  return kept.join(" / ");
+  readReviews.skipped += list.length - kept.length;
+  return {
+    prose: kept.map((review) => review.body).join(" / "),
+    reviews: structured ? kept.map(({ body, ...meta }) => meta) : null,
+  };
 }
-reviewProse.skipped = 0;
+readReviews.skipped = 0;
 
 const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', "#39": "'", nbsp: " " };
 const decodeEntities = (text) => text.replace(/&(#\d+|[a-z]+);/gi, (whole, name) => {
@@ -177,11 +189,11 @@ async function shopItemsRun(categoryId, products, load, crawler, offline) {
         const url = pages.url(page);
         const fetched = await load(url);
         if (!fetched) break;
-        const prose = reviewProse(fetched.html);
+        const { prose, reviews } = readReviews(fetched.html);
         if (prose.length < 20) break;
         slot += 1;
         await savePageText(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, prose);
-        await savePageMeta(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, { sourceUrl: url });
+        await savePageMeta(ROOT_DIR, categoryId, "shop-reviews", `${product.productId}-p${slot}`, { sourceUrl: url, ...(reviews ? { reviews } : {}) });
         characters += prose.length;
       }
     }
@@ -220,13 +232,13 @@ async function main() {
       if (!fetched) break;
       // お店の商品は、API が返したその商品のレビュー数で止める（ページの数字は店ぜんたいの件数のことがある）
       if (page === 1) found = pages.kind === "item" ? product.reviewCount ?? null : totalReviews(fetched.html);
-      const prose = reviewProse(fetched.html);
+      const { prose, reviews } = readReviews(fetched.html);
       // A page that loaded but says nothing is not a failure; it is a product nobody reviewed.
       if (prose.length < 20) break;
       // Pages are kept apart so extraction can run one page at a time: thirty reviews is a size a
       // model reads accurately, and each quote can be checked against the page it came from.
       await savePageText(ROOT_DIR, categoryId, "reviews", `${product.productId}-p${page}`, prose);
-      await savePageMeta(ROOT_DIR, categoryId, "reviews", `${product.productId}-p${page}`, { sourceUrl: url });
+      await savePageMeta(ROOT_DIR, categoryId, "reviews", `${product.productId}-p${page}`, { sourceUrl: url, ...(reviews ? { reviews } : {}) });
       characters += prose.length; pagesRead = page;
       // Nothing left to page to. Asking anyway is a request to somebody else's server for a page
       // we already know is empty.
@@ -243,7 +255,7 @@ async function main() {
   const coverage = (withProse / products.length * 100).toFixed(0);
   const pages = records.reduce((sum, record) => sum + record.pages, 0);
   const source = offline ? "キャッシュから再抽出" : `リクエスト ${crawler.requestsMade}件`;
-  if (reviewProse.skipped) console.log(`長すぎて入れなかったレビュー：${reviewProse.skipped}件（途中で切らずに外した）`);
+  if (readReviews.skipped) console.log(`長すぎて入れなかったレビュー：${readReviews.skipped}件（途中で切らずに外した）`);
   console.log(`\n${products.length}件中${withProse}件にレビュー本文（カバレッジ${coverage}%・${pages}ページ）→ ${path.relative(ROOT_DIR, output)}（${source}）`);
 }
 
