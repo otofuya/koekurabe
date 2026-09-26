@@ -3,7 +3,7 @@ import type { JoinedProduct } from "@lib/types.ts";
 import { switchTargets, READ_ENOUGH } from "@lib/nakami-model.ts";
 import { asAspect } from "./data.ts";
 import type { Genre } from "./data.ts";
-import { bar, productImage, nameOf, productHref, categoryHref, starLine, sectionTitle, sideWord } from "./parts.ts";
+import { bar, productImage, nameOf, productHref, categoryHref, starLine, sectionTitle, sideWord, provTag } from "./parts.ts";
 import type { Quote } from "@lib/aspect-model.ts";
 import { concerns, once } from "./store.ts";
 
@@ -156,7 +156,14 @@ function content(p: JoinedProduct, g: Genre, key: string, close: () => void) {
     ? h("a", { class: "more", href: categoryHref(g, key) }, `${g.label}を「${word}」で並べて見る`, icon("arrow", 16))
     : h("p", { class: "fine" }, `「${word}」で並べる画面はありません（${g.axes.find((a) => a.key === key)?.blockedBecause ?? "並べても差が出ません"}）。`);
 
-  return [head, counts, quotes, sw, toCategory];
+  // 公式・販売ページの仕様と、買った人の声を並べる（オーナーの答え「公式の情報も踏まえて」2026-09-26）
+  const specs = g.specKeys(key).map((k) => p.specs.find((s) => s.key === k)).filter((s): s is NonNullable<typeof s> => !!s);
+  const official = specs.length
+    ? h("section", { class: "sheet__sec" },
+      sectionTitle("公式・販売ページでは", "買った人の声とくらべる"),
+      h("dl", { class: "specs" }, specs.map((s) => [h("dt", null, s.label), h("dd", null, s.displayValue, " ", provTag(s))])))
+    : null;
+  return [head, counts, official, quotes, sw, toCategory];
 }
 
 /** 板が開いているあいだ、後ろの画面はキーボードと読み上げから外す。 */

@@ -8,6 +8,8 @@ import type { Genre } from "./data.ts";
 import { hasAds, shopUrl } from "./site.ts";
 import { fitSummaries, FIT_DIRECTIONS } from "@lib/fit-model.ts";
 import type { FitDefinition, FitSummary, FitTally } from "@lib/fit-model.ts";
+import { starImpact } from "@lib/voice-model.ts";
+import type { Spec } from "@lib/types.ts";
 
 export const nameOf = (p: JoinedProduct) => displayName(p.name);
 export const productHref = (id: string, key?: string | null) => `/reviews/${id}${key ? `?k=${key}` : ""}`;
@@ -147,6 +149,33 @@ function fitQuotes(def: FitDefinition, tally: FitTally) {
       return list.length ? h("div", { class: "qside" }, h("p", { class: "qside__l" }, labels[d]),
         h("ul", { class: "quotes" }, list.map((q) => h("li", null, h("q", null, q.text), " ", h("a", { href: q.reviewUrl, target: "_blank", rel: "noopener", class: "src" }, "出典"))))) : null;
     }));
+}
+
+const PROV: Record<Spec["provenance"], [string, string]> = {
+  official: ["公式", "prov"],
+  ec_api: ["販売ページ", "prov"],
+  llm_inferred: ["推定", "prov prov--est"],
+};
+/** 仕様の出どころ。推定の値には「推定」（設計原則4）。 */
+export const provTag = (s: Spec) => h("span", { class: PROV[s.provenance][1] }, PROV[s.provenance][0]);
+
+/**
+ * ★を下げている残念（オーナーの答え：足す。2026-09-26）。
+ * その残念があったレビューの★の平均と、ほかのレビューの★の平均を並べる。差の大きい順に3つまで。
+ * 「★を下げた原因」とは言い切らない（同じレビューにほかの不満があることもある）。
+ */
+export function impactBlock(p: JoinedProduct, g: Genre) {
+  if (!p.rows?.length) return null;
+  const list = starImpact(p.rows, g.order).slice(0, 3);
+  if (!list.length) return null;
+  const star = (n: number) => `★${n.toFixed(1)}`;
+  return h("section", { class: "block" },
+    sectionTitle("★を下げている残念", "その残念があったレビューの★"),
+    h("ul", { class: "impact" }, list.map((x) => h("li", { class: "impact__row" },
+      h("b", { class: "impact__word" }, g.word(x.key)),
+      h("span", { class: "impact__v impact__v--bad" }, h("small", null, `残念だった${x.with.count}件`), h("b", { class: "num" }, star(x.with.avg))),
+      h("span", { class: "impact__v" }, h("small", null, `ほかの${x.without.count}件`), h("b", { class: "num" }, star(x.without.avg)))))),
+    h("p", { class: "fine" }, "レビューの人が付けた★の平均です。同じレビューに、ほかの不満が書かれていることもあります。"));
 }
 
 /** 読めた量の小さな印。 */

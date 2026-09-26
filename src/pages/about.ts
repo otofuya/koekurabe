@@ -34,6 +34,9 @@ export function aboutPage(app: HTMLElement): Page {
         h("li", null, "1件のレビューが、同じ項目の「よかった」と「残念だった」の両方に入ることがあります。"),
         h("li", null, "読んだレビューが30件未満の商品は、数字がぶれやすいので「まだ少ない」と書いています。"),
         h("li", null, "並びは「残念が少ない順」です。点数や順位は付けていません。"),
+        h("li", null, "年代・性別・最近1年で絞って数えられます。年代と性別は、レビューの人が楽天で自分で選んだ欄です。"),
+        h("li", null, "「★を下げている残念」は、その残念があったレビューの★の平均と、ほかのレビューの★の平均を並べたものです。"),
+        h("li", null, "サイズ感のような好みは、よかった・残念だったではなく「小さめ｜ちょうど｜大きめ」で数えます。"),
         genres.map((g) => h("li", null, `${g.label}：${g.coverage.total}商品のうち${g.coverage.analysed}商品、レビュー${g.coverage.reviewsRead.toLocaleString("ja-JP")}件を読みました。`)))),
 
     h("section", { class: "about__sec" },

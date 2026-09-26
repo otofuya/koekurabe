@@ -4,12 +4,13 @@ import { navigate } from "../app/router.ts";
 import { findProduct } from "../app/data.ts";
 import type { Genre } from "../app/data.ts";
 import type { JoinedProduct, Spec } from "@lib/types.ts";
-import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag, shopLink, adNotice, fitBlock } from "../app/parts.ts";
+import { nakamiCard, allList, productImage, starLine, nameOf, sectionTitle, categoryHref, bar, evidenceTag, shopLink, adNotice, fitBlock, impactBlock, provTag } from "../app/parts.ts";
+import { viewFor, whoBar } from "../app/who.ts";
 import { setHead } from "../app/head.ts";
 import { SITE } from "../app/site.ts";
 import { productHead } from "@lib/seo-model.ts";
 import { createSheet } from "../app/sheet.ts";
-import { concerns, recent, tray, onStoreChange } from "../app/store.ts";
+import { concerns, recent, tray, who, onStoreChange } from "../app/store.ts";
 import { notFound } from "./not-found.ts";
 
 /**
@@ -36,19 +37,30 @@ export function productPage(app: HTMLElement, id: string, url: URL): Page | void
   };
 
   const main = h("div", { class: "pp__main" });
+  // 誰の声で数えるか（似た人・最近）。条件で数え直した商品を shown に持ち、板にも同じ数を出す
+  let shown = p;
   const paintMain = () => {
     const keys = concerns.get(g.id);
+    const view = viewFor(p, g, who.get());
+    shown = view.product;
     fill(main,
-      concernStrip(p, g, keys, pick),
-      nakamiCard(p, g, { onPick: pick, concernKeys: keys }),
+      p.aspects && p.reviewsRead ? whoBar(p, view) : null,
+      concernStrip(shown, g, keys, pick),
+      nakamiCard(shown, g, { onPick: pick, concernKeys: keys }),
       p.aspects && p.reviewsRead ? h("p", { class: "hint" }, "行を押すと、買った人のひとことと、その残念が少ない商品が見られます") : null,
-      fitBlock(p, g),
-      p.aspects && p.reviewsRead ? h("section", { class: "block" }, sectionTitle("ぜんぶの項目", h("span", null, h("span", { class: "dot dot--good" }), "よかった　残念だった", h("span", { class: "dot dot--bad" }))), allList(p, g, pick, keys)) : null,
+      impactBlock(p, g),
+      fitBlock(shown, g),
+      p.aspects && p.reviewsRead ? h("section", { class: "block" }, sectionTitle("ぜんぶの項目", h("span", null, h("span", { class: "dot dot--good" }), "よかった　残念だった", h("span", { class: "dot dot--bad" }))), allList(shown, g, pick, keys)) : null,
       p.aspects ? null : unreadHelp(p, g),
     );
   };
   paintMain();
-  const off = onStoreChange((key) => { if (key.startsWith("concerns.")) paintMain(); });
+  const off = onStoreChange((key) => {
+    if (!key.startsWith("concerns.") && key !== "who") return;
+    paintMain();
+    const open = sheet.key();
+    if (key === "who" && open) sheet.show(shown, g, open, opener);
+  });
 
   const inTray = h("button", { type: "button", class: "btn btn--line" });
   const paintTray = () => {
@@ -78,7 +90,7 @@ export function productPage(app: HTMLElement, id: string, url: URL): Page | void
 
   const update = (u: URL) => {
     const key = u.searchParams.get("k");
-    if (key && g.order.includes(key)) sheet.show(p, g, key, opener);
+    if (key && g.order.includes(key)) sheet.show(shown, g, key, opener);
     else sheet.hide();
     return true;
   };
@@ -114,11 +126,6 @@ function unreadHelp(p: JoinedProduct, g: Genre) {
     h("a", { class: "more", href: categoryHref(g) }, `${g.label}で、読めている商品を見る`, icon("arrow", 16)));
 }
 
-const PROV: Record<Spec["provenance"], [string, string]> = {
-  official: ["公式", "prov"],
-  ec_api: ["販売ページ", "prov"],
-  llm_inferred: ["推定", "prov prov--est"],
-};
 /** 仕様は評判のあと（設計原則4）。推定の値には「推定」。 */
 function specs(list: Spec[]) {
   if (!list.length) return null;
@@ -126,7 +133,7 @@ function specs(list: Spec[]) {
     sectionTitle("仕様", "評判のあとに"),
     h("dl", { class: "specs" }, list.map((s) => [
       h("dt", null, s.label),
-      h("dd", null, s.displayValue, " ", h("span", { class: PROV[s.provenance][1] }, PROV[s.provenance][0])),
+      h("dd", null, s.displayValue, " ", provTag(s)),
     ])),
     h("p", { class: "fine" }, "推定：販売ページやメーカーの表に無く、商品名や説明から推し量った値です。"));
 }

@@ -59,6 +59,21 @@ export const tray = {
   clear: () => write("tray", []),
 };
 
+/** 誰の声で数えるか（似た人・最近）。どの商品でも同じ条件を使う。 */
+export type Who = { recent: boolean; sex: "m" | "f" | null; age: "u29" | "30" | "40" | "o50" | null };
+const AGES = ["u29", "30", "40", "o50"];
+export const who = {
+  get(): Who {
+    const v = read<Partial<Who>>("who", {});
+    return {
+      recent: v.recent === true,
+      sex: v.sex === "m" || v.sex === "f" ? v.sex : null,
+      age: typeof v.age === "string" && AGES.includes(v.age) ? v.age : null,
+    };
+  },
+  set: (next: Who) => write("who", next),
+};
+
 export const once = {
   seen: (key: string) => read(`once.${key}`, false),
   mark: (key: string) => write(`once.${key}`, true),

@@ -21,7 +21,7 @@ import { productOgHtml, siteOgHtml } from "./og-image.mjs";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = join(ROOT, "dist");
 const OUT = join(ROOT, ".cache", "prerender");
-const SITE_NAME = "★の中身"; // src/app/site.ts と同じ（名前が決まったら両方を直す）
+const SITE_NAME = "買った人の声"; // src/app/site.ts と同じ（変えるときは両方を直す）
 const SHELL_DIR = "app-shell"; // /vs/* のように書き出さないページの受け皿
 
 const env = loadEnv("production", ROOT, "VITE_");

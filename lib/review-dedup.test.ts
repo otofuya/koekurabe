@@ -182,3 +182,19 @@ test("sourceUrl is preserved through deduplication", () => {
   assert.equal(productReview?.sourceUrl, reviewsUrl);
   assert.equal(shopReview?.sourceUrl, shopUrl);
 });
+
+// ── レビューごとのデータ（2026-09-26） ────────────────────────────────
+
+import { deduplicateReviews as dedupWithMeta } from "./review-dedup.ts";
+
+const meta = (rating: number) => ({ id: `id${rating}`, rating, date: "2026-09-01", sku: null, age: 30, sex: "female" as const, codes: [], title: null });
+
+test("本文と同じ並びのデータが、重複を除いたあとも各レビューに付いてくる", () => {
+  const got = dedupWithMeta([{ source: "reviews", page: 1, sourceUrl: "u", text: "よい / わるい", meta: [meta(5), meta(1)] }]);
+  assert.deepEqual(got.reviews.map((r) => [r.text, r.meta?.rating]), [["よい", 5], ["わるい", 1]]);
+});
+
+test("数が合わないデータは付けない（ずれて別のレビューの★が付くのを防ぐ）", () => {
+  const got = dedupWithMeta([{ source: "reviews", page: 1, sourceUrl: "u", text: "よい / わるい", meta: [meta(5)] }]);
+  assert.ok(got.reviews.every((r) => r.meta === undefined));
+});

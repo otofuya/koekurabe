@@ -162,13 +162,14 @@ describe("実データ（イヤホン）：docs/11 の数字", () => {
   const aspects = JSON.parse(readFileSync(new URL("genre-aspects.json", root), "utf8")).genres[0].products as { productId: string; reviewsRead: number; aspects: AspectProduct["aspects"] }[];
   const pool: Priced[] = aspects.map((a) => ({ id: a.productId, reviewsRead: a.reviewsRead, aspects: a.aspects, price: products.find((p) => p.productId === a.productId)!.price }));
   const byShort = (s: string) => pool.find((p) => p.id.startsWith(s))!;
-  it("くわしく読めたのは6商品", () => {
-    assert.equal(pool.filter((p) => p.reviewsRead >= READ_ENOUGH).length, 6);
+  // 2026-09-26 に数え直した（gemini-3.5-flash-lite・引用の向き・レビューごとの記録）。soundcore C50i が新たに読めた
+  it("くわしく読めたのは7商品", () => {
+    assert.equal(pool.filter((p) => p.reviewsRead >= READ_ENOUGH).length, 7);
   });
-  it("Sony WF-C710N のつけ心地から乗り換えられるのは Victor・Liberty 4・EarFun", () => {
+  it("Sony WF-C710N のつけ心地から乗り換えられるのは Victor・Liberty 4・EarFun・soundcore C50i", () => {
     const result = switchTargets(byShort("821de2ea"), pool, "fit");
     assert.equal(result.status, "found");
-    if (result.status === "found") assert.deepEqual(result.targets.map((t) => t.id.slice(0, 8)), ["e7e3a226", "637e1dd6", "d5f259d1"]);
+    if (result.status === "found") assert.deepEqual(result.targets.map((t) => t.id.slice(0, 8)), ["e7e3a226", "637e1dd6", "d5f259d1", "f02e6fec"]);
   });
   it("Liberty 4 のノイキャンは、はっきり少ない商品が無い。AUKEY は同じ値段の商品が無い", () => {
     assert.equal(switchTargets(byShort("637e1dd6"), pool, "anc").status, "none");

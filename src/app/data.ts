@@ -29,6 +29,8 @@ function build(categoryId: string) {
     pool,
     order,
     word: (key: string) => words.get(key) ?? key,
+    /** その観点と同じことを言う仕様のキー（公式・販売ページ）。 */
+    specKeys: (key: string) => defs.find((d) => d.key === key)?.specKeys ?? [],
     /** ちょうどよさの観点（小さめ・ちょうど・大きめ）。定義の順。 */
     fits: fitDefs,
     axes,

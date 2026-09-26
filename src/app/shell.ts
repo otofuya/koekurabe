@@ -6,15 +6,15 @@ import { navigate } from "./router.ts";
 import { categoryIds, findProduct, genre } from "./data.ts";
 import { productRow, evidenceTag, productHref, productImage, nameOf } from "./parts.ts";
 import { tray, recent, onStoreChange } from "./store.ts";
-import { hasAds } from "./site.ts";
+import { hasAds, SITE } from "./site.ts";
 
 const allProducts = () => categoryIds().flatMap((id) => genre(id)!.joined);
 const mostRead = () => [...allProducts()].filter((p) => p.reviewsRead).sort((a, b) => (b.reviewsRead ?? 0) - (a.reviewsRead ?? 0));
 
-/** 上の帯。ロゴと「さがす」。名前はまだ決めていない（仮）。 */
+/** 上の帯。ロゴと「さがす」。 */
 export function topBar() {
   return h("header", { class: "top" },
-    h("a", { class: "logo", href: "/", "aria-label": "ホーム" }, h("span", { class: "logo__mark", "aria-hidden": "true" }, "★"), "の中身", h("small", null, "（仮）")),
+    h("a", { class: "logo", href: "/", "aria-label": `${SITE.name}（ホーム）` }, SITE.name),
     h("button", { type: "button", class: "top__search", onclick: () => openSearch() }, icon("search", 18), h("span", null, "さがす")));
 }
 

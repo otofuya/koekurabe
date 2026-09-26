@@ -1,10 +1,16 @@
 import { createHash } from "node:crypto";
+import type { StructuredReview } from "./review-json.ts";
+
+/** レビュー1件ごとのデータ（★・日付・年代・性別など。lib/review-json.ts）。本文は含まない。 */
+export type ReviewMeta = Omit<StructuredReview, "body">;
 
 export type RawPage = {
   source: string;
   page: number;
   text: string;
   sourceUrl: string;
+  /** 本文の並び（" / " で分けた順）と同じ並びの、レビューごとのデータ。数が合わないときは使わない。 */
+  meta?: readonly ReviewMeta[];
 };
 
 export type UniqueReview = {
@@ -14,6 +20,7 @@ export type UniqueReview = {
   source: string;
   page: number;
   sourceUrl: string;
+  meta?: ReviewMeta;
 };
 
 export type DeduplicationResult = {
@@ -57,7 +64,7 @@ export function deduplicateReviews(pages: readonly RawPage[]): DeduplicationResu
     return a.page - b.page;
   });
 
-  type Entry = { text: string; hash: string; source: string; page: number; sourceUrl: string };
+  type Entry = { text: string; hash: string; source: string; page: number; sourceUrl: string; meta?: ReviewMeta };
   const entries: Entry[] = [];
   let totalBeforeDedup = 0;
   const hashSourceCounts = new Map<string, Map<string, number>>();
@@ -65,10 +72,11 @@ export function deduplicateReviews(pages: readonly RawPage[]): DeduplicationResu
   for (const rawPage of sorted) {
     const individuals = splitReviews(rawPage.text);
     totalBeforeDedup += individuals.length;
-    for (const text of individuals) {
+    const aligned = rawPage.meta && rawPage.meta.length === individuals.length ? rawPage.meta : null;
+    for (const [position, text] of individuals.entries()) {
       const normalized = normalizeForDedup(text);
       const hash = reviewHash(normalized);
-      entries.push({ text, hash, source: rawPage.source, page: rawPage.page, sourceUrl: rawPage.sourceUrl });
+      entries.push({ text, hash, source: rawPage.source, page: rawPage.page, sourceUrl: rawPage.sourceUrl, meta: aligned?.[position] });
       if (!hashSourceCounts.has(hash)) hashSourceCounts.set(hash, new Map());
       const sc = hashSourceCounts.get(hash)!;
       sc.set(rawPage.source, (sc.get(rawPage.source) ?? 0) + 1);
@@ -107,7 +115,7 @@ export function deduplicateReviews(pages: readonly RawPage[]): DeduplicationResu
       }
     }
 
-    reviews.push({ index, text: entry.text, hash: entry.hash, source: entry.source, page: entry.page, sourceUrl: entry.sourceUrl });
+    reviews.push({ index, text: entry.text, hash: entry.hash, source: entry.source, page: entry.page, sourceUrl: entry.sourceUrl, ...(entry.meta ? { meta: entry.meta } : {}) });
     sources[entry.source] = (sources[entry.source] ?? 0) + 1;
     index += 1;
   }

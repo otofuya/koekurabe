@@ -21,6 +21,11 @@ export type AspectDefinition = {
   positivePole: string;
   /** その反対側。「悪い」ではなく「割れている」を表す言葉にする。 */
   negativePole: string;
+  /**
+   * この観点と同じことを言っている仕様のキー（公式・販売ページ）。板で「公式では」と買った人の声を並べる。
+   * オーナーの答え「公式の情報も踏まえて」（2026-09-26）。
+   */
+  specKeys?: string[];
 };
 
 export type CategoryDefinition = {
@@ -53,13 +58,13 @@ export const CATEGORY_DEFINITIONS: Record<string, CategoryDefinition> = {
     id: "earbuds",
     label: "完全ワイヤレスイヤホン",
     aspects: [
-      { key: "sound", word: "音質", label: "音質", positivePole: "音が良い", negativePole: "音に不満" },
-      { key: "bass", word: "低音", label: "低音", positivePole: "低音が出る", negativePole: "低音が物足りない" },
-      { key: "fit", word: "つけ心地", label: "装着感", positivePole: "つけ心地が良い", negativePole: "合わない人がいる" },
-      { key: "anc", word: "ノイキャン", label: "ノイズキャンセリング", positivePole: "静かになる", negativePole: "効かない" },
-      { key: "ambient", word: "外の音", label: "外音取り込み", positivePole: "外がよく聞こえる", negativePole: "不自然" },
-      { key: "battery", word: "電池", label: "バッテリー", positivePole: "長く持つ", negativePole: "持たない" },
-      { key: "connection", word: "つながり", label: "接続の安定", positivePole: "安定している", negativePole: "途切れる" },
+      { key: "sound", word: "音質", label: "音質", positivePole: "音が良い", negativePole: "音に不満", specKeys: ["driver", "codec"] },
+      { key: "bass", word: "低音", label: "低音", positivePole: "低音が出る", negativePole: "低音が物足りない", specKeys: ["driver"] },
+      { key: "fit", word: "つけ心地", label: "装着感", positivePole: "つけ心地が良い", negativePole: "合わない人がいる", specKeys: ["weight", "openEar"] },
+      { key: "anc", word: "ノイキャン", label: "ノイズキャンセリング", positivePole: "静かになる", negativePole: "効かない", specKeys: ["anc"] },
+      { key: "ambient", word: "外の音", label: "外音取り込み", positivePole: "外がよく聞こえる", negativePole: "不自然", specKeys: ["ambient"] },
+      { key: "battery", word: "電池", label: "バッテリー", positivePole: "長く持つ", negativePole: "持たない", specKeys: ["playback"] },
+      { key: "connection", word: "つながり", label: "接続の安定", positivePole: "安定している", negativePole: "途切れる", specKeys: ["bluetooth", "multipoint"] },
       { key: "controls", word: "操作", label: "操作性", positivePole: "使いやすい", negativePole: "使いにくい" },
       { key: "calls", word: "通話", label: "通話品質", positivePole: "通話しやすい", negativePole: "通話が弱い" },
       { key: "value", word: "値段", label: "価格の納得感", positivePole: "値段に納得", negativePole: "割高" },

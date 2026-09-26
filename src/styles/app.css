@@ -31,7 +31,7 @@ a { color: inherit; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 h1, h2, h3 { font-weight: 900; line-height: 1.35; }
 /* 短い説明の文は、言葉の切れ目で折り返す（「見／られます」のような切れ方を防ぐ）。対応していないブラウザではふつうに折り返す */
-h1, h2, h3, .hint, .adnote, .fine, .note, .nk__foot, .about__lead, .foot li, .about__sec li, .home__lead, .fit__l span { word-break: auto-phrase; overflow-wrap: anywhere; }
+h1, h2, h3, .hint, .adnote, .fine, .note, .nk__foot, .about__lead, .foot li, .about__sec li, .home__lead, .fit__l span, .whobar__status { word-break: auto-phrase; overflow-wrap: anywhere; }
 b { font-weight: 700; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 8px; }
 .num { font-family: var(--num); font-variant-numeric: tabular-nums; }
@@ -191,6 +191,25 @@ button.row:hover .row__word { text-decoration: underline; }
 .quotes li { background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 10px 14px; font-size: 13.5px; line-height: 1.65; }
 q { quotes: "「" "」"; }
 .qside + .qside { margin-top: 14px; }
+.sheet__sub { word-break: keep-all; overflow-wrap: anywhere; }
+
+/* 誰の声で数えるか */
+.whobar { margin-bottom: 12px; }
+.whobar__chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 2px; }
+.whobar__chips::-webkit-scrollbar { display: none; }
+.whobar__chips .chip { flex-shrink: 0; }
+.whobar__status { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.whobar__status.is-small { color: var(--bad-text); }
+
+/* ★を下げている残念 */
+.impact { list-style: none; display: grid; }
+.impact__row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; padding: 10px 0; border-top: 1px solid var(--hair); }
+.impact__row:first-child { border-top: none; }
+.impact__word { font-size: 15px; }
+.impact__v { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.25; }
+.impact__v small { font-size: 11px; color: var(--muted); }
+.impact__v b { font-size: 19px; font-weight: 600; }
+.impact__v--bad b { color: var(--bad-text); }
 
 /* ちょうどよさ：両端は同じ灰色、まん中（ちょうど）だけ濃く。赤と青は使わない */
 .fitbox { padding: 12px 0; border-top: 1px solid var(--hair); }
@@ -217,7 +236,9 @@ q { quotes: "「" "」"; }
 .vfit__cells { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .vfit__name { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .qside__l { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-.src { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.src { font-size: 11.5px; color: var(--muted); white-space: nowrap; display: inline-block; position: relative; }
+/* 押せる範囲だけを44px 四方に広げる（見た目は変えない） */
+.src::after { content: ""; position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; transform: translate(-50%, -50%); }
 .swipe { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 18px 10px; margin: 0 -18px; scrollbar-width: none; }
 .swipe::-webkit-scrollbar { display: none; }
 .alt { flex: 0 0 216px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 22px; background: #fff; box-shadow: var(--shadow); }

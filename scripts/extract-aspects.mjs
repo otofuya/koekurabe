@@ -9,6 +9,8 @@ import { deduplicateReviews } from "../lib/review-dedup.ts";
 import { checkProductInvariants, validateBatchResponse } from "../lib/extraction-invariants.ts";
 import { aggregateTallies } from "../lib/quote-provenance.ts";
 import { aggregateFits, checkFits } from "../lib/fit-model.ts";
+import { toRow, checkRows } from "../lib/voice-model.ts";
+import { schemaFor, promptFor, formatBatch } from "./extract-prompt.mjs";
 import { PAGE_TEXT_DIR, loadPageMeta } from "./page-text.mjs";
 
 /**
@@ -46,81 +48,6 @@ async function writeAtomic(target, contents) {
   const temporary = `${target}.tmp`;
   await writeFile(temporary, contents, "utf8");
   await rename(temporary, target);
-}
-
-// ── Per-review schema: Gemini classifies each review individually ────────────
-
-// ちょうどよさ（lib/fit-model.ts）。定義があるカテゴリだけ、レビューごとに fits を返させる
-const fitSchema = (fits) => ({
-  type: "array",
-  items: {
-    type: "object",
-    properties: {
-      aspect: { type: "string", enum: fits.map((f) => f.label) },
-      direction: { type: "string", enum: ["low", "just", "high"] },
-      quote: { type: "string" },
-    },
-    required: ["aspect", "direction", "quote"],
-  },
-});
-
-const schemaFor = (aspects, fits = []) => ({
-  type: "object",
-  properties: {
-    reviews: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          index: { type: "integer" },
-          ...(fits.length ? { fits: fitSchema(fits) } : {}),
-          aspects: {
-            type: "array",
-            items: {
-              type: "object",
-              properties: {
-                aspect: { type: "string", enum: aspects.map((a) => a.label) },
-                polarity: { type: "string", enum: ["positive", "negative"] },
-                quote: { type: "string" },
-              },
-              required: ["aspect", "polarity", "quote"],
-            },
-          },
-        },
-        required: ["index", "aspects"],
-      },
-    },
-  },
-  required: ["reviews"],
-});
-
-const fitPrompt = (fits) => fits.length ? `
-
-次の観点は、良し悪しではなく「ちょうどよさ」（好み）です。レビューがふれていたら fits に入れてください。
-- 向きは low・just・high のどれか1つ。1件のレビューで、1つの観点につき1つだけ
-- 根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください
-- ふれていなければ入れないでください。推測で埋めないでください
-${fits.map((f) => `- ${f.label}：low＝${f.low}、just＝${f.just}、high＝${f.high}`).join("\n")}` : "";
-
-const promptFor = (aspects, numberedReviews, fits = []) => `次は1つの商品に対する購入者レビューです。番号付きで並んでいます。
-
-各レビューについて、どの観点に言及しているか判定してください。
-言及している場合、それが肯定的か否定的かを判定し、根拠となる引用（そのレビューの本文にそのまま現れる一節）を付けてください。
-
-- 1つのレビューが同じ観点について肯定と否定の両方を述べている場合、両方を出してください
-- 引用は、その判定（肯定か否定か）の根拠になる一節だけにしてください。肯定と否定の両方を出すときは、それぞれの根拠を別々に引用してください
-- 観点に言及していないレビューは aspects を空配列にしてください
-- 否定表現（「〜ない」「〜しにくい」「期待したほどでは」）を見落とさないでください
-- 商品説明やショップの宣伝文が混ざっている場合、それは購入者の声ではないので判定しないでください
-- 入力のレビュー番号をすべて返してください。省略しないでください
-
-観点: ${aspects.map((a) => a.label).join("、")}${fitPrompt(fits)}
-
---- レビュー ---
-${numberedReviews}`;
-
-function formatBatch(reviews) {
-  return reviews.map((r) => `[${r.batchIndex}] ${r.text}`).join("\n\n");
 }
 
 // ── Reading page text files, grouped by product ─────────────────────────────
@@ -246,7 +173,7 @@ async function main() {
         if (strict) { fatalErrors.push(msg); continue; }
         console.log(`  ⚠ ${msg}（--no-strict のため続行）`);
       }
-      rawPages.push({ source, page, text, sourceUrl: meta?.sourceUrl ?? "" });
+      rawPages.push({ source, page, text, sourceUrl: meta?.sourceUrl ?? "", ...(Array.isArray(meta?.reviews) ? { meta: meta.reviews } : {}) });
     }
 
     const dedup = deduplicateReviews(rawPages);
@@ -257,7 +184,7 @@ async function main() {
     }
 
     // ── Step 2: Batch unique reviews and classify with Gemini ──
-    const reviewMap = new Map(dedup.reviews.map((r) => [r.index, { text: r.text, sourceUrl: r.sourceUrl, classifications: [], fits: [] }]));
+    const reviewMap = new Map(dedup.reviews.map((r) => [r.index, { text: r.text, sourceUrl: r.sourceUrl, classifications: [], fits: [], meta: r.meta }]));
     let productClassified = 0;
     let productBatchFailed = false;
 
@@ -339,6 +266,9 @@ async function main() {
     // ── Step 4: Aggregate per-review classifications into aspect tallies ──
     const aspectList = aggregateTallies([...reviewMap.values()]);
     const fitList = fits.length ? aggregateFits([...reviewMap.values()]) : null;
+    // レビュー1件ごとの記録（★・投稿月・年代・性別と、数えた観点）。本文と番号は入れない（lib/voice-model.ts）
+    const rows = [...reviewMap.values()].map((entry) => toRow(entry.meta, entry.classifications, entry.fits));
+    for (const message of checkRows(rows, dedup.reviews.length, aspectList)) fatalErrors.push(`${productId}: ${message}`);
     for (const message of fitList ? checkFits(fitList, dedup.reviews.length, new Set(fits.map((f) => f.key))) : []) {
       fatalErrors.push(`${productId}: ${message}`);
     }
@@ -363,6 +293,7 @@ async function main() {
       dedup: { totalBeforeDedup: dedup.totalBeforeDedup, duplicatesRemoved: dedup.duplicatesRemoved },
       aspects: aspectList,
       ...(fitList ? { fits: fitList } : {}),
+      rows,
       extractionModel: MODEL,
       extractedAt: new Date().toISOString(),
     });
